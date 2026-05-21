@@ -18,3 +18,46 @@ build/
 .vscode/
 .DS_Store
 configs/mine.env
+
+# ===== HOLDSE / HOISO local phase logs and outputs =====
+foho_phase0/
+runs/
+outputs/
+checkpoints/
+ckpts/
+logs/
+logs_saved/
+wandb/
+.cache/
+
+# ===== FollowMyHold generated data =====
+*_debug/
+foho_debug/
+guidance_out/
+hunyuan_hoi_out/
+hamer_out/
+moge_out/
+aligned_mano/
+h2m_transformations/
+masked_obj_imgs/
+cropped_hoi_imgs/
+cropped_hoi_imgs_wo_bckg/
+cropped_hand_masks/
+ours_inpaint/
+original_imgs/
+
+# ===== model weights / assets =====
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.pkl
+*.onnx
+*.engine
+*.bin
+
+# ===== secrets =====
+*.env
+pipeline.env
+pipeline.*.env
+.foho_secrets
