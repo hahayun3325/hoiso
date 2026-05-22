@@ -4,59 +4,50 @@
 
 Create the official FollowMyHold conda environment before fetching weights and running the pipeline.
 
-## Initial result
+## Initial issue
 
-The official environment script started successfully and created the `foho` conda environment, but stopped during dependency installation because plain `pip install detectron2` could not find a compatible package.
+The official setup script created the `foho` environment and installed PyTorch, but stopped early because plain `pip install detectron2` could not find a compatible wheel.
 
-## Verified working core
+## Repair actions
 
-Python: 3.10.20
-PyTorch: 2.5.0+cu124
-Torch CUDA: 12.4
-CUDA available: True
-GPU: NVIDIA GeForce RTX 4090
+The environment was repaired manually:
 
-A CUDA tensor matrix multiplication test succeeded.
+- Installed common FollowMyHold dependencies.
+- Installed Kaolin 0.17.0.
+- Installed Detectron2 from source.
+- Built the hand-object detector CUDA extension.
+- Built PyTorch3D from source.
+- Installed remaining Python dependencies.
+- Repaired `mmcv==1.3.9` using `--no-build-isolation`.
+- Installed MMPose / MMEngine.
+- Re-pinned NumPy, diffusers, transformers, and Hugging Face Hub.
+- Fixed the missing Google API dependency for `google.generativeai`.
 
-## Repair plan
+## Verified core stack
 
-The missing dependencies were installed manually in smaller groups:
+- Python: 3.10.20
+- PyTorch: 2.5.0+cu124
+- Torch CUDA: 12.4
+- CUDA available: True
+- GPU: NVIDIA GeForce RTX 4090
+- CUDA matmul test: passed
 
-- common Python dependencies
-- Kaolin
-- Detectron2 from source
-- hand-object detector extension
-- PyTorch3D from source
-- Chumpy
-- MMPose / MMEngine
-- HaMeR ViTPose
-- rembg[gpu]
-- NumPy / diffusers / transformers / HuggingFace Hub pins
+## Final verification
 
-## Decision criterion
+The final dependency import check passed:
 
-Phase 0.7 is considered passed only after the final import check succeeds for the important packages:
+ALL_IMPORTS_OK
 
-- torch
-- torchvision
-- kaolin
-- pytorch3d
-- diffusers
-- transformers
-- trimesh
-- cv2
-- scipy
-- skimage
-- rembg
-- smplx
-- mmcv
-- mmpose
-- detectron2
-- google.generativeai
+The FollowMyHold source import check passed:
 
-## Next step
+FOHO_IMPORTS_OK
 
-After Phase 0.7 repair passes, proceed to Phase 0.8:
+## Decision
+
+Phase 0.7 passed.
+
+The machine is ready for Phase 0.8:
 
 - fetch bundled weights/data
-- verify HaMeR / WiLoR downloaded assets  
+- verify HaMeR / WiLoR assets
+- prepare manual detector and MANO assets  
