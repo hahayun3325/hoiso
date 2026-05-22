@@ -1,8 +1,8 @@
 # Phase 0.8 Asset Manifest
 
-Generated: 2026-05-22 00:46:25.761711
+Generated: 2026-05-22 13:56:15.480791
 
-- [OK] `third_party/estimator/hand_object_detector/data/pretrained_model/resnet101_caffe.pth` — 0.2 MB
+- [OK] `third_party/estimator/hand_object_detector/data/pretrained_model/resnet101_caffe.pth` — 170.4 MB — md5 `508530030bf473c7a976e922d69abaef`
 - [OK] `third_party/estimator/hand_object_detector/models/res101_handobj_100K/pascal_voc/faster_rcnn_1_8_89999.pth` — 360.6 MB
 - [OK] `third_party/estimator/hamer/_DATA/data/mano/MANO_RIGHT.pkl` — 3.6 MB
 - [OK] `third_party/estimator/wilor_ckpt/detector.pt` — 51.1 MB
