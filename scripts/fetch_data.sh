@@ -1,4 +1,6 @@
-""" Script to download checkpoint and data for FollowMyHold """
+#!/usr/bin/env bash
+set -euo pipefail
+# """ Script to download checkpoint and data for FollowMyHold """
 
 set -euo pipefail
 
