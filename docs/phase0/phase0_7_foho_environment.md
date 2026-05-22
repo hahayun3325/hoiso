@@ -1,45 +1,62 @@
-# Phase 0.7 — Create the `foho` Environment
+# Phase 0.7 — Create and Repair the `foho` Environment
 
 ## Goal
 
 Create the official FollowMyHold conda environment before fetching weights and running the pipeline.
 
-## Environment setup
+## Initial result
 
-The environment was created using:
+The official environment script started successfully and created the `foho` conda environment, but stopped during dependency installation because plain `pip install detectron2` could not find a compatible package.
 
-export CONDA_SH="$HOME/anaconda3/etc/profile.d/conda.sh"
-export CUDA_HOME="/usr/local/cuda"
-export TORCH_CUDA_ARCH_LIST="8.9"
-export MAX_JOBS=8
+## Verified working core
 
-bash scripts/create_env_foho.sh
+Python: 3.10.20
+PyTorch: 2.5.0+cu124
+Torch CUDA: 12.4
+CUDA available: True
+GPU: NVIDIA GeForce RTX 4090
 
-## Expected core versions
+A CUDA tensor matrix multiplication test succeeded.
 
-Python: 3.10PyTorch: 2.5.0+cu124CUDA runtime used by PyTorch: 12.4CUDA toolkit: /usr/local/cuda -> /usr/local/cuda-12.4GPU: NVIDIA GeForce RTX 4090
+## Repair plan
 
-## Important dependencies
+The missing dependencies were installed manually in smaller groups:
 
-The environment should include:
-
-- PyTorch
-- TorchVision
+- common Python dependencies
 - Kaolin
-- PyTorch3D
-- Diffusers
-- Transformers
-- Detectron2
-- HaMeR / ViTPose dependencies
+- Detectron2 from source
+- hand-object detector extension
+- PyTorch3D from source
+- Chumpy
+- MMPose / MMEngine
+- HaMeR ViTPose
+- rembg[gpu]
+- NumPy / diffusers / transformers / HuggingFace Hub pins
+
+## Decision criterion
+
+Phase 0.7 is considered passed only after the final import check succeeds for the important packages:
+
+- torch
+- torchvision
+- kaolin
+- pytorch3d
+- diffusers
+- transformers
+- trimesh
+- cv2
+- scipy
+- skimage
 - rembg
-- SMPL-X
-- OpenCV
-- Trimesh
+- smplx
+- mmcv
+- mmpose
+- detectron2
+- google.generativeai
 
-## Decision
+## Next step
 
-After this phase, the machine is ready for Phase 0.8:
+After Phase 0.7 repair passes, proceed to Phase 0.8:
 
 - fetch bundled weights/data
-- download or place manual detector/MANO assets
-- prepare the first smoke-test config  
+- verify HaMeR / WiLoR downloaded assets  
