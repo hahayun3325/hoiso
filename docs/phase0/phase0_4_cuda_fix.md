@@ -8,18 +8,31 @@ Fix the CUDA toolkit mismatch before creating the FollowMyHold `foho` environmen
 
 The NVIDIA driver supported CUDA 12.6, but the default CUDA compiler was CUDA 11.1:
 
-
 /usr/local/cuda-11.1/bin/nvcc
 
-and /usr/local/cuda pointed to CUDA 11.1.
+Also, `/usr/local/cuda` pointed to CUDA 11.1.
 
-## Target
+## Fix
 
-Use CUDA Toolkit 12.4 for FollowMyHold environment setup:
+CUDA Toolkit 12.4 was installed, and `/usr/local/cuda` was repointed to:
 
-/usr/local/cuda -> /usr/local/cuda-12.4
-nvcc --version -> release 12.4
+/usr/local/cuda-12.4
 
-## Reason
+## Verified result
+which nvcc
+# /usr/local/cuda/bin/nvcc
 
-FollowMyHold installs PyTorch 2.5.0 + CUDA 12.4 and builds native CUDA-related extensions, including hand-object detector extensions and PyTorch3D.
+nvcc --version
+# Cuda compilation tools, release 12.4, V12.4.131
+
+readlink -f /usr/local/cuda
+# /usr/local/cuda-12.4
+
+## CUDA compile test
+
+A tiny CUDA program compiled and ran successfully:
+Hello from CUDA kernel!
+
+## Decision
+
+Phase 0.4 passed. The system is ready to proceed to Phase 0.5 for Conda / Miniforge setup.  
