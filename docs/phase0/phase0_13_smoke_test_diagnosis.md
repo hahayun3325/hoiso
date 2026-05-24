@@ -2,25 +2,40 @@
 
 ## Current status
 
-The environment dependency issues are mostly resolved. The current blocker is preprocessing.
+Phase 0.13 is a partial pass.
 
-## Observed failures
+The pipeline now reaches all major stages:
 
-- Gemini query works.
-- WiLoR can detect hand boxes in some HO3D images.
-- hand_object_detector often returns `object_bbox=None`.
-- When object detection fails, preprocessing cannot create masks/crops.
-- The pipeline should not proceed to full reconstruction until preprocessing outputs exist.
+- preprocessing
+- inpainting
+- MoGe
+- Hunyuan3D
+- HaMeR / MANO alignment
+- guidance / optimization
 
-## Important artifacts needed before full inference
+## Current blocker
 
-The following files must exist before running later stages:
+The remaining blocker is CUDA out-of-memory during late guidance / optimization.
 
-- `cropped_hoi_imgs/*.png`
-- `cropped_hand_masks/*.png`
-- `masked_obj_imgs/*.png`
-- `cropped_hoi_imgs_wo_bckg/*.png`
+## Evidence
 
-## Dataset note
+The smoke_006 run produced:
 
-FollowMyHold evaluates on OakInk, ARCTIC, and DexYCB, not HO3D. HO3D may be useful for stress testing, but it is not the best first reproduction target.
+- masks and cropped images
+- inpainted object image
+- MoGe depth/normal/mesh/point cloud
+- Hunyuan HOI mesh
+- HaMeR output
+- aligned MANO mesh
+- guidance debug renderings and intermediate hand/object meshes
+
+The final error is CUDA OOM while processing `test_inpainted_object.png`.
+
+## Next action
+
+Create a low-memory guidance run by:
+
+- splitting stages or reusing existing artifacts
+- reducing final optimization / guidance steps
+- reducing render resolution
+- adding explicit CUDA cleanup between heavy stages
