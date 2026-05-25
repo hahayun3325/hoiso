@@ -7,6 +7,7 @@ import json
 import os
 import sys
 import warnings
+import traceback
 from typing import List, Optional
 
 import cv2
@@ -81,6 +82,16 @@ def run_hunyuan_w_guid(
     img_size = original_img_hand_mask.shape
     H, W = img_size[:2]
 
+    render_scale = float(os.environ.get("FOHO_RENDER_SCALE", "1.0"))
+    if render_scale != 1.0:
+        H = max(64, int(H * render_scale))
+        W = max(64, int(W * render_scale))
+        print(f"[FOHO_LOW_MEM] render_scale={render_scale}, renderer image_size=({H}, {W})")
+
+    render_faces_per_pixel = int(os.environ.get("FOHO_RENDER_FACES_PER_PIXEL", "1"))
+    sil_faces_per_pixel = int(os.environ.get("FOHO_SIL_FACES_PER_PIXEL", "100"))
+    print(f"[FOHO_LOW_MEM] render_faces_per_pixel={render_faces_per_pixel}, sil_faces_per_pixel={sil_faces_per_pixel}")
+
     rotation_y_180 = torch.tensor(
         [[-1, 0, 0], [0, 1, 0], [0, 0, -1]], device=device, dtype=torch.float32
     )
@@ -95,7 +106,7 @@ def run_hunyuan_w_guid(
     raster_settings = RasterizationSettings(
         image_size=(H, W),
         blur_radius=np.log(1.0 / 1e-4 - 1.0) * blend_params.sigma,
-        faces_per_pixel=1,
+        faces_per_pixel=render_faces_per_pixel,
         bin_size=-1,
         max_faces_per_bin=None,
     )
@@ -106,7 +117,7 @@ def run_hunyuan_w_guid(
     silhoutte_raster_settings = RasterizationSettings(
         image_size=(H, W),
         blur_radius=np.log(1.0 / 1e-4 - 1.0) * blend_params.sigma,
-        faces_per_pixel=100,
+        faces_per_pixel=sil_faces_per_pixel,
         bin_size=None,
         max_faces_per_bin=None,
     )
@@ -256,6 +267,7 @@ def run(
             print(f"Reconstructed object {index}")
         except Exception as e:
             print(f"Error in processing {cropped_obj_img} : {e}")
+            traceback.print_exc()
             continue
 
     print("Finished processing all images")

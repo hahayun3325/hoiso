@@ -2,17 +2,35 @@
 
 from __future__ import annotations
 
+import os
+
+
+
+
+def _env_int(name: str, default: int) -> int:
+    value = os.environ.get(name)
+    if value is None or value == "":
+        return default
+    return int(value)
+
+
+def _env_float(name: str, default: float) -> float:
+    value = os.environ.get(name)
+    if value is None or value == "":
+        return default
+    return float(value)
+
 
 class OptimizationConfig:
     def __init__(self):
-        self.obj_guidance_scale = 5.0
+        self.obj_guidance_scale = _env_float("FOHO_OBJ_GUIDANCE_SCALE", 5.0)
         self.batch_size = 1  # Not supporting batch processing for now
 
         # Optimization steps
-        self.optimization_steps_hand = 200
-        self.optimization_steps_joint = 50
-        self.optimization_steps_scale = 100
-        self.num_inference_steps = 20
+        self.optimization_steps_hand = _env_int("FOHO_OPT_STEPS_HAND", 200)
+        self.optimization_steps_joint = _env_int("FOHO_OPT_STEPS_JOINT", 50)
+        self.optimization_steps_scale = _env_int("FOHO_OPT_STEPS_SCALE", 100)
+        self.num_inference_steps = _env_int("FOHO_NUM_INFERENCE_STEPS", 20)
         self.guidance_start_step = self.num_inference_steps // 2
         self.handopt_start_step = self.guidance_start_step - 1
         self.guidance_end_step = self.num_inference_steps
