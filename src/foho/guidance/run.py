@@ -84,12 +84,14 @@ def run_hunyuan_w_guid(
 
     render_scale = float(os.environ.get("FOHO_RENDER_SCALE", "1.0"))
     if render_scale != 1.0:
-        H = max(64, int(H * render_scale))
-        W = max(64, int(W * render_scale))
-        print(f"[FOHO_LOW_MEM] render_scale={render_scale}, renderer image_size=({H}, {W})")
+        print(
+            f"[FOHO_LOW_MEM][WARN] FOHO_RENDER_SCALE={render_scale} is ignored for now "
+            "because renderer outputs must match MoGe/mask resolution."
+        )
 
     render_faces_per_pixel = int(os.environ.get("FOHO_RENDER_FACES_PER_PIXEL", "1"))
     sil_faces_per_pixel = int(os.environ.get("FOHO_SIL_FACES_PER_PIXEL", "100"))
+    print(f"[FOHO_LOW_MEM] renderer image_size=({H}, {W})")
     print(f"[FOHO_LOW_MEM] render_faces_per_pixel={render_faces_per_pixel}, sil_faces_per_pixel={sil_faces_per_pixel}")
 
     rotation_y_180 = torch.tensor(
