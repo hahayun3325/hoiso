@@ -1,43 +1,42 @@
-# Phase 0.13 — First Successful Smoke Test
+# Phase 0.13 — Near-Complete Smoke Test
 
 ## Status
 
-Phase 0.13 passed if the final guidance meshes exist:
+Phase 0.13 is a near-complete partial pass.
+
+The pipeline reaches the final guidance / optimization stage, but the final guidance meshes are still missing:
 
 - `guidance_out/test_obj.ply`
 - `guidance_out/test_hand.ply`
 
-## Successful run
+## Best run so far
 
 Run folder:
 
 ~/foho_phase0/runs/smoke_007
 
-Main command:
-
-PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync" \PYTHONPATH=src python3 -m foho.main \  --config configs/pipeline.phase0.env
-
-## Key change
-
-The main change from `smoke_006` to `smoke_007` was switching the PyTorch CUDA allocator backend:
+Main allocator change:
 
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-Earlier runs reached final guidance but failed with CUDA OOM. The async allocator improved memory allocation behavior enough for the smoke test to proceed further.
+## What passed
 
-## Pipeline stages reached
+The run successfully produced:
 
-The run reached:
+- Gemini object response
+- cropped HOI images
+- object and hand masks
+- inpainted object image
+- MoGe mesh/depth/normal outputs
+- Hunyuan HOI mesh
+- HaMeR hand mesh
+- aligned MANO mesh
+- guidance debug folder and optimization logs
 
-- Gemini object naming
-- hand/object preprocessing
-- FLUX/Kontext inpainting
-- MoGe geometry
-- Hunyuan3D HOI mesh generation
-- HaMeR hand reconstruction
-- H2M and MANO alignment
-- final guidance / optimization
+## Current blocker
 
-## Notes
+The final guidance stage still fails with device allocation / memory pressure. Final meshes are not saved.
 
-This smoke test is for setup validation, not final-quality evaluation. For paper-quality results, the original settings and stronger validation should be restored.  
+## Current assessment
+
+The main remaining bottleneck is memory pressure inside the guidance subprocess.  
