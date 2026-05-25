@@ -1622,7 +1622,8 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                 
                 # if we are at the final step, decode the latents in a higher resolution
                 if i == num_inference_steps - 1:
-                    octree_res = 384
+                    octree_res = int(os.environ.get("FOHO_FINAL_OCTREE_RES", "384"))
+                    print(f"[FOHO_LOW_MEM] final octree_res={octree_res}")
                     bounds = 1.10
                     bounds = [-bounds, -bounds, -bounds, bounds, bounds, bounds]
                     bbox_min = np.array(bounds[0:3])

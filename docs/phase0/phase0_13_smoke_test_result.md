@@ -1,29 +1,57 @@
-# Phase 0.13 — Near-Complete Smoke Test
+# Phase 0.13 — First Completed Low-Memory Smoke Test
 
 ## Status
 
-Phase 0.13 is a near-complete partial pass.
+Phase 0.13 passed as a low-memory smoke test.
 
-The pipeline reaches final Hunyuan guidance / optimization, but final guidance meshes are still missing:
+The pipeline produced the final guidance meshes:
 
 - `guidance_out/test_obj.ply`
 - `guidance_out/test_hand.ply`
 
-## Best status so far
+## Successful run
 
-The previous resolution mismatch was fixed by keeping render resolution consistent:
+Run folder:
 
+`~/foho_phase0/runs/smoke_013_octree192_guidance`
+
+## Key fix
+
+The main memory bottleneck was final Hunyuan guidance mesh extraction.
+
+The original final extraction used:
+
+`octree_res = 384`
+
+This caused CUDA OOM during:
+
+`flexi.construct_voxel_grid(octree_res)`
+
+The successful smoke run used:
+
+`export FOHO_FINAL_OCTREE_RES=192`
+
+## Low-memory settings
+
+export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 export FOHO_RENDER_SCALE=1.0
+export FOHO_RENDER_FACES_PER_PIXEL=1
+export FOHO_SIL_FACES_PER_PIXEL=5
+export FOHO_NUM_INFERENCE_STEPS=8
+export FOHO_OPT_STEPS_HAND=40
+export FOHO_OPT_STEPS_SCALE=20
+export FOHO_OPT_STEPS_JOINT=10
+export FOHO_FINAL_OCTREE_RES=192
 
-This avoids the 256-vs-512 tensor mismatch between renderer outputs and MoGe/mask tensors.
+## Output validation
 
-## Current blocker
+The final meshes were readable:
 
-The current blocker is still CUDA memory pressure, now occurring during voxel-grid / FlexiCubes mesh extraction:
+- object mesh: non-empty, readable `.ply`
+- hand mesh: non-empty, readable `.ply`
 
-flexi.construct_voxel_grid(octree_res)
-torch.OutOfMemoryError: Allocation on device
+## Interpretation
 
-## Current interpretation
+This result verifies that the FollowMyHold pipeline can complete on the local RTX 4090 using low-memory settings.
 
-The final guidance stage is too memory-heavy for the current RTX 4090 setup under current settings. The next step is to reduce guidance steps and investigate lowering mesh extraction resolution / octree resolution.  
+This is not yet a paper-quality setting. For final evaluation, the original or higher-quality settings should be restored when using a larger GPU or a more memory-efficient mesh extraction strategy.  
