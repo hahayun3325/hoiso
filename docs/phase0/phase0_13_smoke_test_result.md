@@ -4,39 +4,26 @@
 
 Phase 0.13 is a near-complete partial pass.
 
-The pipeline reaches the final guidance / optimization stage, but the final guidance meshes are still missing:
+The pipeline reaches final Hunyuan guidance / optimization, but final guidance meshes are still missing:
 
 - `guidance_out/test_obj.ply`
 - `guidance_out/test_hand.ply`
 
-## Best run so far
+## Best status so far
 
-Run folder:
+The previous resolution mismatch was fixed by keeping render resolution consistent:
 
-~/foho_phase0/runs/smoke_007
+export FOHO_RENDER_SCALE=1.0
 
-Main allocator change:
-
-export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
-
-## What passed
-
-The run successfully produced:
-
-- Gemini object response
-- cropped HOI images
-- object and hand masks
-- inpainted object image
-- MoGe mesh/depth/normal outputs
-- Hunyuan HOI mesh
-- HaMeR hand mesh
-- aligned MANO mesh
-- guidance debug folder and optimization logs
+This avoids the 256-vs-512 tensor mismatch between renderer outputs and MoGe/mask tensors.
 
 ## Current blocker
 
-The final guidance stage still fails with device allocation / memory pressure. Final meshes are not saved.
+The current blocker is still CUDA memory pressure, now occurring during voxel-grid / FlexiCubes mesh extraction:
 
-## Current assessment
+flexi.construct_voxel_grid(octree_res)
+torch.OutOfMemoryError: Allocation on device
 
-The main remaining bottleneck is memory pressure inside the guidance subprocess.  
+## Current interpretation
+
+The final guidance stage is too memory-heavy for the current RTX 4090 setup under current settings. The next step is to reduce guidance steps and investigate lowering mesh extraction resolution / octree resolution.  
