@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import os
 
+def _scale_lr_dict(d, scale):
+    return {k: float(v) * float(scale) for k, v in d.items()}
+
+
 
 
 
@@ -39,7 +43,9 @@ class OptimizationConfig:
         self.phase1_hand_lrs = {"scale": 1e-2, "trans": 1e-2, "rot": 0.5}
         self.phase2_hand_lrs = {"scale": 1e-4, "trans": 1e-4, "rot": 1e-2}
         self.obj_2half_lrs = {"scale": 1e-2, "trans": 1e-2, "rot": 1e-2}
+        self.obj_2half_lrs = _scale_lr_dict(self.obj_2half_lrs, os.environ.get("FOHO_OBJ_2HALF_LR_SCALE", 1.0))
         self.obj_lrs = {"scale": 5e-2, "trans": 1e-2, "rot": 1e-2}
+        self.obj_lrs = _scale_lr_dict(self.obj_lrs, os.environ.get("FOHO_OBJ_LR_SCALE", 1.0))
         self.noise_obj_lr1 = 1e-4
         self.noise_obj_lr1 = float(os.environ.get('FOHO_NOISE_OBJ_LR1', self.noise_obj_lr1))
         self.noise_obj_lr2 = 1e-2
