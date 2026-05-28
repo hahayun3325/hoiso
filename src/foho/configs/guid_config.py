@@ -41,7 +41,9 @@ class OptimizationConfig:
         self.obj_2half_lrs = {"scale": 1e-2, "trans": 1e-2, "rot": 1e-2}
         self.obj_lrs = {"scale": 5e-2, "trans": 1e-2, "rot": 1e-2}
         self.noise_obj_lr1 = 1e-4
+        self.noise_obj_lr1 = float(os.environ.get('FOHO_NOISE_OBJ_LR1', self.noise_obj_lr1))
         self.noise_obj_lr2 = 1e-2
+        self.noise_obj_lr2 = float(os.environ.get('FOHO_NOISE_OBJ_LR2', self.noise_obj_lr2))
 
         # Losses
         self.use_intersection_loss = True
