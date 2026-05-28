@@ -36,15 +36,6 @@ Instead:
 4. optimize hand pose,
 5. apply local contact refinement only to verified contact fingers.
 
-## Proposed objective
+## Rejection rule
 
-L = L_2D_silhouette
-  + L_2D_depth_normal
-  + λ_shape L_shape_preserve
-  + λ_contact L_local_contact
-  + λ_collision L_non_penetration
-  + λ_pose L_SE3_regularization
-
-## Important rule
-
-If final object completeness is worse than the earlier object source, reject the final object.  
+If final object completeness is worse than the earlier object source, reject the final object.

@@ -21,7 +21,12 @@ if components > 2 or fragmentation_score > 1.5:
 
 ## Step 3: Preserve selected object shape
 
-Do not optimize object latent, SDF, topology, or mesh vertices.
+Do not optimize:
+
+- object latent
+- object SDF
+- object topology
+- object mesh vertices
 
 ## Step 4: Optimize alignment
 
@@ -41,8 +46,8 @@ Use contact constraints only for verified contacting fingers and nearby object s
 
 Check:
 
+- object completeness
 - contact distance
 - penetration
 - object silhouette IoU
-- 3D object completeness
 - visual hand-object alignment  
