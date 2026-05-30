@@ -1,40 +1,50 @@
 # Phase 0.16b — Dataset Readiness
 
-## Current status
+## OakInk
 
-### OakInk
+OakInk image archive has been extracted successfully.
 
-OakInk download completed successfully.
+The flexible split resolver found the first 10 OakInk split images.
 
-However, split-path readiness still needs verification because the first split images were not found by the strict checker.
+Status:
 
-Next step:
+OakInk image split readiness: PASS
 
-- inspect folder structure,
-- check if files are archived,
-- use flexible split resolver.
+Next action:
 
-### ARCTIC
+- use OakInk for a small official-split smoke panel,
+- inspect GT annotation/object mesh files for metric reconstruction.
 
-ARCTIC data is not currently available at the required split paths.
+## ARCTIC
 
-Existing folders appear to be code repositories or empty dataset placeholders.
+ARCTIC cropped image download is currently running through the official repository script.
 
-Next step:
+The script requires:
 
-- inspect local ARCTIC download script,
-- download cropped images if needed,
-- re-run split resolver.
+ARCTIC_USERNAMEARCTIC_PASSWORD
 
-### DexYCB
+These credentials should be stored only in a private ignored file such as `~/.foho_secrets`.
 
-DexYCB toolkit exists, but actual dataset images were not found.
+Next action:
 
-Next step:
+- wait for download to finish,
+- extract cropped image zips,
+- create symlink if needed,
+- re-run flexible split resolver.
 
-- delay download until OakInk/ARCTIC are verified,
-- then download/link DexYCB if needed.
+## DexYCB
 
-## Rule
+DexYCB toolkit exists, but the actual DexYCB image data was not found.
 
-A dataset is ready only when split image paths resolve to real files.
+Status:
+
+DexYCB image split readiness: FAIL
+
+Next action:
+
+- do not test DexYCB yet,
+- download/link DexYCB after OakInk and ARCTIC are stable.
+
+## Readiness rule
+
+A dataset is ready only when the split image paths resolve to real files.  
