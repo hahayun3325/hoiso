@@ -6,10 +6,12 @@ Keep the original FollowMyHold output unchanged by default, while allowing fallb
 
 ## Proposed switches
 
+Default mode:
+
 FOHO_ENABLE_OBJECT_FALLBACK=0
 FOHO_FALLBACK_ALIGN_MODE=none
 
-or:
+Fallback bbox mode:
 
 FOHO_ENABLE_OBJECT_FALLBACK=1FOHO_FALLBACK_ALIGN_MODE=bbox
 
