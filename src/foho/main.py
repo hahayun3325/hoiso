@@ -33,6 +33,8 @@ def _env_with_paths(cfg: PipelineConfig) -> Dict[str, str]:
         env["FOHO_SUPPRESS_WARNINGS"] = "0"
     if cfg.gemini_api_key:
         env["GEMINI_API_KEY"] = cfg.gemini_api_key
+    elif os.environ.get("GEMINI_API_KEY"):
+        env["GEMINI_API_KEY"] = os.environ["GEMINI_API_KEY"]
     if cfg.hf_token:
         env["HF_TOKEN"] = cfg.hf_token
     if cfg.hy3dgen_models:
