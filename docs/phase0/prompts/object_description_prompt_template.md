@@ -39,3 +39,27 @@ A rectangular SPAM canned meat tin with flat front and back faces, rounded recta
   "negative_shape_constraint": "",
   "reconstruction_prompt": ""
 }
+
+## CLIP prompt-length note
+
+The inpainting model uses a CLIP-style text encoder.
+
+The practical limit is **77 tokens**, not 77 words.
+
+A token is not always a full word. It can be:
+
+- a whole word,
+- part of a word,
+- punctuation,
+- a special token.
+
+Therefore, a 77-word prompt can still exceed the 77-token limit.
+
+For Phase 0.17 prompt ablations, a safer rule is:
+
+35–55 words
+below roughly 350 characters
+one concise sentence
+one negative shape constraint
+
+The prompt should be detailed enough for reconstruction, but short enough to avoid CLIP truncation.  

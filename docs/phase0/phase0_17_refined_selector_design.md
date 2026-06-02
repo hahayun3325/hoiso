@@ -1,89 +1,96 @@
-# Phase 0.17 — Refined Selector Design
+# Phase 0.17 — Refined Selector Design  
+  
+## Main finding  
+  
+The current post-hoc selector is useful for diagnosis, but it should not be the final pipeline design.  
+  
+It can identify which object candidate is more complete, but it can still create wrong hand-object alignment when applied after all optimization is finished.  
+  
+## Why post-hoc replacement is problematic  
+  
+The post-hoc selector currently combines:  
+selected object mesh + final hand mesh
+This can fail because:
 
-## Current post-hoc selector
+1. the selected object may come from a different coordinate/pose stage,
+2. the selected Hunyuan mesh may be a composite HOI mesh rather than a clean object-only mesh,
+3. the final hand may no longer match the selected object,
+4. the selector does not optimize contact or front/back relationship.
 
-The current selector is useful for diagnosis.
+## Better placement
 
-It compares object candidates using object completeness:
+The selector should be placed between object-focused refinement and final alignment:
 
-- connected components,
-- largest-face ratio,
-- fragmentation score.
 
-However, it is not yet a complete final pipeline module.
+Phase 4.2 object-focused rectified-flow refinement→ object selector→ Phase 4.3 hand-object alignment refinement
 
-## Current limitation
 
-When the selector chooses the Hunyuan initial mesh, it may choose a full HOI mesh rather than an object-only mesh.
-
-This can cause:
-
-- extra Hunyuan hand geometry,
-- final hand overlaid with Hunyuan hand,
-- wrong front/back relationship,
-- poor contact alignment.
-
-## Better pipeline placement
-
-### Stage A — after Phase 4.2
-
-Run an object selector after object-focused rectified-flow refinement.
+## Object selector after Phase 4.2
 
 The selector should choose the best object-only candidate.
 
-Inputs:
+Candidate sources:
 
 - Hunyuan object candidate,
 - Phase 4.2 refined object,
-- optional inpaint/Hunyuan alternatives.
+- optional inpainting/Hunyuan alternatives.
 
-Score:
-
-C_obj = completeness + 2D mask fit + MoGe point agreement + prompt consistency - fragmentation
-
-Output:
+The selected candidate should include:
 
 
-selected object geometry + selected object pose
+object geometryobject poseconfidence score
 
 
-### Stage B — Phase 4.3
+The selector should score:
 
-Run contact-aware alignment refinement.
 
-Freeze or strongly regularize object geometry.
+C_obj =  object completeness+ 2D mask fit+ MoGe depth/point agreement+ prompt consistency- fragmentation
 
-Optimize:
+
+## Phase 4.3 alignment refinement
+
+After object selection, Phase 4.3 should refine alignment.
+
+It should preserve or strongly regularize the selected object geometry.
+
+It can optimize:
 
 - object SE(3),
 - hand global pose,
-- selected contact fingers or hand vertices.
+- selected hand/contact vertices.
 
-Do not globally deform the object.
+The goal is local alignment refinement, not global object deformation.
 
-### Stage C — after Phase 4.3
+## Scene validator after Phase 4.3
 
-Run a scene validator.
+The scene validator should check whether the final scene is believable.
 
-Score:
+It should check:
 
+- contact quality,
+- penetration,
+- rendered mask consistency,
+- depth/front-back consistency,
+- hand-object distance.
 
-C_scene = object quality + hand-object contact + low penetration + rendered mask fit + depth/front-back consistency
-
-
-If the scene fails, do not simply replace the object. Instead:
+If the scene fails, do not blindly replace the object. Instead:
 
 - rerun local alignment,
-- reduce contact loss,
-- roll back to Phase 4.2 selected object and re-optimize,
+- roll back to the selected Phase 4.2 object,
+- reduce aggressive guidance,
 - or mark the sample as low confidence.
 
-## Main principle
+## Final design principle
 
-Object selection and hand-object alignment are related but not identical.
+The selector should answer:
 
-The selector should choose a reliable object.
+Which object candidate should the alignment stage trust?
 
-The following optimization stage should align it with the hand.
+The alignment stage should answer:
 
-The final validator should check whether the full scene is correct.  
+How should the hand and selected object be spatially refined?
+
+The final validator should answer:
+
+Is the full hand-object scene believable?
+
