@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 import numpy as np
 import trimesh
 
@@ -34,46 +34,47 @@ def mesh_completeness_score(path: Path) -> Dict[str, Any]:
     mesh = load_mesh(path)
     comps = mesh.split(only_watertight=False)
     faces = np.array([len(c.faces) for c in comps], dtype=float)
-    largest = faces.max() / max(len(mesh.faces), 1) if len(faces) else 0.0
-    frag = (len(comps) - 1) + (1.0 - largest)
+    largest_ratio = faces.max() / max(len(mesh.faces), 1) if len(faces) else 0.0
+    fragmentation_score = (len(comps) - 1) + (1.0 - largest_ratio)
 
     return {
-        "vertices": len(mesh.vertices),
-        "faces": len(mesh.faces),
-        "components": len(comps),
-        "largest_face_ratio": float(largest),
-        "fragmentation_score": float(frag),
+        "vertices": int(len(mesh.vertices)),
+        "faces": int(len(mesh.faces)),
+        "components": int(len(comps)),
+        "largest_face_ratio": float(largest_ratio),
+        "fragmentation_score": float(fragmentation_score),
         "watertight": bool(mesh.is_watertight),
     }
 
 
-def select_object_candidate(candidates: list[ObjectCandidate]) -> ObjectSelectionResult:
-    """Select the best object candidate by simple completeness score.
+def scalar_object_score(metrics: Dict[str, Any]) -> float:
+    """Lower is better."""
+    return float(metrics["fragmentation_score"]) - float(metrics["largest_face_ratio"])
 
-    This is a placeholder for the Phase 4.2 -> Phase 4.3 selector.
+
+def select_object_candidate(candidates: List[ObjectCandidate]) -> ObjectSelectionResult:
+    """Select the best object-only candidate.
 
     Important:
-    - candidates should be object-only meshes,
-    - this should not be used for blind post-hoc scene replacement.
+    - Candidates should be object-only meshes.
+    - This selector should be inserted before final alignment.
+    - It should not be used as blind post-hoc scene replacement.
     """
     if not candidates:
         raise ValueError("No object candidates were provided.")
 
     scores: Dict[str, Dict[str, Any]] = {}
-
     best = None
-    best_score = None
+    best_scalar = None
 
     for cand in candidates:
-        s = mesh_completeness_score(cand.mesh_path)
-        scores[cand.name] = s
+        metrics = mesh_completeness_score(cand.mesh_path)
+        scores[cand.name] = metrics
+        scalar = scalar_object_score(metrics)
 
-        # Lower fragmentation is better. Higher largest ratio is better.
-        scalar = float(s["fragmentation_score"]) - float(s["largest_face_ratio"])
-
-        if best is None or scalar < best_score:
+        if best is None or scalar < best_scalar:
             best = cand
-            best_score = scalar
+            best_scalar = scalar
 
     return ObjectSelectionResult(
         selected_name=best.name,
