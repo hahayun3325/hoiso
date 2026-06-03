@@ -5,6 +5,7 @@
 The outer wrapper is:
 
 src/foho/guidance/run.py
+
 It calls:
 
 
@@ -53,23 +54,21 @@ The selector should run after `transformed_obj_mesh` is created and before the j
 
 ## Current debug-export result
 
-The debug hook successfully exports internal object candidates before the joint optimization block.
-
-For `oakink000_gpt54thinking_short`, these candidates have high fragmentation:
+For `oakink000_gpt54thinking_short`, the internal Phase 4.2 candidate before joint alignment is already fragmented:
 
 
-components = 23fragmentation_score = 22.2516
+phase42_before_joint: components = 23, fragmentation_score = 22.2516final_guided_obj: components = 6, fragmentation_score = 5.2243hunyuan_initial: components = 3, fragmentation_score = 2.0955
 
 
-This means the object can already be broken before the joint alignment block.
+This means object degradation can happen before the joint alignment block.
 
 ## Design implication
 
-The selector should not simply trust the current Phase 4.2 object.
+The selector should not blindly trust the current Phase 4.2 object.
 
 It should compare:
 
-1. trusted earlier object candidates,
+1. trusted earlier object-only candidates,
 2. current object-focused refinement candidate,
 3. optional prompt/inpaint alternatives.
 
