@@ -34,13 +34,17 @@ A token can be a full word, part of a word, punctuation, or a special token.
 
 Therefore, a safer practical rule is:
 
-35–55 wordsbelow roughly 350 charactersone concise sentenceone negative shape constraint
+35–55 words
+below roughly 350 characters
+one concise sentence
+one negative shape constraint
 
 ## Design lesson
 
 Detection prompts and reconstruction prompts should be separated.
 
-detection_prompt = short object categoryreconstruction_prompt = detailed geometry description
+detection_prompt = short object category
+reconstruction_prompt = detailed geometry description
 
 ## Selector lesson
 

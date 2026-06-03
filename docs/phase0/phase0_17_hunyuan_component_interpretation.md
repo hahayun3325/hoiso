@@ -15,7 +15,9 @@ The ranks are not semantic labels.
 They do not automatically mean:
 
 
-rank 0 = objectrank 1 = handrank 2 = trigger
+rank 0 = object
+rank 1 = hand
+rank 2 = trigger
 
 
 ## OakInk split000 example
@@ -23,7 +25,9 @@ rank 0 = objectrank 1 = handrank 2 = trigger
 For `oakink000_gpt54thinking_short`, the Hunyuan mesh has three components:
 
 
-rank 0: 135676 facesrank 1: 10610 facesrank 2: 3714 faces
+rank 0: 135676 faces
+rank 1: 10610 faces
+rank 2: 3714 faces
 
 
 Rank 0 is the dominant component, but it may still be a composite shape.
