@@ -1,56 +1,84 @@
 # Phase 0.17 — Selector Insertion Code Notes
 
-## Current code search result
+## Current outer guidance boundary
 
-The final guidance output is exported in:
+The outer wrapper is:
 
 src/foho/guidance/run.py
 
-Important lines found by grep:
+It calls:
 
 
-obj_mesh.export(save_path_obj)save_path_obj = os.path.join(guidance_out_dir, f"{index}_obj.ply")save_path_hand = os.path.join(guidance_out_dir, f"{index}_hand.ply")
+obj_mesh, hand_mesh = pipeline(...)
 
+
+and then exports:
+
+
+guidance_out/<index>_obj.plyguidance_out/<index>_hand.ply
+
+
+This is too late for the correct selector design.
+
+## Current Hunyuan initial export
 
 The Hunyuan initial HOI mesh is exported in:
 
+
 src/foho/geometry/hunyuan.py
+
 
 as:
 
-{i}_hoi_mesh.ply
+
+<index>_hoi_mesh.ply
 
 
-## Meaning
+This mesh may contain both object-like and hand-like components, so it should not be blindly used as an object-only candidate.
 
-The current visible hook is at the outer boundary:
+## Correct internal selector location
+
+The real selector should be inserted inside:
 
 
-guidance pipeline returns obj_mesh, hand_mesh→ run.py exports final object and hand
+third_party/Hunyuan3D-2/hy3dgen/shapegen/pipelines.py
 
 
-This is too late for the desired selector design.
+The target region is the object refinement block:
+
+
+object refinement startsobj_latent_x1 = self.scheduler.step_final(...)obj_pred_sdf = latent2sdf(...)obj_mesh = Meshes(...)moge_obj_mesh = transform_hunyuan2moge(...)transformed_obj_mesh = transform_mesh_around_center_w_scale(...)
+
+
+The selector should run after `transformed_obj_mesh` is created and before the joint hand-object alignment block begins.
 
 ## Correct design
 
-The selector should run inside the guidance pipeline, after object-focused refinement and before final joint hand-object alignment.
 
-## Required engineering step
+Object-focused refinement→ export/score object-only candidates→ selector chooses reliable object geometry + pose→ joint hand-object alignment uses the selected object
 
-Expose intermediate object candidates from inside the guidance pipeline:
 
-1. object before object-focused refinement,
-2. object after object-focused refinement,
-3. object before final joint alignment,
-4. object after final alignment.
+## What the selector should compare
 
-Then run selector on object-only candidates before final alignment.
+The selector should not compare only pose.
 
-## Temporary diagnostic implementation
+It should compare:
 
-Use scripts to:
+- object completeness,
+- fragmentation,
+- object-only validity,
+- 2D object mask consistency,
+- MoGe depth/point consistency,
+- rough pose plausibility.
 
-1. split Hunyuan HOI mesh into connected components,
-2. inspect whether components are object-like or hand-like,
-3. select from object-only candidates,
-4. avoid using the full Hunyuan HOI mesh as an object candidate.  
+## What Phase 4.3 should do
+
+Phase 4.3 should refine hand-object alignment.
+
+It should not globally deform the selected object.
+
+It should optimize mainly:
+
+- object SE(3),
+- hand global pose,
+- local contact vertices.  
