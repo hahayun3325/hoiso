@@ -10,6 +10,8 @@ base_runs = [
     "oakink000_gpt54thinking_short",
     "oakink000_gemini31pro_short",
     "oakink000_sonnet46thinking_short",
+    "oakink000_gpt55_short",
+    "oakink000_gpt55thinking_short",
 ]
 
 def score(path):
