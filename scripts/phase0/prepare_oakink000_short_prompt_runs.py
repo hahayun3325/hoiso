@@ -3,7 +3,7 @@ import pandas as pd
 import subprocess
 
 csv_path = Path("docs/phase0/manual_llm_prompts/oakink000_prompt_candidates_short.csv")
-df = pd.read_csv(csv_path)
+df = pd.read_csv(csv_path).fillna("")
 
 for _, r in df.iterrows():
     cmd = [
@@ -17,4 +17,5 @@ for _, r in df.iterrows():
         "--dataset_tag", "oakink",
     ]
     print("\n===== preparing", r["run_id"], "=====")
+    cmd = [str(x) for x in cmd]
     subprocess.run(cmd, check=True)
