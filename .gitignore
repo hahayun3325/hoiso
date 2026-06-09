@@ -67,3 +67,4 @@ hamer_demo_data.tar.gz
 # Phase 0 local/debug backups
 *.backup_before_*
 src/**/*.backup_before_*
+third_party/OakInk/
