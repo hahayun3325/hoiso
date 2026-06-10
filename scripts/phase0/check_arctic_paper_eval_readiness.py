@@ -7,6 +7,8 @@ roots = [
     Path("/home/fredcui/Projects/BIGS-main/data/arctic_data"),
     Path("/home/fredcui/datasets/hoi/arctic/raw"),
     Path("/home/fredcui/Projects/arctic/data"),
+    Path("/home/fredcui/Projects/arctic/unpack/arctic_data/data"),
+    Path("/home/fredcui/Projects/arctic/unpack/arctic_data"),
 ]
 
 required_dirs = [
