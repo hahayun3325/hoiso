@@ -1,0 +1,6 @@
+case,object,subject,seq_name,view_id,frame,source_path,input_path
+abox01,box,s01,box_grab_01,2,82,/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/box_grab_01/2/00082.jpg,/home/fredcui/foho_phase0/inputs/arctic_phase017/abox01.jpg
+aket01,ketchup,s01,ketchup_grab_01,7,147,/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/ketchup_grab_01/7/00147.jpg,/home/fredcui/foho_phase0/inputs/arctic_phase017/aket01.jpg
+ascis01,scissors,s01,scissors_grab_01,5,365,/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/scissors_grab_01/5/00365.jpg,/home/fredcui/foho_phase0/inputs/arctic_phase017/ascis01.jpg
+alapuse01,laptop,s01,laptop_use_01,0,114,/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/laptop_use_01/0/00114.jpg,/home/fredcui/foho_phase0/inputs/arctic_phase017/alapuse01.jpg
+amicuse01,microwave,s01,microwave_use_01,0,152,/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/microwave_use_01/0/00152.jpg,/home/fredcui/foho_phase0/inputs/arctic_phase017/amicuse01.jpg
