@@ -1,0 +1,22 @@
+paths:
+  repo_root: /home/fredcui/Projects/FollowMyHold
+  phase0_root: /home/fredcui/foho_phase0
+  arctic_root: /home/fredcui/Projects/arctic
+  manifest: /home/fredcui/Projects/FollowMyHold/data/phase1/manifests/phase1_samples.csv
+  output_dir: /home/fredcui/foho_phase0/phase1_diagnostics
+
+units:
+  mesh_unit: m
+  report_unit: mm
+  hand_bbox_diag_min_m: 0.12
+  hand_bbox_diag_max_m: 0.30
+
+thresholds_m:
+  contact: 0.005
+  penetration: 0.001
+  floating: 0.010
+  geometry_sigma: 0.010
+
+debug:
+  save_aligned_meshes: true
+  fail_fast: false
