@@ -68,3 +68,11 @@ hamer_demo_data.tar.gz
 *.backup_before_*
 src/**/*.backup_before_*
 third_party/OakInk/
+
+# Phase 1 generated diagnostics
+/home/fredcui/foho_phase0/phase1_diagnostics/
+outputs/phase1_diagnostics/
+*.ply
+*.obj
+*.glb
+*.npz
