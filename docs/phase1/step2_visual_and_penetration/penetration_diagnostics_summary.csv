@@ -1,0 +1,13 @@
+sample_id,case,method,status,warnings,object_vertices_inside_hand,object_vertices_total,object_inside_hand_ratio,object_inside_hand_max_depth_mm,object_inside_hand_mean_depth_mm,hand_vertices_inside_object,hand_vertices_total,hand_inside_object_ratio,hand_inside_object_max_depth_mm,hand_inside_object_mean_depth_mm
+arctic_abox01_default,abox01,default,OK,,0,130508,0.0,0.0,0.0,778,778,1.0,106.02826753383275,73.4549206381156
+arctic_abox01_gpt55_selector,abox01,gpt55_selector,OK,,4041,124296,0.03251110252944584,17.498181231534883,6.190046675804824,194,778,0.2493573264781491,11.639754273306494,5.578512055086967
+arctic_aket01_default,aket01,default,OK,,0,9420,0.0,0.0,0.0,0,778,0.0,0.0,0.0
+arctic_aket01_gpt55_selector,aket01,gpt55_selector,OK,,0,25962,0.0,0.0,0.0,0,778,0.0,0.0,0.0
+arctic_ascis01_default,ascis01,default,OK,object non-watertight; hand-inside-object winding may be unreliable,0,73190,0.0,0.0,0.0,0,778,0.0,0.0,0.0
+arctic_ascis01_gpt55_selector,ascis01,gpt55_selector,OK,,0,4984,0.0,0.0,0.0,0,778,0.0,0.0,0.0
+arctic_alapuse01_default,alapuse01,default,OK,,318,130982,0.0024278145088638134,5.615192328605807,2.12129911789779,67,778,0.08611825192802057,5.861887040876332,3.143356539092466
+arctic_alapuse01_gpt55_selector,alapuse01,gpt55_selector,OK,,4372,124514,0.03511251746791526,12.654857892719008,2.889255913496128,260,778,0.3341902313624679,10.483165713949811,3.0112556977329255
+arctic_amicuse01_default,amicuse01,default,OK,object non-watertight; hand-inside-object winding may be unreliable,11063,271135,0.04080255223412691,20.429408149160242,6.873190693286801,202,778,0.2596401028277635,21.29706975957968,6.660638452267107
+arctic_amicuse01_gpt55_selector,amicuse01,gpt55_selector,OK,,2078,46248,0.04493167272098253,14.89496380922719,4.533102184173213,25,778,0.032133676092544985,4.3797264218680745,1.2350908340899216
+oakink_split000_default,oakink_split000,default,OK,,0,68886,0.0,0.0,0.0,0,778,0.0,0.0,0.0
+oakink_split000_gpt55_selector,oakink_split000,gpt55_selector,OK,,0,60408,0.0,0.0,0.0,0,778,0.0,0.0,0.0

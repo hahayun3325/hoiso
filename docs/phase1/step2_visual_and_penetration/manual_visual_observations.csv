@@ -1,0 +1,7 @@
+sample_id,visual_status,object_quality,hand_object_relation,possible_penetration,notes
+arctic_aket01_default,floating,coherent,far,no,
+arctic_aket01_gpt55_selector,clear_fail,fargmented,far,no,
+arctic_ascis01_default,floating,wrong_shape,far,no,
+arctic_ascis01_gpt55_selector,floating,fragmented,far,no,
+oakink_split000_gpt55_selector,near_contact,fragmented,close_no_penetration,no,
+arctic_alapuse01_gpt55_selector,floating,coherent,far,no,
