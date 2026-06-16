@@ -1,0 +1,20 @@
+{
+  "case": "oakink_split000",
+  "selected_sample_id": "oakink_split000_default",
+  "selected_method": "default",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": [
+    "severe_floating"
+  ],
+  "selector_v4_score": -1000.2514333946739,
+  "metrics": {
+    "p5_hand_object_dist_mm": 20.041855472596005,
+    "floating": true,
+    "object_inside_hand_ratio": 0.0,
+    "hand_inside_object_ratio": 0.0,
+    "num_components": 2,
+    "largest_component_face_ratio": 0.994521103896104,
+    "bbox_diag_mm": 257.17901082030664
+  },
+  "mode": "dry_run_log_only"
+}

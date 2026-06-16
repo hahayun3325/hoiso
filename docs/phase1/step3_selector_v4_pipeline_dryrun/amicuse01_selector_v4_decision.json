@@ -1,0 +1,20 @@
+{
+  "case": "amicuse01",
+  "selected_sample_id": "arctic_amicuse01_default",
+  "selected_method": "default",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": [
+    "severe_penetration"
+  ],
+  "selector_v4_score": -1005.0535052619966,
+  "metrics": {
+    "p5_hand_object_dist_mm": 2.141816673848362,
+    "floating": false,
+    "object_inside_hand_ratio": 0.0408025522341269,
+    "hand_inside_object_ratio": 0.2596401028277635,
+    "num_components": 161,
+    "largest_component_face_ratio": 0.9553008807163652,
+    "bbox_diag_mm": 571.675816965616
+  },
+  "mode": "dry_run_log_only"
+}

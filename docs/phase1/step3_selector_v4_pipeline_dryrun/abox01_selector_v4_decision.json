@@ -1,0 +1,20 @@
+{
+  "case": "abox01",
+  "selected_sample_id": "arctic_abox01_gpt55_selector",
+  "selected_method": "gpt55_selector",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": [
+    "severe_penetration"
+  ],
+  "selector_v4_score": -999.238888053877,
+  "metrics": {
+    "p5_hand_object_dist_mm": 2.0273389448189345,
+    "floating": false,
+    "object_inside_hand_ratio": 0.0325111025294458,
+    "hand_inside_object_ratio": 0.2493573264781491,
+    "num_components": 56,
+    "largest_component_face_ratio": 0.9781594025622868,
+    "bbox_diag_mm": 535.5315266305976
+  },
+  "mode": "dry_run_log_only"
+}

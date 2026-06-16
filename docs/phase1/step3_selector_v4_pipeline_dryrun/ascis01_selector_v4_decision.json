@@ -1,0 +1,20 @@
+{
+  "case": "ascis01",
+  "selected_sample_id": "arctic_ascis01_default",
+  "selected_method": "default",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": [
+    "severe_floating"
+  ],
+  "selector_v4_score": -1111.6846245174456,
+  "metrics": {
+    "p5_hand_object_dist_mm": 123.589282554064,
+    "floating": true,
+    "object_inside_hand_ratio": 0.0,
+    "hand_inside_object_ratio": 0.0,
+    "num_components": 64,
+    "largest_component_face_ratio": 0.9102329018309204,
+    "bbox_diag_mm": 408.381376645958
+  },
+  "mode": "dry_run_log_only"
+}

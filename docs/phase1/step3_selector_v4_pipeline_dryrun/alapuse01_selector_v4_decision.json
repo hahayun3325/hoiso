@@ -1,0 +1,20 @@
+{
+  "case": "alapuse01",
+  "selected_sample_id": "arctic_alapuse01_default",
+  "selected_method": "default",
+  "final_decision": "select",
+  "failure_reasons": [
+    "valid"
+  ],
+  "selector_v4_score": 8.50776206391862,
+  "metrics": {
+    "p5_hand_object_dist_mm": 3.078929669333472,
+    "floating": false,
+    "object_inside_hand_ratio": 0.0024278145088638,
+    "hand_inside_object_ratio": 0.0861182519280205,
+    "num_components": 47,
+    "largest_component_face_ratio": 0.9864267195363732,
+    "bbox_diag_mm": 404.0828677522077
+  },
+  "mode": "dry_run_log_only"
+}

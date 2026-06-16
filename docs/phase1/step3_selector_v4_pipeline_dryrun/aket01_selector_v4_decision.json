@@ -1,0 +1,20 @@
+{
+  "case": "aket01",
+  "selected_sample_id": "arctic_aket01_gpt55_selector",
+  "selected_method": "gpt55_selector",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": [
+    "severe_floating"
+  ],
+  "selector_v4_score": -1026.03730616394,
+  "metrics": {
+    "p5_hand_object_dist_mm": 39.88220019091485,
+    "floating": true,
+    "object_inside_hand_ratio": 0.0,
+    "hand_inside_object_ratio": 0.0,
+    "num_components": 48,
+    "largest_component_face_ratio": 0.9272447013487476,
+    "bbox_diag_mm": 257.1521631582922
+  },
+  "mode": "dry_run_log_only"
+}
