@@ -1,0 +1,21 @@
+selector_v4:
+  severe_floating:
+    p5_threshold_mm: 20.0
+    borderline_p5_threshold_mm: 25.0
+
+  severe_penetration:
+    object_inside_hand_ratio: 0.03
+    hand_inside_object_ratio: 0.20
+    object_inside_hand_max_depth_mm: 10.0
+    hand_inside_object_max_depth_mm: 10.0
+
+  object_integrity:
+    severe_fragmentation_num_components: 100
+    severe_fragmentation_largest_component_ratio: 0.70
+    low_integrity_largest_component_ratio: 0.65
+    oversized_bbox_diag_mm: 700.0
+
+  decision_labels:
+    valid: select
+    invalid_all: reject_both_or_rerun
+    borderline: selected_with_warning
