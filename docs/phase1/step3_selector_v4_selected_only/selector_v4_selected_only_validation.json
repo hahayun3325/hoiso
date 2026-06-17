@@ -1,0 +1,56 @@
+[
+  {
+    "case": "abox01",
+    "decision": "reject_both_or_rerun",
+    "status": "OK",
+    "note": "rejected case has report and no copied meshes",
+    "has_hand_mesh": false,
+    "has_object_mesh": false,
+    "has_rejection_report": true
+  },
+  {
+    "case": "aket01",
+    "decision": "reject_both_or_rerun",
+    "status": "OK",
+    "note": "rejected case has report and no copied meshes",
+    "has_hand_mesh": false,
+    "has_object_mesh": false,
+    "has_rejection_report": true
+  },
+  {
+    "case": "alapuse01",
+    "decision": "select",
+    "status": "OK",
+    "note": "selected case has both meshes",
+    "has_hand_mesh": true,
+    "has_object_mesh": true,
+    "has_rejection_report": false
+  },
+  {
+    "case": "amicuse01",
+    "decision": "reject_both_or_rerun",
+    "status": "OK",
+    "note": "rejected case has report and no copied meshes",
+    "has_hand_mesh": false,
+    "has_object_mesh": false,
+    "has_rejection_report": true
+  },
+  {
+    "case": "ascis01",
+    "decision": "reject_both_or_rerun",
+    "status": "OK",
+    "note": "rejected case has report and no copied meshes",
+    "has_hand_mesh": false,
+    "has_object_mesh": false,
+    "has_rejection_report": true
+  },
+  {
+    "case": "oakink_split000",
+    "decision": "reject_both_or_rerun",
+    "status": "OK",
+    "note": "rejected case has report and no copied meshes",
+    "has_hand_mesh": false,
+    "has_object_mesh": false,
+    "has_rejection_report": true
+  }
+]
