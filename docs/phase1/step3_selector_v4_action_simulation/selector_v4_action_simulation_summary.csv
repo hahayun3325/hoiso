@@ -1,0 +1,7 @@
+case,sample_id,method,final_decision,failure_reasons,p5_hand_object_dist_mm,floating,object_inside_hand_ratio,hand_inside_object_ratio,action,copied_pred_hand_aligned.ply,copied_pred_object_aligned.ply
+abox01,arctic_abox01_gpt55_selector,gpt55_selector,reject_both_or_rerun,['severe_penetration'],2.0273389448189345,False,0.0325111025294458,0.2493573264781491,rejected_no_output_copy,,
+aket01,arctic_aket01_gpt55_selector,gpt55_selector,reject_both_or_rerun,['severe_floating'],39.88220019091485,True,0.0,0.0,rejected_no_output_copy,,
+alapuse01,arctic_alapuse01_default,default,select,['valid'],3.078929669333472,False,0.0024278145088638,0.0861182519280205,accepted_copy_created,/home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_action_simulation/accepted_outputs/alapuse01/pred_hand_aligned.ply,/home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_action_simulation/accepted_outputs/alapuse01/pred_object_aligned.ply
+amicuse01,arctic_amicuse01_default,default,reject_both_or_rerun,['severe_penetration'],2.141816673848362,False,0.0408025522341269,0.2596401028277635,rejected_no_output_copy,,
+ascis01,arctic_ascis01_default,default,reject_both_or_rerun,['severe_floating'],123.589282554064,True,0.0,0.0,rejected_no_output_copy,,
+oakink_split000,oakink_split000_default,default,reject_both_or_rerun,['severe_floating'],20.041855472596005,True,0.0,0.0,rejected_no_output_copy,,
