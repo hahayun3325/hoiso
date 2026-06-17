@@ -1,0 +1,58 @@
+[
+  {
+    "case": "abox01",
+    "sample_id": "arctic_abox01_gpt55_selector",
+    "method": "gpt55_selector",
+    "final_decision": "reject_both_or_rerun",
+    "source_action": "rejected_no_output_copy",
+    "failure_reasons": "['severe_penetration']",
+    "replacement_status": "no_final_output_rejected"
+  },
+  {
+    "case": "aket01",
+    "sample_id": "arctic_aket01_gpt55_selector",
+    "method": "gpt55_selector",
+    "final_decision": "reject_both_or_rerun",
+    "source_action": "rejected_no_output_copy",
+    "failure_reasons": "['severe_floating']",
+    "replacement_status": "no_final_output_rejected"
+  },
+  {
+    "case": "alapuse01",
+    "sample_id": "arctic_alapuse01_default",
+    "method": "default",
+    "final_decision": "select",
+    "source_action": "accepted_copy_created",
+    "failure_reasons": "['valid']",
+    "final_pred_hand_aligned.ply": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_selected_only_outputs/alapuse01/pred_hand_aligned.ply",
+    "final_pred_object_aligned.ply": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_selected_only_outputs/alapuse01/pred_object_aligned.ply",
+    "replacement_status": "final_selected_output_created"
+  },
+  {
+    "case": "amicuse01",
+    "sample_id": "arctic_amicuse01_default",
+    "method": "default",
+    "final_decision": "reject_both_or_rerun",
+    "source_action": "rejected_no_output_copy",
+    "failure_reasons": "['severe_penetration']",
+    "replacement_status": "no_final_output_rejected"
+  },
+  {
+    "case": "ascis01",
+    "sample_id": "arctic_ascis01_default",
+    "method": "default",
+    "final_decision": "reject_both_or_rerun",
+    "source_action": "rejected_no_output_copy",
+    "failure_reasons": "['severe_floating']",
+    "replacement_status": "no_final_output_rejected"
+  },
+  {
+    "case": "oakink_split000",
+    "sample_id": "oakink_split000_default",
+    "method": "default",
+    "final_decision": "reject_both_or_rerun",
+    "source_action": "rejected_no_output_copy",
+    "failure_reasons": "['severe_floating']",
+    "replacement_status": "no_final_output_rejected"
+  }
+]
