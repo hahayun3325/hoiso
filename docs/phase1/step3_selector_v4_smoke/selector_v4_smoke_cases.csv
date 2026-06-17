@@ -1,0 +1,5 @@
+case,reason,expected_decision
+alapuse01,clean selected case,select
+abox01,penetration reject case,reject_both_or_rerun
+aket01,floating reject case,reject_both_or_rerun
+oakink_split000,borderline/floating reject case,reject_both_or_rerun
