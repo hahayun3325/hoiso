@@ -1,44 +1,37 @@
 selector_v4:
   mode: dry_run_log_only
+  description: 'Selector-v4 runs after candidate generation. In dry-run mode it only
+    computes diagnostics and writes decision files. It does not modify the optimization
+    output.
 
-  description: >
-    Selector-v4 runs after candidate generation. In dry-run mode it only
-    computes diagnostics and writes decision files. It does not modify the
-    optimization output.
-
+    '
   paths:
     phase1_output_dir: /home/fredcui/foho_phase0/phase1_diagnostics
     phase1_manifest: /home/fredcui/Projects/FollowMyHold/data/phase1/manifests/phase1_samples.csv
-    case_config_manifest: /home/fredcui/foho_phase0/phase1_diagnostics/config_audit/selector_v4_case_config_manifest.csv
+    case_config_manifest: /home/fredcui/foho_phase0/phase1_diagnostics/config_audit/selector_v4_case_config_manifest_clean.csv
     decision_output_dir: /home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_pipeline_dryrun
-
   diagnostics:
     contact_summary_csv: /home/fredcui/foho_phase0/phase1_diagnostics/first_contact_metrics/contact_metrics_summary_labeled.csv
     penetration_summary_csv: /home/fredcui/foho_phase0/phase1_diagnostics/penetration_diagnostics/penetration_diagnostics_summary.csv
     object_integrity_csv: /home/fredcui/foho_phase0/phase1_diagnostics/object_integrity_metrics/object_integrity_summary.csv
-
   hard_gates:
     severe_floating:
       p5_threshold_mm: 20.0
       borderline_p5_threshold_mm: 25.0
-
     severe_penetration:
       object_inside_hand_ratio: 0.03
-      hand_inside_object_ratio: 0.20
+      hand_inside_object_ratio: 0.2
       object_inside_hand_max_depth_mm: 10.0
       hand_inside_object_max_depth_mm: 10.0
-
     object_integrity:
       severe_fragmentation_num_components: 100
-      severe_fragmentation_largest_component_ratio: 0.70
+      severe_fragmentation_largest_component_ratio: 0.7
       low_integrity_largest_component_ratio: 0.65
       oversized_bbox_diag_mm: 700.0
-
   decision_policy:
     if_valid_candidate_exists: select_best_valid
     if_only_borderline_exists: selected_with_warning
     if_all_candidates_fail: reject_both_or_rerun
-
   future_actions:
     select: accept_candidate
     selected_with_warning: accept_candidate_but_log_warning
