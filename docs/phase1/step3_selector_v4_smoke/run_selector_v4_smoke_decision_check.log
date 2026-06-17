@@ -1,0 +1,7 @@
+[OK] wrote /home/fredcui/foho_phase0/phase1_diagnostics/selector_v4_smoke/selector_v4_smoke_decision_check.csv
+           case    expected_decision      actual_decision  match           selected_sample_id         method  p5_hand_object_dist_mm  floating  object_inside_hand_ratio  hand_inside_object_ratio        failure_reasons
+      alapuse01               select               select   True     arctic_alapuse01_default        default                3.078930     False                  0.002428                  0.086118              ['valid']
+         abox01 reject_both_or_rerun reject_both_or_rerun   True arctic_abox01_gpt55_selector gpt55_selector                2.027339     False                  0.032511                  0.249357 ['severe_penetration']
+         aket01 reject_both_or_rerun reject_both_or_rerun   True arctic_aket01_gpt55_selector gpt55_selector               39.882200      True                  0.000000                  0.000000    ['severe_floating']
+oakink_split000 reject_both_or_rerun reject_both_or_rerun   True      oakink_split000_default        default               20.041855      True                  0.000000                  0.000000    ['severe_floating']
+{'num_cases': 4, 'num_match': 4, 'all_match': True}
