@@ -1,0 +1,12 @@
+{
+  "case": "abox01",
+  "sample_id": "arctic_abox01_gpt55_selector",
+  "method": "gpt55_selector",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": "['severe_penetration']",
+  "p5_hand_object_dist_mm": 2.0273389448189345,
+  "floating": false,
+  "object_inside_hand_ratio": 0.0325111025294458,
+  "hand_inside_object_ratio": 0.2493573264781491,
+  "action": "rejected_no_output_copy"
+}

@@ -1,0 +1,12 @@
+{
+  "case": "oakink_split000",
+  "sample_id": "oakink_split000_default",
+  "method": "default",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": "['severe_floating']",
+  "p5_hand_object_dist_mm": 20.041855472596005,
+  "floating": true,
+  "object_inside_hand_ratio": 0.0,
+  "hand_inside_object_ratio": 0.0,
+  "action": "rejected_no_output_copy"
+}

@@ -1,0 +1,12 @@
+{
+  "case": "amicuse01",
+  "sample_id": "arctic_amicuse01_default",
+  "method": "default",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": "['severe_penetration']",
+  "p5_hand_object_dist_mm": 2.141816673848362,
+  "floating": false,
+  "object_inside_hand_ratio": 0.0408025522341269,
+  "hand_inside_object_ratio": 0.2596401028277635,
+  "action": "rejected_no_output_copy"
+}

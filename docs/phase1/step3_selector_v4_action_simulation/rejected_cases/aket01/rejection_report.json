@@ -1,0 +1,12 @@
+{
+  "case": "aket01",
+  "sample_id": "arctic_aket01_gpt55_selector",
+  "method": "gpt55_selector",
+  "final_decision": "reject_both_or_rerun",
+  "failure_reasons": "['severe_floating']",
+  "p5_hand_object_dist_mm": 39.88220019091485,
+  "floating": true,
+  "object_inside_hand_ratio": 0.0,
+  "hand_inside_object_ratio": 0.0,
+  "action": "rejected_no_output_copy"
+}
