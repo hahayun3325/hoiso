@@ -1,0 +1,49 @@
+{
+  "case_id": "aket01",
+  "attempt": 0,
+  "all_ok": true,
+  "items": [
+    {
+      "name": "prompt",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/object_prompt_partaware_v2.txt",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "name": "metadata",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/rerun_metadata.json",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "name": "state",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/rerun_state.json",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "name": "output_contract",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/output_contract.json",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "name": "logs",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/logs",
+      "exists": true,
+      "is_dir": true
+    },
+    {
+      "name": "run_outputs",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs",
+      "exists": true,
+      "is_dir": true
+    },
+    {
+      "name": "selector_recheck",
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck",
+      "exists": true,
+      "is_dir": true
+    }
+  ]
+}
