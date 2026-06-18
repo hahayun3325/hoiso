@@ -1,7 +1,7 @@
 {
   "case_id": "aket01",
   "attempt": 0,
-  "state": "prompt_refined_attempt0_prepared",
+  "state": "attempt0_meshes_registered_for_selector_v4_recheck",
   "prompt_version": "partaware_v2",
   "expected_next_steps": [
     "rerun_inpainting",
@@ -9,5 +9,7 @@
     "rerun_object_pose_optimization",
     "selector_v4_recheck"
   ],
-  "previous_failure": "severe_floating"
+  "previous_failure": "severe_floating",
+  "registered_selector_input_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0",
+  "next_step": "run_selector_v4_recheck"
 }
