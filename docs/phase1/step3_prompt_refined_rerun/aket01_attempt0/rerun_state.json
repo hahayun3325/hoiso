@@ -1,7 +1,7 @@
 {
   "case_id": "aket01",
   "attempt": 0,
-  "state": "attempt0_meshes_registered_for_selector_v4_recheck",
+  "state": "waiting_for_actual_refined_prompt_rerun",
   "prompt_version": "partaware_v2",
   "expected_next_steps": [
     "rerun_inpainting",
@@ -10,6 +10,8 @@
     "selector_v4_recheck"
   ],
   "previous_failure": "severe_floating",
-  "registered_selector_input_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0",
-  "next_step": "run_selector_v4_recheck"
+  "registered_selector_input_dir": null,
+  "next_step": "run_inpainting_object_reconstruction_pose_optimization",
+  "registration_status": "not_registered_no_new_meshes_found",
+  "note": "The previous registration state was premature. No new partaware_v2 attempt0 meshes were found or linked into selector_v4_recheck/io_alignment."
 }
