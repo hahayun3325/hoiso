@@ -1,0 +1,22 @@
+{
+  "case_id": "aket01",
+  "attempt": 0,
+  "prompt_version": "partaware_v2",
+  "state": "waiting_for_actual_rerun",
+  "important_directories": {
+    "attempt_root": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt",
+    "raw_run_outputs": "run_outputs",
+    "inpainting_outputs": "run_outputs/inpainting",
+    "object_generation_outputs": "run_outputs/object_generation",
+    "pose_optimization_outputs": "run_outputs/pose_optimization",
+    "aligned_mesh_outputs": "run_outputs/aligned_meshes",
+    "selector_v4_recheck_input": "selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0",
+    "selector_v4_recheck_metrics": "selector_v4_recheck/metrics",
+    "selector_v4_recheck_decision": "selector_v4_recheck/decision"
+  },
+  "required_selector_inputs": [
+    "selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_hand_aligned.ply",
+    "selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_object_aligned.ply"
+  ],
+  "rule": "Do not overwrite old Phase 0 or Phase 1 outputs. Register new meshes by copying or symlinking them into selector_v4_recheck/io_alignment."
+}
