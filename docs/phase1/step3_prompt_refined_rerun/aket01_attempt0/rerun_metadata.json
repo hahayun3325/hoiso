@@ -1,0 +1,17 @@
+{
+  "case_id": "aket01",
+  "label": "ketchup_grab_01",
+  "image_path": "/home/fredcui/foho_phase0/inputs/arctic_phase017/aket01.jpg",
+  "source_path": "/home/fredcui/Projects/arctic/data/cropped_images_structured/s01/ketchup_grab_01/7/00147.jpg",
+  "failure_reasons": "['severe_floating']",
+  "previous_selected_sample_id": "arctic_aket01_gpt55_selector",
+  "previous_method": "gpt55_selector",
+  "prompt_template_version": "partaware_v2",
+  "rerun_policy": "direct_partaware_prompt_then_one_reinpaint_fallback",
+  "new_prompt": "A ketchup bottle, rigid squeeze-bottle with narrow neck and small cap above wider rounded-rectangular body, smooth curved sides and flat label faces, plastic red/white appearance, not a can, cup, box, or cylinder-only object.",
+  "run_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2",
+  "attempt0_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt",
+  "attempt1_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt1_reinpaint_fallback",
+  "final_state": "prepared_not_run",
+  "attempt": 0
+}

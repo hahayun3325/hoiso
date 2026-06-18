@@ -1,0 +1,13 @@
+{
+  "case_id": "aket01",
+  "attempt": 0,
+  "state": "prompt_refined_attempt0_prepared",
+  "prompt_version": "partaware_v2",
+  "expected_next_steps": [
+    "rerun_inpainting",
+    "rerun_object_reconstruction",
+    "rerun_object_pose_optimization",
+    "selector_v4_recheck"
+  ],
+  "previous_failure": "severe_floating"
+}
