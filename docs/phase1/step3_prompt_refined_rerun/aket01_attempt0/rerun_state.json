@@ -1,7 +1,7 @@
 {
   "case_id": "aket01",
   "attempt": 0,
-  "state": "attempt0_ready_launcher_missing",
+  "state": "attempt0_meshes_registered_for_selector_v4_recheck",
   "prompt_version": "partaware_v2",
   "expected_next_steps": [
     "rerun_inpainting",
@@ -10,8 +10,11 @@
     "selector_v4_recheck"
   ],
   "previous_failure": "severe_floating",
-  "registered_selector_input_dir": null,
-  "next_step": "locate_exact_fmh_arctic_launcher",
-  "registration_status": "not_registered_no_new_meshes_found",
-  "note": "The new env and refined prompt response file are ready, but the exact FMH/ARCTIC launcher has not been identified or executed. No new meshes exist yet."
+  "registered_selector_input_dir": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0",
+  "next_step": "run_selector_v4_recheck",
+  "registration_status": "registered",
+  "note": "The new env and refined prompt response file are ready, but the exact FMH/ARCTIC launcher has not been identified or executed. No new meshes exist yet.",
+  "registered_hand_mesh": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/foho_debug/20260619_153623_exp_objaket01_inpainted/final_hand_mesh.ply",
+  "registered_object_mesh": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/foho_debug/20260619_153623_exp_objaket01_inpainted/final_obj_mesh.ply",
+  "registration_mode": "symlink"
 }

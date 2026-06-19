@@ -1,0 +1,10 @@
+{
+  "case_id": "aket01",
+  "attempt": 0,
+  "registration_status": "registered",
+  "mode": "symlink",
+  "source_hand": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/foho_debug/20260619_153623_exp_objaket01_inpainted/final_hand_mesh.ply",
+  "source_object": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/foho_debug/20260619_153623_exp_objaket01_inpainted/final_obj_mesh.ply",
+  "registered_hand": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_hand_aligned.ply",
+  "registered_object": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_object_aligned.ply"
+}
