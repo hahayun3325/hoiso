@@ -1,0 +1,3602 @@
+[
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 63,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 63,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 64,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 64,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 74,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_dir_v3",
+    "line": 75,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_phase017_configs_gpt55_auto.py",
+    "line": 85,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "prompt_csv = run_dir / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_phase017_configs_gpt55_auto.py",
+    "line": 99,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "cfg = set_env(cfg, \"GEMINI_RESPONSES\", prompt_csv)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_phase017_configs_gpt55_auto.py",
+    "line": 101,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "cfg = set_env(cfg, \"FOHO_RUN_DIR\", run_dir)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_phase017_configs_gpt55_auto.py",
+    "line": 102,
+    "pattern": "OUTPUT_DIR",
+    "text": "cfg = set_env(cfg, \"OUTPUT_DIR\", run_dir)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/seed_oakink000_preprocess_from_baseline.py",
+    "line": 29,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "# Keep manual_gemini_responses.csv and config untouched."
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_one_arctic_selector_native_config.py",
+    "line": 42,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "text = set_env(text, \"FOHO_RUN_DIR\", new_run)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_one_arctic_selector_native_config.py",
+    "line": 43,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "text = set_env(text, \"GUIDANCE_OUT_PATH\", new_run / \"guidance_out\")"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_one_arctic_selector_native_config.py",
+    "line": 51,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "old_prompt = base_run / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_one_arctic_selector_native_config.py",
+    "line": 52,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "new_prompt = new_run / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_one_arctic_selector_native_config.py",
+    "line": 55,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_env(text, \"GEMINI_RESPONSES\", new_prompt)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_selector_native_rerun_configs.py",
+    "line": 48,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "text = set_env(text, \"FOHO_RUN_DIR\", run_dir)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_selector_native_rerun_configs.py",
+    "line": 49,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "text = set_env(text, \"GUIDANCE_OUT_PATH\", run_dir / \"guidance_out\")"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_selector_native_rerun_configs.py",
+    "line": 55,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "old_prompt = HOME / \"foho_phase0/runs\" / base / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_selector_native_rerun_configs.py",
+    "line": 56,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "new_prompt = run_dir / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/prepare_arctic_selector_native_rerun_configs.py",
+    "line": 61,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_env(text, \"GEMINI_RESPONSES\", new_prompt)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/make_manual_prompt_config.py",
+    "line": 34,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "prompt_csv = run_dir / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/make_manual_prompt_config.py",
+    "line": 45,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_env_line(text, \"GEMINI_RESPONSES\", str(prompt_csv))"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_phase017_configs.py",
+    "line": 21,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "\"CROPPED_INPAINTED_OBJ\": \"ours_inpaint\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_phase017_configs.py",
+    "line": 24,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "\"HUNYUAN_HOI_MESH_PATH\": \"hunyuan_hoi_out\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_phase017_configs.py",
+    "line": 28,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "\"GUIDANCE_OUT_PATH\": \"guidance_out\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_phase017_configs.py",
+    "line": 61,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "text = set_line(text, \"GEMINI_RESPONSES\", run_dir / \"manual_gemini_responses.csv\")"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_phase017_configs.py",
+    "line": 61,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_line(text, \"GEMINI_RESPONSES\", run_dir / \"manual_gemini_responses.csv\")"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 75,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 75,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 76,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 76,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 86,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh",
+    "line": 87,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 60,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 60,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 61,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 61,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 71,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_before_export_patch_hook",
+    "line": 72,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/make_arctic_selector_native_v2_panel.py",
+    "line": 9,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "(\"arctic_aket01_gpt55_auto_selector_native_v2\", \"aket01 / ketchup\"),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/apply_selector_with_compat.py",
+    "line": 31,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "env[\"FOHO_RUN_DIR\"] = str(run)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/evaluate_arctic_aket01_first_metric_dryrun.py",
+    "line": 18,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "\"gpt55_selector\": RUN_ROOT / \"arctic_aket01_gpt55_auto_selector_native_v2\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 69,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 69,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 70,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 70,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 80,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v5_hook",
+    "line": 81,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 46,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "text = set_env(text, \"FOHO_RUN_DIR\", new_run)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 47,
+    "pattern": "OUTPUT_DIR",
+    "text": "text = set_env(text, \"OUTPUT_DIR\", new_run)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 54,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "\"CROPPED_INPAINTED_OBJ\": \"ours_inpaint\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 57,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "\"HUNYUAN_HOI_MESH_PATH\": \"hunyuan_hoi_out\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 61,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "\"GUIDANCE_OUT_PATH\": \"guidance_out\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 75,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "old_prompt = new_run / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 77,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_env(text, \"GEMINI_RESPONSES\", old_prompt)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 79,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "base_prompt = base_run / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 80,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "new_prompt = new_run / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_all_arctic_selector_native_v2_configs.py",
+    "line": 83,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "text = set_env(text, \"GEMINI_RESPONSES\", new_prompt)"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 38,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "\"CROPPED_INPAINTED_OBJ\": str(run / \"ours_inpaint\"),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 41,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "\"HUNYUAN_HOI_MESH_PATH\": str(run / \"hunyuan_hoi_out\"),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 45,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "\"GUIDANCE_OUT_PATH\": str(run / \"guidance_out\"),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 47,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "\"GEMINI_RESPONSES\": \"\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 53,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "\"FOHO_RUN_DIR\": str(run),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/repair_arctic_default_configs.py",
+    "line": 54,
+    "pattern": "OUTPUT_DIR",
+    "text": "\"OUTPUT_DIR\": str(run),"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/salvage_arctic_outputs_from_polluted_oakink.py",
+    "line": 101,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "prompt = dst_root / \"manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/verify_arctic_salvage_readiness.py",
+    "line": 24,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"prompt_csv\": run / \"manual_gemini_responses.csv\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 66,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 66,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 67,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 67,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 77,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_broken_v3_hook",
+    "line": 78,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 55,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 55,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 65,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_debug_one.sh",
+    "line": 66,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 71,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 71,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{base}/manual_gemini_responses.csv\"',"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 72,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 72,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "f'GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/{debug}/manual_gemini_responses.csv\"'"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 82,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "cp \"$HOME/foho_phase0/runs/${BASE_RUN_ID}/manual_gemini_responses.csv\" \\"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/run_oakink_internal_selector_variant.sh.backup_disable_old_export_patches",
+    "line": 83,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"$HOME/foho_phase0/runs/${DEBUG_RUN_ID}/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase0/apply_object_fallback_optional.py",
+    "line": 11,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "run_dir = Path(os.environ[\"FOHO_RUN_DIR\"])"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 10,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "\"arctic_aket01_gpt55_auto_selector_native_v2\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 11,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "\"pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 11,
+    "pattern": "pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "text": "\"pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 12,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "\"manual_gemini_responses.csv\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 13,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "\"GEMINI_RESPONSES\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 14,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "\"FOHO_RUN_DIR\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 15,
+    "pattern": "OUTPUT_DIR",
+    "text": "\"OUTPUT_DIR\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 16,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "\"CROPPED_INPAINTED_OBJ\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 17,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "\"HUNYUAN_HOI_MESH_PATH\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/discover_aket01_previous_launcher.py",
+    "line": 18,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "\"GUIDANCE_OUT_PATH\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/run_aket01_partaware_v2_attempt0_NOTE.sh",
+    "line": 13,
+    "pattern": "OUTPUT_DIR",
+    "text": "echo \"[OUTPUT_DIR] $OUTPUT_DIR\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/run_aket01_partaware_v2_attempt0_NOTE.sh",
+    "line": 14,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "echo \"[FOHO_RUN_DIR] $FOHO_RUN_DIR\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/scripts/phase1/run_aket01_partaware_v2_attempt0_NOTE.sh",
+    "line": 15,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "echo \"[GEMINI_RESPONSES] $GEMINI_RESPONSES\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.prompt_rect.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.prompt_rect.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.prompt_rect.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.prompt_rect.env",
+    "line": 61,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/prompt_ablation/gemini_spam_rectangular.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.oakink000.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.oakink000.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.oakink000.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.phase0.template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.env.example",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.env.example",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/pipeline.env.example",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v5b.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v5b.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v5b.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v5b.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v5b/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v5b.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v5b/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v4.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v4.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v4.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v4.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v4/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v4.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v4/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_v7_truefile.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_v7_truefile.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_v7_truefile.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v3.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v3.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v3.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v3.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_v3/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v3.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_v3/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v6_clean.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v6_clean.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v6_clean.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v6_clean.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v6_clean/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v6_clean.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v6_clean/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 56,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 57,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3ultra_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3ultra_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_default/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_default/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_default/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 60,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_default.env",
+    "line": 61,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 56,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 57,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_export_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_export_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_export_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_final.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_final.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_final.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3ultra_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3ultra_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3ultra_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 16,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "BASE_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 27,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "ORIGINAL_IMG_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/original_imgs\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 28,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "MASKED_OBJ_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/masked_obj_imgs\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 29,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "CROPPED_HOI_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/cropped_hoi_imgs\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 30,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "CROPPED_HOI_WO_BCKG_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/cropped_hoi_imgs_wo_bckg\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 32,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "MASK_DIR_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/cropped_hand_masks\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 33,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "MOGE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/moge_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 35,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "HAMER_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/hamer_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 36,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "H2M_RT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/h2m_transformations\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 37,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "ALIGNED_MANO_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/aligned_mano\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 49,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "FOHO_DEBUG_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 52,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "FOHO_DEBUG_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 54,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "RUN_ID=\"arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 59,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "FOHO_INTERNAL_SELECTOR_EXPORT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/internal_selector_exports\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto_selector_native_v2.env",
+    "line": 60,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "FOHO_SELECTOR_DEBUG_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/internal_selector_exports\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_abox01_default/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_default/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_default/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 60,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_default.env",
+    "line": 61,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 56,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 57,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_gpt55_auto.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_default/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_default/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_default/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 60,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_alapuse01_default.env",
+    "line": 61,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_alapuse01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v7_truefile.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v7_truefile.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v7_truefile.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v7_truefile.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v7_truefile.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_debug.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_debug.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_debug.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_debug.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_debug.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_default/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_default/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_default/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 60,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_default.env",
+    "line": 61,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonar2_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonar2_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_default_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_default_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_export_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_export_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_export_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_final.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_final.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_final.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_aket01_default/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_default/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_aket01_default/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 60,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_aket01_default.env",
+    "line": 61,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_aket01_default\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 56,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 57,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_ascis01_gpt55_auto.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_ascis01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_debug.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_debug.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_debug.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_debug.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_debug.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_debug.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_debug.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_debug.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_phase42.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_phase42.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_phase42.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_debug.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_debug.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_debug.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_final.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_final.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_final.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_export_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_export_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_export_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_final.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_final.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_final.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_final.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_final/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_abox01_gpt55_auto_selector_native_v2.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_abox01_gpt55_auto_selector_native_v2\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v2.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v2.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v2.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_export_v2.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_export_v2/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 56,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.arctic_amicuse01_gpt55_auto.env.before_arctic_path_repair",
+    "line": 57,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs/arctic_amicuse01_gpt55_auto\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v7_truefile.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v7_truefile.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v7_truefile.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_auto_frag_v7_truefile.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_auto_frag_v7_truefile/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_before42.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_before42.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_before42.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_before42.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_before42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55_short_selector_before42.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55_short_selector_before42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_phase42.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_phase42.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_phase42.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_template.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_template.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_template.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_template.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_template.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_template/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_debug.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_debug.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_debug.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt54thinking_short_selector_debug.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt54thinking_short_selector_debug/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_nemotron3super_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_nemotron3super_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46_short.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46_short/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gpt55thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gpt55thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_native_render.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_native_render.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_native_render.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_sonnet46thinking_short_selector_auto_frag_native_render.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_sonnet46thinking_short_selector_auto_frag_native_render/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_phase42.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "# CROPPED_INPAINTED_OBJ=\"${BASE_DIR}/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_phase42.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "# HUNYUAN_HOI_MESH_PATH=\"${BASE_DIR}/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_phase42.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "# GUIDANCE_OUT_PATH=\"${BASE_DIR}/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/configs/generated/pipeline.phase0.oakink000_gemini31pro_short_selector_phase42.env",
+    "line": 54,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs/oakink000_gemini31pro_short_selector_phase42/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_selector_v4_pipeline_dryrun/selector_v4_case_config_manifest_clean.csv",
+    "line": 5,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "arctic_aket01_gpt55_selector,aket01,gpt55_selector,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2,True,1,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/params.json,1,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/moge_out/aket01_cropped_hoi/fov.json,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_hand_mesh.ply,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_obj_mesh.ply,/home/fredcui/foho_phase0/phase1_diagnostics/cache_transforms/arctic_aket01_gpt55_selector_hand_align.npz,False"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 31,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "CROPPED_INPAINTED_OBJ=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/ours_inpaint\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 34,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "HUNYUAN_HOI_MESH_PATH=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/hunyuan_hoi_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 38,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "GUIDANCE_OUT_PATH=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/guidance_out\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 53,
+    "pattern": "manual_gemini_responses.csv",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 53,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "GEMINI_RESPONSES=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0/manual_gemini_responses.csv\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 55,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "FOHO_RUN_DIR=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/pipeline.phase1.arctic_aket01_partaware_v2_attempt0.env",
+    "line": 56,
+    "pattern": "OUTPUT_DIR",
+    "text": "OUTPUT_DIR=\"/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_aket01_partaware_v2_attempt0\""
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step1_io_alignment/io_alignment_summary.csv",
+    "line": 5,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "arctic_aket01_gpt55_selector,arctic,aket01,gpt55_selector,OK,0.21880726707932996,218.80726707932996,0.2571521800538697,257.1521800538697,0.3863587327188659,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_hand_mesh.ply,/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_obj_mesh.ply,/home/fredcui/foho_phase0/phase1_diagnostics/cache_gt/arctic_aket01_gpt55_selector/gt_hand_points.ply,/home/fredcui/foho_phase0/phase1_diagnostics/cache_gt/arctic_aket01_gpt55_selector/gt_object_mesh.ply,/home/fredcui/foho_phase0/phase1_diagnostics/cache_transforms/arctic_aket01_gpt55_selector_hand_align.npz,"
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step1_io_alignment/io_alignment_summary.json",
+    "line": 67,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "\"pred_hand_mesh\": \"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_hand_mesh.ply\","
+  },
+  {
+    "file": "/home/fredcui/Projects/FollowMyHold/docs/phase1/step1_io_alignment/io_alignment_summary.json",
+    "line": 68,
+    "pattern": "arctic_aket01_gpt55_auto_selector_native_v2",
+    "text": "\"pred_object_mesh\": \"/home/fredcui/foho_phase0/runs/arctic_aket01_gpt55_auto_selector_native_v2/foho_debug/20260607_234917_exp_objaket01_inpainted/final_obj_mesh.ply\","
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 461,
+    "pattern": "CROPPED_INPAINTED_OBJ",
+    "text": "\"CROPPED_INPAINTED_OBJ\": str(run / \"ours_inpaint\"),"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 464,
+    "pattern": "HUNYUAN_HOI_MESH_PATH",
+    "text": "\"HUNYUAN_HOI_MESH_PATH\": str(run / \"hunyuan_hoi_out\"),"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 468,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "\"GUIDANCE_OUT_PATH\": str(run / \"guidance_out\"),"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 470,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "\"GEMINI_RESPONSES\": \"\","
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 476,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "\"FOHO_RUN_DIR\": str(run),"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 477,
+    "pattern": "OUTPUT_DIR",
+    "text": "\"OUTPUT_DIR\": str(run),"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 490,
+    "pattern": "GEMINI_RESPONSES",
+    "text": "for RUN_ID in   arctic_abox01_default   arctic_aket01_default   arctic_ascis01_default   arctic_alapuse01_default   arctic_amicuse01_default; do   echo \"\";   echo \"===== $RUN_ID =====\";   grep -nE     \"BASE_DIR=|IMAGE_PATH=|GUIDANCE_OUT_PATH=|FOHO_DEBUG_DIR=|GEMINI_RESPONSES=|FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR=|FOHO_INTERNAL_SELECTOR_EXPORT_DIR=\"     \"configs/generated/pipeline.phase0.${RUN_ID}.env\"; done"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 490,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "for RUN_ID in   arctic_abox01_default   arctic_aket01_default   arctic_ascis01_default   arctic_alapuse01_default   arctic_amicuse01_default; do   echo \"\";   echo \"===== $RUN_ID =====\";   grep -nE     \"BASE_DIR=|IMAGE_PATH=|GUIDANCE_OUT_PATH=|FOHO_DEBUG_DIR=|GEMINI_RESPONSES=|FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR=|FOHO_INTERNAL_SELECTOR_EXPORT_DIR=\"     \"configs/generated/pipeline.phase0.${RUN_ID}.env\"; done"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 837,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "{   echo \"===== ARCTIC default purity audit =====\"   for CASE in abox01 aket01 ascis01 alapuse01 amicuse01;   do     RUN_ID=\"arctic_${CASE}_default\";     LOG=\"$HOME/foho_phase0/logs/${RUN_ID}.log\";     CFG=\"configs/generated/pipeline.phase0.${RUN_ID}.env\"     echo \"\";     echo \"========================================\";     echo \"$RUN_ID\";     echo \"========================================\"     echo \"-- config selector/path lines --\";     grep -nE       \"BASE_DIR=|GUIDANCE_OUT_PATH=|FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR=|FOHO_INTERNAL_SELECTOR_EXPORT_DIR=|FOHO_SELECTOR_DEBUG_DIR=|gpt55|selector_native\"       \"$CFG\" || true     echo \"\";     echo \"-- suspicious selector lines in log --\";     grep -nE       \"FOHO_INTERNAL_SELECTOR|FOHO_SELECTOR_RENDER|FOHO_SELECTOR_DEBUG|before_frag|selected=|selector_native|gpt55_auto_selector\"       \"$LOG\" || echo \"[OK] no selector/debug lines\"     echo \"\";     echo \"-- success lines --\";     grep -nE \"Reconstructed object|Finished processing|Traceback|CUDA out of memory|FileNotFoundError\" \"$LOG\" || true;   done; } | tee \"$OUT\""
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 844,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 844,
+    "pattern": "OUTPUT_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 844,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1044,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1044,
+    "pattern": "OUTPUT_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1044,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1048,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "unset FOHO_RUN_DIR"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1049,
+    "pattern": "OUTPUT_DIR",
+    "text": "unset OUTPUT_DIR"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1051,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "unset GUIDANCE_OUT_PATH"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1058,
+    "pattern": "FOHO_RUN_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1058,
+    "pattern": "OUTPUT_DIR",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  },
+  {
+    "file": "/home/fredcui/.bash_history",
+    "line": 1058,
+    "pattern": "GUIDANCE_OUT_PATH",
+    "text": "env | grep -E   \"FOHO_ENABLE_INTERNAL_PHASE42_SELECTOR|FOHO_INTERNAL_PHASE42_SELECTOR_CHOICE|FOHO_INTERNAL_SELECTOR_EXPORT_DIR|FOHO_SELECTOR_DEBUG_DIR|FOHO_RUN_DIR|OUTPUT_DIR|BASE_DIR|GUIDANCE_OUT_PATH\"   | sort || true"
+  }
+]
