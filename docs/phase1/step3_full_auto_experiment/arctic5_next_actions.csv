@@ -1,0 +1,6 @@
+case,next_action,reason,priority,policy_role
+abox01,run_partaware_attempt0,partaware attempt0 missing; old candidates rejected or physically weak,high,required_comparison
+aket01,run_attempt1_reinpaint_fallback,partaware attempt0 exists but selector-v4 rejects severe penetration,high,required_after_attempt0_failure
+ascis01,run_partaware_attempt0,partaware attempt0 missing; old candidates rejected or physically weak,high,required_comparison
+alapuse01,optional_run_partaware_attempt0_ablation,"originally selected/usable case, but useful for complete 5-case comparison",medium,optional_ablation
+amicuse01,run_partaware_attempt0,partaware attempt0 missing; old candidates rejected or physically weak,high,required_comparison
