@@ -1,0 +1,21 @@
+{
+  "sample_id": "aket01_partaware_v2_attempt0",
+  "case": "aket01",
+  "method": "partaware_v2_attempt0",
+  "hand_mesh": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_hand_aligned.ply",
+  "object_mesh": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_aket01_partaware_v2/attempt0_partaware_prompt/selector_v4_recheck/io_alignment/aket01_partaware_v2_attempt0/pred_object_aligned.ply",
+  "contact_min_mm": 0.6273728761365286,
+  "contact_p5_mm": 6.115536536534741,
+  "contact_mean_mm": 59.997698322972596,
+  "contact_count_5mm": 30,
+  "num_hand_vertices": 778,
+  "num_object_vertices": 118164,
+  "igl_available": true,
+  "object_inside_hand_ratio": 0.014894553332656308,
+  "object_inside_hand_max_depth_mm": 48.485821736944686,
+  "hand_inside_object_ratio": 0.37146529562982006,
+  "hand_inside_object_max_depth_mm": 164.32454649729965,
+  "severe_floating": false,
+  "severe_penetration": true,
+  "quick_decision": "reject_attempt0_severe_penetration"
+}
