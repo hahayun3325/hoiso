@@ -1,0 +1,5 @@
+slot,label,image_path
+1,input_cropped,/home/fredcui/foho_phase0/runs/arctic_aket01_default/cropped_hoi_imgs/aket01_cropped_hoi_0.png
+2,baseline_default,docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/visual_renders/baseline_default_screenshot.png
+3,old_selector_v1_gpt55,docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/visual_renders/old_selector_v1_gpt55_screenshot.png
+4,selector_v4_refined_attempt0,docs/phase1/step3_prompt_refined_rerun/aket01_attempt0/visual_renders/selector_v4_refined_attempt0_screenshot.png
