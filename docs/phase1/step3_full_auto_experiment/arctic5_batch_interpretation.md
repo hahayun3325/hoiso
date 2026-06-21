@@ -8,9 +8,8 @@
 | default_baseline      | reject_severe_penetration |       3 |
 | old_gpt55_selector_v1 | reject_severe_floating    |       2 |
 | old_gpt55_selector_v1 | reject_severe_penetration |       3 |
-| partaware_v2_attempt0 | missing_mesh              |       1 |
 | partaware_v2_attempt0 | reject_severe_floating    |       2 |
-| partaware_v2_attempt0 | reject_severe_penetration |       2 |
+| partaware_v2_attempt0 | reject_severe_penetration |       3 |
 
 ## Case-level observations
 
@@ -38,9 +37,9 @@
 
 | method                |   object_cd_mm |   object_f5 |   object_f10 |   contact_p5_mm |   hand_inside_object_ratio |   components | selector_v4_gate          | final_status            |
 |:----------------------|---------------:|------------:|-------------:|----------------:|---------------------------:|-------------:|:--------------------------|:------------------------|
-| default_baseline      |        60.5095 |   0.0646981 |     0.124126 |         8.31649 |                  0.0861183 |           47 | reject_severe_penetration | rejected_by_selector_v4 |
-| old_gpt55_selector_v1 |        71.4558 |   0.0715335 |     0.135533 |         1.88134 |                  0.33419   |           96 | reject_severe_penetration | rejected_by_selector_v4 |
-| partaware_v2_attempt0 |       nan      | nan         |   nan        |       nan       |                nan         |          nan | missing_mesh              | missing_rerun           |
+| default_baseline      |        60.5095 |   0.0646981 |   0.124126   |         8.31649 |                 0.0861183  |           47 | reject_severe_penetration | rejected_by_selector_v4 |
+| old_gpt55_selector_v1 |        71.4558 |   0.0715335 |   0.135533   |         1.88134 |                 0.33419    |           96 | reject_severe_penetration | rejected_by_selector_v4 |
+| partaware_v2_attempt0 |       118.692  |   0.0044142 |   0.00922865 |        13.1895  |                 0.00128535 |          103 | reject_severe_penetration | rejected_by_selector_v4 |
 
 **Decision:** no safe final replacement yet; send to fallback/contact-aware guidance.
 
