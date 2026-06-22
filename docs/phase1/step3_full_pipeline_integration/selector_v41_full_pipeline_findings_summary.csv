@@ -1,0 +1,6 @@
+case,best_object_cd_method,best_object_f10_method,best_contact_p5_method,selector_v41_cd,selector_v41_f10,selector_v41_contact_p5,selector_v41_relative_pose_delta_vs_baseline_mm,main_read
+abox01,selector_v41_refined_pipeline,selector_v41_refined_pipeline,old_gpt55_selector_v1,93.88365604182025,0.069259623524101,174.9711478212998,-29.2568780413161,"object shape improves, but hand remains inside box"
+aket01,old_gpt55_selector_v1,selector_v41_refined_pipeline,selector_v41_refined_pipeline,75.61877858994703,0.0737092800012886,3.139800751958951,-27.811576358347025,positive case: best contact/F-score but penetration remains
+alapuse01,default_baseline,old_gpt55_selector_v1,old_gpt55_selector_v1,121.21612922655264,0.0040172455163979,9.812268574400305,18.027353991995422,"visual pose may help, but GT/relative metrics worsen"
+amicuse01,old_gpt55_selector_v1,default_baseline,default_baseline,101.14758760447442,0.0360883755971524,48.75480400186349,8.513048736628093,articulated microwave remains fragmented / poorly aligned
+ascis01,old_gpt55_selector_v1,default_baseline,selector_v41_refined_pipeline,93.44066774878893,0.0,70.09641447721714,0.8591633971862507,thin object still hard; contact improves but still floating
