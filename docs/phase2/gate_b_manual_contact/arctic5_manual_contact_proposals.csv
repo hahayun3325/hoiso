@@ -1,7 +1,7 @@
 case_id,frame_id,hand,finger,object_part,state,confidence,false_positive_risk,should_use_for_optimization,visual_evidence
-aket01,single_image,right,thumb,body,contact,0.80,medium,true,"thumb appears to press or support the bottle body"
-aket01,single_image,right,index,cap,near_contact,0.45,high,false,"index is close to cap but physical touch is unclear"
-ascis01,single_image,right,thumb,left_handle,contact,0.70,medium,true,"thumb appears near handle loop"
-alapuse01,single_image,right,index,screen,contact,0.70,medium,true,"finger appears to touch the laptop screen panel"
-amicuse01,single_image,left,thumb,door,contact,0.60,high,false,"hand appears near microwave door but depth/contact is uncertain"
-abox01,single_image,right,palm,front_panel,contact,0.60,high,false,"hand overlaps box front visually, but penetration risk is high"
+aket01,single_image,right,thumb,body,contact,0.8,medium,True,thumb appears to press or support the bottle body
+aket01,single_image,right,index,cap,near_contact,0.45,high,False,index is close to cap but physical touch is unclear
+ascis01,single_image,right,thumb,left_handle,contact,0.7,medium,True,thumb appears near handle loop
+amicuse01,single_image,left,thumb,door,contact,0.6,high,False,hand appears near microwave door but depth/contact is uncertain
+abox01,single_image,right,palm,front_panel,contact,0.6,high,False,"hand overlaps box front visually, but penetration risk is high"
+alapuse01,single_image,right,index,keyboard_base,contact,0.65,medium,True,Right index appears closest to the front/right edge of the laptop keyboard base; screen contact is not supported by latest mesh inspection.
