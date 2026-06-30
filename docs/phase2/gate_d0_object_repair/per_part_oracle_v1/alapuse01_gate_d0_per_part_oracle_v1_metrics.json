@@ -1,0 +1,395 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1",
+  "purpose": "test shared-scale per-part rigid alignment before non-GT object repair",
+  "important_constraint": "one shared global scale; no independent per-part scale",
+  "shared_scale": 0.5435740044417653,
+  "target_mode": {
+    "screen": "whole_gt_proxy_no_gt_part_label",
+    "keyboard_base": "whole_gt_proxy_no_gt_part_label",
+    "hinge": "whole_gt_proxy_no_gt_part_label"
+  },
+  "transforms": {
+    "screen": [
+      [
+        0.5064129392072128,
+        0.17552692672794395,
+        0.09060315282489635,
+        0.18617790541993087
+      ],
+      [
+        -0.04966081888096206,
+        0.35445037865886947,
+        -0.4091105357253859,
+        -0.5308010368822429
+      ],
+      [
+        -0.19118691476259703,
+        0.3728644865991973,
+        0.3462547278544109,
+        0.8126248241469277
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "keyboard_base": [
+      [
+        0.5399772474442401,
+        0.0600718031440335,
+        -0.01698967375860308,
+        0.0916040757113787
+      ],
+      [
+        -0.04274496346417753,
+        0.24795506624424898,
+        -0.48183384223933,
+        -0.5141061991912802
+      ],
+      [
+        -0.04549877631151715,
+        0.4799816266230318,
+        0.25103823964352506,
+        0.7421425250174551
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "hinge": [
+      [
+        0.4586793215081421,
+        0.28141573936370706,
+        -0.07675389217534705,
+        0.010641499693850837
+      ],
+      [
+        -0.11262232969935501,
+        0.03891342938503629,
+        -0.5303533295562882,
+        -0.6767338894983759
+      ],
+      [
+        -0.26907654892014793,
+        0.4634259649142776,
+        0.09114210974818196,
+        0.5552116205281283
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "whole_metrics": {
+    "name": "per_part_oracle_v1_union_to_gt_object",
+    "pred_to_gt": {
+      "mean": 0.016528133074532828,
+      "median": 0.008977516729608209,
+      "p95": 0.05324632979536608
+    },
+    "gt_to_pred": {
+      "mean": 0.022724126890123663,
+      "median": 0.014888187919832565,
+      "p95": 0.0658427796145545
+    },
+    "symmetric_mean": 0.019626129982328246,
+    "asymmetry_ratio": 1.3748756007499634,
+    "fscore": {
+      "f5mm": {
+        "threshold": 0.005,
+        "precision_pred_to_gt": 0.31495,
+        "recall_gt_to_pred": 0.2078,
+        "fscore": 0.25039353419416543
+      },
+      "f10mm": {
+        "threshold": 0.01,
+        "precision_pred_to_gt": 0.52415,
+        "recall_gt_to_pred": 0.3808,
+        "fscore": 0.4411212111166363
+      },
+      "f30mm": {
+        "threshold": 0.03,
+        "precision_pred_to_gt": 0.81615,
+        "recall_gt_to_pred": 0.7033,
+        "fscore": 0.7555342985948864
+      },
+      "f50mm": {
+        "threshold": 0.05,
+        "precision_pred_to_gt": 0.9388,
+        "recall_gt_to_pred": 0.86645,
+        "fscore": 0.901175194571389
+      }
+    },
+    "bbox": {
+      "pred_extent_xyz": [
+        0.3398893566733572,
+        0.22810499425347042,
+        0.2962400600245316
+      ],
+      "gt_extent_xyz": [
+        0.3357463628053665,
+        0.21995939314365387,
+        0.20073890686035156
+      ],
+      "axis_ratio_pred_over_gt_xyz": [
+        1.0123396537593838,
+        1.037032294885887,
+        1.475748098153277
+      ],
+      "axis_ratio_min": 1.0123396537593838,
+      "axis_ratio_max": 1.475748098153277,
+      "bbox_volume_ratio_pred_over_gt": 1.5492830237266413,
+      "centroid_error": 0.020732043423112235
+    },
+    "collapse_flags": {
+      "bbox_volume_too_small": false,
+      "bbox_volume_too_large": false,
+      "bbox_axis_too_small": false,
+      "bbox_axis_too_large": false,
+      "gt_to_pred_too_large": false,
+      "asymmetric_distance_too_large": false
+    },
+    "collapse_flag": false,
+    "diagnostic_decision": "NO_COLLAPSE_FLAG"
+  },
+  "part_metrics": {
+    "screen": {
+      "name": "screen_to_gt_object_proxy",
+      "pred_to_gt": {
+        "mean": 0.022040165831742578,
+        "median": 0.01731049408179994,
+        "p95": 0.05944982675742188
+      },
+      "gt_to_pred": {
+        "mean": 0.03780066007551014,
+        "median": 0.03292129825431187,
+        "p95": 0.09538000348359117
+      },
+      "symmetric_mean": 0.02992041295362636,
+      "asymmetry_ratio": 1.7150805653680274,
+      "fscore": {
+        "f5mm": {
+          "threshold": 0.005,
+          "precision_pred_to_gt": 0.1642,
+          "recall_gt_to_pred": 0.0827,
+          "fscore": 0.10999870392871608
+        },
+        "f10mm": {
+          "threshold": 0.01,
+          "precision_pred_to_gt": 0.3474,
+          "recall_gt_to_pred": 0.1618,
+          "fscore": 0.22077501963864887
+        },
+        "f30mm": {
+          "threshold": 0.03,
+          "precision_pred_to_gt": 0.7314,
+          "recall_gt_to_pred": 0.4576,
+          "fscore": 0.5629750042052145
+        },
+        "f50mm": {
+          "threshold": 0.05,
+          "precision_pred_to_gt": 0.908,
+          "recall_gt_to_pred": 0.7206,
+          "fscore": 0.8035181137173032
+        }
+      },
+      "bbox": {
+        "pred_extent_xyz": [
+          0.3398893566733572,
+          0.20585159696925137,
+          0.2962400600245316
+        ],
+        "gt_extent_xyz": [
+          0.3357463628053665,
+          0.21995939314365387,
+          0.20073890686035156
+        ],
+        "axis_ratio_pred_over_gt_xyz": [
+          1.0123396537593838,
+          0.9358618153433947,
+          1.475748098153277
+        ],
+        "axis_ratio_min": 0.9358618153433947,
+        "axis_ratio_max": 1.475748098153277,
+        "bbox_volume_ratio_pred_over_gt": 1.398138544205187,
+        "centroid_error": 0.02617461443031604
+      },
+      "collapse_flags": {
+        "bbox_volume_too_small": false,
+        "bbox_volume_too_large": false,
+        "bbox_axis_too_small": false,
+        "bbox_axis_too_large": false,
+        "gt_to_pred_too_large": false,
+        "asymmetric_distance_too_large": false
+      },
+      "collapse_flag": false,
+      "diagnostic_decision": "NO_COLLAPSE_FLAG"
+    },
+    "keyboard_base": {
+      "name": "keyboard_base_to_gt_object_proxy",
+      "pred_to_gt": {
+        "mean": 0.004126107925107078,
+        "median": 0.003911244038444743,
+        "p95": 0.0076265215296740935
+      },
+      "gt_to_pred": {
+        "mean": 0.06876340102437371,
+        "median": 0.061047742502754423,
+        "p95": 0.15673621174858132
+      },
+      "symmetric_mean": 0.036444754474740396,
+      "asymmetry_ratio": 16.665439264434465,
+      "fscore": {
+        "f5mm": {
+          "threshold": 0.005,
+          "precision_pred_to_gt": 0.7089,
+          "recall_gt_to_pred": 0.0699,
+          "fscore": 0.1272524653312789
+        },
+        "f10mm": {
+          "threshold": 0.01,
+          "precision_pred_to_gt": 0.9931,
+          "recall_gt_to_pred": 0.1012,
+          "fscore": 0.18368220780407565
+        },
+        "f30mm": {
+          "threshold": 0.03,
+          "precision_pred_to_gt": 1.0,
+          "recall_gt_to_pred": 0.2627,
+          "fscore": 0.41609250019798844
+        },
+        "f50mm": {
+          "threshold": 0.05,
+          "precision_pred_to_gt": 1.0,
+          "recall_gt_to_pred": 0.4124,
+          "fscore": 0.583970546587369
+        }
+      },
+      "bbox": {
+        "pred_extent_xyz": [
+          0.19786363877849758,
+          0.1516305038438963,
+          0.041358521295583484
+        ],
+        "gt_extent_xyz": [
+          0.3357463628053665,
+          0.21995939314365387,
+          0.20073890686035156
+        ],
+        "axis_ratio_pred_over_gt_xyz": [
+          0.5893247424193242,
+          0.6893568020751336,
+          0.20603141634299846
+        ],
+        "axis_ratio_min": 0.20603141634299846,
+        "axis_ratio_max": 0.6893568020751336,
+        "bbox_volume_ratio_pred_over_gt": 0.08370129712954251,
+        "centroid_error": 0.05136414664009945
+      },
+      "collapse_flags": {
+        "bbox_volume_too_small": true,
+        "bbox_volume_too_large": false,
+        "bbox_axis_too_small": true,
+        "bbox_axis_too_large": false,
+        "gt_to_pred_too_large": true,
+        "asymmetric_distance_too_large": true
+      },
+      "collapse_flag": true,
+      "diagnostic_decision": "REJECT_AS_COLLAPSED_OR_UNRELIABLE"
+    },
+    "hinge": {
+      "name": "hinge_to_gt_object_proxy",
+      "pred_to_gt": {
+        "mean": 0.0064934957208430105,
+        "median": 0.0059174032163036554,
+        "p95": 0.0130462558743513
+      },
+      "gt_to_pred": {
+        "mean": 0.06159059865248539,
+        "median": 0.05448593118134542,
+        "p95": 0.14729820439862262
+      },
+      "symmetric_mean": 0.0340420471866642,
+      "asymmetry_ratio": 9.484967927951367,
+      "fscore": {
+        "f5mm": {
+          "threshold": 0.005,
+          "precision_pred_to_gt": 0.381,
+          "recall_gt_to_pred": 0.0729,
+          "fscore": 0.12238334434897555
+        },
+        "f10mm": {
+          "threshold": 0.01,
+          "precision_pred_to_gt": 0.8295,
+          "recall_gt_to_pred": 0.1457,
+          "fscore": 0.24786331009023788
+        },
+        "f30mm": {
+          "threshold": 0.03,
+          "precision_pred_to_gt": 1.0,
+          "recall_gt_to_pred": 0.3027,
+          "fscore": 0.46472710524295696
+        },
+        "f50mm": {
+          "threshold": 0.05,
+          "precision_pred_to_gt": 1.0,
+          "recall_gt_to_pred": 0.4624,
+          "fscore": 0.6323851203501094
+        }
+      },
+      "bbox": {
+        "pred_extent_xyz": [
+          0.2019022937897851,
+          0.07070879613720638,
+          0.1632032312447675
+        ],
+        "gt_extent_xyz": [
+          0.3357463628053665,
+          0.21995939314365387,
+          0.20073890686035156
+        ],
+        "axis_ratio_pred_over_gt_xyz": [
+          0.6013536292776719,
+          0.3214629533507895,
+          0.8130124538254231
+        ],
+        "axis_ratio_min": 0.3214629533507895,
+        "axis_ratio_max": 0.8130124538254231,
+        "bbox_volume_ratio_pred_over_gt": 0.15716580630371754,
+        "centroid_error": 0.04421148199421995
+      },
+      "collapse_flags": {
+        "bbox_volume_too_small": true,
+        "bbox_volume_too_large": false,
+        "bbox_axis_too_small": true,
+        "bbox_axis_too_large": false,
+        "gt_to_pred_too_large": true,
+        "asymmetric_distance_too_large": true
+      },
+      "collapse_flag": true,
+      "diagnostic_decision": "REJECT_AS_COLLAPSED_OR_UNRELIABLE"
+    }
+  },
+  "hinge_gap_proxy": {
+    "screen_to_base_nn_min": 0.00045738448507965865,
+    "screen_to_base_nn_p1": 0.002052335786508312,
+    "screen_to_base_nn_p5": 0.009632410966839621,
+    "screen_to_base_nn_mean": 0.08169374548277362,
+    "note": "This is a weak hinge-connectivity proxy. A real hinge model should constrain shared hinge axis/endpoints."
+  },
+  "overall_decision": "PER_PART_ORACLE_V1_PROXY_TARGET_VISUAL_CHECK_REQUIRED",
+  "warnings": [
+    "This is an oracle diagnostic, not a final method.",
+    "If gt_parts are missing, part targets use whole GT object as proxy, so visual inspection is required.",
+    "This v1 does not enforce a true connected hinge yet; it reports hinge gap as a proxy."
+  ]
+}

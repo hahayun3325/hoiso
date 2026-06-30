@@ -1,0 +1,16 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1",
+  "decision": "PARTIAL_PASS",
+  "shared_scale_per_part_model_promising": true,
+  "accepted_as_clean_object_repair": false,
+  "reason": [
+    "whole collapse_flag is false",
+    "whole-object metrics improve compared with global oracle",
+    "bbox volume ratio is much closer to GT than previous collapsed repair",
+    "but visual scene shows twisted/overlapping parts",
+    "part targets used whole GT proxy rather than true screen/base/hinge labels",
+    "screen/base/hinge are not connected by a hinge constraint"
+  ],
+  "next_step": "Gate D-0 per-part oracle v1.1 connected hinge"
+}

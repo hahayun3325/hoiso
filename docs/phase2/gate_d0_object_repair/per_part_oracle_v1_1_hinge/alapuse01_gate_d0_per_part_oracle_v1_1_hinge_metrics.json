@@ -1,0 +1,120 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1.1 connected hinge",
+  "purpose": "test shared-scale base-root + screen hinge-angle model",
+  "important_constraints": [
+    "one shared global scale",
+    "keyboard_base is root",
+    "screen has no independent translation",
+    "screen moves only by rotation around estimated hinge axis",
+    "no independent per-part scale"
+  ],
+  "shared_scale": 0.5435740044417653,
+  "estimated_hinge_axis_original_frame": {
+    "center": [
+      -0.14692777584408176,
+      0.13773376069560747,
+      -0.8187950394703272
+    ],
+    "axis": [
+      -0.7696691351265748,
+      -0.25947596753417085,
+      0.5833366478335784
+    ],
+    "num_pairs": 400,
+    "mean_pair_distance": 0.0045585584069899095,
+    "p95_pair_distance": 0.010676050167438932
+  },
+  "angle_grid": {
+    "min": -120.0,
+    "max": 120.0,
+    "step": 5.0
+  },
+  "best_angle_deg": 5.0,
+  "best_score": 0.03886844500738792,
+  "whole_metrics": {
+    "name": "hinge_angle_5.0",
+    "pred_to_gt": {
+      "mean": 0.0323177403224909,
+      "median": 0.020893959251911967,
+      "p95": 0.08224965650215915
+    },
+    "gt_to_pred": {
+      "mean": 0.044169103107309766,
+      "median": 0.040560676922625535,
+      "p95": 0.09805223607615828
+    },
+    "symmetric_mean": 0.03824342171490033,
+    "asymmetry_ratio": 1.3667138440545963,
+    "fscore": {
+      "f5mm": {
+        "threshold": 0.005,
+        "precision_pred_to_gt": 0.189,
+        "recall_gt_to_pred": 0.1059,
+        "fscore": 0.13574160732451676
+      },
+      "f10mm": {
+        "threshold": 0.01,
+        "precision_pred_to_gt": 0.30795,
+        "recall_gt_to_pred": 0.17505,
+        "fscore": 0.22321593167701864
+      },
+      "f30mm": {
+        "threshold": 0.03,
+        "precision_pred_to_gt": 0.5624,
+        "recall_gt_to_pred": 0.4045,
+        "fscore": 0.47055703795635534
+      },
+      "f50mm": {
+        "threshold": 0.05,
+        "precision_pred_to_gt": 0.69215,
+        "recall_gt_to_pred": 0.58225,
+        "fscore": 0.6324612955116133
+      }
+    },
+    "bbox": {
+      "pred_extent_xyz": [
+        0.2907627897575113,
+        0.21909845539135125,
+        0.22979688677852506
+      ],
+      "gt_extent_xyz": [
+        0.3357463628053665,
+        0.21995939314365387,
+        0.20073890686035156
+      ],
+      "axis_ratio_pred_over_gt_xyz": [
+        0.8660191798594931,
+        0.9960859241335498,
+        1.1447550969199425
+      ],
+      "axis_ratio_min": 0.8660191798594931,
+      "axis_ratio_max": 1.1447550969199425,
+      "bbox_volume_ratio_pred_over_gt": 0.9874995341502483,
+      "centroid_error": 0.048167211861018765
+    },
+    "collapse_flags": {
+      "bbox_volume_too_small": false,
+      "bbox_volume_too_large": false,
+      "bbox_axis_too_small": false,
+      "bbox_axis_too_large": false,
+      "gt_to_pred_too_large": false,
+      "asymmetric_distance_too_large": false
+    },
+    "collapse_flag": false,
+    "diagnostic_decision": "NO_COLLAPSE_FLAG"
+  },
+  "hinge_gap_proxy": {
+    "screen_to_base_nn_min": 0.000404166054572256,
+    "screen_to_base_nn_p1": 0.001267188007181635,
+    "screen_to_base_nn_p5": 0.00526795151718554,
+    "screen_to_base_nn_mean": 0.06816730727896524
+  },
+  "overall_decision": "HINGE_ORACLE_V1_1_NO_COLLAPSE_VISUAL_CHECK_REQUIRED",
+  "warnings": [
+    "This is an oracle diagnostic, not a final non-GT method.",
+    "GT whole object is still used as the scoring target.",
+    "Hinge axis is estimated from predicted screen/base nearest boundary; inspect visually.",
+    "If this fails, refine Gate A parts or hinge-axis estimation."
+  ]
+}
