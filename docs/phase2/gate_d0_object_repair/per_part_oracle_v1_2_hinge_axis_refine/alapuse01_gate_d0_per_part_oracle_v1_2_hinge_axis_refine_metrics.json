@@ -1,0 +1,384 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1.2 hinge-axis refinement",
+  "purpose": "refine hinge axis/center and use pseudo part-aware GT scoring",
+  "shared_scale": 0.5435740044417653,
+  "search_space": {
+    "num_axis_candidates": 4,
+    "num_center_candidates": 13,
+    "num_angle_values": 49,
+    "num_total_candidates": 5096,
+    "angle_min": -120.0,
+    "angle_max": 120.0,
+    "angle_step": 5.0
+  },
+  "estimated_boundary_hinge": {
+    "center": [
+      -0.14525504637524572,
+      0.13859606116715206,
+      -0.8208484227113589
+    ],
+    "axis": [
+      -0.7760316270108808,
+      -0.2591004417367539,
+      0.5750146737003015
+    ],
+    "num_pairs": 500,
+    "mean_pair_distance": 0.004356387346053113,
+    "p95_pair_distance": 0.010415656574979872
+  },
+  "best": {
+    "score": 0.07469294358334728,
+    "base_cluster_idx": 1,
+    "screen_cluster_idx": 0,
+    "axis_name": "base_pca_axis_1",
+    "center_name": "pca0_offset_0.0552",
+    "angle_deg": -75.0,
+    "base_part_score": 0.031078537455732948,
+    "screen_part_score": 0.05013807468326784,
+    "hinge_gap_p5": 0.01767820664346205,
+    "T_base": [
+      [
+        0.5080339681762515,
+        0.12094590908303533,
+        0.150818674440624,
+        0.26608137847274266
+      ],
+      [
+        0.07821476641495982,
+        0.2592166475051082,
+        -0.47134051202471733,
+        -0.4828385321230221
+      ],
+      [
+        -0.1767954631731312,
+        0.4622245288138083,
+        0.22486562091415332,
+        0.6917544523908059
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "T_screen": [
+      [
+        0.11274482541381618,
+        0.36646783287075474,
+        0.3853084869533475,
+        0.346255194806131
+      ],
+      [
+        -0.2687155371477957,
+        0.379147051854724,
+        -0.2819790266493234,
+        -0.41356997592051303
+      ],
+      [
+        -0.4588608315629438,
+        -0.13199067711676055,
+        0.2598035733327769,
+        0.7401310565579664
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "whole_metrics": {
+    "name": "basecluster1_base_pca_axis_1_pca0_offset_0.0552_angle-75.0",
+    "pred_to_gt": {
+      "mean": 0.03136075619948474,
+      "median": 0.025233961236726325,
+      "p95": 0.08262221403506366
+    },
+    "gt_to_pred": {
+      "mean": 0.03270574933961858,
+      "median": 0.028849905620621348,
+      "p95": 0.07508929571606021
+    },
+    "symmetric_mean": 0.03203325276955166,
+    "asymmetry_ratio": 1.042887777691915,
+    "fscore": {
+      "f5mm": {
+        "threshold": 0.005,
+        "precision_pred_to_gt": 0.18285,
+        "recall_gt_to_pred": 0.11675,
+        "fscore": 0.14250826101468625
+      },
+      "f10mm": {
+        "threshold": 0.01,
+        "precision_pred_to_gt": 0.31515,
+        "recall_gt_to_pred": 0.20565,
+        "fscore": 0.24888862327188943
+      },
+      "f30mm": {
+        "threshold": 0.03,
+        "precision_pred_to_gt": 0.5513,
+        "recall_gt_to_pred": 0.5154,
+        "fscore": 0.5327458891909628
+      },
+      "f50mm": {
+        "threshold": 0.05,
+        "precision_pred_to_gt": 0.75335,
+        "recall_gt_to_pred": 0.7533,
+        "fscore": 0.7533249991703447
+      }
+    },
+    "bbox": {
+      "pred_extent_xyz": [
+        0.3070628301819197,
+        0.20885670657096267,
+        0.2907731235122195
+      ],
+      "gt_extent_xyz": [
+        0.3357463628053665,
+        0.21995939314365387,
+        0.20073890686035156
+      ],
+      "axis_ratio_pred_over_gt_xyz": [
+        0.9145678529954031,
+        0.9495239261483136,
+        1.4485140327804127
+      ],
+      "axis_ratio_min": 0.9145678529954031,
+      "axis_ratio_max": 1.4485140327804127,
+      "bbox_volume_ratio_pred_over_gt": 1.2578954648682865,
+      "centroid_error": 0.031133762418956303
+    },
+    "collapse_flags": {
+      "bbox_volume_too_small": false,
+      "bbox_volume_too_large": false,
+      "bbox_axis_too_small": false,
+      "bbox_axis_too_large": false,
+      "gt_to_pred_too_large": false,
+      "asymmetric_distance_too_large": false
+    },
+    "collapse_flag": false,
+    "diagnostic_decision": "NO_COLLAPSE_FLAG"
+  },
+  "top_candidates": [
+    {
+      "score": 0.07469294358334728,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca0_offset_0.0552",
+      "angle_deg": -75.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05013807468326784,
+      "hinge_gap_p5": 0.01767820664346205,
+      "whole_symmetric_mean": 0.03203325276955166,
+      "bbox_volume_ratio": 1.2578954648682865,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07535907663345583,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "screen_pca_axis_0",
+      "center_name": "pca1_offset_-0.0552",
+      "angle_deg": 120.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.055572765924077866,
+      "hinge_gap_p5": 0.009170617636312215,
+      "whole_symmetric_mean": 0.03181315025461758,
+      "bbox_volume_ratio": 1.264359403918089,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07540771285976967,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca0_offset_0.0552",
+      "angle_deg": -80.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.049589171524074854,
+      "hinge_gap_p5": 0.018723735140577305,
+      "whole_symmetric_mean": 0.032039372930279725,
+      "bbox_volume_ratio": 1.2654554843253714,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07610956630524476,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca1_offset_0.1104",
+      "angle_deg": -80.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05577037835071627,
+      "hinge_gap_p5": 0.016882835674078386,
+      "whole_symmetric_mean": 0.035637310020512056,
+      "bbox_volume_ratio": 1.182674358308726,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07615030005326667,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca1_offset_0.0552",
+      "angle_deg": -80.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05895038796384719,
+      "hinge_gap_p5": 0.016720954808056885,
+      "whole_symmetric_mean": 0.0361637454434289,
+      "bbox_volume_ratio": 1.1523190661791254,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.0763340095450577,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "screen_pca_axis_0",
+      "center_name": "pca2_offset_0.0552",
+      "angle_deg": 120.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05907839839570549,
+      "hinge_gap_p5": 0.008685043141637186,
+      "whole_symmetric_mean": 0.03253487223960379,
+      "bbox_volume_ratio": 1.244884195149009,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07697398734244046,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca1_offset_0.1104",
+      "angle_deg": -75.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05556342418655991,
+      "hinge_gap_p5": 0.016842218600836747,
+      "whole_symmetric_mean": 0.03527509607084528,
+      "bbox_volume_ratio": 1.209061907927486,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07712065318451096,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca0_offset_0.0552",
+      "angle_deg": -70.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05052098036212381,
+      "hinge_gap_p5": 0.01765834883146892,
+      "whole_symmetric_mean": 0.03216860126399826,
+      "bbox_volume_ratio": 1.3012609253705676,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07740327066011538,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "screen_pca_axis_0",
+      "center_name": "pca1_offset_-0.0552",
+      "angle_deg": 115.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05567692260538559,
+      "hinge_gap_p5": 0.008806404716696097,
+      "whole_symmetric_mean": 0.032142959719718096,
+      "bbox_volume_ratio": 1.297917998380116,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07810939447830882,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca1_offset_0.0552",
+      "angle_deg": -75.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05888783806400646,
+      "hinge_gap_p5": 0.018201494599207096,
+      "whole_symmetric_mean": 0.03599488766372888,
+      "bbox_volume_ratio": 1.180510561661352,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07811634355775844,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_pca_axis",
+      "center_name": "pca2_offset_0.0552",
+      "angle_deg": 35.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05814841437446126,
+      "hinge_gap_p5": 0.003761211805474531,
+      "whole_symmetric_mean": 0.03583819714385368,
+      "bbox_volume_ratio": 1.2209742654667357,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.078247754242534,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca0_offset_0.0552",
+      "angle_deg": -85.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.04902735954908011,
+      "hinge_gap_p5": 0.019364963722095535,
+      "whole_symmetric_mean": 0.03249695747871065,
+      "bbox_volume_ratio": 1.3106250190218203,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07827499344707121,
+      "base_cluster_idx": 0,
+      "screen_cluster_idx": 1,
+      "axis_name": "boundary_pca_axis",
+      "center_name": "pca2_offset_0.0552",
+      "angle_deg": 120.0,
+      "base_part_score": 0.032443659683514196,
+      "screen_part_score": 0.04846009724282554,
+      "hinge_gap_p5": 0.008895766154217668,
+      "whole_symmetric_mean": 0.030981945723691312,
+      "bbox_volume_ratio": 1.37953465598322,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07856676437072843,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "base_pca_axis_1",
+      "center_name": "pca1_offset_0.1104",
+      "angle_deg": -85.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05584042612117752,
+      "hinge_gap_p5": 0.017601244390866348,
+      "whole_symmetric_mean": 0.03610521826980377,
+      "bbox_volume_ratio": 1.2147857330714564,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.07882339979609265,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_pca_axis",
+      "center_name": "pca2_offset_0.1104",
+      "angle_deg": 40.0,
+      "base_part_score": 0.031078537455732948,
+      "screen_part_score": 0.05585786889039128,
+      "hinge_gap_p5": 0.004180816056701564,
+      "whole_symmetric_mean": 0.037293636419070436,
+      "bbox_volume_ratio": 1.222040423117575,
+      "collapse_flag": false
+    }
+  ],
+  "overall_decision": "HINGE_ORACLE_V1_2_NO_COLLAPSE_VISUAL_CHECK_REQUIRED",
+  "warnings": [
+    "This is still an oracle diagnostic, not a final method.",
+    "GT is used for scoring, but pseudo screen/base split is unsupervised.",
+    "Visual inspection is required before Gate C v3.",
+    "If v1.2 still misaligns visually, inspect Gate A part quality and pseudo-GT split."
+  ]
+}
