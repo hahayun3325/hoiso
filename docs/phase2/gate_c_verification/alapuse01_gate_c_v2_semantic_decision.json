@@ -1,0 +1,24 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v2 semantic verification",
+  "input_contact_proposal": "alapuse01_contact_proposal_v2_from_input_gt_corrected.json",
+  "old_contact_target": {
+    "finger": "right_index",
+    "object_part": "keyboard_base",
+    "status": "deprecated_as_final",
+    "reason": "This target was inferred from selector-v41 reconstruction, where the laptop is misaligned."
+  },
+  "corrected_contact_target": {
+    "fingers": ["right_index", "right_middle", "right_ring"],
+    "object_part": "screen",
+    "contact_surface": "outer_top_lid",
+    "status": "active_gate_c_candidate",
+    "reason": "The cropped input shows the right hand resting on the top wooden lid / screen panel."
+  },
+  "decision": {
+    "semantic_image_gate_c": "PASS",
+    "current_3d_distance_gate_c": "UNRELIABLE_UNTIL_OBJECT_REPAIR",
+    "gate_d_semantic_optimization": "PAUSE"
+  },
+  "next_step": "Build object pose/scale/hinge repair before using this contact target for final Gate D optimization."
+}

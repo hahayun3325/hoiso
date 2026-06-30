@@ -1,0 +1,5 @@
+case_id,hypothesis,source,finger,object_part,contact_surface,decision,reason
+alapuse01,old_keyboard_base,selector_v41_reconstruction,right_index,keyboard_base,front_edge,deprecated_as_final,"Object pose/scale is weak in selector-v41; this target came from misaligned 3D reconstruction."
+alapuse01,new_screen_top_lid,cropped_input_gt_reference,right_index,screen,outer_top_lid,active_gate_c_candidate,"Cropped input shows right index on top wooden lid/screen panel."
+alapuse01,new_screen_top_lid,cropped_input_gt_reference,right_middle,screen,outer_top_lid,active_gate_c_candidate,"Cropped input suggests middle finger rests on same top lid/screen panel."
+alapuse01,new_screen_top_lid,cropped_input_gt_reference,right_ring,screen,outer_top_lid,lower_confidence_candidate,"Ring finger may be near the same top lid/screen panel."

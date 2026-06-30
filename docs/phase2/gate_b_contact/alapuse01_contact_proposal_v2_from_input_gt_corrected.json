@@ -1,0 +1,81 @@
+{
+  "case_id": "alapuse01",
+  "source": "manual_contact_proposal_v2_from_cropped_input_and_gt_reference",
+  "status": "candidate_needs_gate_c_verification",
+  "revision_reason": "The previous keyboard_base contact was inferred from selector-v41 reconstruction. The cropped input indicates the right hand is contacting the top wooden lid / screen panel instead.",
+  "object_part_schema": {
+    "available_parts": ["screen", "keyboard_base", "hinge", "residual_uncertain"],
+    "surface_aliases": {
+      "top_lid": "screen",
+      "outer_top_panel": "screen",
+      "wooden_lid": "screen"
+    }
+  },
+  "contacts": [
+    {
+      "hand": "right",
+      "finger": "index",
+      "object_part": "screen",
+      "contact_surface": "outer_top_lid",
+      "state": "contact_candidate",
+      "confidence": 0.80,
+      "should_use_for_gate_c": true,
+      "should_use_for_gate_d": false,
+      "visual_evidence": "In the cropped input, the right index finger lies on the top wooden lid/screen panel, not on the keyboard base.",
+      "notes": "Primary corrected Gate B hypothesis."
+    },
+    {
+      "hand": "right",
+      "finger": "middle",
+      "object_part": "screen",
+      "contact_surface": "outer_top_lid",
+      "state": "contact_candidate",
+      "confidence": 0.70,
+      "should_use_for_gate_c": true,
+      "should_use_for_gate_d": false,
+      "visual_evidence": "The middle finger appears to rest on the same top lid/screen panel area.",
+      "notes": "Candidate contact; verify with Gate C."
+    },
+    {
+      "hand": "right",
+      "finger": "ring",
+      "object_part": "screen",
+      "contact_surface": "outer_top_lid",
+      "state": "near_contact_candidate",
+      "confidence": 0.55,
+      "should_use_for_gate_c": true,
+      "should_use_for_gate_d": false,
+      "visual_evidence": "The ring finger may also contact or hover close to the top lid/screen panel.",
+      "notes": "Lower-confidence candidate."
+    },
+    {
+      "hand": "right",
+      "finger": "thumb",
+      "object_part": "keyboard_base",
+      "contact_surface": "front_edge_or_uncertain",
+      "state": "uncertain",
+      "confidence": 0.30,
+      "should_use_for_gate_c": false,
+      "should_use_for_gate_d": false,
+      "visual_evidence": "Thumb contact is unclear from the cropped input and should not drive optimization.",
+      "notes": "Do not use as optimization target."
+    },
+    {
+      "hand": "right",
+      "finger": "index",
+      "object_part": "keyboard_base",
+      "contact_surface": "front_edge",
+      "state": "deprecated_reconstruction_based_hypothesis",
+      "confidence": 0.20,
+      "should_use_for_gate_c": false,
+      "should_use_for_gate_d": false,
+      "visual_evidence": "This was supported by the misaligned selector-v41 3D reconstruction, not by the cropped input.",
+      "notes": "Kept only to document why the previous Gate B target was rejected."
+    }
+  ],
+  "global_decision": {
+    "primary_gate_b_hypothesis": "right index/middle -> screen outer_top_lid",
+    "deprecated_hypothesis": "right index -> keyboard_base",
+    "next_step": "rerun Gate C verification using the screen/top_lid candidate before any semantic Gate D optimization"
+  }
+}
