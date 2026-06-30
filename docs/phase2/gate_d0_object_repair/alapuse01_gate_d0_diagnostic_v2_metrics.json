@@ -1,0 +1,189 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 diagnostic v2",
+  "purpose": "catch collapsed/twisted object repair that one-way NN can miss",
+  "gt_object": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_object_mesh.ply",
+  "candidates": {
+    "current_phase2_part_scene": {
+      "exists": true,
+      "name": "current_phase2_part_scene",
+      "pred_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/part_meshes_partfield_v2_vmap/part_scene.glb",
+      "gt_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_object_mesh.ply",
+      "num_pred_vertices": 16123,
+      "num_gt_vertices": 3910,
+      "num_pred_sample_points": 30000,
+      "num_gt_sample_points": 30000,
+      "pred_to_gt": {
+        "mean": 1.3865350412481325,
+        "median": 1.4105018139286558,
+        "p95": 1.5192125110513166,
+        "max": 1.5754676847059572
+      },
+      "gt_to_pred": {
+        "mean": 1.2311411631041942,
+        "median": 1.245732618019911,
+        "p95": 1.301037574373041,
+        "max": 1.3290703742142773
+      },
+      "symmetric_mean": 1.3088381021761633,
+      "asymmetry_ratio_gt_to_pred_over_pred_to_gt": 0.8879264688441947,
+      "fscore": {
+        "f5mm": {
+          "threshold": 0.005,
+          "precision_pred_to_gt": 0.0,
+          "recall_gt_to_pred": 0.0,
+          "fscore": 0.0
+        },
+        "f10mm": {
+          "threshold": 0.01,
+          "precision_pred_to_gt": 0.0,
+          "recall_gt_to_pred": 0.0,
+          "fscore": 0.0
+        },
+        "f30mm": {
+          "threshold": 0.03,
+          "precision_pred_to_gt": 0.0,
+          "recall_gt_to_pred": 0.0,
+          "fscore": 0.0
+        },
+        "f50mm": {
+          "threshold": 0.05,
+          "precision_pred_to_gt": 0.0,
+          "recall_gt_to_pred": 0.0,
+          "fscore": 0.0
+        }
+      },
+      "bbox": {
+        "pred_extent_xyz": [
+          0.5478130131959915,
+          0.5002740174531937,
+          0.5260459780693054
+        ],
+        "gt_extent_xyz": [
+          0.3357463628053665,
+          0.21995939314365387,
+          0.20073890686035156
+        ],
+        "axis_ratio_pred_over_gt_xyz": [
+          1.6316275435381584,
+          2.2743926063046938,
+          2.6205481851869448
+        ],
+        "axis_ratio_min": 1.6316275435381584,
+        "axis_ratio_max": 2.6205481851869448,
+        "bbox_volume_ratio_pred_over_gt": 9.724753741907744,
+        "centroid_error": 1.516412526576601,
+        "pred_centroid": [
+          -0.20075792362415093,
+          0.09942027070196517,
+          -0.9317043338236447
+        ],
+        "gt_centroid": [
+          0.007453568876921984,
+          -0.08864474924620705,
+          0.5585260085801059
+        ]
+      },
+      "collapse_flags": {
+        "bbox_volume_too_small": false,
+        "bbox_axis_too_small": false,
+        "bbox_axis_too_large": true,
+        "gt_to_pred_too_large": true,
+        "asymmetric_distance_too_large": false
+      },
+      "collapse_flag": true,
+      "diagnostic_decision": "REJECT_AS_COLLAPSED_OR_UNRELIABLE"
+    },
+    "oracle_similarity_repaired_object": {
+      "exists": true,
+      "name": "oracle_similarity_repaired_object",
+      "pred_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d0_object_repair/outputs/object_repaired_oracle_similarity_to_gt.ply",
+      "gt_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_object_mesh.ply",
+      "num_pred_vertices": 16123,
+      "num_gt_vertices": 3910,
+      "num_pred_sample_points": 30000,
+      "num_gt_sample_points": 30000,
+      "pred_to_gt": {
+        "mean": 0.01037754292679018,
+        "median": 0.00717513532477132,
+        "p95": 0.028562449336485492,
+        "max": 0.04194273830448331
+      },
+      "gt_to_pred": {
+        "mean": 0.05385182202979775,
+        "median": 0.05127411326390077,
+        "p95": 0.11533288838587075,
+        "max": 0.15864576915427664
+      },
+      "symmetric_mean": 0.032114682478293965,
+      "asymmetry_ratio_gt_to_pred_over_pred_to_gt": 5.189265167073065,
+      "fscore": {
+        "f5mm": {
+          "threshold": 0.005,
+          "precision_pred_to_gt": 0.35283333333333333,
+          "recall_gt_to_pred": 0.06523333333333334,
+          "fscore": 0.11010920639982989
+        },
+        "f10mm": {
+          "threshold": 0.01,
+          "precision_pred_to_gt": 0.6300333333333333,
+          "recall_gt_to_pred": 0.1157,
+          "fscore": 0.19549845342392275
+        },
+        "f30mm": {
+          "threshold": 0.03,
+          "precision_pred_to_gt": 0.9619,
+          "recall_gt_to_pred": 0.30923333333333336,
+          "fscore": 0.4680099805947449
+        },
+        "f50mm": {
+          "threshold": 0.05,
+          "precision_pred_to_gt": 1.0,
+          "recall_gt_to_pred": 0.4894,
+          "fscore": 0.6571773868671948
+        }
+      },
+      "bbox": {
+        "pred_extent_xyz": [
+          0.1638171747326851,
+          0.12000150233507156,
+          0.15334519743919373
+        ],
+        "gt_extent_xyz": [
+          0.3357463628053665,
+          0.21995939314365387,
+          0.20073890686035156
+        ],
+        "axis_ratio_pred_over_gt_xyz": [
+          0.48791943228779083,
+          0.5455620722534884,
+          0.7639037187039764
+        ],
+        "axis_ratio_min": 0.48791943228779083,
+        "axis_ratio_max": 0.7639037187039764,
+        "bbox_volume_ratio_pred_over_gt": 0.20334378799016398,
+        "centroid_error": 0.03035518059523261,
+        "pred_centroid": [
+          0.009664694320343382,
+          -0.1116190849032062,
+          0.5782421901161483
+        ],
+        "gt_centroid": [
+          0.007453568876921984,
+          -0.08864474924620705,
+          0.5585260085801059
+        ]
+      },
+      "collapse_flags": {
+        "bbox_volume_too_small": true,
+        "bbox_axis_too_small": false,
+        "bbox_axis_too_large": false,
+        "gt_to_pred_too_large": true,
+        "asymmetric_distance_too_large": true
+      },
+      "collapse_flag": true,
+      "diagnostic_decision": "REJECT_AS_COLLAPSED_OR_UNRELIABLE"
+    }
+  },
+  "overall_decision": "OLD_ORACLE_REPAIR_REJECTED_BY_V2_METRICS"
+}
