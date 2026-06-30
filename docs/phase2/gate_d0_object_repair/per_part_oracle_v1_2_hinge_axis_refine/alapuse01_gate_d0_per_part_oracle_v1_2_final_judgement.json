@@ -1,0 +1,18 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1.2 hinge-axis refinement",
+  "decision": "PARTIAL_PASS_VISUAL_FAIL",
+  "scale_and_collapse_status": "PASS",
+  "metric_improvement_over_v1_1": true,
+  "accepted_as_clean_object_repair": false,
+  "proceed_to_gate_c_v3": false,
+  "next_step": "Gate D-0 v1.3 pseudo-GT part split and physical inter-part scoring",
+  "reason": [
+    "collapse_flag is false",
+    "symmetric_mean improves compared with v1.1",
+    "F50 improves compared with v1.1",
+    "but screen/base/hinge visibly penetrate or cross each other",
+    "current pseudo part-aware scoring is not physically strict enough",
+    "Gate C v3 requires a reliable repaired object frame"
+  ]
+}
