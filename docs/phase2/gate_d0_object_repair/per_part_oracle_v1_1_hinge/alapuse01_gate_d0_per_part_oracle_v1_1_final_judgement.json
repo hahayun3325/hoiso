@@ -1,0 +1,17 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 per-part oracle v1.1 connected hinge",
+  "decision": "PARTIAL_PASS",
+  "scale_and_collapse_status": "PASS",
+  "accepted_as_clean_object_repair": false,
+  "proceed_to_gate_c_v3": false,
+  "next_step": "Gate D-0 per-part oracle v1.2 hinge-axis refinement",
+  "reason": [
+    "bbox_volume_ratio is close to 1",
+    "collapse_flag is false",
+    "hinge gap p5 is small",
+    "but visual screen/base alignment is still wrong",
+    "best hinge angle is suspiciously small",
+    "hinge axis and base root pose likely need refinement"
+  ]
+}
