@@ -1,0 +1,681 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 v1.3 kinematic-chain oracle",
+  "purpose": "test base-root + shared-scale + single hinge angle with physical scoring",
+  "model_constraints": [
+    "one shared global scale",
+    "keyboard_base is root SE(3)",
+    "screen has no independent translation",
+    "screen rotates around one hinge axis",
+    "no independent per-part scale",
+    "physical scoring includes overlap/crossing proxies"
+  ],
+  "shared_scale": 0.5435740044417653,
+  "boundary_hinge_seed": {
+    "center": [
+      -0.1524282782313841,
+      0.1365420494417727,
+      -0.8184632227964953
+    ],
+    "axis": [
+      -0.7434754541467253,
+      -0.26523613675675795,
+      0.6139169657532448
+    ],
+    "num_pairs": 500,
+    "mean_pair_distance": 0.004315486576679335,
+    "p95_pair_distance": 0.009987975746226849
+  },
+  "search_space": {
+    "num_axis_candidates": 5,
+    "num_center_candidates": 13,
+    "num_angle_values": 49,
+    "num_total_candidates": 6370,
+    "angle_min": -120.0,
+    "angle_max": 120.0,
+    "angle_step": 5.0
+  },
+  "best": {
+    "score": 0.12048045585395797,
+    "base_cluster_idx": 1,
+    "screen_cluster_idx": 0,
+    "axis_name": "boundary_axis_perturb_pca2_+0.20",
+    "center_name": "boundary_pca1_offset_0.0552",
+    "angle_deg": 115.0,
+    "base_part_score": 0.03268650952436248,
+    "screen_part_score": 0.04301902333794913,
+    "physical_scores": {
+      "near_fraction_2mm": 0.005083333333333333,
+      "near_fraction_5mm": 0.0125,
+      "near_fraction_10mm": 0.027583333333333335,
+      "hinge_gap_p1": 0.004058030167711217,
+      "hinge_gap_p5": 0.01599369588384558,
+      "hinge_gap_mean": 0.11886207205701603,
+      "bbox_overlap_ratio": 0.3618382125204753,
+      "base_plane_screen_smaller_side_ratio": 0.14625,
+      "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+    },
+    "T_base": [
+      [
+        0.48890104133555695,
+        -0.0001792680031193479,
+        0.23758880013343736,
+        0.26420181330303527
+      ],
+      [
+        0.2115786700493076,
+        0.24761959965016156,
+        -0.43519156535267906,
+        -0.41562216286569525
+      ],
+      [
+        -0.10808763327055583,
+        0.48389792315831687,
+        0.2227836659225565,
+        0.7043079175350779
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "T_screen": [
+      [
+        0.024128117847538138,
+        -0.43328752344877697,
+        -0.32734149486066716,
+        -0.17553768556323807
+      ],
+      [
+        0.5215940823506184,
+        0.10966174282419214,
+        -0.10670807711898986,
+        -0.10665157125792307
+      ],
+      [
+        0.15109647742686425,
+        -0.3093685867848278,
+        0.42063479447711805,
+        0.9874788749713364
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "whole_metrics": {
+    "name": "kinematic_chain_angle_115.0_boundary_axis_perturb_pca2_+0.20_boundary_pca1_offset_0.0552",
+    "pred_to_gt": {
+      "mean": 0.03715949845722162,
+      "median": 0.0338790283075582,
+      "p95": 0.08650091649014563
+    },
+    "gt_to_pred": {
+      "mean": 0.03800581011270208,
+      "median": 0.03722180322535821,
+      "p95": 0.07984969623601537
+    },
+    "symmetric_mean": 0.03758265428496185,
+    "asymmetry_ratio": 1.0227751097462938,
+    "fscore": {
+      "f5mm": {
+        "threshold": 0.005,
+        "precision_pred_to_gt": 0.1847,
+        "recall_gt_to_pred": 0.12195,
+        "fscore": 0.14690471221262028
+      },
+      "f10mm": {
+        "threshold": 0.01,
+        "precision_pred_to_gt": 0.2703,
+        "recall_gt_to_pred": 0.19845,
+        "fscore": 0.228868416
+      },
+      "f30mm": {
+        "threshold": 0.03,
+        "precision_pred_to_gt": 0.46295,
+        "recall_gt_to_pred": 0.4331,
+        "fscore": 0.44752780536800396
+      },
+      "f50mm": {
+        "threshold": 0.05,
+        "precision_pred_to_gt": 0.6461,
+        "recall_gt_to_pred": 0.6277,
+        "fscore": 0.6367671062961219
+      }
+    },
+    "bbox": {
+      "pred_extent_xyz": [
+        0.37430066234000026,
+        0.31956549810239804,
+        0.18629608098806866
+      ],
+      "gt_extent_xyz": [
+        0.3357463628053665,
+        0.21995939314365387,
+        0.20073890686035156
+      ],
+      "axis_ratio_pred_over_gt_xyz": [
+        1.1148316223368406,
+        1.4528386059589287,
+        0.9280516861520504
+      ],
+      "axis_ratio_min": 0.9280516861520504,
+      "axis_ratio_max": 1.4528386059589287,
+      "bbox_volume_ratio_pred_over_gt": 1.5031378643610054,
+      "centroid_error": 0.042641863593823305
+    },
+    "collapse_flags": {
+      "bbox_volume_too_small": false,
+      "bbox_volume_too_large": false,
+      "bbox_axis_too_small": false,
+      "bbox_axis_too_large": false,
+      "gt_to_pred_too_large": false,
+      "asymmetric_distance_too_large": false
+    },
+    "collapse_flag": false,
+    "diagnostic_decision": "NO_COLLAPSE_FLAG"
+  },
+  "visual_flags": {
+    "collapse_flag": false,
+    "bbox_volume_reasonable": true,
+    "hinge_connected": true,
+    "excessive_near_overlap": false,
+    "excessive_bbox_overlap": false,
+    "screen_straddles_base_plane": false
+  },
+  "top_candidates": [
+    {
+      "score": 0.12048045585395797,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 115.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04301902333794913,
+      "physical_scores": {
+        "near_fraction_2mm": 0.005083333333333333,
+        "near_fraction_5mm": 0.0125,
+        "near_fraction_10mm": 0.027583333333333335,
+        "hinge_gap_p1": 0.004058030167711217,
+        "hinge_gap_p5": 0.01599369588384558,
+        "hinge_gap_mean": 0.11886207205701603,
+        "bbox_overlap_ratio": 0.3618382125204753,
+        "base_plane_screen_smaller_side_ratio": 0.14625,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03758265428496185,
+      "bbox_volume_ratio": 1.5031378643610054,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.12205738500640681,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 110.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.045013774305457166,
+      "physical_scores": {
+        "near_fraction_2mm": 0.006666666666666667,
+        "near_fraction_5mm": 0.0145,
+        "near_fraction_10mm": 0.02808333333333333,
+        "hinge_gap_p1": 0.0032193242277149124,
+        "hinge_gap_p5": 0.01616891810328668,
+        "hinge_gap_mean": 0.11858640005068172,
+        "bbox_overlap_ratio": 0.3605427014624531,
+        "base_plane_screen_smaller_side_ratio": 0.14408333333333334,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.038058258096644856,
+      "bbox_volume_ratio": 1.5161309756068955,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.12497675883328453,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 105.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04682491330768544,
+      "physical_scores": {
+        "near_fraction_2mm": 0.005416666666666667,
+        "near_fraction_5mm": 0.01225,
+        "near_fraction_10mm": 0.023833333333333335,
+        "hinge_gap_p1": 0.004010754887706244,
+        "hinge_gap_p5": 0.017404035795236115,
+        "hinge_gap_mean": 0.11968532047230612,
+        "bbox_overlap_ratio": 0.3605570277942104,
+        "base_plane_screen_smaller_side_ratio": 0.14175,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03855517480452748,
+      "bbox_volume_ratio": 1.5224635053824875,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.13052374091620858,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 120.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.041118859773970506,
+      "physical_scores": {
+        "near_fraction_2mm": 0.007083333333333333,
+        "near_fraction_5mm": 0.014916666666666667,
+        "near_fraction_10mm": 0.028416666666666666,
+        "hinge_gap_p1": 0.0031380836728384523,
+        "hinge_gap_p5": 0.015243076337530878,
+        "hinge_gap_mean": 0.11801359507772823,
+        "bbox_overlap_ratio": 0.378633040084717,
+        "base_plane_screen_smaller_side_ratio": 0.14316666666666666,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.036392416805791486,
+      "bbox_volume_ratio": 1.5027185691984857,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.13684687897404174,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 105.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03976502515902873,
+      "physical_scores": {
+        "near_fraction_2mm": 0.006583333333333333,
+        "near_fraction_5mm": 0.016,
+        "near_fraction_10mm": 0.030916666666666665,
+        "hinge_gap_p1": 0.0027022346946369525,
+        "hinge_gap_p5": 0.015105706898384747,
+        "hinge_gap_mean": 0.11579770693909379,
+        "bbox_overlap_ratio": 0.3522108791422696,
+        "base_plane_screen_smaller_side_ratio": 0.12125,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.034637407285588326,
+      "bbox_volume_ratio": 1.7871014502834908,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.13987245228240877,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 100.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04829549726017161,
+      "physical_scores": {
+        "near_fraction_2mm": 0.004416666666666667,
+        "near_fraction_5mm": 0.012416666666666666,
+        "near_fraction_10mm": 0.029083333333333333,
+        "hinge_gap_p1": 0.004275713267579384,
+        "hinge_gap_p5": 0.016019299318297455,
+        "hinge_gap_mean": 0.1181254654409028,
+        "bbox_overlap_ratio": 0.3812453785041798,
+        "base_plane_screen_smaller_side_ratio": 0.14783333333333334,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.039305153659718955,
+      "bbox_volume_ratio": 1.5181936339089728,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.1425286038288736,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 110.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03790786705083006,
+      "physical_scores": {
+        "near_fraction_2mm": 0.0055,
+        "near_fraction_5mm": 0.016916666666666667,
+        "near_fraction_10mm": 0.03275,
+        "hinge_gap_p1": 0.003216102978594148,
+        "hinge_gap_p5": 0.014574157886802606,
+        "hinge_gap_mean": 0.11390250686505639,
+        "bbox_overlap_ratio": 0.36925748454744317,
+        "base_plane_screen_smaller_side_ratio": 0.13208333333333333,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03398432490426645,
+      "bbox_volume_ratio": 1.72922852541467,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.15363878386674995,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 100.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04188962987069236,
+      "physical_scores": {
+        "near_fraction_2mm": 0.00525,
+        "near_fraction_5mm": 0.014416666666666666,
+        "near_fraction_10mm": 0.03,
+        "hinge_gap_p1": 0.0035375698433534213,
+        "hinge_gap_p5": 0.014795274158921753,
+        "hinge_gap_mean": 0.11502628610102557,
+        "bbox_overlap_ratio": 0.36554326943471194,
+        "base_plane_screen_smaller_side_ratio": 0.127,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.035373090400761684,
+      "bbox_volume_ratio": 1.8423539957143784,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.1650128872880283,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 115.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03598694693777278,
+      "physical_scores": {
+        "near_fraction_2mm": 0.006166666666666667,
+        "near_fraction_5mm": 0.016083333333333335,
+        "near_fraction_10mm": 0.034666666666666665,
+        "hinge_gap_p1": 0.003294208494443067,
+        "hinge_gap_p5": 0.013736938763010725,
+        "hinge_gap_mean": 0.11333371848994572,
+        "bbox_overlap_ratio": 0.40737113625717714,
+        "base_plane_screen_smaller_side_ratio": 0.15058333333333335,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.0327904656860703,
+      "bbox_volume_ratio": 1.6859203247043453,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.16887907067574698,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 95.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.043644500176909594,
+      "physical_scores": {
+        "near_fraction_2mm": 0.005,
+        "near_fraction_5mm": 0.014916666666666667,
+        "near_fraction_10mm": 0.035,
+        "hinge_gap_p1": 0.003455897766463263,
+        "hinge_gap_p5": 0.013775635675755812,
+        "hinge_gap_mean": 0.112775651482248,
+        "bbox_overlap_ratio": 0.3795068355692867,
+        "base_plane_screen_smaller_side_ratio": 0.129,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.0362928325519821,
+      "bbox_volume_ratio": 1.8755680853641818,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.18275265152876474,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 105.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04645919838542415,
+      "physical_scores": {
+        "near_fraction_2mm": 0.007916666666666667,
+        "near_fraction_5mm": 0.018833333333333334,
+        "near_fraction_10mm": 0.0415,
+        "hinge_gap_p1": 0.0025169658502713745,
+        "hinge_gap_p5": 0.011899417772586166,
+        "hinge_gap_mean": 0.10252715057841377,
+        "bbox_overlap_ratio": 0.44417938586159394,
+        "base_plane_screen_smaller_side_ratio": 0.18133333333333335,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.037339067700880836,
+      "bbox_volume_ratio": 1.5103533205875244,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.18429200213855856,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 110.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.043860824114706654,
+      "physical_scores": {
+        "near_fraction_2mm": 0.0085,
+        "near_fraction_5mm": 0.020166666666666666,
+        "near_fraction_10mm": 0.04133333333333333,
+        "hinge_gap_p1": 0.002234681987129157,
+        "hinge_gap_p5": 0.011793454840944406,
+        "hinge_gap_mean": 0.10205043947875644,
+        "bbox_overlap_ratio": 0.45097772024779914,
+        "base_plane_screen_smaller_side_ratio": 0.18883333333333333,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03600362451874192,
+      "bbox_volume_ratio": 1.4959088734224653,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.18642172688028652,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 115.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04156874231492023,
+      "physical_scores": {
+        "near_fraction_2mm": 0.009583333333333333,
+        "near_fraction_5mm": 0.020583333333333332,
+        "near_fraction_10mm": 0.03866666666666667,
+        "hinge_gap_p1": 0.002132287642444284,
+        "hinge_gap_p5": 0.012357275311156525,
+        "hinge_gap_mean": 0.10089999250103779,
+        "bbox_overlap_ratio": 0.4589865469000071,
+        "base_plane_screen_smaller_side_ratio": 0.18825,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03499848195651056,
+      "bbox_volume_ratio": 1.474067591969858,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.18776989972474964,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 120.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.034378579798892646,
+      "physical_scores": {
+        "near_fraction_2mm": 0.007583333333333333,
+        "near_fraction_5mm": 0.01825,
+        "near_fraction_10mm": 0.03716666666666667,
+        "hinge_gap_p1": 0.0026938969341177674,
+        "hinge_gap_p5": 0.01295104664171471,
+        "hinge_gap_mean": 0.11193818355091152,
+        "bbox_overlap_ratio": 0.4434663962937432,
+        "base_plane_screen_smaller_side_ratio": 0.18458333333333332,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03226017922694907,
+      "bbox_volume_ratio": 1.6529039648051662,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.1937990903353058,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0552",
+      "angle_deg": 95.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.05002496469678501,
+      "physical_scores": {
+        "near_fraction_2mm": 0.00525,
+        "near_fraction_5mm": 0.013333333333333334,
+        "near_fraction_10mm": 0.027583333333333335,
+        "hinge_gap_p1": 0.0038581630550186133,
+        "hinge_gap_p5": 0.017031921955329148,
+        "hinge_gap_mean": 0.1196445129221694,
+        "bbox_overlap_ratio": 0.4511633689841725,
+        "base_plane_screen_smaller_side_ratio": 0.13808333333333334,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.039627325401362545,
+      "bbox_volume_ratio": 1.514538739741405,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.19492727188725345,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 100.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04865167000746651,
+      "physical_scores": {
+        "near_fraction_2mm": 0.0105,
+        "near_fraction_5mm": 0.022333333333333334,
+        "near_fraction_10mm": 0.04225,
+        "hinge_gap_p1": 0.001977784329555734,
+        "hinge_gap_p5": 0.011704741033471317,
+        "hinge_gap_mean": 0.10416026503558301,
+        "bbox_overlap_ratio": 0.4580075791914855,
+        "base_plane_screen_smaller_side_ratio": 0.18575,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.038159393909258446,
+      "bbox_volume_ratio": 1.5136073972483217,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.19716272843455473,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca1_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 105.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03881528016970305,
+      "physical_scores": {
+        "near_fraction_2mm": 0.004916666666666666,
+        "near_fraction_5mm": 0.016666666666666666,
+        "near_fraction_10mm": 0.04133333333333333,
+        "hinge_gap_p1": 0.003558800290572099,
+        "hinge_gap_p5": 0.011540090810238697,
+        "hinge_gap_mean": 0.0993897885977152,
+        "bbox_overlap_ratio": 0.44674493188583436,
+        "base_plane_screen_smaller_side_ratio": 0.18791666666666668,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.032477122623703863,
+      "bbox_volume_ratio": 1.7067636998825542,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.20089872249935103,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca2_offset_0.0552",
+      "angle_deg": 100.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.04067706949856569,
+      "physical_scores": {
+        "near_fraction_2mm": 0.0015833333333333333,
+        "near_fraction_5mm": 0.006166666666666667,
+        "near_fraction_10mm": 0.016583333333333332,
+        "hinge_gap_p1": 0.0067451528087765136,
+        "hinge_gap_p5": 0.021620780431272545,
+        "hinge_gap_mean": 0.09642951226296266,
+        "bbox_overlap_ratio": 0.35246464480859896,
+        "base_plane_screen_smaller_side_ratio": 0.2846666666666667,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03627523799357506,
+      "bbox_volume_ratio": 1.9181181342784241,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.20142515542460868,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca1_offset_0.0276",
+      "angle_deg": 120.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03901519027937633,
+      "physical_scores": {
+        "near_fraction_2mm": 0.01025,
+        "near_fraction_5mm": 0.021416666666666667,
+        "near_fraction_10mm": 0.043,
+        "hinge_gap_p1": 0.0019763341303947715,
+        "hinge_gap_p5": 0.01166584455902603,
+        "hinge_gap_mean": 0.10082575325577113,
+        "bbox_overlap_ratio": 0.48234425254937513,
+        "base_plane_screen_smaller_side_ratio": 0.17866666666666667,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03424926564633111,
+      "bbox_volume_ratio": 1.4640719042512456,
+      "collapse_flag": false
+    },
+    {
+      "score": 0.20168746483876,
+      "base_cluster_idx": 1,
+      "screen_cluster_idx": 0,
+      "axis_name": "boundary_axis_perturb_pca2_+0.20",
+      "center_name": "boundary_pca2_offset_0.0552",
+      "angle_deg": 105.0,
+      "base_part_score": 0.03268650952436248,
+      "screen_part_score": 0.03875978719488238,
+      "physical_scores": {
+        "near_fraction_2mm": 0.00225,
+        "near_fraction_5mm": 0.00575,
+        "near_fraction_10mm": 0.015083333333333334,
+        "hinge_gap_p1": 0.0074527326277384325,
+        "hinge_gap_p5": 0.02161993871771354,
+        "hinge_gap_mean": 0.09634607447536156,
+        "bbox_overlap_ratio": 0.3459779605007564,
+        "base_plane_screen_smaller_side_ratio": 0.2946666666666667,
+        "note": "Proxy only. Later replace with SDF/interpenetration or renderer-based test."
+      },
+      "whole_symmetric_mean": 0.03521348430210891,
+      "bbox_volume_ratio": 1.9108681946983073,
+      "collapse_flag": false
+    }
+  ],
+  "overall_decision": "KINEMATIC_CHAIN_V1_3_NO_COLLAPSE_VISUAL_CHECK_REQUIRED",
+  "warnings": [
+    "This is still an oracle diagnostic, not a final non-GT method.",
+    "Pseudo GT screen/base split is unsupervised.",
+    "Physical scoring uses proxies, not exact SDF.",
+    "Visual inspection is required before Gate C v3.",
+    "If this fails, move to template/CAD or silhouette-depth scoring."
+  ]
+}
