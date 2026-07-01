@@ -1,0 +1,50 @@
+{
+  "screen": {
+    "exists": true,
+    "source": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/part_meshes_partfield_v2_vmap/screen.ply",
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v0_largest_component/screen.ply",
+    "num_components_before": 3,
+    "chosen_component_area": 0.35509687166808346,
+    "total_area_before": 0.5420351953203189,
+    "chosen_area_ratio": 0.6551177390948514,
+    "num_vertices": 1968,
+    "num_faces": 3944,
+    "bbox_extent": [
+      0.5073966048657894,
+      0.40465399622917175,
+      0.25838398933410645
+    ]
+  },
+  "keyboard_base": {
+    "exists": true,
+    "source": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/part_meshes_partfield_v2_vmap/keyboard_base.ply",
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v0_largest_component/keyboard_base.ply",
+    "num_components_before": 1,
+    "chosen_component_area": 0.1092821716839228,
+    "total_area_before": 0.1092821716839228,
+    "chosen_area_ratio": 1.0,
+    "num_vertices": 4873,
+    "num_faces": 9646,
+    "bbox_extent": [
+      0.363200718536973,
+      0.11292679607868195,
+      0.27910298109054565
+    ]
+  },
+  "hinge": {
+    "exists": true,
+    "source": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/part_meshes_partfield_v2_vmap/hinge.ply",
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v0_largest_component/hinge.ply",
+    "num_components_before": 1,
+    "chosen_component_area": 0.13377972665945018,
+    "total_area_before": 0.13377972665945018,
+    "chosen_area_ratio": 1.0,
+    "num_vertices": 2379,
+    "num_faces": 4598,
+    "bbox_extent": [
+      0.34698059409856796,
+      0.23985620215535164,
+      0.2003059983253479
+    ]
+  }
+}

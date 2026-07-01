@@ -1,0 +1,218 @@
+{
+  "screen": {
+    "exists": true,
+    "num_components": 3,
+    "components_sorted_by_area": [
+      {
+        "component_id": 1,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/screen_component_01.ply",
+        "num_vertices": 1968,
+        "num_faces": 3944,
+        "area": 0.35509687166808346,
+        "bbox_extent": [
+          0.5073966048657894,
+          0.40465399622917175,
+          0.25838398933410645
+        ]
+      },
+      {
+        "component_id": 2,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/screen_component_02.ply",
+        "num_vertices": 2705,
+        "num_faces": 5134,
+        "area": 0.18614781722733992,
+        "bbox_extent": [
+          0.42423229292035103,
+          0.139848493039608,
+          0.36005699634552
+        ]
+      },
+      {
+        "component_id": 0,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/screen_component_00.ply",
+        "num_vertices": 20,
+        "num_faces": 36,
+        "area": 0.0007905064248954438,
+        "bbox_extent": [
+          0.02100101113319397,
+          0.2094263955950737,
+          0.08785802125930786
+        ]
+      }
+    ]
+  },
+  "keyboard_base": {
+    "exists": true,
+    "num_components": 1,
+    "components_sorted_by_area": [
+      {
+        "component_id": 0,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/keyboard_base_component_00.ply",
+        "num_vertices": 4873,
+        "num_faces": 9646,
+        "area": 0.1092821716839228,
+        "bbox_extent": [
+          0.363200718536973,
+          0.11292679607868195,
+          0.27910298109054565
+        ]
+      }
+    ]
+  },
+  "hinge": {
+    "exists": true,
+    "num_components": 1,
+    "components_sorted_by_area": [
+      {
+        "component_id": 0,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/hinge_component_00.ply",
+        "num_vertices": 2379,
+        "num_faces": 4598,
+        "area": 0.13377972665945018,
+        "bbox_extent": [
+          0.34698059409856796,
+          0.23985620215535164,
+          0.2003059983253479
+        ]
+      }
+    ]
+  },
+  "residual_uncertain": {
+    "exists": true,
+    "num_components": 11,
+    "components_sorted_by_area": [
+      {
+        "component_id": 0,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_00.ply",
+        "num_vertices": 1015,
+        "num_faces": 2018,
+        "area": 0.0953662734753877,
+        "bbox_extent": [
+          0.5020406115800142,
+          0.22649101167917252,
+          0.22625797986984253
+        ]
+      },
+      {
+        "component_id": 1,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_01.ply",
+        "num_vertices": 2910,
+        "num_faces": 5452,
+        "area": 0.0805305489359986,
+        "bbox_extent": [
+          0.35448630154132843,
+          0.14145349711179733,
+          0.41293495893478394
+        ]
+      },
+      {
+        "component_id": 9,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_09.ply",
+        "num_vertices": 30,
+        "num_faces": 56,
+        "area": 0.0011907842048599344,
+        "bbox_extent": [
+          0.02319839969277382,
+          0.2288980931043625,
+          0.09561002254486084
+        ]
+      },
+      {
+        "component_id": 8,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_08.ply",
+        "num_vertices": 87,
+        "num_faces": 170,
+        "area": 0.0010134965462512296,
+        "bbox_extent": [
+          0.034143101423978806,
+          0.012407004833221436,
+          0.02248603105545044
+        ]
+      },
+      {
+        "component_id": 5,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_05.ply",
+        "num_vertices": 35,
+        "num_faces": 66,
+        "area": 0.0005447614615751791,
+        "bbox_extent": [
+          0.04029099643230438,
+          0.009248003363609314,
+          0.015653014183044434
+        ]
+      },
+      {
+        "component_id": 10,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_10.ply",
+        "num_vertices": 12,
+        "num_faces": 20,
+        "area": 0.0002530572717747619,
+        "bbox_extent": [
+          0.006930500268936157,
+          0.0656600147485733,
+          0.027680039405822754
+        ]
+      },
+      {
+        "component_id": 2,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_02.ply",
+        "num_vertices": 31,
+        "num_faces": 58,
+        "area": 0.00024400627411887065,
+        "bbox_extent": [
+          0.0100250244140625,
+          0.0069739967584609985,
+          0.010993003845214844
+        ]
+      },
+      {
+        "component_id": 7,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_07.ply",
+        "num_vertices": 14,
+        "num_faces": 24,
+        "area": 0.0002183020614307414,
+        "bbox_extent": [
+          0.02845500409603119,
+          0.007538005709648132,
+          0.01148998737335205
+        ]
+      },
+      {
+        "component_id": 6,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_06.ply",
+        "num_vertices": 14,
+        "num_faces": 24,
+        "area": 0.0001870257407654144,
+        "bbox_extent": [
+          0.01924300193786621,
+          0.0036509931087493896,
+          0.00651395320892334
+        ]
+      },
+      {
+        "component_id": 3,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_03.ply",
+        "num_vertices": 14,
+        "num_faces": 24,
+        "area": 0.00018063282042742374,
+        "bbox_extent": [
+          0.0392879843711853,
+          0.011747300624847412,
+          0.010695040225982666
+        ]
+      },
+      {
+        "component_id": 4,
+        "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/residual_uncertain_component_04.ply",
+        "num_vertices": 16,
+        "num_faces": 28,
+        "area": 0.00016975414538257196,
+        "bbox_extent": [
+          0.021178990602493286,
+          0.005237996578216553,
+          0.008291006088256836
+        ]
+      }
+    ]
+  }
+}

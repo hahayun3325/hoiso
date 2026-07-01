@@ -1,0 +1,201 @@
+### Search for optimization / guidance files
+src/foho/alignment/mesh_align.py:3:This script aligns two meshes using the Iterative Closest Point (ICP) algorithm.
+src/foho/alignment/mesh_align.py:14:from trimesh.proximity import closest_point
+src/foho/alignment/mesh_align.py:228:@click.option('-os', '--on_surface', is_flag=True, help='If present, use trimesh.proximity.closest_point instead of scipy\'s KdTree (slightly more accurate but a lot slower, not recommended)')
+src/foho/configs/guid_config.py:1:"""Configuration for the FOHO guidance diffusion model."""
+src/foho/configs/guid_config.py:30:        self.obj_guidance_scale = _env_float("FOHO_OBJ_GUIDANCE_SCALE", 5.0)
+src/foho/configs/guid_config.py:38:        self.guidance_start_step = self.num_inference_steps // 2
+src/foho/configs/guid_config.py:39:        self.handopt_start_step = self.guidance_start_step - 1
+src/foho/configs/guid_config.py:40:        self.guidance_end_step = self.num_inference_steps
+src/foho/configs/guid_config.py:55:        self.use_intersection_loss = True
+src/foho/configs/guid_config.py.backup_before_lowmem_env:1:"""Configuration for the FOHO guidance diffusion model."""
+src/foho/configs/guid_config.py.backup_before_lowmem_env:8:        self.obj_guidance_scale = 5.0
+src/foho/configs/guid_config.py.backup_before_lowmem_env:16:        self.guidance_start_step = self.num_inference_steps // 2
+src/foho/configs/guid_config.py.backup_before_lowmem_env:17:        self.handopt_start_step = self.guidance_start_step - 1
+src/foho/configs/guid_config.py.backup_before_lowmem_env:18:        self.guidance_end_step = self.num_inference_steps
+src/foho/configs/guid_config.py.backup_before_lowmem_env:29:        self.use_intersection_loss = True
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:1:"""Configuration for the FOHO guidance diffusion model."""
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:26:        self.obj_guidance_scale = _env_float("FOHO_OBJ_GUIDANCE_SCALE", 5.0)
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:34:        self.guidance_start_step = self.num_inference_steps // 2
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:35:        self.handopt_start_step = self.guidance_start_step - 1
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:36:        self.guidance_end_step = self.num_inference_steps
+src/foho/configs/guid_config.py.backup_before_noise_lr_env:47:        self.use_intersection_loss = True
+src/foho/configs/pipeline.py:37:    guidance_out_path: str
+src/foho/configs/pipeline.py:98:    guidance_out_path = _p("GUIDANCE_OUT_PATH", f"{base_dir}/guidance_out")
+src/foho/configs/pipeline.py:144:        guidance_out_path=guidance_out_path,
+src/foho/hand/hamer.py:275:                save4guidance = {}
+src/foho/hand/hamer.py:276:                save4guidance["mano_3d_kps"] = pred_kps_3d_proj
+src/foho/hand/hamer.py:277:                save4guidance["mano_2d_kps"] = kps_2d_orig_img
+src/foho/hand/hamer.py:278:                save4guidance["cam_t"] = cam_t_arr
+src/foho/hand/hamer.py:279:                np.save(os.path.join(out_folder, f"{img_fn}_kps_for_guidance.npy"), save4guidance)
+src/foho/guidance/run.py:1:"""Run FOHO guidance step."""
+src/foho/guidance/run.py:126:    silhouette_renderer = MeshRenderer(
+src/foho/guidance/run.py:160:        sil_renderer=silhouette_renderer,
+src/foho/guidance/run.py:210:    guidance_out_dir: str,
+src/foho/guidance/run.py:217:    os.makedirs(guidance_out_dir, exist_ok=True)
+src/foho/guidance/run.py:233:            hamer_for_guid_path = os.path.join(hamer_out_dir, f"{index}_kps_for_guidance.npy")
+src/foho/guidance/run.py:234:            save_path_obj = os.path.join(guidance_out_dir, f"{index}_obj.ply")
+src/foho/guidance/run.py:235:            save_path_hand = os.path.join(guidance_out_dir, f"{index}_hand.ply")
+src/foho/guidance/run.py:279:    parser = argparse.ArgumentParser(description="Hunyuan3D-2 guidance")
+src/foho/guidance/run.py:288:    parser.add_argument("--guidance_out_dir", required=True)
+src/foho/guidance/run.py:301:        guidance_out_dir=args.guidance_out_dir,
+src/foho/guidance/run.py.backup_before_disable_render_scale:1:"""Run FOHO guidance step."""
+src/foho/guidance/run.py.backup_before_disable_render_scale:124:    silhouette_renderer = MeshRenderer(
+src/foho/guidance/run.py.backup_before_disable_render_scale:158:        sil_renderer=silhouette_renderer,
+src/foho/guidance/run.py.backup_before_disable_render_scale:208:    guidance_out_dir: str,
+src/foho/guidance/run.py.backup_before_disable_render_scale:215:    os.makedirs(guidance_out_dir, exist_ok=True)
+src/foho/guidance/run.py.backup_before_disable_render_scale:231:            hamer_for_guid_path = os.path.join(hamer_out_dir, f"{index}_kps_for_guidance.npy")
+src/foho/guidance/run.py.backup_before_disable_render_scale:232:            save_path_obj = os.path.join(guidance_out_dir, f"{index}_obj.ply")
+src/foho/guidance/run.py.backup_before_disable_render_scale:233:            save_path_hand = os.path.join(guidance_out_dir, f"{index}_hand.ply")
+src/foho/guidance/run.py.backup_before_disable_render_scale:277:    parser = argparse.ArgumentParser(description="Hunyuan3D-2 guidance")
+src/foho/guidance/run.py.backup_before_disable_render_scale:286:    parser.add_argument("--guidance_out_dir", required=True)
+src/foho/guidance/run.py.backup_before_disable_render_scale:299:        guidance_out_dir=args.guidance_out_dir,
+src/foho/guidance/run.py.backup_before_traceback_debug:1:"""Run FOHO guidance step."""
+src/foho/guidance/run.py.backup_before_traceback_debug:123:    silhouette_renderer = MeshRenderer(
+src/foho/guidance/run.py.backup_before_traceback_debug:157:        sil_renderer=silhouette_renderer,
+src/foho/guidance/run.py.backup_before_traceback_debug:207:    guidance_out_dir: str,
+src/foho/guidance/run.py.backup_before_traceback_debug:214:    os.makedirs(guidance_out_dir, exist_ok=True)
+src/foho/guidance/run.py.backup_before_traceback_debug:230:            hamer_for_guid_path = os.path.join(hamer_out_dir, f"{index}_kps_for_guidance.npy")
+src/foho/guidance/run.py.backup_before_traceback_debug:231:            save_path_obj = os.path.join(guidance_out_dir, f"{index}_obj.ply")
+src/foho/guidance/run.py.backup_before_traceback_debug:232:            save_path_hand = os.path.join(guidance_out_dir, f"{index}_hand.ply")
+src/foho/guidance/run.py.backup_before_traceback_debug:275:    parser = argparse.ArgumentParser(description="Hunyuan3D-2 guidance")
+src/foho/guidance/run.py.backup_before_traceback_debug:284:    parser.add_argument("--guidance_out_dir", required=True)
+src/foho/guidance/run.py.backup_before_traceback_debug:297:        guidance_out_dir=args.guidance_out_dir,
+src/foho/guidance/run.py.backup_before_lowmem_render:1:"""Run FOHO guidance step."""
+src/foho/guidance/run.py.backup_before_lowmem_render:113:    silhouette_renderer = MeshRenderer(
+src/foho/guidance/run.py.backup_before_lowmem_render:147:        sil_renderer=silhouette_renderer,
+src/foho/guidance/run.py.backup_before_lowmem_render:197:    guidance_out_dir: str,
+src/foho/guidance/run.py.backup_before_lowmem_render:204:    os.makedirs(guidance_out_dir, exist_ok=True)
+src/foho/guidance/run.py.backup_before_lowmem_render:220:            hamer_for_guid_path = os.path.join(hamer_out_dir, f"{index}_kps_for_guidance.npy")
+src/foho/guidance/run.py.backup_before_lowmem_render:221:            save_path_obj = os.path.join(guidance_out_dir, f"{index}_obj.ply")
+src/foho/guidance/run.py.backup_before_lowmem_render:222:            save_path_hand = os.path.join(guidance_out_dir, f"{index}_hand.ply")
+src/foho/guidance/run.py.backup_before_lowmem_render:265:    parser = argparse.ArgumentParser(description="Hunyuan3D-2 guidance")
+src/foho/guidance/run.py.backup_before_lowmem_render:274:    parser.add_argument("--guidance_out_dir", required=True)
+src/foho/guidance/run.py.backup_before_lowmem_render:287:        guidance_out_dir=args.guidance_out_dir,
+src/foho/main.py:129:            cfg.guidance_out_path,
+src/foho/main.py:270:            "foho.guidance.run",
+src/foho/main.py:280:                "guidance_out_dir": cfg.guidance_out_path,
+src/foho/selection/object_selector.py:60:    - This selector should be inserted before final alignment.
+src/foho/preprocess/segment_hoi_sam2.py.backup_before_detector_guard:132:    # Compute intersection area
+src/foho/preprocess/segment_hoi_sam2.py.backup_before_detector_guard:135:    intersection = inter_width * inter_height
+src/foho/preprocess/segment_hoi_sam2.py.backup_before_detector_guard:140:    union = area_box1 + area_box2 - intersection
+src/foho/preprocess/segment_hoi_sam2.py.backup_before_detector_guard:142:    return intersection / union if union > 0 else 0.0
+src/foho/preprocess/inpaint.py:80:            guidance_scale=2.5,
+src/foho/preprocess/segment_hoi_sam2.py:132:    # Compute intersection area
+src/foho/preprocess/segment_hoi_sam2.py:135:    intersection = inter_width * inter_height
+src/foho/preprocess/segment_hoi_sam2.py:140:    union = area_box1 + area_box2 - intersection
+src/foho/preprocess/segment_hoi_sam2.py:142:    return intersection / union if union > 0 else 0.0
+scripts/phase0/evaluate_oakink000_selector_candidates_contact.py:43:    hand_path = run / "guidance_out/oakink_hand.ply"
+scripts/phase0/evaluate_oakink000_selector_candidates_contact.py:44:    obj_path = run / "guidance_out/oakink_obj.ply"
+scripts/phase0/make_smoke013_015_016_017_sheet.py:6:    ("013 vague inpaint", Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/ours_inpaint/test_inpainted_object.png"),
+scripts/phase0/create_phase42_mock_selector_for_oakink_run.sh:16:# This is not final semantic object extraction.
+scripts/phase0/create_phase42_mock_selector_for_oakink_run.sh:29:  --candidate "final_obj" "$RUN/guidance_out/oakink_obj.ply" "final_guided"
+scripts/phase0/make_prompt_ablation_sheet.py:6:    ("baseline inpaint", Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/ours_inpaint/test_inpainted_object.png"),
+scripts/phase0/make_oakink000_paper_like_metric_overlay.py:30:    obj_candidates = [run_dir / "guidance_out/oakink_obj.ply", run_dir / "guidance_out/test_obj.ply"]
+scripts/phase0/make_oakink000_paper_like_metric_overlay.py:31:    hand_candidates = [run_dir / "guidance_out/oakink_hand.ply", run_dir / "guidance_out/test_hand.ply"]
+scripts/phase0/make_oakink000_native_render_story_panel.py:60:        (debug_dir / "rendered_normal_t5.png" if debug_dir else None, "8. HOI native render t5", "later guidance"),
+scripts/phase0/find_selector_insertion_points.sh:8:  echo "===== likely optimization / guidance files ====="
+scripts/phase0/find_selector_insertion_points.sh:17:  grep -RInE "test_obj|test_hand|guidance_out|final_obj_mesh|final_hand_mesh|export" src/foho || true
+scripts/phase0/make_selector_candidate_full_panel.py:112:final_obj = first_glob(debug_run, ["guidance_out/*obj*.ply", "guidance_out/test_obj.ply"])
+scripts/phase0/make_selector_candidate_full_panel.py:113:final_hand = first_glob(debug_run, ["guidance_out/*hand*.ply", "guidance_out/test_hand.ply"])
+scripts/phase0/score_selector_need_candidates.py:48:    "final_guided_obj": first_glob(run, ["guidance_out/*obj*.ply", "guidance_out/test_obj.ply"]),
+scripts/phase0/render_smoke020_and_compare.py:9:    "smoke019_exported_obj": Path.home() / "foho_phase0/runs/smoke_019_prompt_rect_guidance_transform_debug/guidance_out/test_obj.ply",
+scripts/phase0/render_smoke020_and_compare.py:10:    "smoke020_exported_obj": Path.home() / "foho_phase0/runs/smoke_020_prompt_rect_freeze_obj_noise/guidance_out/test_obj.ply",
+scripts/phase0/render_smoke020_and_compare.py:11:    "smoke020_hand": Path.home() / "foho_phase0/runs/smoke_020_prompt_rect_freeze_obj_noise/guidance_out/test_hand.ply",
+scripts/phase0/render_smoke019_debug_meshes.py:4:run = Path.home() / "foho_phase0/runs/smoke_019_prompt_rect_guidance_transform_debug"
+scripts/phase0/render_smoke019_debug_meshes.py:9:mesh_paths += list((run / "guidance_out").rglob("*.ply"))
+scripts/phase0/make_oakink000_v7_selector_story_grid.py:235:        run / "guidance_out/oakink_obj.ply",
+scripts/phase0/make_oakink000_v7_selector_story_grid.py:236:        run / "guidance_out/test_obj.ply",
+scripts/phase0/make_oakink000_v7_selector_story_grid.py:239:        run / "guidance_out/oakink_hand.ply",
+scripts/phase0/make_oakink000_v7_selector_story_grid.py:240:        run / "guidance_out/test_hand.ply",
+scripts/phase0/make_internal_selector_debug_panel.py:90:d.text((10, 34), "These are object candidates exported before the joint/alignment block.", fill=(80,80,80))
+scripts/phase0/patch_internal_selector_exact_export_v3.py:10:# 1. Ensure PyTorch3D mesh export helper exists.
+scripts/phase0/patch_internal_selector_exact_export_v3.py:14:    """Export a PyTorch3D Meshes object for selector/debug inspection."""
+scripts/phase0/verify_oakink000_prompt_batch.py:18:    final_obj = bool(list((run / "guidance_out").glob("*obj*.ply")))
+scripts/phase0/verify_oakink000_prompt_batch.py:19:    final_hand = bool(list((run / "guidance_out").glob("*hand*.ply")))
+scripts/phase0/find_oakink000_exact_hand_annotation_v2.py:22:# This is a hypothesis, not guaranteed.
+scripts/phase0/measure_final_hoi_alignment.py:27:    obj_path = run / "guidance_out/oakink_obj.ply"
+scripts/phase0/measure_final_hoi_alignment.py:28:    hand_path = run / "guidance_out/oakink_hand.ply"
+scripts/phase0/seed_oakink000_preprocess_from_baseline.py:38:            "guidance_out",
+scripts/phase0/build_arctic_selected_eval_mesh_manifest.py:15:    # Prefer final FOHO output; fallback to guidance_out.
+scripts/phase0/build_arctic_selected_eval_mesh_manifest.py:19:        candidates += [root / "guidance_out" / f"{root.name.split('_')[1]}_obj.ply"]
+scripts/phase0/build_arctic_selected_eval_mesh_manifest.py:21:        candidates += [root / "guidance_out" / f"{root.name.split('_')[1]}_hand.ply"]
+scripts/phase0/render_mesh_preview.py:4:base = Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/guidance_out"
+scripts/phase0/evaluate_oakink000_diagnostic.py:77:        run / "guidance_out/oakink_obj.ply",
+scripts/phase0/evaluate_oakink000_diagnostic.py:78:        run / "guidance_out/test_obj.ply",
+scripts/phase0/evaluate_oakink000_diagnostic.py:81:        run / "guidance_out/oakink_hand.ply",
+scripts/phase0/evaluate_oakink000_diagnostic.py:82:        run / "guidance_out/test_hand.ply",
+scripts/phase0/report_object_fallback_selection.py:8:    "smoke022_final_obj": Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_obj.ply",
+scripts/phase0/repair_one_arctic_selector_native_config.py:43:text = set_env(text, "GUIDANCE_OUT_PATH", new_run / "guidance_out")
+scripts/phase0/check_selector_final_scene_geometry.py:58:    final_obj = run / "guidance_out/oakink_obj.ply"
+scripts/phase0/check_selector_final_scene_geometry.py:59:    final_hand = run / "guidance_out/oakink_hand.ply"
+scripts/phase0/check_selector_final_scene_geometry.py:62:        hits = sorted((run / "guidance_out").glob("*obj*.ply"))
+scripts/phase0/check_selector_final_scene_geometry.py:66:        hits = sorted((run / "guidance_out").glob("*hand*.ply"))
+scripts/phase0/score_object_candidates_2d3d.py:8:    "smoke022_final_obj": Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_obj.ply",
+scripts/phase0/score_object_candidates_2d3d.py:35:# Lower score is better. Later add 2D silhouette IoU and MoGe point-cloud distance.
+scripts/phase0/score_object_candidates_2d3d.py:42:        "2D silhouette IoU",
+scripts/phase0/prepare_arctic_selector_native_rerun_configs.py:49:    text = set_env(text, "GUIDANCE_OUT_PATH", run_dir / "guidance_out")
+scripts/phase0/validate_smoke016_outputs.py:4:base = Path.home() / "foho_phase0/runs/smoke_016_prompt_rect_guidance_ultralow/guidance_out"
+scripts/phase0/compare_smoke020_completeness.py:7:    "smoke019_before_h2m": next((Path.home() / "foho_phase0/runs/smoke_019_prompt_rect_guidance_transform_debug/foho_debug").rglob("debug_obj_before_hunyuan2moge.ply")),
+scripts/phase0/compare_smoke020_completeness.py:8:    "smoke019_exported_obj": Path.home() / "foho_phase0/runs/smoke_019_prompt_rect_guidance_transform_debug/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke020_completeness.py:9:    "smoke020_exported_obj": Path.home() / "foho_phase0/runs/smoke_020_prompt_rect_freeze_obj_noise/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke021_completeness.py:7:    "smoke019_exported_obj": Path.home() / "foho_phase0/runs/smoke_019_prompt_rect_guidance_transform_debug/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke021_completeness.py:8:    "smoke020_exported_obj": Path.home() / "foho_phase0/runs/smoke_020_prompt_rect_freeze_obj_noise/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke021_completeness.py:9:    "smoke021_exported_obj": Path.home() / "foho_phase0/runs/smoke_021_verified_freeze_obj_noise/guidance_out/test_obj.ply",
+scripts/phase0/check_oakink_pipeline_clip_token_lengths.py:10:from transformers import CLIPTokenizer
+scripts/phase0/check_oakink_pipeline_clip_token_lengths.py:11:tokenizer = CLIPTokenizer.from_pretrained("openai/clip-vit-large-patch14")
+scripts/phase0/verify_arctic_clean_default_vs_selector_pairs.py:35:        "default_obj": ok(default / "guidance_out" / f"{case}_obj.ply"),
+scripts/phase0/verify_arctic_clean_default_vs_selector_pairs.py:36:        "default_hand": ok(default / "guidance_out" / f"{case}_hand.ply"),
+scripts/phase0/verify_arctic_clean_default_vs_selector_pairs.py:37:        "method_obj": ok(method / "guidance_out" / f"{case}_obj.ply"),
+scripts/phase0/verify_arctic_clean_default_vs_selector_pairs.py:38:        "method_hand": ok(method / "guidance_out" / f"{case}_hand.ply"),
+scripts/phase0/compare_smoke_mesh_stats.py:6:    "smoke013_final_obj": Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke_mesh_stats.py:8:    "smoke016_final_obj_octree128": Path.home() / "foho_phase0/runs/smoke_016_prompt_rect_guidance_ultralow/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke_mesh_stats.py:9:    "smoke017_final_obj_octree192": Path.home() / "foho_phase0/runs/smoke_017_prompt_rect_guidance_octree192_steps6/guidance_out/test_obj.ply",
+scripts/phase0/compare_smoke_mesh_stats.py:10:    "smoke017_final_hand": Path.home() / "foho_phase0/runs/smoke_017_prompt_rect_guidance_octree192_steps6/guidance_out/test_hand.ply",
+scripts/phase0/make_prompt_ablation_final_sheet.py:6:    ("baseline inpaint", Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/ours_inpaint/test_inpainted_object.png"),
+scripts/phase0/search_rendering_code_no_rg.py:12:    "silhouette",
+scripts/phase0/build_arctic_final_metric_overlay_image.py:73:draw.text((x0, y), "This is selected-case evaluation, not full benchmark.", fill="black")
+scripts/phase0/verify_arctic_phase017_outputs.py:80:    final_obj = first_glob(run_dir, ["guidance_out/*obj*.ply", "**/guidance_out/*obj*.ply", "guidance_out/test_obj.ply"])
+scripts/phase0/verify_arctic_phase017_outputs.py:81:    final_hand = first_glob(run_dir, ["guidance_out/*hand*.ply", "**/guidance_out/*hand*.ply", "guidance_out/test_hand.ply"])
+scripts/phase0/compare_oakink000_object_quality.py:20:        "guidance_out/*obj*.ply",
+scripts/phase0/compare_oakink000_object_quality.py:21:        "guidance_out/test_obj.ply",
+scripts/phase0/evaluate_oakink000_paper_like_metrics.py:31:        run_dir / "guidance_out/oakink_obj.ply",
+scripts/phase0/evaluate_oakink000_paper_like_metrics.py:32:        run_dir / "guidance_out/test_obj.ply",
+scripts/phase0/evaluate_oakink000_paper_like_metrics.py:35:        run_dir / "guidance_out/oakink_hand.ply",
+scripts/phase0/evaluate_oakink000_paper_like_metrics.py:36:        run_dir / "guidance_out/test_hand.ply",
+scripts/phase0/evaluate_fallback_alignment.py:10:        "hand": Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_hand.ply",
+scripts/phase0/evaluate_fallback_alignment.py:14:        "hand": Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_hand.ply",
+scripts/phase0/audit_arctic_phase017_generated_files.py:49:        "guidance",
+scripts/phase0/audit_arctic_phase017_generated_files.py:85:            if re.search(r"Reconstructed object|Finished processing|saved|wrote|exported|guidance_out|hunyuan|cropped|inpaint|selector|rendered_normal|\.ply|\.png", line, re.I):
+scripts/phase0/align_selected_object_to_final_obj_bbox.py:6:target_path = Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_obj.ply"
+scripts/phase0/align_selected_object_to_final_obj_bbox.py:7:hand_path = Path.home() / "foho_phase0/runs/smoke_022_freeze_obj_pose_and_noise/guidance_out/test_hand.ply"
+scripts/phase0/make_oakink000_pipeline_ordered_sheet.py:60:    ("10. Final object", "rectified-flow guidance", run / "guidance_out/oakink_obj.ply", True),
+scripts/phase0/make_oakink000_pipeline_ordered_sheet.py:61:    ("11. Final hand", "guided hand", run / "guidance_out/oakink_hand.ply", True),
+scripts/phase0/apply_internal_phase42_auto_selector_patch.py:11:# 1. Add helper functions for cloning/scoring PyTorch3D meshes.
+scripts/phase0/apply_internal_phase42_auto_selector_patch.py:17:    """Clone a PyTorch3D Meshes object without gradients."""
+scripts/phase0/apply_internal_phase42_auto_selector_patch.py:29:    """Compute cheap mesh quality score for a PyTorch3D Meshes object."""
+scripts/phase0/apply_internal_phase42_auto_selector_patch.py:121:# 4. Replace the selector decision block before joint optimization.
+scripts/phase0/apply_internal_phase42_auto_selector_patch.py:130:    raise RuntimeError("Could not find joint optimization info_str after selector block.")
+scripts/phase0/create_phase42_mock_selector_from_internal_exports.sh:20:FINAL_OBJ="$(find "$RUN/guidance_out" -maxdepth 1 \( -name '*obj*.ply' -o -name 'test_obj.ply' \) | sort | head -n 1)"
+scripts/phase0/make_weekly_final_summary_panel.py:8:        "Generic prompt causes shape drift; structured prompt improves object prior; final guidance can fragment object."
+scripts/phase0/make_input_output_contact_sheet.py:7:    ("inpainted object", Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/ours_inpaint/test_inpainted_object.png"),
+scripts/phase0/run_smoke016_prompt_rect_guidance_ultralow.sh:11:export DST="$HOME/foho_phase0/runs/smoke_016_prompt_rect_guidance_ultralow"
+scripts/phase0/run_smoke016_prompt_rect_guidance_ultralow.sh:14:mkdir -p "$DST/guidance_out" "$DST/foho_debug"
+scripts/phase0/run_smoke016_prompt_rect_guidance_ultralow.sh:43:PYTHONPATH=src python3 -m foho.guidance.run \
+scripts/phase0/run_smoke016_prompt_rect_guidance_ultralow.sh:52:  --guidance_out_dir "$DST/guidance_out" \
+scripts/phase0/run_smoke016_prompt_rect_guidance_ultralow.sh:53:  |& tee ~/foho_phase0/logs/phase0_16_prompt_rect_guidance_ultralow.log
+scripts/phase0/make_native_debug_render_sheet.py:60:    d.text((10, 34), "These are pipeline-saved images, not custom matplotlib PLY renders.", fill=(120, 0, 0))
+scripts/phase0/evaluate_arctic_default_vs_selector_proxy.py:49:        hand_p = run / "guidance_out" / f"{case}_hand.ply"
+scripts/phase0/evaluate_arctic_default_vs_selector_proxy.py:50:        obj_p = run / "guidance_out" / f"{case}_obj.ply"
+scripts/phase0/repair_arctic_phase017_configs.py:28:    "GUIDANCE_OUT_PATH": "guidance_out",
+scripts/phase0/patch_internal_selector_exact_export_v5.py:54:# The safest anchor is the branch that checks selected_name == before_phase42.
+scripts/phase0/validate_smoke_guidance_outputs.py:4:base = Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance"
+scripts/phase0/validate_smoke_guidance_outputs.py:6:    "object": base / "guidance_out/test_obj.ply",
+scripts/phase0/validate_smoke_guidance_outputs.py:7:    "hand": base / "guidance_out/test_hand.ply",
+scripts/phase0/make_oakink000_selected_object_only_grid.py:70:d.text((10, 32), "This avoids hand overlay and shows only the object source selected by the selector.", fill=(80,80,80))
+scripts/phase0/prepare_arctic_phase017_inputs_gpt55.py:20:        "manual_prompt": "A tall ketchup bottle with a red cylindrical body, green cap, curved side surfaces, and vertical bottle silhouette; it is not a box, cuboid, or flat rectangular object.",
+scripts/phase0/inspect_smoke018_debug_components.py:5:run = Path.home() / "foho_phase0/runs/smoke_018_prompt_rect_guidance_debug_exports"
+scripts/phase0/inspect_smoke018_debug_components.py:9:    run / "guidance_out/test_obj.ply",
+scripts/phase0/evaluate_oakink000_gpt55_stage_contact.py:36:hand_path = RUN / "guidance_out/oakink_hand.ply"
+scripts/phase0/evaluate_oakink000_gpt55_stage_contact.py:40:    "final_obj": RUN / "guidance_out/oakink_obj.ply",
+scripts/phase0/render_prompt_ablation_preview.py:5:    "baseline_smoke_013": Path.home() / "foho_phase0/runs/smoke_013_octree192_guidance/guidance_out/test_obj.ply",
