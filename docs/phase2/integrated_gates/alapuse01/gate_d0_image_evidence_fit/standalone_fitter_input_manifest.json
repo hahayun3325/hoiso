@@ -1,0 +1,73 @@
+{
+  "case_id": "alapuse01",
+  "stage": "standalone_fast_articulated_fitter_inputs",
+  "case_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01",
+  "run_root": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0",
+  "paths": {
+    "screen_part": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/screen.ply",
+      "exists": true
+    },
+    "keyboard_base_part": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/keyboard_base.ply",
+      "exists": true
+    },
+    "hinge_part": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/hinge.ply",
+      "exists": true
+    },
+    "cropped_obj_mask": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/cropped_hand_masks/alapuse01_cropped_obj_mask.png",
+      "exists": true
+    },
+    "cropped_hand_mask": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/cropped_hand_masks/alapuse01_cropped_hand_mask.png",
+      "exists": true
+    },
+    "cropped_hoi_img": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/cropped_hoi_imgs/alapuse01_cropped_hoi_1.png",
+      "exists": true
+    },
+    "cropped_hoi_wo_bckg": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/cropped_hoi_imgs_wo_bckg/alapuse01_cropped_hoi_wo_bckg_1.png",
+      "exists": true
+    },
+    "inpainted_object_img": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/ours_inpaint/alapuse01_inpainted_object.png",
+      "exists": true
+    },
+    "aligned_mano": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/aligned_mano/alapuse01_hamer_aligned_mano.ply",
+      "exists": true
+    },
+    "hamer_kps": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/hamer_out/alapuse01_kps_for_guidance.npy",
+      "exists": true
+    },
+    "h2m_transform": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/h2m_transformations/alapuse01_hoi_mesh.npy",
+      "exists": true
+    },
+    "guidance_obj": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/guidance_out/alapuse01_obj.ply",
+      "exists": true
+    },
+    "guidance_hand": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/guidance_out/alapuse01_hand.ply",
+      "exists": true
+    },
+    "hunyuan_hoi_mesh": {
+      "path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/hunyuan_hoi_out/alapuse01_hoi_mesh.ply",
+      "exists": true
+    }
+  },
+  "moge_candidates": [
+    "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/moge_out",
+    "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/foho_debug/20260620_191408_exp_objalapuse01_inpainted/debug_obj_before_hunyuan2moge.ply",
+    "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/foho_debug/20260620_191408_exp_objalapuse01_inpainted/debug_obj_after_hunyuan2moge.ply",
+    "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/moge_out/alapuse01_cropped_hoi/mesh.glb",
+    "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/moge_out/alapuse01_cropped_hoi/fov.json"
+  ],
+  "missing_required_or_expected": [],
+  "ready_for_fitter_v0": true
+}
