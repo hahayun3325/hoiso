@@ -1,0 +1,17 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 v1.3 kinematic-chain oracle",
+  "decision": "FAIL_STOP_GRID_ORACLE_LINE",
+  "accepted_as_clean_object_repair": false,
+  "proceed_to_gate_c_v3": false,
+  "continue_v1_4_grid_search": false,
+  "next_step": "audit Gate A part quality and pivot to image-evidence articulated fitting integrated with FollowMyHold",
+  "reason": [
+    "visual result remains disordered",
+    "v1.3 is numerically worse than v1.2",
+    "runtime is around 30 minutes",
+    "grid search is too slow for the target runtime",
+    "fragmented part meshes cannot be fixed by post-hoc registration",
+    "ArtHOI-style solution should use image evidence and contact/regularization losses instead of GT Chamfer grid search"
+  ]
+}

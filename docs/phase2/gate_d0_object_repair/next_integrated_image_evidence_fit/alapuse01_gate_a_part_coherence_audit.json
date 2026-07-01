@@ -1,0 +1,100 @@
+{
+  "screen": {
+    "exists": true,
+    "num_vertices": 4693,
+    "num_faces": 9114,
+    "num_components": 3,
+    "largest_component_area_ratio": 0.6551177390948514,
+    "bbox_extent_xyz": [
+      0.5405663140118122,
+      0.40465399622917175,
+      0.5231459736824036
+    ],
+    "component_faces_top10": [
+      5134,
+      3944,
+      36
+    ],
+    "component_vertices_top10": [
+      2705,
+      1968,
+      20
+    ],
+    "coherence_flag": "FRAGMENTED_OR_NOISY"
+  },
+  "keyboard_base": {
+    "exists": true,
+    "num_vertices": 4873,
+    "num_faces": 9644,
+    "num_components": 1,
+    "largest_component_area_ratio": 1.0,
+    "bbox_extent_xyz": [
+      0.363200718536973,
+      0.11292679607868195,
+      0.27910298109054565
+    ],
+    "component_faces_top10": [
+      9646
+    ],
+    "component_vertices_top10": [
+      4873
+    ],
+    "coherence_flag": "OK"
+  },
+  "hinge": {
+    "exists": true,
+    "num_vertices": 2379,
+    "num_faces": 4598,
+    "num_components": 1,
+    "largest_component_area_ratio": 1.0,
+    "bbox_extent_xyz": [
+      0.34698059409856796,
+      0.23985620215535164,
+      0.2003059983253479
+    ],
+    "component_faces_top10": [
+      4598
+    ],
+    "component_vertices_top10": [
+      2379
+    ],
+    "coherence_flag": "OK"
+  },
+  "residual_uncertain": {
+    "exists": true,
+    "num_vertices": 4178,
+    "num_faces": 7940,
+    "num_components": 11,
+    "largest_component_area_ratio": 0.5301111332355587,
+    "bbox_extent_xyz": [
+      0.5393720120191574,
+      0.36809611320495605,
+      0.5252450108528137
+    ],
+    "component_faces_top10": [
+      5452,
+      2018,
+      170,
+      66,
+      58,
+      56,
+      28,
+      24,
+      24,
+      24
+    ],
+    "component_vertices_top10": [
+      2910,
+      1015,
+      87,
+      35,
+      31,
+      30,
+      16,
+      14,
+      14,
+      14
+    ],
+    "coherence_flag": "FRAGMENTED_OR_NOISY"
+  }
+}
