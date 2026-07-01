@@ -1,0 +1,119 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v3-lite contact verification",
+  "object_seed": "v0 dry-run active clean parts, not v0.1 optimized output",
+  "contact_hypothesis": [
+    "right index -> screen / outer_top_lid",
+    "right middle -> screen / outer_top_lid",
+    "right ring -> screen / outer_top_lid"
+  ],
+  "kps_available": true,
+  "kps_source": "root.item.mano_3d_kps",
+  "kps_candidates_seen": [
+    {
+      "name": "root.item.mano_3d_kps",
+      "raw_shape": [
+        1,
+        21,
+        3
+      ],
+      "num_points": 21
+    }
+  ],
+  "contacts": {
+    "index_tip": {
+      "kps_index": 8,
+      "point": [
+        -0.02037666365504265,
+        -0.05264318734407425,
+        0.009971756488084793
+      ],
+      "distance_to_screen": 0.6880997286294824,
+      "nearest_screen_point": [
+        -0.18099699914455414,
+        0.09183049947023392,
+        -0.6433349847793579
+      ],
+      "distance_to_keyboard_base": 0.7419755044503612,
+      "nearest_base_point": [
+        -0.276870995759964,
+        0.07737419754266739,
+        -0.6740120053291321
+      ],
+      "primary_part": "screen",
+      "screen_contact_lite_3cm": false,
+      "screen_contact_lite_5cm": false
+    },
+    "middle_tip": {
+      "kps_index": 12,
+      "point": [
+        -0.008030397817492485,
+        -0.05749090760946274,
+        0.01990552991628647
+      ],
+      "distance_to_screen": 0.701494538007404,
+      "nearest_screen_point": [
+        -0.17483200132846832,
+        0.09146229922771454,
+        -0.644989013671875
+      ],
+      "distance_to_keyboard_base": 0.7562971700402147,
+      "nearest_base_point": [
+        -0.276870995759964,
+        0.07737419754266739,
+        -0.6740120053291321
+      ],
+      "primary_part": "screen",
+      "screen_contact_lite_3cm": false,
+      "screen_contact_lite_5cm": false
+    },
+    "ring_tip": {
+      "kps_index": 16,
+      "point": [
+        0.015058770775794983,
+        -0.057799965143203735,
+        0.029841242358088493
+      ],
+      "distance_to_screen": 0.7164220975808901,
+      "nearest_screen_point": [
+        -0.14989300072193146,
+        0.0977431982755661,
+        -0.6497600078582764
+      ],
+      "distance_to_keyboard_base": 0.773889163334968,
+      "nearest_base_point": [
+        -0.276870995759964,
+        0.07737419754266739,
+        -0.6740120053291321
+      ],
+      "primary_part": "screen",
+      "screen_contact_lite_3cm": false,
+      "screen_contact_lite_5cm": false
+    }
+  },
+  "global_hand_to_screen": {
+    "min": 0.0013599317536714555,
+    "mean": 0.08351923703985396,
+    "nearest_hand_vertex_index": 701,
+    "nearest_hand_vertex": [
+      0.014116139151155949,
+      -0.02142256498336792,
+      -1.1268552541732788
+    ],
+    "nearest_screen_point": [
+      0.015259199775755405,
+      -0.021477900445461273,
+      -1.1275899410247803
+    ],
+    "p1": 0.005490560623404445,
+    "p5": 0.013929763781541659,
+    "p10": 0.021220609201383342
+  },
+  "decision": "FAIL_LITE_INTENDED_FINGERS_FAR_FROM_SCREEN",
+  "decision_rule": {
+    "pass": "at least one intended fingertip is within about 3cm of screen and visual marker is plausible",
+    "partial": "at least one intended fingertip is within about 5cm, or global hand-screen near without keypoints",
+    "fail": "all intended fingertips are far from screen"
+  },
+  "next_step_hint": "Open the marker GLB and verify whether red fingertip markers are on the intended hand/fingers."
+}
