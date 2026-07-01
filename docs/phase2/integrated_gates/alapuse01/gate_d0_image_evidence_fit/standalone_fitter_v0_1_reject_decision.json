@@ -1,0 +1,14 @@
+{
+  "case_id": "alapuse01",
+  "stage": "standalone_fast_articulated_fitter_v0_1_conservative",
+  "decision": "REJECT_OPTIMIZER_OUTPUT_KEEP_V0_DRYRUN_ACTIVE_SEED",
+  "use_v0_1_outputs": false,
+  "active_seed": "v0_dryrun_active_clean_parts_in_current_followmyhold_frame",
+  "reason": [
+    "visual alignment becomes worse than v0 dry-run",
+    "best angle is -18 degrees, too large for an already good frame",
+    "objective uses weak physical proxies only",
+    "objective does not preserve image/object/hand alignment"
+  ],
+  "next_step": "Gate C v3-lite contact verification"
+}
