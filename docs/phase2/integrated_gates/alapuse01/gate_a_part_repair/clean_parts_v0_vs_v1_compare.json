@@ -1,0 +1,84 @@
+{
+  "v0_largest": {
+    "screen": {
+      "exists": true,
+      "num_vertices": 1968,
+      "num_faces": 3944,
+      "num_components": 1,
+      "area": 0.35509687166808346,
+      "largest_component_area_ratio": 1.0,
+      "bbox_extent_xyz": [
+        0.5073966048657894,
+        0.40465399622917175,
+        0.25838398933410645
+      ]
+    },
+    "keyboard_base": {
+      "exists": true,
+      "num_vertices": 4873,
+      "num_faces": 9646,
+      "num_components": 1,
+      "area": 0.1092821716839228,
+      "largest_component_area_ratio": 1.0,
+      "bbox_extent_xyz": [
+        0.363200718536973,
+        0.11292679607868195,
+        0.27910298109054565
+      ]
+    },
+    "hinge": {
+      "exists": true,
+      "num_vertices": 2379,
+      "num_faces": 4598,
+      "num_components": 1,
+      "area": 0.13377972665945018,
+      "largest_component_area_ratio": 1.0,
+      "bbox_extent_xyz": [
+        0.34698059409856796,
+        0.23985620215535164,
+        0.2003059983253479
+      ]
+    }
+  },
+  "v1_merge": {
+    "screen": {
+      "exists": true,
+      "num_vertices": 4673,
+      "num_faces": 9078,
+      "num_components": 2,
+      "area": 0.5412446888954233,
+      "largest_component_area_ratio": 0.6560745610137405,
+      "bbox_extent_xyz": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ]
+    },
+    "keyboard_base": {
+      "exists": true,
+      "num_vertices": 4873,
+      "num_faces": 9646,
+      "num_components": 1,
+      "area": 0.1092821716839228,
+      "largest_component_area_ratio": 1.0,
+      "bbox_extent_xyz": [
+        0.363200718536973,
+        0.11292679607868195,
+        0.27910298109054565
+      ]
+    },
+    "hinge": {
+      "exists": true,
+      "num_vertices": 2379,
+      "num_faces": 4598,
+      "num_components": 1,
+      "area": 0.13377972665945018,
+      "largest_component_area_ratio": 1.0,
+      "bbox_extent_xyz": [
+        0.34698059409856796,
+        0.23985620215535164,
+        0.2003059983253479
+      ]
+    }
+  }
+}

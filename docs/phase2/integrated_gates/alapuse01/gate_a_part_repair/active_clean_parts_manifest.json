@@ -1,0 +1,22 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate A clean-parts active proposal",
+  "active_version": "v1_component_merge",
+  "decision": "USE_AS_ACTIVE_FOR_STANDALONE_ARTICULATED_FIT",
+  "parts": {
+    "screen": "screen.ply",
+    "keyboard_base": "keyboard_base.ply",
+    "hinge": "hinge.ply"
+  },
+  "reason": [
+    "v1 keeps two large screen components instead of only the largest component",
+    "v1 preserves more screen/lid area than v0",
+    "keyboard_base and hinge remain stable anchors"
+  ],
+  "limitations": [
+    "screen still has two disconnected components",
+    "not final paper-quality part reconstruction",
+    "should be used as an engineering seed for standalone fitting"
+  ],
+  "next_step": "standalone_fast_articulated_fitter"
+}

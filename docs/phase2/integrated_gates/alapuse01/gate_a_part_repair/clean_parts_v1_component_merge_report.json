@@ -1,0 +1,54 @@
+{
+  "screen": {
+    "exists": true,
+    "selected_components": [
+      "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/screen_component_01.ply",
+      "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/screen_component_02.ply"
+    ],
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v1_component_merge/screen.ply",
+    "num_vertices": 4673,
+    "num_faces": 9078,
+    "num_components_after_merge": 2,
+    "largest_component_area_ratio_after_merge": 0.6560745610137405,
+    "bbox_extent_xyz": [
+      0.5224473066627979,
+      0.40465399622917175,
+      0.5231459736824036
+    ],
+    "note": "Multiple components can be acceptable if visual inspection shows they belong to the same physical part."
+  },
+  "keyboard_base": {
+    "exists": true,
+    "selected_components": [
+      "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/keyboard_base_component_00.ply"
+    ],
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v1_component_merge/keyboard_base.ply",
+    "num_vertices": 4873,
+    "num_faces": 9646,
+    "num_components_after_merge": 1,
+    "largest_component_area_ratio_after_merge": 1.0,
+    "bbox_extent_xyz": [
+      0.363200718536973,
+      0.11292679607868195,
+      0.27910298109054565
+    ],
+    "note": "Multiple components can be acceptable if visual inspection shows they belong to the same physical part."
+  },
+  "hinge": {
+    "exists": true,
+    "selected_components": [
+      "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/components/hinge_component_00.ply"
+    ],
+    "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/clean_parts_v1_component_merge/hinge.ply",
+    "num_vertices": 2379,
+    "num_faces": 4598,
+    "num_components_after_merge": 1,
+    "largest_component_area_ratio_after_merge": 1.0,
+    "bbox_extent_xyz": [
+      0.34698059409856796,
+      0.23985620215535164,
+      0.2003059983253479
+    ],
+    "note": "Multiple components can be acceptable if visual inspection shows they belong to the same physical part."
+  }
+}
