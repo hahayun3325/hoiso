@@ -1,0 +1,15 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v3.1 local hand-mesh patch verification",
+  "decision": "PASS",
+  "use_for_contact_aware_scorer": true,
+  "do_not_use_hamer_keypoints": true,
+  "active_contact_target": "nearest_1_percent_hand_mesh_patch_to_screen",
+  "reason": [
+    "HaMeR fingertip keypoints are far from the screen",
+    "global hand-to-screen distance is close",
+    "local mesh patch markers visually fall on the contact/penetration region",
+    "dense hand mesh and active object parts are in the same frame"
+  ],
+  "next_step": "contact-aware scorer v0"
+}

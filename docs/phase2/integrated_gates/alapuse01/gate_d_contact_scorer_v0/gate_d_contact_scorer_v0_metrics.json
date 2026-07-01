@@ -1,0 +1,38 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D contact-aware scorer v0",
+  "input_contact": "Gate C v3.1 nearest hand-mesh patch to active screen",
+  "object_seed": "v0 dry-run active clean parts",
+  "num_patch_vertices": 20,
+  "target_band_m": {
+    "min": 0.003,
+    "max": 0.02
+  },
+  "distance_stats": {
+    "min": 0.0013599317536714555,
+    "p1": 0.0015993185144385683,
+    "p5": 0.00255686555750702,
+    "p10": 0.002914030458914656,
+    "mean": 0.005548926655384628,
+    "max": 0.008203758981542275
+  },
+  "threshold_counts": {
+    "within_5mm": 6,
+    "within_10mm": 20,
+    "within_20mm": 20,
+    "within_30mm": 20
+  },
+  "loss_terms": {
+    "l_attract_farther_than_20mm": 0.0,
+    "l_collision_proxy_closer_than_3mm": 1.418583949006111e-07,
+    "l_contact_band_total": 1.418583949006111e-07
+  },
+  "decision_rule": {
+    "pass": "patch is mostly within 20mm and visual markers stay on intended contact region",
+    "warning": "large closer-than-3mm count indicates possible penetration",
+    "fail": "patch distances mostly larger than 30mm or visual region wrong"
+  },
+  "decision": "PASS_CONTACT_SCORER_V0_PATCH_USABLE",
+  "penetration_warning": true,
+  "next_step": "contact-aware scorer v0.1 dry-run with small loss-weight sweep"
+}
