@@ -1,0 +1,23 @@
+{
+  "case_id": "alapuse01",
+  "stage": "image-derived semantic contact prior",
+  "source": "cropped input image visual evidence",
+  "decision": "USE_AS_CONTACT_INPUT_CONSTRAINT_NOT_AS_VERIFICATION_OUTPUT",
+  "contact_prior": [
+    {
+      "hand": "right",
+      "region": "fingers",
+      "likely_fingers": ["index", "middle", "ring"],
+      "object_part": "lid_outer_surface",
+      "object_aliases": ["screen", "top_lid", "outer_top_lid"],
+      "state": "contact_or_strong_near_contact",
+      "confidence": 0.75,
+      "notes": "Input image suggests the right fingers rest on the laptop lid/top surface, not on the keyboard base."
+    }
+  ],
+  "important_warning": [
+    "Do not construct this contact by nearest-neighbor search in the current bad 3D frame.",
+    "Use this as an input constraint for object-state fitting over {s, T_base, theta}.",
+    "Run Gate C verification only after object fitting."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v3.3 manual top-lid/screen component verification",
+  "decision": "FAIL_TOP_LID_CONTACT_NOT_SUPPORTED_IN_CURRENT_FRAME",
+  "current_contact_target_accepted": false,
+  "accepted_for_sandbox_optimization": false,
+  "rerun_gate_c_v3_3": false,
+  "reason": [
+    "manual true top-lid component is at least 12.5 cm away from the hand patch",
+    "wrong/base-like screen component is only about 5.5 mm away",
+    "nearest-neighbor contact keeps selecting the wrong surface",
+    "the failure is now an object-state / lid-angle problem, not only a contact-verification problem"
+  ],
+  "next_step": "Gate D-0 image-evidence articulated fitting over {s, T_base, theta}"
+}
