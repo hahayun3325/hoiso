@@ -1,0 +1,10 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v3.2 semantic contact-part audit",
+  "decision": "SEMANTIC_FAIL_FOR_CURRENT_V0_CONTACT_TARGET",
+  "distance_audit_result": "patch is closest to screen_all / screen_component_00",
+  "visual_interpretation": "nearest component behaves like base-like penetration region, not desired upright screen/top-lid",
+  "current_contact_target_accepted": false,
+  "accepted_for_sandbox_optimization": false,
+  "next_step": "Gate C v3.3 manually selected top-lid/screen component verification"
+}
