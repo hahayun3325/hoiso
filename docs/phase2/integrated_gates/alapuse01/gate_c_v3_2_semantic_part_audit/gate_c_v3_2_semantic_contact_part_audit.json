@@ -1,0 +1,348 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate C v3.2 semantic contact-part audit",
+  "purpose": "check whether the verified contact patch touches desired screen/top-lid or base-like geometry",
+  "input_contact_target": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d_contact_scorer_v0/outputs/verified_contact_patch_target_v0.json",
+  "patch_num_points": 20,
+  "part_scores": {
+    "screen_all": {
+      "mesh_info": {
+        "num_vertices": 4673,
+        "num_faces": 9078,
+        "num_components": 2,
+        "area": 0.5412446888954233,
+        "bbox_min": [
+          -0.4721820056438446,
+          -0.17241500318050385,
+          -1.1468600034713745
+        ],
+        "bbox_max": [
+          0.05026530101895332,
+          0.2322389930486679,
+          -0.623714029788971
+        ],
+        "bbox_extent": [
+          0.5224473066627979,
+          0.40465399622917175,
+          0.5231459736824036
+        ],
+        "component_areas": [
+          0.35509687166808346,
+          0.18614781722733992
+        ]
+      },
+      "patch_to_part_distance": {
+        "min": 0.0013599317536714555,
+        "p1": 0.0015993185144385683,
+        "p5": 0.00255686555750702,
+        "p10": 0.002914030458914656,
+        "mean": 0.005548926655384628,
+        "max": 0.008203758981542275,
+        "within_5mm": 6,
+        "within_10mm": 20,
+        "within_20mm": 20,
+        "nearest_indices": [
+          1648,
+          1477,
+          1545,
+          1485,
+          1681,
+          1700,
+          1647,
+          1570,
+          1514,
+          1456,
+          1825,
+          1510,
+          1606,
+          1476,
+          1661,
+          1533,
+          1545,
+          1628,
+          1540,
+          1605
+        ]
+      }
+    },
+    "keyboard_base": {
+      "mesh_info": {
+        "num_vertices": 4873,
+        "num_faces": 9646,
+        "num_components": 1,
+        "area": 0.1092821716839228,
+        "bbox_min": [
+          -0.3697099983692169,
+          0.07489719986915588,
+          -0.9503419995307922
+        ],
+        "bbox_max": [
+          -0.006509279832243919,
+          0.18782399594783783,
+          -0.6712390184402466
+        ],
+        "bbox_extent": [
+          0.363200718536973,
+          0.11292679607868195,
+          0.27910298109054565
+        ],
+        "component_areas": [
+          0.10928217168392282
+        ]
+      },
+      "patch_to_part_distance": {
+        "min": 0.14066693727516322,
+        "p1": 0.14145036808613187,
+        "p5": 0.14458409133000652,
+        "p10": 0.15288540174141801,
+        "mean": 0.21288656330869354,
+        "max": 0.28639951384531037,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0,
+        "nearest_indices": [
+          4389,
+          4561,
+          4561,
+          4356,
+          4389,
+          4614,
+          4389,
+          4389,
+          4389,
+          4356,
+          4614,
+          4561,
+          4614,
+          4389,
+          4614,
+          4561,
+          4561,
+          4614,
+          4389,
+          4614
+        ]
+      }
+    },
+    "hinge": {
+      "mesh_info": {
+        "num_vertices": 2379,
+        "num_faces": 4598,
+        "num_components": 1,
+        "area": 0.13377972665945018,
+        "bbox_min": [
+          -0.39142799377441406,
+          -0.04719420149922371,
+          -1.073830008506775
+        ],
+        "bbox_max": [
+          -0.0444473996758461,
+          0.19266200065612793,
+          -0.873524010181427
+        ],
+        "bbox_extent": [
+          0.34698059409856796,
+          0.23985620215535164,
+          0.2003059983253479
+        ],
+        "component_areas": [
+          0.1337797266594502
+        ]
+      },
+      "patch_to_part_distance": {
+        "min": 0.020117582013833266,
+        "p1": 0.020125044660280554,
+        "p5": 0.0201548952460697,
+        "p10": 0.025275629738693624,
+        "mean": 0.06678718497318285,
+        "max": 0.10060049646035653,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0,
+        "nearest_indices": [
+          2053,
+          2081,
+          2085,
+          2081,
+          2053,
+          2053,
+          2053,
+          1963,
+          2047,
+          2092,
+          2297,
+          2081,
+          2053,
+          1963,
+          2297,
+          2268,
+          2085,
+          2081,
+          1963,
+          2053
+        ]
+      }
+    },
+    "screen_component_00_sorted_by_area": {
+      "mesh_info": {
+        "num_vertices": 1968,
+        "num_faces": 3944,
+        "num_components": 1,
+        "area": 0.35509687166808346,
+        "bbox_min": [
+          -0.4721820056438446,
+          -0.17241500318050385,
+          -1.1468600034713745
+        ],
+        "bbox_max": [
+          0.03521459922194481,
+          0.2322389930486679,
+          -0.8884760141372681
+        ],
+        "bbox_extent": [
+          0.5073966048657894,
+          0.40465399622917175,
+          0.25838398933410645
+        ],
+        "component_areas": [
+          0.3550968716680834
+        ]
+      },
+      "patch_to_part_distance": {
+        "min": 0.0013599317536714555,
+        "p1": 0.0015993185144385683,
+        "p5": 0.00255686555750702,
+        "p10": 0.002914030458914656,
+        "mean": 0.005548926655384628,
+        "max": 0.008203758981542275,
+        "within_5mm": 6,
+        "within_10mm": 20,
+        "within_20mm": 20,
+        "nearest_indices": [
+          1648,
+          1477,
+          1545,
+          1485,
+          1681,
+          1700,
+          1647,
+          1570,
+          1514,
+          1456,
+          1825,
+          1510,
+          1606,
+          1476,
+          1661,
+          1533,
+          1545,
+          1628,
+          1540,
+          1605
+        ]
+      }
+    },
+    "screen_component_01_sorted_by_area": {
+      "mesh_info": {
+        "num_vertices": 2705,
+        "num_faces": 5134,
+        "num_components": 1,
+        "area": 0.18614781722733992,
+        "bbox_min": [
+          -0.3739669919013977,
+          0.06667950004339218,
+          -0.983771026134491
+        ],
+        "bbox_max": [
+          0.05026530101895332,
+          0.20652799308300018,
+          -0.623714029788971
+        ],
+        "bbox_extent": [
+          0.42423229292035103,
+          0.139848493039608,
+          0.36005699634552
+        ],
+        "component_areas": [
+          0.18614781722733995
+        ]
+      },
+      "patch_to_part_distance": {
+        "min": 0.12545869001470472,
+        "p1": 0.12739523278008785,
+        "p5": 0.13514140384162043,
+        "p10": 0.13827856340019606,
+        "mean": 0.20411362919727027,
+        "max": 0.2822564234706953,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0,
+        "nearest_indices": [
+          2236,
+          2189,
+          2300,
+          2189,
+          2236,
+          2236,
+          2236,
+          2189,
+          2189,
+          2189,
+          2429,
+          2189,
+          2236,
+          2189,
+          2429,
+          2300,
+          2300,
+          2300,
+          2189,
+          2401
+        ]
+      }
+    }
+  },
+  "ranking_by_patch_distance": [
+    {
+      "part": "screen_all",
+      "mean": 0.005548926655384628,
+      "p5": 0.00255686555750702,
+      "within_10mm": 20,
+      "within_20mm": 20
+    },
+    {
+      "part": "screen_component_00_sorted_by_area",
+      "mean": 0.005548926655384628,
+      "p5": 0.00255686555750702,
+      "within_10mm": 20,
+      "within_20mm": 20
+    },
+    {
+      "part": "hinge",
+      "mean": 0.06678718497318285,
+      "p5": 0.0201548952460697,
+      "within_10mm": 0,
+      "within_20mm": 0
+    },
+    {
+      "part": "screen_component_01_sorted_by_area",
+      "mean": 0.20411362919727027,
+      "p5": 0.13514140384162043,
+      "within_10mm": 0,
+      "within_20mm": 0
+    },
+    {
+      "part": "keyboard_base",
+      "mean": 0.21288656330869354,
+      "p5": 0.14458409133000652,
+      "within_10mm": 0,
+      "within_20mm": 0
+    }
+  ],
+  "preliminary_decision": "VISUAL_CHECK_REQUIRED",
+  "decision_rule": {
+    "pass": "patch is closest to the visually desired top-lid/screen component",
+    "semantic_fail": "patch is closest to keyboard_base or a base-like screen subcomponent",
+    "repair_needed": "screen components are semantically mixed and require Gate A v2 mask-guided repair"
+  }
+}

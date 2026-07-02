@@ -1,0 +1,14 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D contact-aware scorer v0",
+  "geometry_dryrun_decision": "PASS",
+  "semantic_contact_decision": "NEEDS_RECHECK",
+  "accepted_for_sandbox_optimization": false,
+  "reason": [
+    "distance scorer passed numerically",
+    "all selected patch vertices are close to target surface",
+    "penetration warning is true",
+    "visual inspection suggests markers are around base/penetration region instead of desired screen/top-lid contact"
+  ],
+  "next_step": "Gate C v3.2 semantic contact-part audit"
+}
