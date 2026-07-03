@@ -1,0 +1,13 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a1 old v0 dry-run comparison",
+  "decision": "OLD_V0_DRYRUN_NOT_ENOUGH",
+  "reason": [
+    "old v0 dry-run frame loads meshes successfully",
+    "but hand-object contact is still semantically wrong",
+    "desired contact is right fingers on lid/screen",
+    "next step is selector-v41 aligned frame recovery"
+  ],
+  "use_old_v0_as_final_seed": false,
+  "next_step": "selector_v41_frame_recovery_v1a2"
+}

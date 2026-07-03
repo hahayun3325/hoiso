@@ -1,0 +1,238 @@
+{
+  "case_id": "alapuse01",
+  "stage": "selector_v41_frame_recovery_v1a2_asset_audit",
+  "paths": {
+    "selector_v41_aligned_pred_vs_gt_glb": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/visuals_alignment_audit/alapuse01_selector_v41_aligned_pred_vs_gt.glb",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "type": "Scene",
+        "num_geometries": 3,
+        "geometries": {
+          "aligned_pred_hand_selector_v41.ply": {
+            "num_vertices": 778,
+            "num_faces": 1552,
+            "bounds": [
+              [
+                -0.02785484306514263,
+                -0.12515048682689667,
+                0.36716219782829285
+              ],
+              [
+                0.10100454837083817,
+                -0.015421748161315918,
+                0.45076027512550354
+              ]
+            ]
+          },
+          "aligned_pred_object_selector_v41.ply": {
+            "num_vertices": 123100,
+            "num_faces": 246420,
+            "bounds": [
+              [
+                -0.1884303092956543,
+                -0.18842676281929016,
+                0.24212303757667542
+              ],
+              [
+                0.01931833103299141,
+                -0.004605107940733433,
+                0.44382184743881226
+              ]
+            ]
+          },
+          "gt_object_mesh.ply": {
+            "num_vertices": 3910,
+            "num_faces": 7816,
+            "bounds": [
+              [
+                -0.1614828109741211,
+                -0.1723012626171112,
+                0.42512285709381104
+              ],
+              [
+                0.17426355183124542,
+                0.047658130526542664,
+                0.6258617639541626
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "selector_v41_aligned_decision_json": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/alapuse01_selector_v41_aligned_decision_v1.json",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "top_level_type": "dict",
+        "keys": [
+          "case_id",
+          "stage",
+          "status",
+          "hand_alignment",
+          "object_alignment",
+          "method_decision",
+          "next_step"
+        ],
+        "preview": "{'case_id': 'alapuse01', 'stage': 'selector_v41_aligned_diagnostic', 'status': 'PASS_WITH_OBJECT_ALIGNMENT_WARNING', 'hand_alignment': {'status': 'PASS', 'selector_v41_pred_hand_to_gt_hand_center': 0.0033700463061395783, 'selector_v41_pred_hand_to_gt_hand_nn_mean': 0.004187973520991187}, 'object_alignment': {'status': 'WEAK', 'selector_v41_pred_object_to_gt_object_center': 0.20677039786213103, 'selector_v41_pred_object_to_gt_object_nn_mean': 0.08390931664682542, 'selector_v41_pred_object_to_gt_object_nn_p95': 0.15480152083636467, 'selector_v41_pred_object_diag': 0.3429756671551127, 'gt_object_diag': 0.4487804179068492}, 'method_decision': {'best_gt_object_metric_reference': 'default', 'phase2_contact_development_seed': 'selector_v41', 'reason': 'selector_v41 has weak GT object alignment but useful hand-object relative distance for contact pipeline debugging'}, 'next_step': {'run_gate_d_optimizer_v1': 'exploratory_only', 'do_not_claim': 'GT object improvement for alapuse01', 'claim_allo"
+      }
+    },
+    "selector_v41_transform_diagnostic_json": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selector_v41_aligned_diagnostic/selector_v41_alignment_transform_diagnostic_v2.json",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "top_level_type": "dict",
+        "keys": [
+          "case_id",
+          "method",
+          "alignment",
+          "source_pred_hand",
+          "source_pred_object",
+          "target_gt_hand",
+          "target_gt_object",
+          "output_aligned_hand",
+          "output_aligned_object",
+          "pred_hand_vertices",
+          "gt_hand_vertices",
+          "scale",
+          "rotation",
+          "translation",
+          "note"
+        ],
+        "preview": "{'case_id': 'alapuse01', 'method': 'selector_v41', 'alignment': 'hand_based_umeyama_similarity_v2_robust_pointcloud_loader', 'source_pred_hand': '/home/fredcui/foho_phase0/phase1_report_assets/meshes/alapuse01/selector_v41/final_hand.ply', 'source_pred_object': '/home/fredcui/foho_phase0/phase1_report_assets/meshes/alapuse01/selector_v41/final_object.ply', 'target_gt_hand': '/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_right_hand_points.ply', 'target_gt_object': '/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_object_mesh.ply', 'output_aligned_hand': '/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selector_v41_aligned_diagnostic/aligned_pred_hand_selector_v41.ply', 'output_aligned_object': '/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selector_v41_aligned_diagnostic/aligned_pred_object_selector_v41.ply', 'pred_hand_vertices': 778, 'g"
+      }
+    },
+    "selector_v41_run_root": {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline",
+      "exists": true,
+      "summary": {
+        "exists": true
+      }
+    },
+    "selector_v41_h2m_npy": {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/h2m_transformations/alapuse01_hoi_mesh.npy",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "type": "ndarray",
+        "shape": [
+          4,
+          4
+        ],
+        "dtype": "float64",
+        "preview": [
+          0.31565956148654734,
+          0.001587872026493388,
+          0.027066558831291724,
+          -0.011156876520689252,
+          -0.0008078083210444301,
+          0.31668843063965235,
+          -0.009157731549313678,
+          -0.12446655967467271,
+          -0.027101058840140527,
+          0.009055123623691274,
+          0.3155306895506686,
+          -0.910687797914481,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "selector_v41_guidance_hand": {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_hand.ply",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "type": "Mesh",
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bounds": [
+          [
+            -0.06407994776964188,
+            -0.13649724423885345,
+            -1.1745446920394897
+          ],
+          [
+            0.28123629093170166,
+            0.15596386790275574,
+            -0.9485036730766296
+          ]
+        ]
+      }
+    },
+    "selector_v41_guidance_obj": {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_obj.ply",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "type": "Mesh",
+        "num_vertices": 74762,
+        "num_faces": 150000,
+        "bounds": [
+          [
+            -0.48185965418815613,
+            -0.17241500318050385,
+            -1.146860122680664
+          ],
+          [
+            0.05038796365261078,
+            0.32801705598831177,
+            -0.6236852407455444
+          ]
+        ]
+      }
+    },
+    "selector_v41_aligned_mano": {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/aligned_mano/alapuse01_hamer_aligned_mano.ply",
+      "exists": true,
+      "summary": {
+        "exists": true,
+        "type": "Mesh",
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bounds": [
+          [
+            -0.19809149205684662,
+            -0.3542962670326233,
+            -0.45608213543891907
+          ],
+          [
+            0.8690569400787354,
+            0.45101264119148254,
+            0.20689573884010315
+          ]
+        ]
+      }
+    },
+    "script_generate_from_hand_v2": {
+      "path": "/home/fredcui/Projects/FollowMyHold/scripts/phase2/alapuse01_generate_selector_v41_aligned_from_hand_v2.py",
+      "exists": true,
+      "summary": {
+        "exists": true
+      },
+      "source_hints": [
+        "aligned",
+        "gt",
+        "reference",
+        "umeyama"
+      ]
+    },
+    "script_make_selector_scene": {
+      "path": "/home/fredcui/Projects/FollowMyHold/scripts/phase2/alapuse01_make_selector_v41_aligned_scene.py",
+      "exists": true,
+      "summary": {
+        "exists": true
+      },
+      "source_hints": [
+        "aligned",
+        "gt",
+        "reference"
+      ]
+    }
+  }
+}
