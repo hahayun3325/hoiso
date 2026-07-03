@@ -1,0 +1,108 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a hand-frame diagnostic",
+  "best_transform_by_distance": "flip_yz",
+  "ranking": [
+    {
+      "transform": "flip_yz",
+      "hand_to_fitted_lid": {
+        "min": 0.0034576100206055683,
+        "p1": 0.014928299724716671,
+        "p5": 0.03432173559208182,
+        "p10": 0.04855041077881151,
+        "mean": 0.11882092544842135,
+        "within_5mm": 1,
+        "within_10mm": 5,
+        "within_20mm": 12
+      },
+      "hand_to_fitted_base": {
+        "min": 0.0024595299588749822,
+        "p1": 0.004552848084315708,
+        "p5": 0.013952428816654852,
+        "p10": 0.023105132031882084,
+        "mean": 0.08982827347120191,
+        "within_5mm": 10,
+        "within_10mm": 26,
+        "within_20mm": 60
+      },
+      "score_lower_better": 0.09094171255296152
+    },
+    {
+      "transform": "flip_z",
+      "hand_to_fitted_lid": {
+        "min": 0.012386883566697864,
+        "p1": 0.03748073430151157,
+        "p5": 0.08427633628849934,
+        "p10": 0.10253819281946268,
+        "mean": 0.18747012038516098,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 3
+      },
+      "hand_to_fitted_base": {
+        "min": 0.00439885377325465,
+        "p1": 0.007756102199506385,
+        "p5": 0.0209615325192642,
+        "p10": 0.03716425168768555,
+        "mean": 0.11462066891731677,
+        "within_5mm": 1,
+        "within_10mm": 14,
+        "within_20mm": 38
+      },
+      "score_lower_better": 0.173819089977227
+    },
+    {
+      "transform": "flip_y",
+      "hand_to_fitted_lid": {
+        "min": 1.673022421253453,
+        "p1": 1.6928649671619245,
+        "p5": 1.7146921717102317,
+        "p10": 1.732772537153112,
+        "mean": 1.8085763106015043,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0
+      },
+      "hand_to_fitted_base": {
+        "min": 1.8747039729478066,
+        "p1": 1.8919015954253335,
+        "p5": 1.9135124445402076,
+        "p10": 1.9341868687551969,
+        "mean": 2.0104473050930647,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0
+      },
+      "score_lower_better": 2.608980327010984
+    },
+    {
+      "transform": "identity_xyz",
+      "hand_to_fitted_lid": {
+        "min": 1.6779734108178532,
+        "p1": 1.6956185902929648,
+        "p5": 1.7164398254212236,
+        "p10": 1.7359291342145697,
+        "mean": 1.8125067152918366,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0
+      },
+      "hand_to_fitted_base": {
+        "min": 1.8641467029089485,
+        "p1": 1.8835170513641044,
+        "p5": 1.9099536174722689,
+        "p10": 1.9264028265621689,
+        "mean": 1.997482954816788,
+        "within_5mm": 0,
+        "within_10mm": 0,
+        "within_20mm": 0
+      },
+      "score_lower_better": 2.612693183067142
+    }
+  ],
+  "decision_rule": {
+    "good": "best hand transform visually places fingers near lid/screen and not under base",
+    "bad": "all hand transforms are far/wrong, meaning hand/object alignment requires a saved FMH transform rather than simple axis flip"
+  },
+  "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/visuals/fit_v1a_hand_frame_diagnostic_scene.glb"
+}
