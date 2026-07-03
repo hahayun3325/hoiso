@@ -1,0 +1,661 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a3 non-GT shared-frame candidate search",
+  "uses_gt": false,
+  "inputs": {
+    "h2m": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/h2m_transformations/alapuse01_hoi_mesh.npy",
+    "guidance_hand": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_hand.ply",
+    "guidance_obj": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_obj.ply",
+    "aligned_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/aligned_mano/alapuse01_hamer_aligned_mano.ply",
+    "active_screen": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/screen.ply",
+    "active_base": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/keyboard_base.ply",
+    "active_hinge": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/hinge.ply",
+    "relabel_lid": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/outputs/lid_relabel_v1.ply",
+    "relabel_base": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/outputs/base_relabel_v1.ply"
+  },
+  "h2m_matrix": [
+    [
+      0.31565956148654734,
+      0.001587872026493388,
+      0.027066558831291724,
+      -0.011156876520689252
+    ],
+    [
+      -0.0008078083210444301,
+      0.31668843063965235,
+      -0.009157731549313678,
+      -0.12446655967467271
+    ],
+    [
+      -0.027101058840140527,
+      0.009055123623691274,
+      0.3155306895506686,
+      -0.910687797914481
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "candidates": {
+    "A_guidance_raw_active_parts_raw": {
+      "note": "raw selector-v41 guidance hand/object with active clean parts",
+      "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/A_guidance_raw_active_parts_raw.glb",
+      "score": {
+        "score": 523.0890655632338,
+        "hand_to_lid": {
+          "min": 0.0034548174098347575,
+          "p1": 0.005202704190616224,
+          "p5": 0.012490368181088693,
+          "mean": 0.08420364985242576,
+          "within_02": 74,
+          "within_05": 253
+        },
+        "hand_to_base": {
+          "min": 0.11887668335348885,
+          "p1": 0.12570392623905915,
+          "p5": 0.14460341271142313,
+          "mean": 0.2302127749925184,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "interpretation": "higher score means more lid/screen contact and less base contact"
+      },
+      "mesh_info": {
+        "hand": {
+          "vertices": 778,
+          "faces": 1552,
+          "bbox_min": [
+            -0.06407994776964188,
+            -0.13649724423885345,
+            -1.1745446920394897
+          ],
+          "bbox_max": [
+            0.28123629093170166,
+            0.15596386790275574,
+            -0.9485036730766296
+          ],
+          "extent": [
+            0.34531623870134354,
+            0.2924611121416092,
+            0.2260410189628601
+          ],
+          "center": [
+            0.09342845171512608,
+            0.02623092751875156,
+            -1.0492208640268015
+          ]
+        },
+        "lid": {
+          "vertices": 4673,
+          "faces": 9078,
+          "bbox_min": [
+            -0.4721820056438446,
+            -0.17241500318050385,
+            -1.1468600034713745
+          ],
+          "bbox_max": [
+            0.05026530101895332,
+            0.2322389930486679,
+            -0.623714029788971
+          ],
+          "extent": [
+            0.5224473066627979,
+            0.40465399622917175,
+            0.5231459736824036
+          ],
+          "center": [
+            -0.1936070624959194,
+            0.0718205692156658,
+            -0.9363704304930854
+          ]
+        },
+        "base": {
+          "vertices": 4873,
+          "faces": 9646,
+          "bbox_min": [
+            -0.3697099983692169,
+            0.07489719986915588,
+            -0.9503419995307922
+          ],
+          "bbox_max": [
+            -0.006509279832243919,
+            0.18782399594783783,
+            -0.6712390184402466
+          ],
+          "extent": [
+            0.363200718536973,
+            0.11292679607868195,
+            0.27910298109054565
+          ],
+          "center": [
+            -0.20531600898838503,
+            0.13411730077923073,
+            -0.8517676527433921
+          ]
+        },
+        "hinge": {
+          "vertices": 2379,
+          "faces": 4598,
+          "bbox_min": [
+            -0.39142799377441406,
+            -0.04719420149922371,
+            -1.073830008506775
+          ],
+          "bbox_max": [
+            -0.0444473996758461,
+            0.19266200065612793,
+            -0.873524010181427
+          ],
+          "extent": [
+            0.34698059409856796,
+            0.23985620215535164,
+            0.2003059983253479
+          ],
+          "center": [
+            -0.21044000309799182,
+            0.05692911893023727,
+            -0.9786917691966254
+          ]
+        }
+      }
+    },
+    "B_guidance_h2m_active_h2m": {
+      "note": "apply h2m to selector-v41 guidance and active parts",
+      "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/B_guidance_h2m_active_h2m.glb",
+      "score": {
+        "score": 1313.9786834375816,
+        "hand_to_lid": {
+          "min": 0.0010945616108366508,
+          "p1": 0.001648330317942913,
+          "p5": 0.00395722143732298,
+          "mean": 0.026677555334306904,
+          "within_02": 325,
+          "within_05": 687
+        },
+        "hand_to_base": {
+          "min": 0.037662729628461705,
+          "p1": 0.03982574928592029,
+          "p5": 0.04581351937712327,
+          "mean": 0.07293643511048258,
+          "within_02": 0,
+          "within_05": 75
+        },
+        "interpretation": "higher score means more lid/screen contact and less base contact"
+      },
+      "mesh_info": {
+        "hand": {
+          "vertices": 778,
+          "faces": 1552,
+          "bbox_min": [
+            -0.061076646598908144,
+            -0.1584266670267366,
+            -1.281755247679017
+          ],
+          "bbox_max": [
+            0.05014443297383149,
+            -0.0654000064486408,
+            -1.2111034300756631
+          ],
+          "extent": [
+            0.11122107957273963,
+            0.0930266605780958,
+            0.07065181760335393
+          ],
+          "center": [
+            -0.010022439309089632,
+            -0.1066265176765581,
+            -1.244043666307634
+          ]
+        },
+        "lid": {
+          "vertices": 4673,
+          "faces": 9078,
+          "bbox_min": [
+            -0.18417438301388608,
+            -0.16945917745522832,
+            -1.2738750488544957
+          ],
+          "bbox_max": [
+            -0.014424699653923543,
+            -0.041724532106316756,
+            -1.0986979473462095
+          ],
+          "extent": [
+            0.16974968335996254,
+            0.12773464534891155,
+            0.17517710150828614
+          ],
+          "center": [
+            -0.09750108044088862,
+            -0.09299038989284858,
+            -1.200244104997281
+          ]
+        },
+        "base": {
+          "vertices": 4873,
+          "faces": 9646,
+          "bbox_min": [
+            -0.15115964554646882,
+            -0.09430772436021566,
+            -1.2071271223409443
+          ],
+          "bbox_max": [
+            -0.03665630394273253,
+            -0.05646873169850153,
+            -1.1138670849859842
+          ],
+          "extent": [
+            0.11450334160373629,
+            0.03783899266171413,
+            0.09326003735496013
+          ],
+          "center": [
+            -0.09880829605752456,
+            -0.07402704668255479,
+            -1.172667902742506
+          ]
+        },
+        "hinge": {
+          "vertices": 2379,
+          "faces": 4598,
+          "bbox_min": [
+            -0.15915764629498627,
+            -0.1304349632715515,
+            -1.247526015834252
+          ],
+          "bbox_max": [
+            -0.05154904045175029,
+            -0.05431270923950969,
+            -1.175518934228656
+          ],
+          "extent": [
+            0.10760860584323598,
+            0.0761222540320418,
+            0.07200708160559599
+          ],
+          "center": [
+            -0.10398369781104831,
+            -0.09730517466554892,
+            -1.2132764395906772
+          ]
+        }
+      }
+    },
+    "C_guidance_h2m_relabel_raw": {
+      "note": "h2m hand/object with image-relabel lid/base",
+      "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/C_guidance_h2m_relabel_raw.glb",
+      "score": {
+        "score": -3.3426754247078536,
+        "hand_to_lid": {
+          "min": 0.37474503150882643,
+          "p1": 0.3765796913095775,
+          "p5": 0.38121600860883426,
+          "mean": 0.4045421927198207,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "hand_to_base": {
+          "min": 0.07352415068964853,
+          "p1": 0.08021847213078817,
+          "p5": 0.08857748584307155,
+          "mean": 0.11744380198122335,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "interpretation": "higher score means more lid/screen contact and less base contact"
+      },
+      "mesh_info": {
+        "hand": {
+          "vertices": 778,
+          "faces": 1552,
+          "bbox_min": [
+            -0.061076646598908144,
+            -0.1584266670267366,
+            -1.281755247679017
+          ],
+          "bbox_max": [
+            0.05014443297383149,
+            -0.0654000064486408,
+            -1.2111034300756631
+          ],
+          "extent": [
+            0.11122107957273963,
+            0.0930266605780958,
+            0.07065181760335393
+          ],
+          "center": [
+            -0.010022439309089632,
+            -0.1066265176765581,
+            -1.244043666307634
+          ]
+        },
+        "lid": {
+          "vertices": 2705,
+          "faces": 5134,
+          "bbox_min": [
+            -0.3739669919013977,
+            0.06667950004339218,
+            -0.983771026134491
+          ],
+          "bbox_max": [
+            0.05026530101895332,
+            0.20652799308300018,
+            -0.623714029788971
+          ],
+          "extent": [
+            0.42423229292035103,
+            0.139848493039608,
+            0.36005699634552
+          ],
+          "center": [
+            -0.1424034388619458,
+            0.14050148717087507,
+            -0.7840521444909168
+          ]
+        },
+        "base": {
+          "vertices": 1968,
+          "faces": 3944,
+          "bbox_min": [
+            -0.4721820056438446,
+            -0.17241500318050385,
+            -1.1468600034713745
+          ],
+          "bbox_max": [
+            0.03521459922194481,
+            0.2322389930486679,
+            -0.8884760141372681
+          ],
+          "extent": [
+            0.5073966048657894,
+            0.40465399622917175,
+            0.25838398933410645
+          ],
+          "center": [
+            -0.22044887253164414,
+            0.03581686436049512,
+            -1.0162182656202199
+          ]
+        },
+        "hinge": {
+          "vertices": 2379,
+          "faces": 4598,
+          "bbox_min": [
+            -0.15915764629498627,
+            -0.1304349632715515,
+            -1.247526015834252
+          ],
+          "bbox_max": [
+            -0.05154904045175029,
+            -0.05431270923950969,
+            -1.175518934228656
+          ],
+          "extent": [
+            0.10760860584323598,
+            0.0761222540320418,
+            0.07200708160559599
+          ],
+          "center": [
+            -0.10398369781104831,
+            -0.09730517466554892,
+            -1.2132764395906772
+          ]
+        }
+      }
+    },
+    "D_guidance_inv_h2m_active_inv_h2m": {
+      "note": "apply inverse h2m to selector-v41 guidance and active parts",
+      "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/D_guidance_inv_h2m_active_inv_h2m.glb",
+      "score": {
+        "score": 128.05760507037255,
+        "hand_to_lid": {
+          "min": 0.010904606206839541,
+          "p1": 0.016421545245152998,
+          "p5": 0.03942394929627447,
+          "mean": 0.2657760263119751,
+          "within_02": 15,
+          "within_05": 56
+        },
+        "hand_to_base": {
+          "min": 0.3752161881130979,
+          "p1": 0.3967653429059565,
+          "p5": 0.45641870024575226,
+          "mean": 0.7266316442457836,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "interpretation": "higher score means more lid/screen contact and less base contact"
+      },
+      "mesh_info": {
+        "hand": {
+          "vertices": 778,
+          "faces": 1552,
+          "bbox_min": [
+            -0.12003221332196447,
+            -0.045543671779585626,
+            -0.8334917661570289
+          ],
+          "bbox_max": [
+            0.9531956548268289,
+            0.8728460833883176,
+            -0.11257131038937063
+          ],
+          "extent": [
+            1.0732278681487935,
+            0.9183897551679032,
+            0.7209204557676583
+          ],
+          "center": [
+            0.36508715437456546,
+            0.46461054666575713,
+            -0.4210237799243705
+          ]
+        },
+        "lid": {
+          "vertices": 4673,
+          "faces": 9078,
+          "bbox_min": [
+            -1.4568324299188256,
+            -0.16697085113328125,
+            -0.7378988601218746
+          ],
+          "bbox_max": [
+            0.20760808043369575,
+            1.1165276809960207,
+            0.8078483453194494
+          ],
+          "extent": [
+            1.6644405103525213,
+            1.283498532129302,
+            1.545747205441324
+          ],
+          "center": [
+            -0.56840914961997,
+            0.6140865098572521,
+            -0.14783903181194794
+          ]
+        },
+        "base": {
+          "vertices": 4873,
+          "faces": 9646,
+          "bbox_min": [
+            -1.1430238761650156,
+            0.6454163009176082,
+            -0.1678271260681905
+          ],
+          "bbox_max": [
+            0.0029882104700584555,
+            0.9834420330278026,
+            0.6585304154012972
+          ],
+          "extent": [
+            1.146012086635074,
+            0.3380257321101945,
+            0.8263575414694877
+          ],
+          "center": [
+            -0.6285747754275862,
+            0.8180808352022891,
+            0.10926759659724317
+          ]
+        },
+        "hinge": {
+          "vertices": 2379,
+          "faces": 4598,
+          "bbox_min": [
+            -1.1980781430646594,
+            0.23505288189219176,
+            -0.5413475294290855
+          ],
+          "bbox_max": [
+            -0.08690585251514069,
+            0.9925350976331455,
+            0.0021330928102849533
+          ],
+          "extent": [
+            1.1111722905495187,
+            0.7574822157409538,
+            0.5434806222393704
+          ],
+          "center": [
+            -0.6097984544706289,
+            0.5630195266029654,
+            -0.28405593960116654
+          ]
+        }
+      }
+    },
+    "E_aligned_mano_active_raw": {
+      "note": "aligned_mano hand with active clean parts raw",
+      "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/E_aligned_mano_active_raw.glb",
+      "score": {
+        "score": 0.0,
+        "hand_to_lid": {
+          "min": 0.25322800904212295,
+          "p1": 0.2698335921489016,
+          "p5": 0.30700644616000383,
+          "mean": 0.5800815250433339,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "hand_to_base": {
+          "min": 0.3420639167076893,
+          "p1": 0.35558378114823547,
+          "p5": 0.38888428559915417,
+          "mean": 0.6778160583844242,
+          "within_02": 0,
+          "within_05": 0
+        },
+        "interpretation": "higher score means more lid/screen contact and less base contact"
+      },
+      "mesh_info": {
+        "hand": {
+          "vertices": 778,
+          "faces": 1552,
+          "bbox_min": [
+            -0.19809149205684662,
+            -0.3542962670326233,
+            -0.45608213543891907
+          ],
+          "bbox_max": [
+            0.8690569400787354,
+            0.45101264119148254,
+            0.20689573884010315
+          ],
+          "extent": [
+            1.067148432135582,
+            0.8053089082241058,
+            0.6629778742790222
+          ],
+          "center": [
+            0.2924215510596225,
+            0.07319583922825235,
+            -0.09674422759613319
+          ]
+        },
+        "lid": {
+          "vertices": 4673,
+          "faces": 9078,
+          "bbox_min": [
+            -0.4721820056438446,
+            -0.17241500318050385,
+            -1.1468600034713745
+          ],
+          "bbox_max": [
+            0.05026530101895332,
+            0.2322389930486679,
+            -0.623714029788971
+          ],
+          "extent": [
+            0.5224473066627979,
+            0.40465399622917175,
+            0.5231459736824036
+          ],
+          "center": [
+            -0.1936070624959194,
+            0.0718205692156658,
+            -0.9363704304930854
+          ]
+        },
+        "base": {
+          "vertices": 4873,
+          "faces": 9646,
+          "bbox_min": [
+            -0.3697099983692169,
+            0.07489719986915588,
+            -0.9503419995307922
+          ],
+          "bbox_max": [
+            -0.006509279832243919,
+            0.18782399594783783,
+            -0.6712390184402466
+          ],
+          "extent": [
+            0.363200718536973,
+            0.11292679607868195,
+            0.27910298109054565
+          ],
+          "center": [
+            -0.20531600898838503,
+            0.13411730077923073,
+            -0.8517676527433921
+          ]
+        },
+        "hinge": {
+          "vertices": 2379,
+          "faces": 4598,
+          "bbox_min": [
+            -0.39142799377441406,
+            -0.04719420149922371,
+            -1.073830008506775
+          ],
+          "bbox_max": [
+            -0.0444473996758461,
+            0.19266200065612793,
+            -0.873524010181427
+          ],
+          "extent": [
+            0.34698059409856796,
+            0.23985620215535164,
+            0.2003059983253479
+          ],
+          "center": [
+            -0.21044000309799182,
+            0.05692911893023727,
+            -0.9786917691966254
+          ]
+        }
+      }
+    }
+  },
+  "best_candidate_by_simple_contact_score": "B_guidance_h2m_active_h2m",
+  "decision_rule": {
+    "accept_candidate": "visual hand touches lid/screen and hand-to-lid is better than hand-to-base",
+    "reject_all": "all candidates still put hand near base or in a wrong frame",
+    "next_if_accept": "use best candidate as non-GT v1b shared-frame seed",
+    "next_if_reject": "inspect original FollowMyHold transform chain around h2m_transformations and guidance_out export"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a2 selector-v41 frame recovery",
+  "decision": "OPTION_B_GT_ORACLE_ONLY",
+  "reason": [
+    "selector-v41 aligned scene uses gt_right_hand_points.ply",
+    "selector-v41 aligned scene uses gt_object_mesh.ply",
+    "helper script computes Umeyama similarity from predicted hand to GT hand",
+    "therefore this scene is oracle/debug only and cannot be used as final non-GT seed"
+  ],
+  "use_as_final_seed": false,
+  "use_as_oracle_reference": true,
+  "next_step": "v1a3 non-GT FMH/H2M shared-frame candidate search"
+}
