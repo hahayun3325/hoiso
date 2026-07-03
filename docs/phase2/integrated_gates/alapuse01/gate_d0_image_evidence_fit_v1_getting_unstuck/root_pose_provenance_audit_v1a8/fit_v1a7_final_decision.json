@@ -1,0 +1,19 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a7 corrected-scale root-pose probe",
+  "decision": "PARTIAL_FULL_ROOT_SNAP_TOO_LARGE_SCALE_FIX_NOT_ENOUGH",
+  "evidence": {
+    "object_scale": 1.4136934704961228,
+    "hand_scale_aligned_mano_to_guidance": 0.3235878236828734,
+    "full_root_snap_norm_m": 0.4188872022758948,
+    "clipped_root_snap_norm_m": 0.08
+  },
+  "reason": [
+    "scale correction is necessary but not sufficient",
+    "only full root snap gives good visual contact",
+    "full root snap is about 42 cm and too large for a physical local correction",
+    "next blocker is root-pose/shared-frame transform provenance"
+  ],
+  "use_as_final_seed": false,
+  "next_step": "v1a8 transform-chain root-pose provenance audit"
+}
