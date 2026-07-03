@@ -1,0 +1,79 @@
+{
+  "case_id": "alapuse01",
+  "stage": "safe_projection_relabel_v1",
+  "transform_used": "flip_yz",
+  "decision": "PASS_RELABEL_OUTPUTS_EXIST",
+  "per_component": {
+    "screen.ply#component_00": {
+      "label": "base",
+      "faces": 3944,
+      "vertices": 1968,
+      "area": 0.35509687166808346,
+      "in_obj": 0.21655701754385964,
+      "lid_score": 0.15515350877192982,
+      "base_score": 0.27631578947368424,
+      "valid_vertices": 1824
+    },
+    "screen.ply#component_01": {
+      "label": "lid",
+      "faces": 5134,
+      "vertices": 2705,
+      "area": 0.18614781722733992,
+      "in_obj": 0.8856282919488337,
+      "lid_score": 0.009781790820165538,
+      "base_score": 0.0,
+      "valid_vertices": 2658
+    },
+    "keyboard_base.ply#component_00": {
+      "label": "lid",
+      "faces": 9646,
+      "vertices": 4873,
+      "area": 0.10928217168392282,
+      "in_obj": 0.753953583898131,
+      "lid_score": 0.023208050934483467,
+      "base_score": 0.0,
+      "valid_vertices": 4869
+    },
+    "hinge.ply#component_00": {
+      "label": "lid",
+      "faces": 4598,
+      "vertices": 2379,
+      "area": 0.1337797266594502,
+      "in_obj": 0.2648171500630517,
+      "lid_score": 0.30390920554854983,
+      "base_score": 0.1710802858343842,
+      "valid_vertices": 2379
+    }
+  },
+  "result": {
+    "lid": {
+      "exists": true,
+      "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/outputs/lid_relabel_v1.ply",
+      "components_merged": 3,
+      "merged_components_after": 3,
+      "kept_faces": 5134,
+      "kept_vertices": 2705,
+      "kept_area_ratio": 0.4336989832110914,
+      "bbox_extent_xyz": [
+        0.42423229292035103,
+        0.139848493039608,
+        0.36005699634552
+      ]
+    },
+    "base": {
+      "exists": true,
+      "output": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/outputs/base_relabel_v1.ply",
+      "components_merged": 1,
+      "merged_components_after": 1,
+      "kept_faces": 3944,
+      "kept_vertices": 1968,
+      "kept_area_ratio": 0.9999999999999999,
+      "bbox_extent_xyz": [
+        0.5073966048657894,
+        0.40465399622917175,
+        0.25838398933410645
+      ]
+    }
+  },
+  "next_step": "open relabel_v1_scene.glb if PASS; otherwise run manual component fallback"
+}

@@ -1,0 +1,567 @@
+{
+  "case_id": "alapuse01",
+  "stage": "projection_frame_probe",
+  "camera": {
+    "K": [
+      [
+        549.7451004476565,
+        0.0,
+        255.5
+      ],
+      [
+        0.0,
+        549.7451004476565,
+        255.5
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "width": 512,
+    "height": 512,
+    "source": "moge fov.json converted to pinhole K"
+  },
+  "summary_ranked": [
+    {
+      "transform": "flip_yz",
+      "score": 1.59174558037286,
+      "total_valid_projected_vertices": 11730,
+      "mean_obj_score": 0.530239010863469,
+      "mean_lid_score": 0.12301313901878216,
+      "mean_base_score": 0.11184901882701712
+    },
+    {
+      "transform": "flip_z",
+      "score": 1.4359498819749181,
+      "total_valid_projected_vertices": 11730,
+      "mean_obj_score": 0.1827079343835658,
+      "mean_lid_score": 0.04961622807017544,
+      "mean_base_score": 0.5064838951827048
+    },
+    {
+      "transform": "identity_xyz",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "flip_y",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "swap_yz",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "swap_yz_flip_z",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "swap_yz_flip_y",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "swap_xz",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    },
+    {
+      "transform": "swap_xz_flip_z",
+      "score": 0.0,
+      "total_valid_projected_vertices": 0,
+      "mean_obj_score": 0.0,
+      "mean_lid_score": 0.0,
+      "mean_base_score": 0.0
+    }
+  ],
+  "details": {
+    "identity_xyz": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -1.1468600034713745,
+          "z_max": -0.8884760141372681,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.983771026134491,
+          "z_max": -0.623714029788971,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.9503419995307922,
+          "z_max": -0.6712390184402466,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -1.073830008506775,
+          "z_max": -0.873524010181427,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "flip_y": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -1.1468600034713745,
+          "z_max": -0.8884760141372681,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.983771026134491,
+          "z_max": -0.623714029788971,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.9503419995307922,
+          "z_max": -0.6712390184402466,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -1.073830008506775,
+          "z_max": -0.873524010181427,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "flip_z": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 1824,
+          "valid_ratio": 0.926829268292683,
+          "z_min": 0.8884760141372681,
+          "z_max": 1.1468600034713745,
+          "u_min": 0,
+          "u_max": 272,
+          "y_min": 162,
+          "y_max": 388,
+          "obj_score": 0.18146929824561403,
+          "lid_score": 0.19846491228070176,
+          "base_score": 0.30975877192982454
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 2658,
+          "valid_ratio": 0.9826247689463956,
+          "z_min": 0.623714029788971,
+          "z_max": 0.983771026134491,
+          "u_min": 0,
+          "u_max": 294,
+          "y_min": 314,
+          "y_max": 375,
+          "obj_score": 0.22084273890142964,
+          "lid_score": 0.0,
+          "base_score": 0.5711060948081265
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 4869,
+          "valid_ratio": 0.9991791504206854,
+          "z_min": 0.6712390184402466,
+          "z_max": 0.9503419995307922,
+          "u_min": 0,
+          "u_max": 251,
+          "y_min": 317,
+          "y_max": 367,
+          "obj_score": 0.11624563565413842,
+          "lid_score": 0.0,
+          "base_score": 0.6103922776750873
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 2379,
+          "valid_ratio": 1.0,
+          "z_min": 0.873524010181427,
+          "z_max": 1.073830008506775,
+          "u_min": 18,
+          "u_max": 231,
+          "y_min": 228,
+          "y_max": 363,
+          "obj_score": 0.21227406473308114,
+          "lid_score": 0.0,
+          "base_score": 0.5346784363177806
+        }
+      }
+    },
+    "flip_yz": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 1824,
+          "valid_ratio": 0.926829268292683,
+          "z_min": 0.8884760141372681,
+          "z_max": 1.1468600034713745,
+          "u_min": 0,
+          "u_max": 272,
+          "y_min": 123,
+          "y_max": 349,
+          "obj_score": 0.21655701754385964,
+          "lid_score": 0.15515350877192982,
+          "base_score": 0.27631578947368424
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 2658,
+          "valid_ratio": 0.9826247689463956,
+          "z_min": 0.623714029788971,
+          "z_max": 0.983771026134491,
+          "u_min": 0,
+          "u_max": 294,
+          "y_min": 136,
+          "y_max": 197,
+          "obj_score": 0.8856282919488337,
+          "lid_score": 0.009781790820165538,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 4869,
+          "valid_ratio": 0.9991791504206854,
+          "z_min": 0.6712390184402466,
+          "z_max": 0.9503419995307922,
+          "u_min": 0,
+          "u_max": 251,
+          "y_min": 144,
+          "y_max": 194,
+          "obj_score": 0.753953583898131,
+          "lid_score": 0.023208050934483467,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 2379,
+          "valid_ratio": 1.0,
+          "z_min": 0.873524010181427,
+          "z_max": 1.073830008506775,
+          "u_min": 18,
+          "u_max": 231,
+          "y_min": 148,
+          "y_max": 283,
+          "obj_score": 0.2648171500630517,
+          "lid_score": 0.30390920554854983,
+          "base_score": 0.1710802858343842
+        }
+      }
+    },
+    "swap_yz": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.17241500318050385,
+          "z_max": 0.2322389930486679,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.06667950004339218,
+          "z_max": 0.20652799308300018,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.07489719986915588,
+          "z_max": 0.18782399594783783,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.04719420149922371,
+          "z_max": 0.19266200065612793,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "swap_yz_flip_z": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.2322389930486679,
+          "z_max": 0.17241500318050385,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.20652799308300018,
+          "z_max": -0.06667950004339218,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.18782399594783783,
+          "z_max": -0.07489719986915588,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.19266200065612793,
+          "z_max": 0.04719420149922371,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "swap_yz_flip_y": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.17241500318050385,
+          "z_max": 0.2322389930486679,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.06667950004339218,
+          "z_max": 0.20652799308300018,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.07489719986915588,
+          "z_max": 0.18782399594783783,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.04719420149922371,
+          "z_max": 0.19266200065612793,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "swap_xz": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.4721820056438446,
+          "z_max": 0.03521459922194481,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.3739669919013977,
+          "z_max": 0.05026530101895332,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.3697099983692169,
+          "z_max": -0.006509279832243919,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.39142799377441406,
+          "z_max": -0.0444473996758461,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    },
+    "swap_xz_flip_z": {
+      "screen.ply": {
+        "component_00": {
+          "num_vertices": 1968,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.03521459922194481,
+          "z_max": 0.4721820056438446,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        },
+        "component_01": {
+          "num_vertices": 2705,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": -0.05026530101895332,
+          "z_max": 0.3739669919013977,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "keyboard_base.ply": {
+        "component_00": {
+          "num_vertices": 4873,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.006509279832243919,
+          "z_max": 0.3697099983692169,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      },
+      "hinge.ply": {
+        "component_00": {
+          "num_vertices": 2379,
+          "valid_projected_vertices": 0,
+          "valid_ratio": 0.0,
+          "z_min": 0.0444473996758461,
+          "z_max": 0.39142799377441406,
+          "obj_score": 0.0,
+          "lid_score": 0.0,
+          "base_score": 0.0
+        }
+      }
+    }
+  },
+  "recommended_transform": "flip_yz"
+}
