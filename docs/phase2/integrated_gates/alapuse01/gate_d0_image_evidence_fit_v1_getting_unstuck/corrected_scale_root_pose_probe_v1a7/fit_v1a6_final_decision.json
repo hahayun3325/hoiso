@@ -1,0 +1,18 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a6 hand-scale/provenance audit",
+  "decision": "HAND_SCALE_PROVENANCE_SUSPECT_ALIGNED_MANO",
+  "evidence": {
+    "aligned_mano_xy_over_guidance_hand_xy": 3.0903511405918427,
+    "guidance_hand_xy_over_active_object_xy": 0.6609589795899173,
+    "aligned_mano_xy_over_active_object_xy": 2.0425953364601215,
+    "h2m_scale_from_det": 0.3168218406335312
+  },
+  "reason": [
+    "aligned_mano is about 3x larger than guidance_hand",
+    "guidance_hand is reasonably scaled relative to the active object",
+    "h2m contains a strong scale term and should not be blindly applied to aligned_mano",
+    "scale correction must happen before v1b"
+  ],
+  "next_step": "v1a7 corrected-scale root-pose probe"
+}
