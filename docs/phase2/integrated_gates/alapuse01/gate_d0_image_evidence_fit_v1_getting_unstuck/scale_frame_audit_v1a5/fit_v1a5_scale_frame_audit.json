@@ -1,0 +1,278 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a5 scale-frame audit",
+  "uses_gt": false,
+  "inputs": {
+    "hand_E_aligned_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/aligned_mano/alapuse01_hamer_aligned_mano.ply",
+    "screen_active": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/screen.ply",
+    "base_active": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/keyboard_base.ply",
+    "hinge_active": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/hinge.ply",
+    "manifest": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/inputs/fit_input_manifest.json"
+  },
+  "mesh_bbox_info": {
+    "hand": {
+      "bbox_min": [
+        -0.19809149205684662,
+        -0.3542962670326233,
+        -0.45608213543891907
+      ],
+      "bbox_max": [
+        0.8690569400787354,
+        0.45101264119148254,
+        0.20689573884010315
+      ],
+      "extent_xyz": [
+        1.067148432135582,
+        0.8053089082241058,
+        0.6629778742790222
+      ],
+      "max_extent": 1.067148432135582,
+      "xy_max_extent": 1.067148432135582,
+      "center": [
+        0.2924215510596225,
+        0.07319583922825235,
+        -0.09674422759613319
+      ],
+      "num_vertices": 778,
+      "num_faces": 1552
+    },
+    "screen": {
+      "bbox_min": [
+        -0.4721820056438446,
+        -0.17241500318050385,
+        -1.1468600034713745
+      ],
+      "bbox_max": [
+        0.05026530101895332,
+        0.2322389930486679,
+        -0.623714029788971
+      ],
+      "extent_xyz": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ],
+      "max_extent": 0.5231459736824036,
+      "xy_max_extent": 0.5224473066627979,
+      "center": [
+        -0.1936070624959194,
+        0.0718205692156658,
+        -0.9363704304930854
+      ],
+      "num_vertices": 4673,
+      "num_faces": 9078
+    },
+    "base": {
+      "bbox_min": [
+        -0.3697099983692169,
+        0.07489719986915588,
+        -0.9503419995307922
+      ],
+      "bbox_max": [
+        -0.006509279832243919,
+        0.18782399594783783,
+        -0.6712390184402466
+      ],
+      "extent_xyz": [
+        0.363200718536973,
+        0.11292679607868195,
+        0.27910298109054565
+      ],
+      "max_extent": 0.363200718536973,
+      "xy_max_extent": 0.363200718536973,
+      "center": [
+        -0.20531600898838503,
+        0.13411730077923073,
+        -0.8517676527433921
+      ],
+      "num_vertices": 4873,
+      "num_faces": 9646
+    },
+    "hinge": {
+      "bbox_min": [
+        -0.39142799377441406,
+        -0.04719420149922371,
+        -1.073830008506775
+      ],
+      "bbox_max": [
+        -0.0444473996758461,
+        0.19266200065612793,
+        -0.873524010181427
+      ],
+      "extent_xyz": [
+        0.34698059409856796,
+        0.23985620215535164,
+        0.2003059983253479
+      ],
+      "max_extent": 0.34698059409856796,
+      "xy_max_extent": 0.34698059409856796,
+      "center": [
+        -0.21044000309799182,
+        0.05692911893023727,
+        -0.9786917691966254
+      ],
+      "num_vertices": 2379,
+      "num_faces": 4598
+    },
+    "active_object_combined": {
+      "bbox_min": [
+        -0.4721820056438446,
+        -0.17241500318050385,
+        -1.1468600034713745
+      ],
+      "bbox_max": [
+        0.05026530101895332,
+        0.2322389930486679,
+        -0.623714029788971
+      ],
+      "extent_xyz": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ],
+      "max_extent": 0.5231459736824036,
+      "xy_max_extent": 0.5224473066627979,
+      "center": [
+        -0.19810974722521657,
+        0.0779607037544862,
+        -0.9318009952522371
+      ],
+      "num_vertices": 11925,
+      "num_faces": 23322
+    }
+  },
+  "depth_bbox_info": {
+    "lid_mask_depth_cloud": {
+      "exists": true,
+      "bbox_min": [
+        -0.3615542948246002,
+        -0.14759619534015656,
+        0.7099749445915222
+      ],
+      "bbox_max": [
+        0.3770260512828827,
+        -0.015594751574099064,
+        1.047514796257019
+      ],
+      "extent_xyz": [
+        0.7385803461074829,
+        0.13200144469738007,
+        0.3375398516654968
+      ],
+      "max_extent": 0.7385803461074829,
+      "xy_max_extent": 0.7385803461074829,
+      "center": [
+        0.015420888550579548,
+        -0.08081120997667313,
+        0.9261858463287354
+      ],
+      "num_points": 12000
+    },
+    "base_mask_depth_cloud": {
+      "exists": true,
+      "bbox_min": [
+        -0.2565527856349945,
+        -0.021527061238884926,
+        0.7052793502807617
+      ],
+      "bbox_max": [
+        0.2681404650211334,
+        0.20525825023651123,
+        0.9544969201087952
+      ],
+      "extent_xyz": [
+        0.5246932506561279,
+        0.2267853170633316,
+        0.24921756982803345
+      ],
+      "max_extent": 0.5246932506561279,
+      "xy_max_extent": 0.5246932506561279,
+      "center": [
+        -0.008956937119364738,
+        0.08669344335794449,
+        0.8713898658752441
+      ],
+      "num_points": 12000
+    },
+    "object_mask_depth_cloud": {
+      "exists": true,
+      "bbox_min": [
+        -0.3615542948246002,
+        -0.14759619534015656,
+        0.7052793502807617
+      ],
+      "bbox_max": [
+        0.3770260512828827,
+        0.20525825023651123,
+        1.047514796257019
+      ],
+      "extent_xyz": [
+        0.7385803461074829,
+        0.3528544306755066,
+        0.3422354459762573
+      ],
+      "max_extent": 0.7385803461074829,
+      "xy_max_extent": 0.7385803461074829,
+      "center": [
+        0.003231962211430073,
+        0.002941045444458723,
+        0.8987852334976196
+      ],
+      "num_points": 24000
+    }
+  },
+  "ratios": {
+    "object_scale_to_depth_xy": 1.4136934704961228,
+    "hand_to_active_object_xy_ratio": 2.0425953364601215,
+    "hand_to_active_object_max_ratio": 2.0398674286336695
+  },
+  "original_contact_hand_to_screen": {
+    "min": 0.25353417767972825,
+    "p1": 0.269996986925748,
+    "p5": 0.30730025201885863,
+    "p10": 0.3393554398635385,
+    "mean": 0.580437319419077,
+    "within_02": 0,
+    "within_05": 0
+  },
+  "scaled_object_report": {
+    "object_scale_to_depth_xy": 1.4136934704961228,
+    "scaled_contact_hand_to_screen": {
+      "min": 0.13352058519484689,
+      "p1": 0.1505934087978934,
+      "p5": 0.18942970663782066,
+      "p10": 0.22309054499140377,
+      "mean": 0.46246687450692625,
+      "within_02": 0,
+      "within_05": 0
+    },
+    "scaled_snap_vector": [
+      0.04195501324503469,
+      0.02381798262691029,
+      0.17317232874514982
+    ],
+    "scaled_snap_norm_m": 0.17976700163218243,
+    "scenes": {
+      "object_scaled_to_moge_mask_xy": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/visuals/E_object_scaled_to_moge_mask_xy.glb",
+      "object_scaled_then_snap_debug": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/visuals/E_object_scaled_then_snap_debug.glb"
+    }
+  },
+  "flags": [
+    "ACTIVE_OBJECT_LIKELY_UNDER_SCALED_RELATIVE_TO_MOGE_MASK_DEPTH",
+    "HAND_LARGE_RELATIVE_TO_ACTIVE_OBJECT_XY",
+    "LARGE_ROOT_TRANSLATION_STILL_REQUIRED_AFTER_OBJECT_SCALE"
+  ],
+  "decision": "SCALE_MISMATCH_OBJECT_UNDER_SCALED",
+  "scenes": {
+    "E_original_scale_audit": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/visuals/E_original_scale_audit.glb",
+    "object_scaled_to_moge_mask_xy": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/visuals/E_object_scaled_to_moge_mask_xy.glb",
+    "object_scaled_then_snap_debug": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/visuals/E_object_scaled_then_snap_debug.glb"
+  },
+  "decision_rule": {
+    "object_under_scaled": "object_scale_to_depth_xy > 1.35",
+    "object_over_scaled": "object_scale_to_depth_xy < 0.75",
+    "hand_large_relative_to_object": "hand_to_active_object_xy_ratio > 0.70",
+    "still_frame_issue": "scaled_snap_norm_m > 0.10 after object scale correction"
+  },
+  "next_step": "inspect scale audit scenes, then decide object-scale correction vs transform-chain debugging"
+}
