@@ -1,0 +1,14 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a3 non-GT shared-frame candidate search",
+  "decision": "PARTIAL_PASS_STRUCTURAL_FRAME_FOUND",
+  "accepted_structural_candidate": "E_aligned_mano_active_raw",
+  "accepted_as_contact_seed": false,
+  "rejected_candidates": {
+    "A_guidance_raw_active_parts_raw": "wrong-region base contact",
+    "B_guidance_h2m_active_h2m": "highest numeric score but wrong-region base contact; metric is misleading",
+    "C_guidance_h2m_relabel_raw": "double-laptop scale/frame mismatch",
+    "D_guidance_inv_h2m_active_inv_h2m": "wrong-region base contact"
+  },
+  "next_step": "v1a4 E-candidate contact-closing diagnostic"
+}
