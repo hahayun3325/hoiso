@@ -1,0 +1,13 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 image-evidence articulated fitting v1",
+  "decision": "FAIL",
+  "reason": [
+    "fit_v1 ran and produced a scene",
+    "loss decreased numerically",
+    "visual result places hand underneath or behind the laptop base",
+    "final contact mean is larger than the current failure threshold",
+    "fit_v1 is not accepted as repaired seed"
+  ],
+  "next_step": "Gate D-0 fit v1a/v1a1 shared-frame recovery"
+}

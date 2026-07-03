@@ -1,0 +1,14 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a hand-frame diagnostic",
+  "decision": "FAIL_SIMPLE_AXIS_FLIPS",
+  "best_simple_transform": "flip_yz",
+  "reason": [
+    "flip_yz is numerically best among simple transforms",
+    "but visual inspection shows no candidate hand correctly touches the lid/screen",
+    "the hand is still close to the base/wrong region",
+    "exact FMH shared-frame transform must be recovered"
+  ],
+  "accepted_for_v1b": false,
+  "next_step": "recover previous working FMH shared frame or h2m/m2h transform"
+}

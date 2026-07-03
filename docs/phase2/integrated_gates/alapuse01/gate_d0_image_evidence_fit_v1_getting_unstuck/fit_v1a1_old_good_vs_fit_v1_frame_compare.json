@@ -1,0 +1,134 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a1 old-good-frame comparison",
+  "old_manifest": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit/metrics/standalone_fitter_input_manifest.json",
+  "old_hand_path": "/home/fredcui/foho_phase0/runs_prompt_refined_v2/arctic_alapuse01_partaware_v2/attempt0_partaware_prompt/run_outputs/arctic_alapuse01_partaware_v2_attempt0/guidance_out/alapuse01_hand.ply",
+  "scene": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/visuals/fit_v1a1_old_good_vs_fit_v1_frame_compare.glb",
+  "mesh_info": {
+    "old_hand": {
+      "num_vertices": 778,
+      "num_faces": 1552,
+      "bbox_min": [
+        -0.06931343674659729,
+        -0.13793614506721497,
+        -1.1752456426620483
+      ],
+      "bbox_max": [
+        0.2799353003501892,
+        0.1588381677865982,
+        -0.9455681443214417
+      ],
+      "bbox_extent": [
+        0.3492487370967865,
+        0.29677431285381317,
+        0.2296774983406067
+      ],
+      "center": [
+        0.08938292111244517,
+        0.026605983268863386,
+        -1.0483460101908992
+      ]
+    },
+    "old_screen": {
+      "num_vertices": 4673,
+      "num_faces": 9078,
+      "bbox_min": [
+        -0.4721820056438446,
+        -0.17241500318050385,
+        -1.1468600034713745
+      ],
+      "bbox_max": [
+        0.05026530101895332,
+        0.2322389930486679,
+        -0.623714029788971
+      ],
+      "bbox_extent": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ],
+      "center": [
+        -0.1936070624959194,
+        0.0718205692156658,
+        -0.9363704304930854
+      ]
+    },
+    "old_base": {
+      "num_vertices": 4873,
+      "num_faces": 9646,
+      "bbox_min": [
+        -0.3697099983692169,
+        0.07489719986915588,
+        -0.9503419995307922
+      ],
+      "bbox_max": [
+        -0.006509279832243919,
+        0.18782399594783783,
+        -0.6712390184402466
+      ],
+      "bbox_extent": [
+        0.363200718536973,
+        0.11292679607868195,
+        0.27910298109054565
+      ],
+      "center": [
+        -0.20531600898838503,
+        0.13411730077923073,
+        -0.8517676527433921
+      ]
+    },
+    "fit_v1_lid": {
+      "num_vertices": 2705,
+      "num_faces": 5134,
+      "bbox_min": [
+        -0.1395895928144455,
+        -0.10079070925712585,
+        0.7272030115127563
+      ],
+      "bbox_max": [
+        0.1779506504535675,
+        -0.04730254411697388,
+        0.9889330267906189
+      ],
+      "bbox_extent": [
+        0.317540243268013,
+        0.05348816514015198,
+        0.26173001527786255
+      ],
+      "center": [
+        0.03419696197608345,
+        -0.0675498851683404,
+        0.8383237179241759
+      ]
+    },
+    "fit_v1_base": {
+      "num_vertices": 1968,
+      "num_faces": 3944,
+      "bbox_min": [
+        -0.21167178452014923,
+        -0.10083550214767456,
+        0.8988214731216431
+      ],
+      "bbox_max": [
+        0.2286134511232376,
+        0.20856264233589172,
+        1.010050654411316
+      ],
+      "bbox_extent": [
+        0.44028523564338684,
+        0.3093981444835663,
+        0.11122918128967285
+      ],
+      "center": [
+        0.007642010927703538,
+        0.06526148250420086,
+        0.957487574554323
+      ]
+    }
+  },
+  "decision_rule": {
+    "old_frame_good": "old hand and active parts show plausible hand-laptop relation",
+    "fit_frame_bad": "fit_v1 objects moved into a different frame or wrong relative pose",
+    "next": "run v1b in old shared frame, not in raw MoGe frame"
+  }
+}
