@@ -1,0 +1,12 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a4 E-candidate contact-closing diagnostic",
+  "decision": "PARTIAL_DIAGNOSTIC_FAIL_AS_PHYSICAL_REPAIR",
+  "reason": [
+    "whole-object snap closes contact but requires a large nonphysical translation",
+    "screen-only snap is debug-only and breaks part consistency",
+    "hinge-only contact closing fails",
+    "result suggests hand/object scale-frame mismatch"
+  ],
+  "next_step": "Gate D-0 fit v1a5 scale-frame audit"
+}

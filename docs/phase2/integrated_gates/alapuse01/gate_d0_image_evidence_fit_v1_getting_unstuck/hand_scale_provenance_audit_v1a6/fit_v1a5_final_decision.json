@@ -1,0 +1,17 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a5 scale-frame audit",
+  "decision": "SCALE_MISMATCH_CONFIRMED_NOT_READY_FOR_V1B",
+  "evidence": {
+    "object_scale_to_depth_xy": 1.4136934704961228,
+    "hand_to_active_object_xy_ratio": 2.0425953364601215,
+    "scaled_snap_norm_m": 0.17976700163218243
+  },
+  "reason": [
+    "active laptop is under-scaled relative to MoGe/mask depth",
+    "hand remains visually oversized after object scaling",
+    "large root translation is still required after object scaling",
+    "scale alone is not enough for v1b"
+  ],
+  "next_step": "v1a6 hand-scale and transform-provenance audit"
+}

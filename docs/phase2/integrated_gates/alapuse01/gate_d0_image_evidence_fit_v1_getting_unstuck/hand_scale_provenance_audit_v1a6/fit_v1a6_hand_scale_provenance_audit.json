@@ -1,0 +1,880 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1a6 hand-scale/provenance audit",
+  "uses_gt": false,
+  "paths": {
+    "aligned_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/aligned_mano/alapuse01_hamer_aligned_mano.ply",
+    "guidance_hand": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_hand.ply",
+    "guidance_obj": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/guidance_out/alapuse01_obj.ply",
+    "h2m": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/h2m_transformations/alapuse01_hoi_mesh.npy",
+    "active_screen": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/screen.ply",
+    "active_base": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/keyboard_base.ply",
+    "active_hinge": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_a_part_repair/active_clean_parts/hinge.ply",
+    "v1a5_report": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/scale_frame_audit_v1a5/metrics/fit_v1a5_scale_frame_audit.json"
+  },
+  "mesh_infos": {
+    "aligned_mano": {
+      "num_vertices": 778,
+      "num_faces": 1552,
+      "bbox_min": [
+        -0.19809149205684662,
+        -0.3542962670326233,
+        -0.45608213543891907
+      ],
+      "bbox_max": [
+        0.8690569400787354,
+        0.45101264119148254,
+        0.20689573884010315
+      ],
+      "extent_xyz": [
+        1.067148432135582,
+        0.8053089082241058,
+        0.6629778742790222
+      ],
+      "xy_max_extent": 1.067148432135582,
+      "max_extent": 1.067148432135582,
+      "center": [
+        0.2924215510596225,
+        0.07319583922825235,
+        -0.09674422759613319
+      ]
+    },
+    "guidance_hand": {
+      "num_vertices": 778,
+      "num_faces": 1552,
+      "bbox_min": [
+        -0.06407994776964188,
+        -0.13649724423885345,
+        -1.1745446920394897
+      ],
+      "bbox_max": [
+        0.28123629093170166,
+        0.15596386790275574,
+        -0.9485036730766296
+      ],
+      "extent_xyz": [
+        0.34531623870134354,
+        0.2924611121416092,
+        0.2260410189628601
+      ],
+      "xy_max_extent": 0.34531623870134354,
+      "max_extent": 0.34531623870134354,
+      "center": [
+        0.09342845171512608,
+        0.02623092751875156,
+        -1.0492208640268015
+      ]
+    },
+    "guidance_obj": {
+      "num_vertices": 74762,
+      "num_faces": 150000,
+      "bbox_min": [
+        -0.48185965418815613,
+        -0.17241500318050385,
+        -1.146860122680664
+      ],
+      "bbox_max": [
+        0.05038796365261078,
+        0.32801705598831177,
+        -0.6236852407455444
+      ],
+      "extent_xyz": [
+        0.5322476178407669,
+        0.5004320591688156,
+        0.5231748819351196
+      ],
+      "xy_max_extent": 0.5322476178407669,
+      "max_extent": 0.5322476178407669,
+      "center": [
+        -0.2008660905865795,
+        0.09646120947406052,
+        -0.9335478327168233
+      ]
+    },
+    "active_object": {
+      "num_vertices": 11925,
+      "num_faces": 23322,
+      "bbox_min": [
+        -0.4721820056438446,
+        -0.17241500318050385,
+        -1.1468600034713745
+      ],
+      "bbox_max": [
+        0.05026530101895332,
+        0.2322389930486679,
+        -0.623714029788971
+      ],
+      "extent_xyz": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ],
+      "xy_max_extent": 0.5224473066627979,
+      "max_extent": 0.5231459736824036,
+      "center": [
+        -0.19810974722521657,
+        0.0779607037544862,
+        -0.9318009952522371
+      ]
+    },
+    "screen": {
+      "num_vertices": 4673,
+      "num_faces": 9078,
+      "bbox_min": [
+        -0.4721820056438446,
+        -0.17241500318050385,
+        -1.1468600034713745
+      ],
+      "bbox_max": [
+        0.05026530101895332,
+        0.2322389930486679,
+        -0.623714029788971
+      ],
+      "extent_xyz": [
+        0.5224473066627979,
+        0.40465399622917175,
+        0.5231459736824036
+      ],
+      "xy_max_extent": 0.5224473066627979,
+      "max_extent": 0.5231459736824036,
+      "center": [
+        -0.1936070624959194,
+        0.0718205692156658,
+        -0.9363704304930854
+      ]
+    },
+    "base": {
+      "num_vertices": 4873,
+      "num_faces": 9646,
+      "bbox_min": [
+        -0.3697099983692169,
+        0.07489719986915588,
+        -0.9503419995307922
+      ],
+      "bbox_max": [
+        -0.006509279832243919,
+        0.18782399594783783,
+        -0.6712390184402466
+      ],
+      "extent_xyz": [
+        0.363200718536973,
+        0.11292679607868195,
+        0.27910298109054565
+      ],
+      "xy_max_extent": 0.363200718536973,
+      "max_extent": 0.363200718536973,
+      "center": [
+        -0.20531600898838503,
+        0.13411730077923073,
+        -0.8517676527433921
+      ]
+    },
+    "hinge": {
+      "num_vertices": 2379,
+      "num_faces": 4598,
+      "bbox_min": [
+        -0.39142799377441406,
+        -0.04719420149922371,
+        -1.073830008506775
+      ],
+      "bbox_max": [
+        -0.0444473996758461,
+        0.19266200065612793,
+        -0.873524010181427
+      ],
+      "extent_xyz": [
+        0.34698059409856796,
+        0.23985620215535164,
+        0.2003059983253479
+      ],
+      "xy_max_extent": 0.34698059409856796,
+      "max_extent": 0.34698059409856796,
+      "center": [
+        -0.21044000309799182,
+        0.05692911893023727,
+        -0.9786917691966254
+      ]
+    },
+    "guidance_hand_h2m": {
+      "num_vertices": 778,
+      "num_faces": 1552,
+      "bbox_min": [
+        -0.061076646598908144,
+        -0.1584266670267366,
+        -1.281755247679017
+      ],
+      "bbox_max": [
+        0.05014443297383149,
+        -0.0654000064486408,
+        -1.2111034300756631
+      ],
+      "extent_xyz": [
+        0.11122107957273963,
+        0.0930266605780958,
+        0.07065181760335393
+      ],
+      "xy_max_extent": 0.11122107957273963,
+      "max_extent": 0.11122107957273963,
+      "center": [
+        -0.010022439309089632,
+        -0.1066265176765581,
+        -1.244043666307634
+      ]
+    }
+  },
+  "ratios": {
+    "aligned_mano_xy_over_guidance_hand_xy": 3.0903511405918427,
+    "aligned_mano_max_over_guidance_hand_max": 3.0903511405918427,
+    "guidance_hand_xy_over_active_object_xy": 0.6609589795899173,
+    "aligned_mano_xy_over_active_object_xy": 2.0425953364601215,
+    "guidance_hand_h2m_xy_over_active_object_xy": 0.21288477929607708
+  },
+  "h2m_info": {
+    "exists": true,
+    "matrix": [
+      [
+        0.31565956148654734,
+        0.001587872026493388,
+        0.027066558831291724,
+        -0.011156876520689252
+      ],
+      [
+        -0.0008078083210444301,
+        0.31668843063965235,
+        -0.009157731549313678,
+        -0.12446655967467271
+      ],
+      [
+        -0.027101058840140527,
+        0.009055123623691274,
+        0.3155306895506686,
+        -0.910687797914481
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "singular_values": [
+      0.31682184063353286,
+      0.3168218406335311,
+      0.31682184063352975
+    ],
+    "approx_uniform_scale_from_det": 0.3168218406335312,
+    "approx_uniform_scale_from_svd_mean": 0.31682184063353125,
+    "translation": [
+      -0.011156876520689252,
+      -0.12446655967467271,
+      -0.910687797914481
+    ]
+  },
+  "scale_aligned_mano_to_guidance_bbox": 0.3235878236828734,
+  "extra_hand_like_files": [
+    {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/foho_debug/20260621_184319_exp_objalapuse01_inpainted/final_hand_mesh.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.06407994776964188,
+          -0.13649724423885345,
+          -1.1745446920394897
+        ],
+        "bbox_max": [
+          0.28123629093170166,
+          0.15596386790275574,
+          -0.9485036730766296
+        ],
+        "extent_xyz": [
+          0.34531623870134354,
+          0.2924611121416092,
+          0.2260410189628601
+        ],
+        "xy_max_extent": 0.34531623870134354,
+        "max_extent": 0.34531623870134354,
+        "center": [
+          0.09342845171512608,
+          0.02623092751875156,
+          -1.0492208640268015
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse01_selector_v41_refined_pipeline/hamer_out/alapuse01_hamer.obj",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.02990986,
+          -0.06210111,
+          -8.30517006
+        ],
+        "bbox_max": [
+          0.12116878,
+          0.05850773,
+          -8.21959114
+        ],
+        "extent_xyz": [
+          0.15107864000000001,
+          0.12060884,
+          0.08557891999999967
+        ],
+        "xy_max_extent": 0.15107864000000001,
+        "max_extent": 0.15107864000000001,
+        "center": [
+          0.04009636466291903,
+          0.0010784983335652065,
+          -8.265752946554752
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d0_object_repair/visuals_clean/scene_A_original_pred_object_and_hand.glb",
+      "info": {
+        "num_vertices": 16901,
+        "num_faces": 32848,
+        "bbox_min": [
+          -0.4903010129928589,
+          -0.17241500318050385,
+          -1.1745446920394897
+        ],
+        "bbox_max": [
+          0.28123629093170166,
+          0.3278590142726898,
+          -0.623714029788971
+        ],
+        "extent_xyz": [
+          0.7715373039245605,
+          0.5002740174531937,
+          0.5508306622505188
+        ],
+        "xy_max_extent": 0.7715373039245605,
+        "max_extent": 0.7715373039245605,
+        "center": [
+          -0.14104856621861672,
+          0.08456544051017649,
+          -0.9555560043670729
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/collision_precheck_alpha050/hand_alpha_0.50_for_collision_check.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07127457857131958,
+          -0.1391821652650833,
+          -1.1715023517608643
+        ],
+        "bbox_max": [
+          0.27404165267944336,
+          0.15327894687652588,
+          -0.9454612731933594
+        ],
+        "extent_xyz": [
+          0.34531623125076294,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531623125076294,
+        "max_extent": 0.34531623125076294,
+        "center": [
+          0.08623382098902391,
+          0.023546010552106235,
+          -1.0461784666834457
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/optimizer_v0_contact_only/hand_optimizer_v0_contact_only.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07487189024686813,
+          -0.14052461087703705,
+          -1.1699811220169067
+        ],
+        "bbox_max": [
+          0.2704443335533142,
+          0.15193650126457214,
+          -0.9439400434494019
+        ],
+        "extent_xyz": [
+          0.34531622380018234,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531622380018234,
+        "max_extent": 0.34531622380018234,
+        "center": [
+          0.08263650932920966,
+          0.02220355266956188,
+          -1.044657279560553
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/optimizer_v1_exploratory_contact_only/hand_optimizer_v1_exploratory_contact_only.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07487189024686813,
+          -0.14052461087703705,
+          -1.1699811220169067
+        ],
+        "bbox_max": [
+          0.2704443335533142,
+          0.15193650126457214,
+          -0.9439400434494019
+        ],
+        "extent_xyz": [
+          0.34531622380018234,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531622380018234,
+        "max_extent": 0.34531622380018234,
+        "center": [
+          0.08263650932920966,
+          0.02220355266956188,
+          -1.044657279560553
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/selected_contact_only_v1/hand_contact_only_selected_alpha_0.75.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07487189024686813,
+          -0.14052461087703705,
+          -1.1699811220169067
+        ],
+        "bbox_max": [
+          0.2704443335533142,
+          0.15193650126457214,
+          -0.9439400434494019
+        ],
+        "extent_xyz": [
+          0.34531622380018234,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531622380018234,
+        "max_extent": 0.34531622380018234,
+        "center": [
+          0.08263650932920966,
+          0.02220355266956188,
+          -1.044657279560553
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/selected_optimizer_v0_contact_only/hand_optimizer_v0_contact_only_selected.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07487189024686813,
+          -0.14052461087703705,
+          -1.1699811220169067
+        ],
+        "bbox_max": [
+          0.2704443335533142,
+          0.15193650126457214,
+          -0.9439400434494019
+        ],
+        "extent_xyz": [
+          0.34531622380018234,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531622380018234,
+        "max_extent": 0.34531622380018234,
+        "center": [
+          0.08263650932920966,
+          0.02220355266956188,
+          -1.044657279560553
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/smoke_contact_only_v1/hand_contact_only_alpha_0.00.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.06407994776964188,
+          -0.13649724423885345,
+          -1.1745446920394897
+        ],
+        "bbox_max": [
+          0.28123629093170166,
+          0.15596386790275574,
+          -0.9485036730766296
+        ],
+        "extent_xyz": [
+          0.34531623870134354,
+          0.2924611121416092,
+          0.2260410189628601
+        ],
+        "xy_max_extent": 0.34531623870134354,
+        "max_extent": 0.34531623870134354,
+        "center": [
+          0.09342845171512608,
+          0.02623092751875156,
+          -1.0492208640268015
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/smoke_contact_only_v1/hand_contact_only_alpha_0.25.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.06767725944519043,
+          -0.13783970475196838,
+          -1.1730234622955322
+        ],
+        "bbox_max": [
+          0.2776389718055725,
+          0.1546214073896408,
+          -0.9469825029373169
+        ],
+        "extent_xyz": [
+          0.34531623125076294,
+          0.2924611121416092,
+          0.22604095935821533
+        ],
+        "xy_max_extent": 0.34531623125076294,
+        "max_extent": 0.34531623125076294,
+        "center": [
+          0.08983113327911411,
+          0.02488847147132362,
+          -1.0476996499563873
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/smoke_contact_only_v1/hand_contact_only_alpha_0.50.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07127457857131958,
+          -0.1391821652650833,
+          -1.1715023517608643
+        ],
+        "bbox_max": [
+          0.27404165267944336,
+          0.15327894687652588,
+          -0.9454612731933594
+        ],
+        "extent_xyz": [
+          0.34531623125076294,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531623125076294,
+        "max_extent": 0.34531623125076294,
+        "center": [
+          0.08623382098902391,
+          0.023546010552106235,
+          -1.0461784666834457
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/smoke_contact_only_v1/hand_contact_only_alpha_0.75.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07487189024686813,
+          -0.14052461087703705,
+          -1.1699811220169067
+        ],
+        "bbox_max": [
+          0.2704443335533142,
+          0.15193650126457214,
+          -0.9439400434494019
+        ],
+        "extent_xyz": [
+          0.34531622380018234,
+          0.2924611121416092,
+          0.22604107856750488
+        ],
+        "xy_max_extent": 0.34531622380018234,
+        "max_extent": 0.34531622380018234,
+        "center": [
+          0.08263650932920966,
+          0.02220355266956188,
+          -1.044657279560553
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gate_d_optimization/smoke_contact_only_v1/hand_contact_only_alpha_1.00.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.07846920192241669,
+          -0.14186707139015198,
+          -1.1684598922729492
+        ],
+        "bbox_max": [
+          0.26684704422950745,
+          0.15059404075145721,
+          -0.9424188733100891
+        ],
+        "extent_xyz": [
+          0.34531624615192413,
+          0.2924611121416092,
+          0.2260410189628601
+        ],
+        "xy_max_extent": 0.34531624615192413,
+        "max_extent": 0.34531624615192413,
+        "center": [
+          0.07903919382770419,
+          0.020861098114099013,
+          -1.0431360644359395
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selected/gt_right_hand_points.ply",
+      "error": "AttributeError(\"'PointCloud' object has no attribute 'faces'\")"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/selector_v41_aligned_diagnostic/aligned_pred_hand_selector_v41.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.02785484306514263,
+          -0.12515048682689667,
+          0.36716219782829285
+        ],
+        "bbox_max": [
+          0.10100454837083817,
+          -0.015421748161315918,
+          0.45076027512550354
+        ],
+        "extent_xyz": [
+          0.1288593914359808,
+          0.10972873866558075,
+          0.0835980772972107
+        ],
+        "xy_max_extent": 0.1288593914359808,
+        "max_extent": 0.1288593914359808,
+        "center": [
+          0.031085377257580003,
+          -0.0767312997752873,
+          0.4056027759297501
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/gt_reference/visuals_alignment_audit/alapuse01_pred_gt_hand_object_alignment_audit_raw.glb",
+      "info": {
+        "num_vertices": 129344,
+        "num_faces": 258892,
+        "bbox_min": [
+          -0.5043617486953735,
+          -0.17241500318050385,
+          -1.2486321926116943
+        ],
+        "bbox_max": [
+          0.31172266602516174,
+          0.32801705598831177,
+          0.6258617639541626
+        ],
+        "extent_xyz": [
+          0.8160844147205353,
+          0.5004320591688156,
+          1.874493956565857
+        ],
+        "xy_max_extent": 0.8160844147205353,
+        "max_extent": 1.874493956565857,
+        "center": [
+          -0.051493829361401296,
+          0.03793890640266759,
+          -0.7784084480759859
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/input/final_hand.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.06407994776964188,
+          -0.13649724423885345,
+          -1.1745446920394897
+        ],
+        "bbox_max": [
+          0.28123629093170166,
+          0.15596386790275574,
+          -0.9485036730766296
+        ],
+        "extent_xyz": [
+          0.34531623870134354,
+          0.2924611121416092,
+          0.2260410189628601
+        ],
+        "xy_max_extent": 0.34531623870134354,
+        "max_extent": 0.34531623870134354,
+        "center": [
+          0.09342845171512608,
+          0.02623092751875156,
+          -1.0492208640268015
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/e_candidate_contact_closing_v1a4/outputs/hand_v1a4_E_aligned_mano.ply",
+      "info": {
+        "num_vertices": 778,
+        "num_faces": 1552,
+        "bbox_min": [
+          -0.19809149205684662,
+          -0.3542962670326233,
+          -0.45608213543891907
+        ],
+        "bbox_max": [
+          0.8690569400787354,
+          0.45101264119148254,
+          0.20689573884010315
+        ],
+        "extent_xyz": [
+          1.067148432135582,
+          0.8053089082241058,
+          0.6629778742790222
+        ],
+        "xy_max_extent": 1.067148432135582,
+        "max_extent": 1.067148432135582,
+        "center": [
+          0.2924215510596225,
+          0.07319583922825235,
+          -0.09674422759613319
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/e_candidate_contact_closing_v1a4/visuals/E_whole_object_snap_to_hand_patch.glb",
+      "info": {
+        "num_vertices": 12703,
+        "num_faces": 24874,
+        "bbox_min": [
+          -0.4002017676830292,
+          -0.3542962670326233,
+          -0.8596982359886169
+        ],
+        "bbox_max": [
+          0.8690569400787354,
+          0.45101264119148254,
+          0.20689573884010315
+        ],
+        "extent_xyz": [
+          1.2692587077617645,
+          0.8053089082241058,
+          1.06659397482872
+        ],
+        "xy_max_extent": 1.2692587077617645,
+        "max_extent": 1.2692587077617645,
+        "center": [
+          0.1773795970562387,
+          0.08375854050394153,
+          -0.24733735296123627
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/non_gt_shared_frame_recovery_v1a3/visuals/E_aligned_mano_active_raw.glb",
+      "info": {
+        "num_vertices": 87465,
+        "num_faces": 174874,
+        "bbox_min": [
+          -0.48185965418815613,
+          -0.3542962670326233,
+          -1.146860122680664
+        ],
+        "bbox_max": [
+          0.8690569400787354,
+          0.45101264119148254,
+          0.20689573884010315
+        ],
+        "extent_xyz": [
+          1.3509165942668915,
+          0.8053089082241058,
+          1.3537558615207672
+        ],
+        "xy_max_extent": 1.3509165942668915,
+        "max_extent": 1.3537558615207672,
+        "center": [
+          0.07072340201092274,
+          0.07982638944476801,
+          -0.4734386242525364
+        ]
+      }
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/visuals/fit_v1a_hand_frame_diagnostic_scene.glb",
+      "info": {
+        "num_vertices": 7785,
+        "num_faces": 15286,
+        "bbox_min": [
+          -0.21167178452014923,
+          -0.1588381677865982,
+          -1.1752456426620483
+        ],
+        "bbox_max": [
+          0.2799353003501892,
+          0.20856264233589172,
+          1.1752456426620483
+        ],
+        "extent_xyz": [
+          0.49160708487033844,
+          0.36740081012248993,
+          2.3504912853240967
+        ],
+        "xy_max_extent": 0.49160708487033844,
+        "max_extent": 2.3504912853240967,
+        "center": [
+          0.0696232742084607,
+          0.00532969400385694,
+          0.24941880374139822
+        ]
+      }
+    }
+  ],
+  "flags": [
+    "ALIGNED_MANO_LARGER_THAN_GUIDANCE_HAND",
+    "ALIGNED_MANO_LARGE_RELATIVE_TO_ACTIVE_OBJECT",
+    "H2M_HAS_NONTRIVIAL_SCALE_TERM"
+  ],
+  "decision": "HAND_SCALE_PROVENANCE_SUSPECT_ALIGNED_MANO",
+  "scenes": {
+    "E_aligned_mano_active_object": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/hand_scale_provenance_audit_v1a6/visuals/E_aligned_mano_active_object.glb",
+    "guidance_hand_active_object": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/hand_scale_provenance_audit_v1a6/visuals/guidance_hand_active_object.glb",
+    "guidance_hand_h2m_active_object": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/hand_scale_provenance_audit_v1a6/visuals/guidance_hand_h2m_active_object.glb",
+    "centered_aligned_vs_guidance_hand": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/hand_scale_provenance_audit_v1a6/visuals/centered_aligned_vs_guidance_hand.glb",
+    "aligned_mano_scaled_to_guidance_bbox_active_object": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse01/integrated_gates/gate_d0_image_evidence_fit_v1_getting_unstuck/hand_scale_provenance_audit_v1a6/visuals/aligned_mano_scaled_to_guidance_bbox_active_object.glb"
+  },
+  "decision_rule": {
+    "aligned_mano_scale_bug": "aligned_mano much larger than guidance_hand",
+    "guidance_hand_scale_bug": "guidance_hand already much larger than active object",
+    "h2m_scale_bug": "h2m has a nontrivial uniform scale term",
+    "need_visual": "open scenes before deciding which hand source to use"
+  },
+  "next_step": "inspect scenes and decide whether to use guidance_hand, rescale aligned_mano, or debug h2m transform chain"
+}
