@@ -1,0 +1,13 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D sandbox v0.3 proxy collision push-out",
+  "decision": "PASS_PROXY_PUSHOUT_REDUCES_COLLISION_KEEP_CONTACT",
+  "translation_norm_m": 0.033099091053448076,
+  "base_deep_proxy_count_lt_minus_005": 350,
+  "best_deep_proxy_count_lt_minus_005": 145,
+  "base_within_05": 593,
+  "best_within_05": 531,
+  "interpretation": "Proxy collision push-out reduces deep collision proxy while preserving most contact.",
+  "limitation": "This is a proxy repair because the body mesh is not watertight; do not claim final physical collision-free reconstruction.",
+  "next": "Package aket01 positive-control summary and move to abox01."
+}
