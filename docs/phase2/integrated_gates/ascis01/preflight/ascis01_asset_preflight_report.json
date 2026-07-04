@@ -1,0 +1,24 @@
+{
+  "case": "ascis01",
+  "exists": {
+    "case_root": true,
+    "selector_run": true,
+    "guidance_hand": true,
+    "guidance_object": true,
+    "aligned_mano": true
+  },
+  "paths": {
+    "case_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/ascis01",
+    "selector_run": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_ascis01_selector_v41_refined_pipeline",
+    "guidance_hand": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_ascis01_selector_v41_refined_pipeline/guidance_out/ascis01_hand.ply",
+    "guidance_object": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_ascis01_selector_v41_refined_pipeline/guidance_out/ascis01_obj.ply",
+    "aligned_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_ascis01_selector_v41_refined_pipeline/aligned_mano/ascis01_hamer_aligned_mano.ply"
+  },
+  "num_candidate_part_plys": 0,
+  "candidate_part_plys": [],
+  "num_glb_files": 0,
+  "glb_files": [],
+  "num_manifest_files": 0,
+  "manifest_files": [],
+  "decision": "FAIL_NO_PART_MESHES"
+}
