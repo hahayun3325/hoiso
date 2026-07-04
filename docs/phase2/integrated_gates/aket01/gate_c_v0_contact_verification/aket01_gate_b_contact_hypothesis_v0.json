@@ -1,0 +1,31 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate B contact hypothesis v0",
+  "source": "manual_from_cropped_input_and_guidance_frame_v1",
+  "object": "squeeze bottle",
+  "active_parts": ["body", "top_or_cap", "residual_uncertain"],
+  "hypotheses": [
+    {
+      "hand_region": "visible grasping fingers",
+      "object_part": "body",
+      "contact_state": "contact_candidate",
+      "confidence": 0.75,
+      "reason": "The hand wraps around the main bottle body in the cropped input and the v1 guidance-frame scene."
+    },
+    {
+      "hand_region": "visible grasping fingers",
+      "object_part": "top_or_cap",
+      "contact_state": "possible_secondary_or_near_contact",
+      "confidence": 0.35,
+      "reason": "The cap/top is near the hand but should not be primary contact unless 3D distance verifies it."
+    },
+    {
+      "hand_region": "visible grasping fingers",
+      "object_part": "residual_uncertain",
+      "contact_state": "do_not_use_as_primary_target",
+      "confidence": 0.1,
+      "reason": "Residual fragments are not reliable semantic parts."
+    }
+  ],
+  "decision": "READY_FOR_GATE_C_GEOMETRIC_VERIFICATION"
+}
