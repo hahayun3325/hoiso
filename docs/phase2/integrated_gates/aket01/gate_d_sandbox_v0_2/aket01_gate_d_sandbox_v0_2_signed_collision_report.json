@@ -1,0 +1,41 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D sandbox v0.2 signed collision audit",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_hand.ply",
+  "body_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_obj.ply",
+  "unsigned_hand_to_body": {
+    "min": 0.0026392797442322427,
+    "p1": 0.004099955440468024,
+    "p5": 0.006399310415348809,
+    "p10": 0.00821080979289303,
+    "mean": 0.03500374710460565,
+    "within_003": 2,
+    "within_005": 16,
+    "within_01": 123,
+    "within_02": 378,
+    "within_05": 590
+  },
+  "signed_distance_method": "igl.signed_distance",
+  "signed_distance_error": null,
+  "mesh_quality_warning": "Signed distance can be unreliable if the body mesh is open or non-watertight.",
+  "signed_distance": {
+    "min": -0.1169688023327568,
+    "p1": -0.1098786134811091,
+    "p5": -0.09006901350887875,
+    "mean": -0.001839554217347886,
+    "negative_count_lt_0": 398,
+    "negative_count_lt_minus_002": 374,
+    "negative_count_lt_minus_005": 350,
+    "negative_ratio_lt_minus_002": 0.480719794344473,
+    "negative_ratio_lt_minus_005": 0.4498714652956298
+  },
+  "decision": "FAIL_SIGNED_COLLISION_DEEP_INTERSECTION",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_sandbox_v0_2_signed_collision_audit/visuals/aket01_gate_d_sandbox_v0_2_signed_collision_audit.glb",
+  "interpretation": [
+    "This is a collision audit, not an optimizer.",
+    "Green = hand, blue = verified body.",
+    "Red/orange/yellow markers indicate suspected signed-distance penetration when signed distance is available.",
+    "If signed distance fails, use the unsigned result only as a proxy and do not claim physical collision pass."
+  ]
+}
