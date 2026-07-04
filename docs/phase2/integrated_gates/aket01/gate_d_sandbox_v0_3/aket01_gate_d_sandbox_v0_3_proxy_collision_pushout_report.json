@@ -1,0 +1,224 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D sandbox v0.3 robust proxy collision push-out",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_hand.ply",
+  "body_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+  "body_largest_component_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_sandbox_v0_3_proxy_collision_pushout/outputs/aket01_body_largest_component_for_proxy.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_obj.ply",
+  "body_raw_is_watertight": false,
+  "body_largest_is_watertight": false,
+  "body_raw_components": [
+    11095,
+    49
+  ],
+  "base_stats": {
+    "unsigned_min": 0.0004788745269427664,
+    "unsigned_p1": 0.00195465407655145,
+    "unsigned_p5": 0.00429852203954241,
+    "unsigned_p10": 0.005798469655648787,
+    "unsigned_mean": 0.033595200562453874,
+    "within_003": 15,
+    "within_005": 62,
+    "within_01": 191,
+    "within_02": 399,
+    "within_05": 593,
+    "proxy_min": -0.11791151770703272,
+    "proxy_p1": -0.11068810029380907,
+    "proxy_p5": -0.09067011352885519,
+    "proxy_mean": -0.0020427182935799223,
+    "proxy_negative_lt_0": 398,
+    "proxy_negative_lt_minus_002": 375,
+    "proxy_negative_lt_minus_005": 350
+  },
+  "push_vector": [
+    -0.013329344630588592,
+    -0.01402066184478476,
+    -0.026857018481537414
+  ],
+  "push_vector_norm": 0.033099091053448076,
+  "candidates": [
+    {
+      "alpha": 0.0,
+      "translation": [
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "translation_norm": 0.0,
+      "stats": {
+        "unsigned_min": 0.0004788745269427664,
+        "unsigned_p1": 0.00195465407655145,
+        "unsigned_p5": 0.00429852203954241,
+        "unsigned_p10": 0.005798469655648787,
+        "unsigned_mean": 0.033595200562453874,
+        "within_003": 15,
+        "within_005": 62,
+        "within_01": 191,
+        "within_02": 399,
+        "within_05": 593,
+        "proxy_min": -0.11791151770703272,
+        "proxy_p1": -0.11068810029380907,
+        "proxy_p5": -0.09067011352885519,
+        "proxy_mean": -0.0020427182935799223,
+        "proxy_negative_lt_0": 398,
+        "proxy_negative_lt_minus_002": 375,
+        "proxy_negative_lt_minus_005": 350
+      },
+      "score": -2203.5
+    },
+    {
+      "alpha": 0.25,
+      "translation": [
+        -0.003332336157647148,
+        -0.00350516546119619,
+        -0.0067142546203843535
+      ],
+      "translation_norm": 0.008274772763362019,
+      "stats": {
+        "unsigned_min": 0.0005966135183930771,
+        "unsigned_p1": 0.00229419556971145,
+        "unsigned_p5": 0.004120461230074211,
+        "unsigned_p10": 0.005698981719778106,
+        "unsigned_mean": 0.03406277843992991,
+        "within_003": 16,
+        "within_005": 59,
+        "within_01": 195,
+        "within_02": 367,
+        "within_05": 587,
+        "proxy_min": -0.11008981494085257,
+        "proxy_p1": -0.10432835708639293,
+        "proxy_p5": -0.0851042827532651,
+        "proxy_mean": 0.004614118327034595,
+        "proxy_negative_lt_0": 338,
+        "proxy_negative_lt_minus_002": 314,
+        "proxy_negative_lt_minus_005": 282
+      },
+      "score": -1745.3274772763361
+    },
+    {
+      "alpha": 0.5,
+      "translation": [
+        -0.006664672315294296,
+        -0.00701033092239238,
+        -0.013428509240768707
+      ],
+      "translation_norm": 0.016549545526724038,
+      "stats": {
+        "unsigned_min": 0.0004223221437286788,
+        "unsigned_p1": 0.0019274977462086834,
+        "unsigned_p5": 0.004089143886550361,
+        "unsigned_p10": 0.005390507902250974,
+        "unsigned_mean": 0.035645015212585465,
+        "within_003": 23,
+        "within_005": 63,
+        "within_01": 175,
+        "within_02": 322,
+        "within_05": 578,
+        "proxy_min": -0.10214820582015012,
+        "proxy_p1": -0.09654035997517768,
+        "proxy_p5": -0.07838659707846966,
+        "proxy_mean": 0.011473240682732288,
+        "proxy_negative_lt_0": 259,
+        "proxy_negative_lt_minus_002": 245,
+        "proxy_negative_lt_minus_005": 213
+      },
+      "score": -1267.6549545526725
+    },
+    {
+      "alpha": 0.75,
+      "translation": [
+        -0.009997008472941445,
+        -0.01051549638358857,
+        -0.02014276386115306
+      ],
+      "translation_norm": 0.024824318290086054,
+      "stats": {
+        "unsigned_min": 0.0013895628030996237,
+        "unsigned_p1": 0.0019215660868003822,
+        "unsigned_p5": 0.0044220925432875025,
+        "unsigned_p10": 0.006652730953400657,
+        "unsigned_mean": 0.03835760621560349,
+        "within_003": 17,
+        "within_005": 50,
+        "within_01": 135,
+        "within_02": 270,
+        "within_05": 556,
+        "proxy_min": -0.09406446769014631,
+        "proxy_p1": -0.08876961237794681,
+        "proxy_p5": -0.07042733875006724,
+        "proxy_mean": 0.01850661819544244,
+        "proxy_negative_lt_0": 206,
+        "proxy_negative_lt_minus_002": 191,
+        "proxy_negative_lt_minus_005": 169
+      },
+      "score": -951.4824318290086
+    },
+    {
+      "alpha": 1.0,
+      "translation": [
+        -0.013329344630588592,
+        -0.01402066184478476,
+        -0.026857018481537414
+      ],
+      "translation_norm": 0.033099091053448076,
+      "stats": {
+        "unsigned_min": 0.0014402848256051548,
+        "unsigned_p1": 0.0033127297807032667,
+        "unsigned_p5": 0.005899344921102561,
+        "unsigned_p10": 0.008634880226787859,
+        "unsigned_mean": 0.04201435439632116,
+        "within_003": 6,
+        "within_005": 27,
+        "within_01": 92,
+        "within_02": 218,
+        "within_05": 531,
+        "proxy_min": -0.08598072956014219,
+        "proxy_p1": -0.0812239948396112,
+        "proxy_p5": -0.06248494362349694,
+        "proxy_mean": 0.02565945371447814,
+        "proxy_negative_lt_0": 163,
+        "proxy_negative_lt_minus_002": 154,
+        "proxy_negative_lt_minus_005": 145
+      },
+      "score": -770.8099091053448
+    }
+  ],
+  "best": {
+    "alpha": 1.0,
+    "translation": [
+      -0.013329344630588592,
+      -0.01402066184478476,
+      -0.026857018481537414
+    ],
+    "translation_norm": 0.033099091053448076,
+    "stats": {
+      "unsigned_min": 0.0014402848256051548,
+      "unsigned_p1": 0.0033127297807032667,
+      "unsigned_p5": 0.005899344921102561,
+      "unsigned_p10": 0.008634880226787859,
+      "unsigned_mean": 0.04201435439632116,
+      "within_003": 6,
+      "within_005": 27,
+      "within_01": 92,
+      "within_02": 218,
+      "within_05": 531,
+      "proxy_min": -0.08598072956014219,
+      "proxy_p1": -0.0812239948396112,
+      "proxy_p5": -0.06248494362349694,
+      "proxy_mean": 0.02565945371447814,
+      "proxy_negative_lt_0": 163,
+      "proxy_negative_lt_minus_002": 154,
+      "proxy_negative_lt_minus_005": 145
+    },
+    "score": -770.8099091053448
+  },
+  "decision": "PASS_PROXY_PUSHOUT_REDUCES_COLLISION_KEEP_CONTACT",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_sandbox_v0_3_proxy_collision_pushout/visuals/aket01_gate_d_sandbox_v0_3_proxy_collision_pushout.glb",
+  "interpretation": [
+    "This is a fallback collision proxy because v0.2a showed raw SDF is unreliable.",
+    "It uses largest body component + nearest surface local normal push-out.",
+    "Green is original hand. Orange is best proxy-corrected hand.",
+    "Red/yellow markers indicate suspected proxy penetration regions on the original hand.",
+    "This is still a sandbox diagnostic, not the final optimizer."
+  ]
+}
