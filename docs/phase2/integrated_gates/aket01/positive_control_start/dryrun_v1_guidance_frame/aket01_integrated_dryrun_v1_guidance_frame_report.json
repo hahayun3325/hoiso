@@ -1,0 +1,88 @@
+{
+  "case_id": "aket01",
+  "stage": "dryrun_v1_guidance_frame",
+  "decision": "VISUAL_REVIEW_REQUIRED",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_hand.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_obj.ply",
+  "active_part_paths": [
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/residual_uncertain.ply",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/top_or_cap.ply"
+  ],
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/dryrun_v1_guidance_frame/visuals/aket01_integrated_dryrun_v1_guidance_frame.glb",
+  "bbox": {
+    "hand": {
+      "center": [
+        -0.019775137305259705,
+        -0.16876263730227947,
+        -3.242093086242676
+      ],
+      "extent": [
+        0.4100618064403534,
+        0.21921268478035927,
+        0.28166770935058594
+      ],
+      "diag": 0.543637365125453
+    },
+    "guidance_object": {
+      "center": [
+        0.1996450237929821,
+        -0.0827229768037796,
+        -3.0135245323181152
+      ],
+      "extent": [
+        0.6245614662766457,
+        1.0834037959575653,
+        1.1686930656433105
+      ],
+      "diag": 1.7116320550678101
+    },
+    "active_parts_union": {
+      "center": [
+        0.23664399236440659,
+        -0.08277599513530731,
+        -3.0262449979782104
+      ],
+      "extent": [
+        0.6984819918870926,
+        1.0829019844532013,
+        1.1941301822662354
+      ],
+      "diag": 1.7568439581028346
+    }
+  },
+  "distances": {
+    "hand_to_guidance_object": {
+      "min": 0.002002659479709399,
+      "p1": 0.0038749018885454716,
+      "p5": 0.006810930005814305,
+      "p10": 0.009386920020722127,
+      "mean": 0.03624110257168715,
+      "within_02": 346,
+      "within_05": 584
+    },
+    "hand_to_active_parts": {
+      "min": 0.0026392797442322427,
+      "p1": 0.004143509305203437,
+      "p5": 0.008407145921773395,
+      "p10": 0.010686527926648667,
+      "mean": 0.03698456731924214,
+      "within_02": 325,
+      "within_05": 584
+    },
+    "guidance_object_to_active_parts": {
+      "min": 2.9802322387695312e-08,
+      "p1": 2.45630034257287e-06,
+      "p5": 0.0016361549783178173,
+      "p10": 0.0025967086113308055,
+      "mean": 0.008678114996276961,
+      "within_02": 7553,
+      "within_05": 8000
+    }
+  },
+  "interpretation": [
+    "This scene uses guidance_out hand and guidance_out object from the same source folder.",
+    "If the hand is now near the bottle, v0 failure was caused by mixed coordinate families.",
+    "If the hand still floats, run a root-frame provenance audit."
+  ]
+}
