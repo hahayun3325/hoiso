@@ -1,0 +1,170 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D sandbox v0.1 contact/collision probe",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_hand.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_obj.ply",
+  "body_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+  "baseline_stats": {
+    "min": 0.0026392797442322427,
+    "p1": 0.004099955440468024,
+    "p5": 0.006399310415348809,
+    "p10": 0.00821080979289303,
+    "mean": 0.03500374710460565,
+    "within_003": 2,
+    "within_005": 16,
+    "within_01": 123,
+    "within_02": 378,
+    "within_05": 590
+  },
+  "raw_contact_vector_norm": 0.000977976521723629,
+  "max_step": 0.000977976521723629,
+  "rows": [
+    {
+      "alpha": 0.0,
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "translation_norm": 0.0,
+      "score": -0.015150247191500222,
+      "stats": {
+        "min": 0.0026392797442322427,
+        "p1": 0.004099955440468024,
+        "p5": 0.006399310415348809,
+        "p10": 0.00821080979289303,
+        "mean": 0.03500374710460565,
+        "within_003": 2,
+        "within_005": 16,
+        "within_01": 123,
+        "within_02": 378,
+        "within_05": 590
+      },
+      "very_close_growth_vs_baseline": 0
+    },
+    {
+      "alpha": 0.25,
+      "translation": [
+        0.00021656609132207974,
+        9.166547097265443e-05,
+        6.688758730888367e-05
+      ],
+      "translation_norm": 0.0002444941304309072,
+      "score": -0.015175300959216632,
+      "stats": {
+        "min": 0.0024442120445901877,
+        "p1": 0.00401426646720246,
+        "p5": 0.006430787869495782,
+        "p10": 0.008230344103480919,
+        "mean": 0.034978052358883405,
+        "within_003": 2,
+        "within_005": 18,
+        "within_01": 122,
+        "within_02": 378,
+        "within_05": 591
+      },
+      "very_close_growth_vs_baseline": 0
+    },
+    {
+      "alpha": 0.5,
+      "translation": [
+        0.0004331321826441595,
+        0.00018333094194530886,
+        0.00013377517461776733
+      ],
+      "translation_norm": 0.0004889882608618145,
+      "score": -0.015176151620052257,
+      "stats": {
+        "min": 0.0022495863220908644,
+        "p1": 0.0038715502177358026,
+        "p5": 0.006437813732088316,
+        "p10": 0.008117883029249423,
+        "mean": 0.03495335155185576,
+        "within_003": 2,
+        "within_005": 18,
+        "within_01": 120,
+        "within_02": 379,
+        "within_05": 589
+      },
+      "very_close_growth_vs_baseline": 0
+    },
+    {
+      "alpha": 0.75,
+      "translation": [
+        0.0006496982739662392,
+        0.0002749964129179633,
+        0.000200662761926651
+      ],
+      "translation_norm": 0.0007334823912927217,
+      "score": -0.017218808816034922,
+      "stats": {
+        "min": 0.0020623948667136544,
+        "p1": 0.0038748343884997508,
+        "p5": 0.006486385966438587,
+        "p10": 0.008133617000467929,
+        "mean": 0.03492969139838535,
+        "within_003": 3,
+        "within_005": 19,
+        "within_01": 121,
+        "within_02": 380,
+        "within_05": 589
+      },
+      "very_close_growth_vs_baseline": 1
+    },
+    {
+      "alpha": 1.0,
+      "translation": [
+        0.000866264365288319,
+        0.0003666618838906177,
+        0.00026755034923553467
+      ],
+      "translation_norm": 0.000977976521723629,
+      "score": -0.019257158749273886,
+      "stats": {
+        "min": 0.0018883488320714686,
+        "p1": 0.003941732755197163,
+        "p5": 0.0065303958648549485,
+        "p10": 0.008115183096903046,
+        "mean": 0.034907051537675746,
+        "within_003": 4,
+        "within_005": 18,
+        "within_01": 122,
+        "within_02": 379,
+        "within_05": 589
+      },
+      "very_close_growth_vs_baseline": 2
+    }
+  ],
+  "best": {
+    "alpha": 0.0,
+    "translation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "translation_norm": 0.0,
+    "score": -0.015150247191500222,
+    "stats": {
+      "min": 0.0026392797442322427,
+      "p1": 0.004099955440468024,
+      "p5": 0.006399310415348809,
+      "p10": 0.00821080979289303,
+      "mean": 0.03500374710460565,
+      "within_003": 2,
+      "within_005": 16,
+      "within_01": 123,
+      "within_02": 378,
+      "within_05": 590
+    },
+    "very_close_growth_vs_baseline": 0
+  },
+  "decision": "PASS_STABLE_NO_MOVE_BEST",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_sandbox_v0_1_contact_collision_probe/visuals/aket01_gate_d_sandbox_v0_1_contact_collision_probe.glb",
+  "interpretation": [
+    "This is a tiny probe, not full optimization.",
+    "Green hand is original; orange hand is best tiny-update candidate.",
+    "Red/blue markers show original contact patch.",
+    "Yellow/purple markers show best candidate patch.",
+    "If alpha=0 is best, that is still a useful result: current contact is already stable."
+  ]
+}
