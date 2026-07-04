@@ -1,0 +1,19 @@
+{
+  "case": "alapuse02_v3",
+  "case_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3",
+  "num_keyword_matches": 9,
+  "keyword_matches_sample": [
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/input",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/input/alapuse02_v3_s05_laptop_use_02_view3_00060.jpg",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/integrated_gates",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/metrics",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/notes",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/notes/alapuse02_v3_candidate_note.md",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/outputs",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/visuals"
+  ],
+  "num_guidance_like_matches": 0,
+  "guidance_like_matches_sample": [],
+  "decision": "NEEDS_GUIDANCE_PIPELINE_RUN"
+}
