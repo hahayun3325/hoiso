@@ -1,0 +1,121 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D sandbox v0.2a SDF sanity audit",
+  "mesh_quality": {
+    "body_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+    "body_vertices": 11144,
+    "body_faces": 22192,
+    "is_watertight": false,
+    "is_winding_consistent": true,
+    "euler_number": -14.0,
+    "volume": 0.2009633101604036,
+    "num_components": 2,
+    "component_vertex_counts_top10": [
+      11095,
+      49
+    ],
+    "bbox_extents": [
+      0.6243059784173965,
+      1.0502579808235168,
+      0.9505100250244141
+    ],
+    "bbox_diag": 1.5479887236808625
+  },
+  "unsigned_hand_to_body": {
+    "min": 0.0026392797442322427,
+    "p1": 0.004099955440468024,
+    "p5": 0.006399310415348809,
+    "p10": 0.00821080979289303,
+    "mean": 0.03500374710460565,
+    "within_003": 2,
+    "within_005": 16,
+    "within_01": 123,
+    "within_02": 378,
+    "within_05": 590
+  },
+  "signed_distance_error": null,
+  "signed_report": {
+    "probe_points": [
+      {
+        "name": "bbox_center",
+        "point": [
+          0.19955598562955856,
+          -0.09909799695014956,
+          -2.9044349193572994
+        ],
+        "signed_distance": -0.21623029777867359
+      },
+      {
+        "name": "outside_axis0_-1",
+        "point": [
+          -1.348432738051304,
+          -0.09909799695014956,
+          -2.9044349193572994
+        ],
+        "signed_distance": 1.2619085284402052
+      },
+      {
+        "name": "outside_axis0_+1",
+        "point": [
+          1.747544709310421,
+          -0.09909799695014956,
+          -2.9044349193572994
+        ],
+        "signed_distance": 1.2389531912131897
+      },
+      {
+        "name": "outside_axis1_-1",
+        "point": [
+          0.19955598562955856,
+          -1.647086720631012,
+          -2.9044349193572994
+        ],
+        "signed_distance": 1.0343940709027206
+      },
+      {
+        "name": "outside_axis1_+1",
+        "point": [
+          0.19955598562955856,
+          1.448890726730713,
+          -2.9044349193572994
+        ],
+        "signed_distance": 1.0268159088820645
+      },
+      {
+        "name": "outside_axis2_-1",
+        "point": [
+          0.19955598562955856,
+          -0.09909799695014956,
+          -4.452423643038162
+        ],
+        "signed_distance": 1.089254573885106
+      },
+      {
+        "name": "outside_axis2_+1",
+        "point": [
+          0.19955598562955856,
+          -0.09909799695014956,
+          -1.3564461956764369
+        ],
+        "signed_distance": 1.095369579966534
+      }
+    ],
+    "hand_signed_distance": {
+      "min": -0.11696880233275696,
+      "p1": -0.1098786134811091,
+      "p5": -0.0900690135088787,
+      "mean": -0.0018395542173478836,
+      "negative_count_lt_0": 398,
+      "negative_count_lt_minus_002": 374,
+      "negative_count_lt_minus_005": 350,
+      "total_hand_vertices": 778
+    }
+  },
+  "decision": "SDF_UNRELIABLE_BODY_NOT_WATERTIGHT",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_sandbox_v0_2a_sdf_sanity_audit/visuals/aket01_gate_d_sandbox_v0_2a_sdf_sanity_audit.glb",
+  "interpretation": [
+    "If body is not watertight, signed-distance penetration depth should be treated as a warning, not final truth.",
+    "If body is watertight and many hand points are deeply negative, collision is confirmed.",
+    "This audit decides whether v0.3 should use signed-distance push-out or a fallback collision proxy."
+  ]
+}
