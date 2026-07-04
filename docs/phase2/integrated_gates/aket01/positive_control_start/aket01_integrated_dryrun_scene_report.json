@@ -1,0 +1,13 @@
+{
+  "case_id": "aket01",
+  "stage": "integrated dry-run scene",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/aligned_mano/aket01_hamer_aligned_mano.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_obj.ply",
+  "part_paths": [
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/residual_uncertain.ply",
+    "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/top_or_cap.ply"
+  ],
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/visuals/aket01_integrated_dryrun_scene.glb",
+  "decision": "VISUAL_REVIEW_REQUIRED"
+}
