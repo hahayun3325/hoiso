@@ -1,0 +1,14 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate C v0 contact verification",
+  "decision": "PASS_BODY_CONTACT",
+  "verified_primary_part": "body",
+  "rejected_primary_parts": ["top_or_cap", "residual_uncertain"],
+  "reason": [
+    "best_part is body",
+    "body has strong near-contact statistics",
+    "top_or_cap and residual_uncertain have zero points within 5cm",
+    "visual markers agree with cropped input body grasp"
+  ],
+  "next_step": "Gate D contact-aware scorer sandbox v0"
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "aket01",
+  "stage": "Gate D contact scorer v0",
+  "verified_contact": {
+    "hand_source": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_aket01_selector_v41_refined_pipeline/guidance_out/aket01_hand.ply",
+    "object_part": "body",
+    "object_part_path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/active_parts_v0/body.ply",
+    "patch_n": 80,
+    "patch_mean_distance": 0.006232808766178831,
+    "patch_l_attract_mean_squared": 4.100703223612454e-05
+  },
+  "contact_stats_all_hand_to_body": {
+    "min": 0.0026392797442322427,
+    "p1": 0.004099955440468024,
+    "p5": 0.006399310415348809,
+    "p10": 0.00821080979289303,
+    "mean": 0.03500374710460565,
+    "within_005": 16,
+    "within_01": 123,
+    "within_02": 378,
+    "within_05": 590
+  },
+  "contact_stats_patch": {
+    "min": 0.0026392797442322427,
+    "p1": 0.0026494078293983177,
+    "p5": 0.003460035629124382,
+    "p10": 0.004111415006239333,
+    "mean": 0.006232808766178831,
+    "within_005": 16,
+    "within_01": 80,
+    "within_02": 80,
+    "within_05": 80
+  },
+  "very_close_proxy": {
+    "threshold_m": 0.003,
+    "count": 2,
+    "note": "This is not true penetration. It only flags very-close hand vertices."
+  },
+  "near_contact_proxy": {
+    "threshold_m": 0.02,
+    "count": 378
+  },
+  "decision": "PASS_CONTACT_TARGET_READY_FOR_SANDBOX",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/aket01/integrated_gates/positive_control_aket01/gate_d_contact_scorer_v0/visuals/aket01_gate_d_contact_scorer_v0_target.glb",
+  "next_step": "If visual patch is correct, run tiny contact/collision sandbox without changing object semantics."
+}
