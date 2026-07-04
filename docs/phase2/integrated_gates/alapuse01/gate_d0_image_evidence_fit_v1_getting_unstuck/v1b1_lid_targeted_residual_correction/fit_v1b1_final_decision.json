@@ -1,0 +1,16 @@
+{
+  "case_id": "alapuse01",
+  "stage": "Gate D-0 fit v1b1 lid-targeted residual correction",
+  "decision": "HARD_CASE_LOCAL_FIT_FAIL",
+  "best_candidate": "grid_0518",
+  "best_translation_norm_m": 0.12498722830736063,
+  "raw_lid_patch_snap_norm_m": 0.1301319726827732,
+  "reason": [
+    "4cm and 8cm residual corrections do not recover lid/screen contact",
+    "best candidate requires about 12.5cm translation",
+    "base/keyboard contact remains competitive",
+    "full optimization would likely optimize a wrong semantic target"
+  ],
+  "use_as_final_seed": false,
+  "next_step": "freeze alapuse01 and run preflight on another case"
+}
