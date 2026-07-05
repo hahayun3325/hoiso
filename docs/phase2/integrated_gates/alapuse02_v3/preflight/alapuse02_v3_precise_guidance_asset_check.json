@@ -1,0 +1,35 @@
+{
+  "case": "alapuse02_v3",
+  "token": "alapuse02v3",
+  "paths": {
+    "run_root": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline",
+    "guidance_hand": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/guidance_out/alapuse02v3_hand.ply",
+    "guidance_object": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/guidance_out/alapuse02v3_obj.ply",
+    "aligned_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/aligned_mano/alapuse02v3_hamer_aligned_mano.ply",
+    "hunyuan_hoi_mesh": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/hunyuan_hoi_out/alapuse02v3_hoi_mesh.ply",
+    "h2m_transform": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/h2m_transformations/alapuse02v3_hoi_mesh.npy",
+    "moge_depth": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/moge_out/alapuse02v3_cropped_hoi/depth.exr",
+    "moge_fov": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/moge_out/alapuse02v3_cropped_hoi/fov.json"
+  },
+  "exists": {
+    "run_root": true,
+    "guidance_hand": true,
+    "guidance_object": true,
+    "aligned_mano": true,
+    "hunyuan_hoi_mesh": true,
+    "h2m_transform": true,
+    "moge_depth": true,
+    "moge_fov": true
+  },
+  "sizes_bytes": {
+    "run_root": null,
+    "guidance_hand": 39080,
+    "guidance_object": 1054499,
+    "aligned_mano": 32921,
+    "hunyuan_hoi_mesh": 2850244,
+    "h2m_transform": 256,
+    "moge_depth": 434594,
+    "moge_fov": 32
+  },
+  "decision": "PASS_GUIDANCE_ASSETS_READY"
+}

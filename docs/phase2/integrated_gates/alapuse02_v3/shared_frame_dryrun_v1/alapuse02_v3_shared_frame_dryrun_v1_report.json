@@ -1,0 +1,105 @@
+{
+  "case": "alapuse02_v3",
+  "stage": "shared_frame_dryrun_v1",
+  "decision": "VISUAL_REVIEW_REQUIRED",
+  "hand_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/guidance_out/alapuse02v3_hand.ply",
+  "object_path": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/guidance_out/alapuse02v3_obj.ply",
+  "visual": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3/integrated_gates/shared_frame_dryrun_v1/visuals/alapuse02_v3_shared_frame_dryrun_v1.glb",
+  "bbox": {
+    "guidance_hand": {
+      "center": [
+        -0.06914758682250977,
+        0.10596612840890884,
+        -4.47535514831543
+      ],
+      "extent": [
+        0.8168751001358032,
+        0.6636777371168137,
+        0.5617380142211914
+      ],
+      "diag": 1.193022491232894,
+      "num_vertices": 778,
+      "num_faces": 1552
+    },
+    "guidance_object": {
+      "center": [
+        0.0882764458656311,
+        -0.39010022580623627,
+        -4.936941385269165
+      ],
+      "extent": [
+        0.7349759340286255,
+        0.2313540279865265,
+        0.5381932258605957
+      ],
+      "diag": 0.9398756610472873,
+      "num_vertices": 27736,
+      "num_faces": 55496
+    },
+    "aligned_mano_reference": {
+      "center": [
+        0.45732642710208893,
+        -0.06213778257369995,
+        0.33207306265830994
+      ],
+      "extent": [
+        1.2878160178661346,
+        1.8333362340927124,
+        1.2339410185813904
+      ],
+      "diag": 2.5577729141672285,
+      "num_vertices": 778,
+      "num_faces": 1552
+    },
+    "hunyuan_reference": {
+      "center": [
+        -0.0025418996810913086,
+        -0.0021404623985290527,
+        0.003438204526901245
+      ],
+      "extent": [
+        1.9959349632263184,
+        1.994368553161621,
+        1.9821156859397888
+      ],
+      "diag": 3.448194439952275,
+      "num_vertices": 75002,
+      "num_faces": 150000
+    }
+  },
+  "object_components": {
+    "num_components": 1,
+    "largest_component_vertices": 27736,
+    "top10_component_vertices": [
+      27736
+    ]
+  },
+  "distances": {
+    "hand_to_guidance_object": {
+      "min": 0.25630529785748446,
+      "p1": 0.31105053606595734,
+      "p5": 0.4196379204218449,
+      "p10": 0.49818770575966975,
+      "mean": 0.760361306169036,
+      "within_01": 0,
+      "within_02": 0,
+      "within_05": 0
+    },
+    "object_to_hand": {
+      "min": 0.25630529785748446,
+      "p1": 0.26348355457184214,
+      "p5": 0.2830165287818689,
+      "p10": 0.30147873742683384,
+      "mean": 0.4293295168057899,
+      "within_01": 0,
+      "within_02": 0,
+      "within_05": 0
+    }
+  },
+  "decision_rule": {
+    "PASS_SHARED_FRAME": "hand is visually near the laptop and contact/near-contact is plausible",
+    "FAIL_FRAME_MISMATCH": "hand floats far away or is in a different coordinate family",
+    "FAIL_OBJECT_UNUSABLE": "laptop object is a fused blob, collapsed, or visually not a laptop",
+    "NEXT_IF_PASS": "run Gate A part reconstruction / part split for screen-base-hinge"
+  }
+}
