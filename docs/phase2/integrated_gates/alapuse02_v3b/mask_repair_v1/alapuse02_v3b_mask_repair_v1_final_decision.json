@@ -1,0 +1,8 @@
+{
+  "case": "alapuse02_v3b",
+  "stage": "mask_repair_v1",
+  "decision": "PASS_MASK_REPAIR",
+  "segmentation_prompt": "open toy laptop screen keyboard",
+  "root_cause_fixed": "original_mask_selected_support_box_table_not_laptop",
+  "next": "shared_frame_dryrun_v1"
+}

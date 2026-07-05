@@ -148,6 +148,12 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     img_pil = Image.fromarray(img_cv2[..., ::-1])
 
     object_bbox, hand_bbox = hand_object_detector(img_cv2)
+    if object_bbox is None or hand_bbox is None:
+        print("[FOHO_DEBUG] hand_object_detector returned None.")
+        print("[FOHO_DEBUG] object_bbox:", object_bbox)
+        print("[FOHO_DEBUG] hand_bbox:", hand_bbox)
+        return None
+
     bbox_obj = object_bbox.reshape((-1, 2))
 
     detections = hand_detector(img_cv2, conf=0.3, verbose=False, iou=IoU_threshold)[0] # conf=0.3
@@ -161,6 +167,7 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
 
     if len(bboxes) == 0:
         print("no hands in this image")
+        return None
     elif len(bboxes) == 1:
         bbox_hand = np.array(bboxes[0]).reshape((-1, 2))
     elif len(bboxes) > 1:
@@ -198,7 +205,9 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
 
     if object_name is None:
         object_name = "manipulated object"
-    pred_obj = sam_model.predict([Image.fromarray(crop_img_hoi)], [object_name])
+    seg_object_name = os.environ.get("FOHO_SEGMENT_OBJECT_PROMPT", object_name)
+    print(f"[FOHO_DEBUG] segmentation object prompt: {seg_object_name}")
+    pred_obj = sam_model.predict([Image.fromarray(crop_img_hoi)], [seg_object_name])
     if pred_obj[0]["boxes"] is None or len(pred_obj[0]["boxes"]) == 0:
         return None
     bbox_obj = pred_obj[0]["boxes"][0].reshape((-1, 2))
