@@ -1,0 +1,9 @@
+{
+  "case": "alapuse02_v3b",
+  "stage": "shared_frame_dryrun_v1",
+  "decision": "FAIL_SHARED_FRAME_POST_HUNYUAN",
+  "mask_repair": "PASS",
+  "raw_hunyuan_shape": "PASS_RECOGNIZABLE_LAPTOP",
+  "guidance_shared_frame": "FAIL",
+  "next": "gate_a0_hunyuan_frame_sanity"
+}
