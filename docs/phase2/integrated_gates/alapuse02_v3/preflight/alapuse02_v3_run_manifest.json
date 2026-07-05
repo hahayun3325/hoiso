@@ -1,0 +1,10 @@
+{
+  "case_id": "alapuse02_v3",
+  "dataset": "ARCTIC",
+  "subject": "s05",
+  "sequence": "laptop_use_02",
+  "view": "3",
+  "frame": "00060",
+  "purpose": "Generate guidance_out assets before Phase 2 Gate A/C/D preflight",
+  "status": "PENDING_GUIDANCE_PIPELINE_RUN"
+}
