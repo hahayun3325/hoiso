@@ -49,3 +49,10 @@ downstream can be trusted until the mask is confirmed correct by eye.
 - AGILE (2026) addresses this with a VLM-guided verification/rejection
   step between generation and 3D lifting, rather than trusting the first
   segmentation/generation pass.
+
+## Related but distinct issue: image dimension mismatch (not a prompt problem)
+
+See object_only_hunyuan_input_recipe.md. FLUX inpainting can silently return
+images at a different resolution than requested, breaking mask-based
+compositing that assumes shared dimensions. This is an image-processing bug,
+not a prompt-tuning issue — don't conflate the two when debugging.
