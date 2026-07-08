@@ -1,0 +1,34 @@
+{
+  "case_id": "alapuse02_v3c",
+  "method": "partfield_n2_manual_visual_merge",
+  "decision": "PASS_PARTFIELD_SCREEN_BASE_SPLIT_PARTIAL",
+  "source": {
+    "partfield_candidate": "N2",
+    "source_mesh": "partfield/input_mesh_low30k/00000.obj",
+    "cluster_labels": "PartField exp_results/clustering/alapuse02_v3c/cluster_out/00000_0_02.npy"
+  },
+  "physical_parts": {
+    "screen_lid": [
+      6876
+    ],
+    "keyboard_base": [
+      16536
+    ]
+  },
+  "derived_parts": {
+    "hinge": {
+      "status": "not_exported_as_mesh",
+      "definition": "derive later as geometric boundary/joint axis between screen_lid and keyboard_base, not as a PartField cluster"
+    }
+  },
+  "notes": [
+    "N=2 gives the cleanest semantic screen/base split, visually confirmed.",
+    "N=3 was investigated and REJECTED: bbox-extent evidence shows its third",
+    "cluster is a second large flat panel (base split into two slabs),",
+    "not a hinge fragment. All three N=3 clusters share ~full-object extent",
+    "in two of three dimensions, inconsistent with a small hinge bracket.",
+    "Hinge is not needed for contact (Gate C), since hand-object contact",
+    "occurs on screen_lid and keyboard_base surfaces, not the hinge itself."
+  ],
+  "case": "alapuse02_v3c"
+}

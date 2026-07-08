@@ -1,0 +1,30 @@
+{
+  "case_id": "alapuse02_v3c",
+  "method": "partfield_n2_vmap",
+  "decision": "PASS_PARTFIELD_SCREEN_BASE_SPLIT_PARTIAL",
+  "parts": {
+    "screen_lid": {
+      "exists": true,
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3c/part_meshes_partfield_n2_vmap/screen_lid.ply",
+      "num_vertices": 5861,
+      "num_faces": 11488,
+      "bbox_extent": [
+        0.2137547731399536,
+        1.6503198742866516,
+        1.9945332407951355
+      ]
+    },
+    "keyboard_base": {
+      "exists": true,
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v3c/part_meshes_partfield_n2_vmap/keyboard_base.ply",
+      "num_vertices": 9549,
+      "num_faces": 18868,
+      "bbox_extent": [
+        1.9840500950813293,
+        0.18457984924316406,
+        1.9946826696395874
+      ]
+    }
+  },
+  "case": "alapuse02_v3c"
+}

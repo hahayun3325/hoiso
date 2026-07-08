@@ -1,0 +1,13 @@
+{
+  "case": "alapuse02_v3c",
+  "source_faces": 30000,
+  "part_face_counts": {
+    "screen_lid": 11488,
+    "keyboard_base": 18868
+  },
+  "selected_faces_total_with_duplicates": 30356,
+  "selected_faces_unique": 30000,
+  "duplicate_boundary_faces": 356,
+  "unique_face_coverage_ratio": 1.0,
+  "duplicate_ratio_over_selected": 0.011727500329424167
+}
