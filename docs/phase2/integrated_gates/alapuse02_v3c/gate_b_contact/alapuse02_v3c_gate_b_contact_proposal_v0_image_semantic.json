@@ -1,0 +1,82 @@
+{
+  "case_id": "alapuse02_v3c",
+  "gate": "Gate B",
+  "proposal_version": "v0_image_semantic_conservative",
+  "source": "manual_visual_inspection_of_rgb_with_gate_a_parts",
+  "decision": "CONSERVATIVE_CONTACT_PROPOSAL_CREATED",
+  "part_source": {
+    "gate_a_decision": "PASS_PARTFIELD_SCREEN_BASE_SPLIT_PARTIAL",
+    "part_manifest": "part_meshes_partfield_n2_vmap/part_manifest.json",
+    "available_parts": [
+      "screen_lid",
+      "keyboard_base"
+    ],
+    "hinge_status": "not_recovered_as_independent_mesh"
+  },
+  "image_evidence_summary": {
+    "object": "open toy laptop",
+    "visible_parts": [
+      "screen_lid",
+      "keyboard_base"
+    ],
+    "visible_interaction": "upper visible hand appears to touch or hold the screen/lid edge; lower visible hand appears near or touching the keyboard/base region",
+    "uncertainty": "single-image 2D proposal only; no final 3D verification yet"
+  },
+  "contacts": [
+    {
+      "contact_id": "c_upper_hand_screen_lid_00",
+      "hand_region": "upper_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_or_distal_fingers",
+      "object_part": "screen_lid",
+      "state": "contact_candidate",
+      "confidence": 0.70,
+      "evidence": "The upper visible hand is placed on or very near the screen/lid edge in the RGB image.",
+      "false_positive_risk": "medium",
+      "reason_for_risk": "2D overlap/near-contact may not be true 3D contact without depth or shared-frame verification.",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_lower_hand_keyboard_base_00",
+      "hand_region": "lower_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_or_distal_fingers",
+      "object_part": "keyboard_base",
+      "state": "contact_candidate",
+      "confidence": 0.65,
+      "evidence": "The lower visible hand is near the keyboard/base area and appears to support or touch the base region.",
+      "false_positive_risk": "medium",
+      "reason_for_risk": "The hand may be close to the base in the image but still needs 3D/depth verification.",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_upper_hand_keyboard_base_negative_00",
+      "hand_region": "upper_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_or_distal_fingers",
+      "object_part": "keyboard_base",
+      "state": "not_primary_contact",
+      "confidence": 0.25,
+      "evidence": "The upper visible hand is visually associated with the screen/lid rather than the keyboard/base.",
+      "false_positive_risk": "high",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_lower_hand_screen_lid_negative_00",
+      "hand_region": "lower_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_or_distal_fingers",
+      "object_part": "screen_lid",
+      "state": "not_primary_contact",
+      "confidence": 0.25,
+      "evidence": "The lower visible hand is visually associated with the keyboard/base rather than the screen/lid.",
+      "false_positive_risk": "high",
+      "should_use_for_optimization": false
+    }
+  ],
+  "gate_c_precondition": {
+    "requires_valid_shared_3d_frame": true,
+    "current_shared_frame_status": "not_available_or_not_trusted_for_alapuse02_v3c",
+    "decision": "DO_NOT_USE_FOR_FINAL_OPTIMIZATION_UNTIL_GATE_C"
+  }
+}
