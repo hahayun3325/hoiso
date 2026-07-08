@@ -80,11 +80,32 @@ def apply_T(P, T):
     return P @ T[:3, :3].T + T[:3, 3]
 
 tree = cKDTree(tgt)
-T_cur = T_old.copy()
+
+# Coarse bbox-based init: seed scale+translation from source/target bbox
+# geometry directly, instead of the old (contaminated) transform. This
+# gives iteration 0 real spatial overlap instead of relying on T_old,
+# which was solved against a whole-crop (hand+object) target and may not
+# land near the newly masked object-only target at all.
+src_extent = src0.max(0) - src0.min(0)
+tgt_extent = tgt.max(0) - tgt.min(0)
+coarse_scale = float(np.median(tgt_extent / src_extent))
+src_center = src0.mean(0)
+tgt_center = tgt.mean(0)
+
+T_init = np.eye(4)
+T_init[:3, :3] = coarse_scale * np.eye(3)
+T_init[:3, 3] = tgt_center - coarse_scale * src_center
+print(f"[init] coarse bbox scale={coarse_scale:.4f} (old T scale={s_old:.4f})")
+
+T_cur = T_init
 for it in range(20):
     cur = apply_T(src0, T_cur)
     dist, idx = tree.query(cur)
     keep = dist < np.percentile(dist, 80)           # trim worst 20%
+    if keep.sum() < 4:
+        print(f"[icp WARN] only {int(keep.sum())} inliers this iteration; "
+              f"skipping update and keeping previous transform.")
+        break
     T_cur, s_cur = umeyama(src0[keep], tgt[idx[keep]])
     if it % 5 == 0 or it == 19:
         print(f"[icp {it:02d}] inlier_mean={dist[keep].mean():.4f} scale={s_cur:.4f} (old {s_old:.4f})")
