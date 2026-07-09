@@ -38,3 +38,29 @@ shows visual fragmentation artifacts. This is consistent with occlusion
 complexity being a driver of shared-frame reliability, not a single
 uniform bug -- worth stating precisely as a pipeline-level finding
 rather than either "everything is broken" or "it mostly works."
+
+## ascis01 shape-sanity check result (final)
+
+watertight = True
+euler_number = -332  (expect ~2 for a clean closed genus-0 box)
+area^1.5 / volume = 499.05  (high = irregular/ragged surface)
+
+Watertight does not imply clean: euler_number this far from 2 indicates
+hundreds of small holes/handles or disconnected sealed fragments stitched
+into one mesh, not a coherent box. The high area/volume ratio independently
+confirms a fuzzy, high-surface-area shell rather than six flat panels.
+
+Decision: ascis01's numeric fingertip-distance pass was COINCIDENTAL.
+The bounding box happened to land at a plausible scale despite fragmented,
+untrustworthy underlying geometry. FAIL_FRAGMENTED_GEOMETRY (final).
+
+## Updated pipeline-level finding (final for this round)
+
+Three consecutive non-aket01 cases (abox01, amicuse01, ascis01) have now
+failed a genuine shared-frame check, each for a related but distinct
+reason (oversized/contaminated object; fragmented disjoint object;
+watertight-but-topologically-fragmented object). Only aket01 -- the
+simplest, least-occluded, highest-contrast-background case -- has passed.
+This is a strong enough pattern to treat guidance_out shared-frame
+reliability as input-difficulty-dependent, and to prioritize finding or
+constructing an easier input case over further debugging of harder ones.
