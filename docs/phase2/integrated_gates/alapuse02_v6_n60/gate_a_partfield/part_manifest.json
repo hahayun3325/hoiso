@@ -1,0 +1,33 @@
+{
+  "case": "alapuse02_v6_n60",
+  "case_id": "alapuse02_v6_n60",
+  "gate": "Gate A",
+  "decision": "PASS_GATE_A_PARTFIELD_N2_SCREEN_BASE_SPLIT",
+  "selected_cluster_count": 2,
+  "source_mesh": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v6_n60/partfield/input_mesh_low30k/00000.obj",
+  "cluster_labels": "/home/fredcui/Projects/ArtHOI-4D-Reconstruction/third_party/PartField/exp_results/clustering/alapuse02_v6_n60/cluster_out/00000_0_02.npy",
+  "partfield_mapping": {
+    "29330": "screen_lid",
+    "26183": "keyboard_base"
+  },
+  "parts": {
+    "screen_lid": {
+      "mesh": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v6_n60/part_meshes_partfield_n2_vmap/screen_lid.ply",
+      "vmap": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v6_n60/part_meshes_partfield_n2_vmap/screen_lid_vmap.npy",
+      "cluster_id": 29330,
+      "source_face_count": 9386
+    },
+    "keyboard_base": {
+      "mesh": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v6_n60/part_meshes_partfield_n2_vmap/keyboard_base.ply",
+      "vmap": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02_v6_n60/part_meshes_partfield_n2_vmap/keyboard_base_vmap.npy",
+      "cluster_id": 26183,
+      "source_face_count": 20614
+    }
+  },
+  "hinge": {
+    "independent_mesh": false,
+    "handling": "derive later from screen_lid/keyboard_base boundary if articulation fitting requires it"
+  },
+  "optimization_ready": false,
+  "reason_not_optimization_ready": "Gate C shared-frame verification has not run"
+}

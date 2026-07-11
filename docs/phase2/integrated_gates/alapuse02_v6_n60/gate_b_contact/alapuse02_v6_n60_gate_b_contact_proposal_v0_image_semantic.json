@@ -1,0 +1,70 @@
+{
+  "case_id": "alapuse02_v6_n60",
+  "gate": "Gate B",
+  "proposal_version": "v0_image_semantic_conservative",
+  "source": "manual_visual_inspection_of_rgb_with_gate_a_n2_parts",
+  "decision": "PASS_GATE_B_CONSERVATIVE_IMAGE_CONTACT_PROPOSAL",
+  "image_path": "/home/fredcui/foho_phase0/inputs/arctic_phase017/alapuse02v6n60.jpg",
+  "part_source": {
+    "gate_a_decision": "PASS_GATE_A_PARTFIELD_N2_SCREEN_BASE_SPLIT",
+    "part_manifest": "part_meshes_partfield_n2_vmap/part_manifest.json",
+    "available_parts": [
+      "screen_lid",
+      "keyboard_base"
+    ],
+    "hinge_status": "derived boundary only; no independent mesh"
+  },
+  "contacts": [
+    {
+      "contact_id": "c_upper_hand_screen_lid_00",
+      "hand_region": "upper_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_and_distal_fingers",
+      "object_part": "screen_lid",
+      "object_region": "upper_or_outer_lid_edge",
+      "state": "contact_candidate",
+      "confidence": 0.8,
+      "false_positive_risk": "medium",
+      "evidence": "The upper visible hand drapes over and appears to grasp the screen/lid edge.",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_lower_hand_keyboard_base_00",
+      "hand_region": "lower_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_and_distal_fingers",
+      "object_part": "keyboard_base",
+      "object_region": "front_or_side_base_edge",
+      "state": "contact_candidate",
+      "confidence": 0.75,
+      "false_positive_risk": "medium",
+      "evidence": "The lower visible hand appears to support or touch the front/side edge of the keyboard base.",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_upper_hand_keyboard_base_negative_00",
+      "hand_region": "upper_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_and_distal_fingers",
+      "object_part": "keyboard_base",
+      "state": "not_primary_contact",
+      "confidence": 0.2,
+      "false_positive_risk": "high",
+      "evidence": "The upper hand is visually associated with the lid rather than the keyboard base.",
+      "should_use_for_optimization": false
+    },
+    {
+      "contact_id": "c_lower_hand_screen_lid_negative_00",
+      "hand_region": "lower_visible_hand",
+      "hand_side": "uncertain_from_single_image",
+      "finger_or_region": "fingertips_and_distal_fingers",
+      "object_part": "screen_lid",
+      "state": "not_primary_contact",
+      "confidence": 0.2,
+      "false_positive_risk": "high",
+      "evidence": "The lower hand is visually associated with the keyboard/base rather than the lid.",
+      "should_use_for_optimization": false
+    }
+  ],
+  "gate_c_requirement": "Verify all candidates in a trusted shared 3D frame before enabling any optimization target."
+}
