@@ -1,0 +1,23 @@
+{
+  "schema_version": "vlm_asset_critic_case_v2",
+  "case_id": "alapuse02v3n60",
+  "candidate_id": "original_bad_mask",
+  "gate_mode": "pre_hunyuan",
+  "target_object": "light-tan wooden toy laptop",
+  "required_parts": [
+    "screen or lid",
+    "keyboard or base",
+    "visible hinge or side frame"
+  ],
+  "required_state": [
+    "open articulated laptop",
+    "same orientation as the source frame"
+  ],
+  "forbidden_distractors": [
+    "wooden stand or support",
+    "hand or arm",
+    "table or background",
+    "cables"
+  ],
+  "minimum_confidence": 0.75
+}
