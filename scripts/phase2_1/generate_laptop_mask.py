@@ -14,6 +14,7 @@ def main():
     parser.add_argument('--out-mask', required=True)
     parser.add_argument('--out-overlay', required=True)
     parser.add_argument('--prompt', default='laptop')
+    parser.add_argument('--sam-type', default='sam2.1_hiera_large')
     parser.add_argument('--box-threshold', type=float, default=0.30)
     parser.add_argument('--text-threshold', type=float, default=0.25)
     parser.add_argument('--positive-roi', nargs=4, type=int)
@@ -42,7 +43,7 @@ def main():
             return
 
         cropped = original.crop((x1, y1, x2, y2))
-        model = LangSAM(sam_type='sam2.1_hiera_small')
+        model = LangSAM(sam_type=args.sam_type)
         result = model.predict(
             [cropped],
             [args.prompt],
