@@ -1,0 +1,168 @@
+from pathlib import Path
+import hashlib
+import json
+import sys
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def write_env(path, values):
+    lines = [
+        "export " + key + "=" + json.dumps(str(value))
+        for key, value in values.items()
+    ]
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text("\n".join(lines) + "\n")
+
+
+def main():
+    if len(sys.argv) != 8:
+        print("[HOLD] RGB_GUARD_ARGUMENTS_INVALID")
+        return
+
+    response_path = Path(sys.argv[1])
+    query_path = Path(sys.argv[2])
+    candidate_manifest_path = Path(sys.argv[3])
+    rgb_manifest_path = Path(sys.argv[4])
+    rgb_path = Path(sys.argv[5])
+    expected_candidate = sys.argv[6]
+    env_path = Path(sys.argv[7])
+
+    required = [
+        response_path,
+        query_path,
+        candidate_manifest_path,
+        rgb_manifest_path,
+        rgb_path,
+    ]
+    missing = [str(path) for path in required if not path.is_file()]
+    if missing:
+        write_env(
+            env_path,
+            {
+                "VLM_RGB_RESPONSE_PROVENANCE": "0",
+                "VLM_RGB_RESPONSE_PROVENANCE_REASON":
+                    "missing_files:" + ",".join(missing),
+                "VLM_RGB_RESPONSE_DECISION": "unknown",
+            },
+        )
+        print("[HOLD] VLM_RGB_RESPONSE_PROVENANCE=" + str(env_path))
+        return
+
+    try:
+        response = json.loads(response_path.read_text())
+        query = json.loads(query_path.read_text())
+        candidate_manifest = json.loads(candidate_manifest_path.read_text())
+        rgb_manifest = json.loads(rgb_manifest_path.read_text())
+    except Exception as error:
+        write_env(
+            env_path,
+            {
+                "VLM_RGB_RESPONSE_PROVENANCE": "0",
+                "VLM_RGB_RESPONSE_PROVENANCE_REASON":
+                    "json_error:" + type(error).__name__,
+                "VLM_RGB_RESPONSE_DECISION": "unknown",
+            },
+        )
+        print("[HOLD] VLM_RGB_RESPONSE_JSON_INVALID=" + str(env_path))
+        return
+
+    decision = str(response.get("decision", "")).strip().lower()
+    recommendation = response.get("authorization_recommendation", {})
+    if not isinstance(recommendation, dict):
+        recommendation = {}
+
+    preferred_value = response.get("preferred_image_for_hunyuan")
+    if preferred_value is None:
+        preferred_value = recommendation.get(
+            "preferred_image_for_hunyuan",
+            "",
+        )
+    preferred = str(preferred_value).strip()
+
+    authorized = response.get("authorize_for_hunyuan")
+    if authorized is None:
+        authorized = recommendation.get("authorize_hunyuan")
+
+    attachments = query.get("attachments_in_order", [])
+    rgb_attachments = [
+        item for item in attachments
+        if item.get("role") == "hunyuan_input_rgb"
+    ]
+
+    checks = {
+        "response_case":
+            response.get("case_id") == "alapuse02v3n60",
+        "response_candidate":
+            response.get("candidate_id") == expected_candidate,
+        "query_case":
+            query.get("case_id") == "alapuse02v3n60",
+        "query_candidate":
+            query.get("candidate_id") == expected_candidate,
+        "candidate_manifest_candidate":
+            candidate_manifest.get("candidate_id") == expected_candidate,
+        "rgb_manifest_candidate":
+            rgb_manifest.get("candidate_id") == expected_candidate,
+        "query_candidate_manifest_hash":
+            query.get("candidate_manifest_sha256")
+            == digest(candidate_manifest_path),
+        "query_rgb_manifest_hash":
+            query.get("rgb_manifest_sha256")
+            == digest(rgb_manifest_path),
+        "rgb_manifest_source_hash":
+            rgb_manifest.get("source_candidate_manifest_sha256")
+            == digest(candidate_manifest_path),
+        "rgb_file_hash":
+            rgb_manifest.get("hunyuan_input_rgb_sha256")
+            == digest(rgb_path),
+        "one_rgb_attachment": len(rgb_attachments) == 1,
+        "decision_known": decision in {"pass", "reject"},
+    }
+
+    if len(rgb_attachments) == 1:
+        checks["query_rgb_attachment_hash"] = (
+            rgb_attachments[0].get("sha256") == digest(rgb_path)
+        )
+    else:
+        checks["query_rgb_attachment_hash"] = False
+
+    if decision == "pass":
+        checks["decision_fields_consistent"] = (
+            authorized is True
+            and Path(preferred).name == rgb_path.name
+        )
+    elif decision == "reject":
+        checks["decision_fields_consistent"] = (
+            authorized is False
+            and preferred.lower() in {"", "none"}
+        )
+    else:
+        checks["decision_fields_consistent"] = False
+
+    failed = [name for name, passed in checks.items() if not passed]
+    passed = not failed
+    reason = "pass" if passed else "failed_checks:" + ",".join(failed)
+
+    write_env(
+        env_path,
+        {
+            "VLM_RGB_RESPONSE_PROVENANCE": "1" if passed else "0",
+            "VLM_RGB_RESPONSE_PROVENANCE_REASON": reason,
+            "VLM_RGB_RESPONSE_DECISION": decision or "unknown",
+            "VLM_RGB_RESPONSE_SHA256": digest(response_path),
+            "VLM_RGB_QUERY_SHA256": digest(query_path),
+            "VLM_RGB_IMAGE_SHA256": digest(rgb_path),
+        },
+    )
+
+    label = "PASS" if passed else "HOLD"
+    print(
+        f"[{label}] VLM_RGB_RESPONSE_PROVENANCE="
+        f"{env_path} reason={reason}"
+    )
+
+
+if __name__ == "__main__":
+    main()

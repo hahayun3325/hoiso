@@ -1,0 +1,18 @@
+{
+  "schema_version": "auto_v2_sam2_model_lock_v2",
+  "case_id": "alapuse02v3n60",
+  "created_at_utc": "2026-07-27T20:06:53.865466+00:00",
+  "variant": "sam2.1_hiera_large",
+  "registry_contract": "direct_url_and_config",
+  "registry_spec": {
+    "url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt",
+    "config": "configs/sam2.1/sam2.1_hiera_l.yaml"
+  },
+  "model_config": "configs/sam2.1/sam2.1_hiera_l.yaml",
+  "checkpoint_url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt",
+  "checkpoint": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/models/sam2.1_hiera_large.pt",
+  "checkpoint_bytes": 898083611,
+  "checkpoint_sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+  "downloaded_now": true,
+  "maximum_configurations": 1
+}

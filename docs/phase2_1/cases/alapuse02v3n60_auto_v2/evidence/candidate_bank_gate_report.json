@@ -1,0 +1,73 @@
+{
+  "schema_version": "auto_v2_candidate_bank_gate_report_v1",
+  "case_id": "alapuse02v3n60",
+  "created_at_utc": "2026-07-27T22:23:08.734166+00:00",
+  "bank": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/candidate_bank_summary.json",
+  "bank_sha256": "2fbb2343300bf0ff2e7fa721c2c732bb5b03a53aa9a94c051b0bd175973e6acc",
+  "build_config": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/preregistration/build_config_resolved.json",
+  "build_config_sha256": "275b07e4715684dacf59f47714dda8e154f946eb6523aa8c184f506bb04ff56f",
+  "candidate_id_set_complete": true,
+  "deterministic_pass_ids": [
+    "c01_whole_minus_distractors",
+    "c02_part_union_raw",
+    "c03_part_union_minus_distractors",
+    "c04_part_graph_complete"
+  ],
+  "deterministic_pass_count": 4,
+  "metrics": {
+    "c01_whole_minus_distractors": {
+      "foreground_pixels": 154972,
+      "components": 1,
+      "largest_component_fraction": 1.0,
+      "lid_retention": 0.9996913357957877,
+      "base_retention": 0.9974335512954987,
+      "support_overlap_fraction": 0.0,
+      "tabletop_overlap_fraction": 0.0,
+      "bottom_border_touch_fraction": 0.0,
+      "lid_above_base": true,
+      "hinge_connected_with_dilation": true,
+      "deterministic_gate_pass": true
+    },
+    "c02_part_union_raw": {
+      "foreground_pixels": 140208,
+      "components": 1,
+      "largest_component_fraction": 1.0,
+      "lid_retention": 1.0,
+      "base_retention": 1.0,
+      "support_overlap_fraction": 0.0,
+      "tabletop_overlap_fraction": 0.0,
+      "bottom_border_touch_fraction": 0.0,
+      "lid_above_base": true,
+      "hinge_connected_with_dilation": true,
+      "deterministic_gate_pass": true
+    },
+    "c03_part_union_minus_distractors": {
+      "foreground_pixels": 140199,
+      "components": 1,
+      "largest_component_fraction": 1.0,
+      "lid_retention": 1.0,
+      "base_retention": 0.9997991474926912,
+      "support_overlap_fraction": 0.0,
+      "tabletop_overlap_fraction": 0.0,
+      "bottom_border_touch_fraction": 0.0,
+      "lid_above_base": true,
+      "hinge_connected_with_dilation": true,
+      "deterministic_gate_pass": true
+    },
+    "c04_part_graph_complete": {
+      "foreground_pixels": 153084,
+      "components": 1,
+      "largest_component_fraction": 1.0,
+      "lid_retention": 1.0,
+      "base_retention": 0.9771474480573099,
+      "support_overlap_fraction": 0.0,
+      "tabletop_overlap_fraction": 0.0,
+      "bottom_border_touch_fraction": 0.0,
+      "lid_above_base": true,
+      "hinge_connected_with_dilation": true,
+      "deterministic_gate_pass": true
+    }
+  },
+  "next_status": "proceed_to_blind_critic_preparation",
+  "blind_critic_queries_spent": 0
+}

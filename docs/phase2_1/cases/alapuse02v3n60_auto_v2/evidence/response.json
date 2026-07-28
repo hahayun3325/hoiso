@@ -1,0 +1,72 @@
+{
+  "schema_version": "auto_v2_candidate_critic_v1",
+  "case_id": "alapuse02v3n60",
+  "uncertain": false,
+  "candidate_reviews": [
+    {
+      "candidate_id": "c01_whole_minus_distractors",
+      "target_identity_preserved": true,
+      "lid_complete": true,
+      "base_complete": true,
+      "hinge_preserved": true,
+      "support_absent": true,
+      "tabletop_absent": true,
+      "hand_absent": true,
+      "orientation_preserved": true,
+      "safe_for_hunyuan": true,
+      "confidence": 0.91,
+      "failure_reasons": []
+    },
+    {
+      "candidate_id": "c02_part_union_raw",
+      "target_identity_preserved": false,
+      "lid_complete": true,
+      "base_complete": false,
+      "hinge_preserved": false,
+      "support_absent": true,
+      "tabletop_absent": true,
+      "hand_absent": true,
+      "orientation_preserved": true,
+      "safe_for_hunyuan": false,
+      "confidence": 0.93,
+      "failure_reasons": [
+        "large missing/blank region in keyboard area",
+        "base interior is incomplete",
+        "hinge relationship is visually disrupted by the missing region"
+      ]
+    },
+    {
+      "candidate_id": "c03_part_union_minus_distractors",
+      "target_identity_preserved": false,
+      "lid_complete": true,
+      "base_complete": false,
+      "hinge_preserved": false,
+      "support_absent": true,
+      "tabletop_absent": true,
+      "hand_absent": true,
+      "orientation_preserved": true,
+      "safe_for_hunyuan": false,
+      "confidence": 0.93,
+      "failure_reasons": [
+        "large missing/blank region in keyboard area",
+        "base interior is incomplete",
+        "hinge relationship is visually disrupted by the missing region"
+      ]
+    },
+    {
+      "candidate_id": "c04_part_graph_complete",
+      "target_identity_preserved": true,
+      "lid_complete": true,
+      "base_complete": true,
+      "hinge_preserved": true,
+      "support_absent": true,
+      "tabletop_absent": true,
+      "hand_absent": true,
+      "orientation_preserved": true,
+      "safe_for_hunyuan": true,
+      "confidence": 0.88,
+      "failure_reasons": []
+    }
+  ],
+  "notes": "c01 and c04 preserve the open wooden toy laptop while excluding the support, tabletop, and hands. c02 and c03 are unsafe because the base/keyboard area contains a large missing white region."
+}

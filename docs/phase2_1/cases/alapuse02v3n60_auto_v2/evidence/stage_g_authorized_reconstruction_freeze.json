@@ -1,0 +1,66 @@
+{
+  "schema_version": "auto_v2_stage_g_freeze_v1",
+  "case_id": "alapuse02v3n60",
+  "candidate_id": "c01_whole_minus_distractors",
+  "scientific_role": "automatic_candidate",
+  "created_at_utc": "2026-07-28T02:57:32.629880+00:00",
+  "authorized_fixed_seed_run": true,
+  "settings": {
+    "steps": 30,
+    "octree_resolution": 384,
+    "num_chunks": 8000,
+    "seed": 1234
+  },
+  "artifacts": [
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/candidate_manifest.json",
+      "bytes": 1899,
+      "sha256": "2fc52472b5df1c2d42b450d83a5fdcc98b737fc9d2ac55d2c59c702640044b9c"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/repaired_object_mask.png",
+      "bytes": 3694,
+      "sha256": "bfcd35bc41982d8df2a04ed0fe2e3317dfed15410fbc52adc6679b459af28df7"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/hunyuan_input_rgb.png",
+      "bytes": 186650,
+      "sha256": "20f088b90482accce9016db17f61c8b52003a9596a2ae53b3901170fe005e64f"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/selection/selection.json",
+      "bytes": 1664,
+      "sha256": "bf7bd3a411744afa8c233458c8b5282b6fc79755f16a896d1b4e8ab6723ebadd"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/selection/exact_rgb_bridge/candidate_scoped_response.json",
+      "bytes": 946,
+      "sha256": "bc38fb45ddadeab8ad2e861b43725ecf24b11b9326ee878b54620148062c23b4"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/selection/exact_rgb_bridge/hunyuan_input_rgb_manifest.json",
+      "bytes": 768,
+      "sha256": "5b9b5a077d47fbba9076bbf82cbce3f887da1537b5fd04b56f5c41e859a3a244"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/auth/c01_whole_minus_distractors.response_guard.env",
+      "bytes": 538,
+      "sha256": "3347603cb04941b3c5b84a4b88b8a2f207eede02b4ca03534f398f7bd9a27930"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/auth/c01_whole_minus_distractors.inpaint_authorization.env",
+      "bytes": 468,
+      "sha256": "738b846a769f1f6dc253f3f1bd3a4e9c9213bc1e4400cb5d6510033a9d2a8aaa"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/authorized_trial_spec.json",
+      "bytes": 1592,
+      "sha256": "6fc37a1ffdf81820459cc41f7455252528ab305ecef1c74bbc1a718416d2809c"
+    },
+    {
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/repaired_object.glb",
+      "bytes": 12743044,
+      "sha256": "e6a8522847fe8808f932c479c19f0d683f7afecbdf08f6cc4cddd08ead3c3a7a"
+    }
+  ]
+}

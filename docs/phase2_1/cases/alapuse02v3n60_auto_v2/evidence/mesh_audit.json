@@ -1,0 +1,32 @@
+{
+  "schema_version": "auto_v2_mesh_audit_v1",
+  "case_id": "alapuse02v3n60",
+  "candidate_id": "c01_whole_minus_distractors",
+  "scientific_role": "automatic_candidate",
+  "mesh": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/repaired_object.glb",
+  "mesh_sha256": "e6a8522847fe8808f932c479c19f0d683f7afecbdf08f6cc4cddd08ead3c3a7a",
+  "bytes": 12743044,
+  "vertices": 353952,
+  "faces": 707900,
+  "connected_components": 1,
+  "watertight": true,
+  "winding_consistent": true,
+  "euler_number": 2,
+  "bounds": [
+    [
+      -0.7790254354476929,
+      -0.8184626698493958,
+      -0.7264189124107361
+    ],
+    [
+      0.6211055517196655,
+      0.8146876692771912,
+      0.7245502471923828
+    ]
+  ],
+  "extents": [
+    1.4001309871673584,
+    1.633150339126587,
+    1.450969159603119
+  ]
+}

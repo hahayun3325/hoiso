@@ -1,0 +1,29 @@
+{
+  "schema_version": "auto_v2_selection_v1",
+  "case_id": "alapuse02v3n60",
+  "decision": "selected_for_existing_provenance_guard",
+  "selected_candidate_id": "c01_whole_minus_distractors",
+  "critic_confidence": 0.91,
+  "authorize_hunyuan": false,
+  "authorization_note": "This is only preselection. Existing exact-file provenance and authorization scripts must still pass before Hunyuan.",
+  "candidate_dir": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors",
+  "candidate_manifest": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/candidate_manifest.json",
+  "candidate_rgb": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/hunyuan_input_rgb.png",
+  "candidate_rgb_sha256": "20f088b90482accce9016db17f61c8b52003a9596a2ae53b3901170fe005e64f",
+  "bank_sha256": "2fbb2343300bf0ff2e7fa721c2c732bb5b03a53aa9a94c051b0bd175973e6acc",
+  "critic_response_sha256": "58725af859882def888dfb57eaf79e4f8ea8534aea819a37e5c6c7b17d32c3b6",
+  "critic_review": {
+    "candidate_id": "c01_whole_minus_distractors",
+    "target_identity_preserved": true,
+    "lid_complete": true,
+    "base_complete": true,
+    "hinge_preserved": true,
+    "support_absent": true,
+    "tabletop_absent": true,
+    "hand_absent": true,
+    "orientation_preserved": true,
+    "safe_for_hunyuan": true,
+    "confidence": 0.91,
+    "failure_reasons": []
+  }
+}

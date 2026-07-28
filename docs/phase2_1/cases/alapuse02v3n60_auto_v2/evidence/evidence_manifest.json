@@ -1,0 +1,68 @@
+{
+  "schema_version": "alapuse02v3n60_auto_v2_git_evidence_v1",
+  "case_id": "alapuse02v3n60",
+  "scientific_role": "automatic_development_case",
+  "generated_meshes_committed": false,
+  "records": [
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/preregistration/build_config_resolved.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/build_config_resolved.json",
+      "sha256": "275b07e4715684dacf59f47714dda8e154f946eb6523aa8c184f506bb04ff56f",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/preregistration/sam2_model_lock_v2.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/sam2_model_lock_v2.json",
+      "sha256": "e237d97d9902a7e74815307de355e9bf7f01a188a1a198f9e253719a886d5797",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/review/candidate_bank_freeze.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/candidate_bank_freeze.json",
+      "sha256": "c8517980eaab2cda7e02771c338cdf477e77764d607c4d708e29eb9f25c8a70f",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/review/candidate_bank_gate_report.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/candidate_bank_gate_report.json",
+      "sha256": "267a7e23774d1f45ca443d00eafcab937a3b58216715eaa243c26c1029cb4a91",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/vlm_critic/result/response.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/response.json",
+      "sha256": "58725af859882def888dfb57eaf79e4f8ea8534aea819a37e5c6c7b17d32c3b6",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/selection/selection.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/selection.json",
+      "sha256": "bf7bd3a411744afa8c233458c8b5282b6fc79755f16a896d1b4e8ab6723ebadd",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/stage_g_authorized_reconstruction_freeze.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/stage_g_authorized_reconstruction_freeze.json",
+      "sha256": "2aa29ddc61ddad4c33f1737ec805236fabccc2c1c86d9d5da22910edb1f2d076",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/mesh_audit.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/mesh_audit.json",
+      "sha256": "657f21302aaa252a8454efebe70fd6fda8aeda7f58bdfe4cb83c6be1f5123d7a",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/hunyuan/c01_whole_minus_distractors.steps30.octree384.seed1234/post_hunyuan_review/human_review_v2.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/human_review_v2.json",
+      "sha256": "e576f333a7fc52ddadb2f4cc16abeb77b5d3990b65016203c3b5ad27065390f2",
+      "status": "copied"
+    },
+    {
+      "source": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate0_accepted/provenance.json",
+      "repository_copy": "/home/fredcui/Projects/FollowMyHold/docs/phase2_1/cases/alapuse02v3n60_auto_v2/evidence/provenance.json",
+      "sha256": "8f3b0cf78813f6f030418d63383a1aeccf1bc725c09b927f20c6c9f258362ac4",
+      "status": "copied"
+    }
+  ]
+}

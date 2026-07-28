@@ -1,0 +1,34 @@
+{
+  "case_id": "alapuse02v3n60",
+  "reference_rgb": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/candidates/repair_J_auto_target_resegment/manual_vlm/request/01_reference_crop.png",
+  "context_rgb": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/candidates/repair_G_mask_union_hole_filled/contextual_inpaint.png",
+  "output_root": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank",
+  "masks": {
+    "whole": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/part_masks/whole_laptop_mask.png",
+    "lid": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/part_masks/laptop_lid_mask.png",
+    "base": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/part_masks/laptop_base_mask.png",
+    "support": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/part_masks/wooden_support_mask.png",
+    "tabletop": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/part_masks/tabletop_mask.png"
+  },
+  "thresholds": {
+    "distractor_dilate_px": 1,
+    "hinge_dilation_px": 8,
+    "max_completion_area_gain": 1.35,
+    "max_distractor_overlap_fraction": 0.005,
+    "max_bottom_border_touch_fraction": 0.02,
+    "max_components": 3,
+    "min_lid_retention": 0.9,
+    "min_base_retention": 0.9
+  },
+  "path_resolution": {
+    "schema_version": "auto_v2_build_path_resolution_v1",
+    "created_at_utc": "2026-07-27T22:17:51.140417+00:00",
+    "original_config": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/preregistration/build_config.json",
+    "original_config_sha256": "6e455a4e781f2b44e6b2b1fe1ec353c0dd7c1fdc9872832c4cb51dd611fb76ca",
+    "sam2_run_freeze": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/review/sam2_run_freeze.json",
+    "sam2_run_freeze_sha256": "8c060ed6b31c0be637cbffa7531d89e995dea3518542927d91aa237936ef8bb2",
+    "previous_reference_rgb": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/candidates/repair_I_reviewed_full_lid_silhouette/01_reference_crop.png",
+    "method_parameters_changed": false,
+    "candidate_I_used_for_construction": false
+  }
+}

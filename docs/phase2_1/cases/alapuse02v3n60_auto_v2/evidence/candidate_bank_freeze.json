@@ -1,0 +1,128 @@
+{
+  "schema_version": "auto_v2_candidate_bank_freeze_v1",
+  "case_id": "alapuse02v3n60",
+  "created_at_utc": "2026-07-27T23:23:33.755279+00:00",
+  "candidate_bank": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/candidate_bank_summary.json",
+  "candidate_bank_sha256": "2fbb2343300bf0ff2e7fa721c2c732bb5b03a53aa9a94c051b0bd175973e6acc",
+  "critic_panel": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/critic_candidate_bank.png",
+  "critic_panel_sha256": "386852363e5c82286773cf38c9b8940b7bd5be246be2ba9a968db32c4ad40512",
+  "gate_report": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/review/candidate_bank_gate_report.json",
+  "gate_report_sha256": "267a7e23774d1f45ca443d00eafcab937a3b58216715eaa243c26c1029cb4a91",
+  "build_config": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/preregistration/build_config_resolved.json",
+  "build_config_sha256": "275b07e4715684dacf59f47714dda8e154f946eb6523aa8c184f506bb04ff56f",
+  "candidate_assets": [
+    {
+      "candidate_id": "c01_whole_minus_distractors",
+      "role": "manifest",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/candidate_manifest.json",
+      "bytes": 1899,
+      "sha256": "2fc52472b5df1c2d42b450d83a5fdcc98b737fc9d2ac55d2c59c702640044b9c"
+    },
+    {
+      "candidate_id": "c01_whole_minus_distractors",
+      "role": "mask",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/repaired_object_mask.png",
+      "bytes": 3694,
+      "sha256": "bfcd35bc41982d8df2a04ed0fe2e3317dfed15410fbc52adc6679b459af28df7"
+    },
+    {
+      "candidate_id": "c01_whole_minus_distractors",
+      "role": "overlay",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/repaired_object_mask_overlay.png",
+      "bytes": 457433,
+      "sha256": "4f45b009cc5a8f23593480a287cfae2b449950fbe0082b28a1c2c9aef3557af6"
+    },
+    {
+      "candidate_id": "c01_whole_minus_distractors",
+      "role": "hunyuan_input_rgb",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c01_whole_minus_distractors/hunyuan_input_rgb.png",
+      "bytes": 186650,
+      "sha256": "20f088b90482accce9016db17f61c8b52003a9596a2ae53b3901170fe005e64f"
+    },
+    {
+      "candidate_id": "c02_part_union_raw",
+      "role": "manifest",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c02_part_union_raw/candidate_manifest.json",
+      "bytes": 1845,
+      "sha256": "108b1dc7b0ad590a822a663ddce3c0cd5632a1f56e84ec6bfa045a7d6f1759d6"
+    },
+    {
+      "candidate_id": "c02_part_union_raw",
+      "role": "mask",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c02_part_union_raw/repaired_object_mask.png",
+      "bytes": 4343,
+      "sha256": "f3ed1a808f32b32ecf0a4925f0802b0454e5dd0765593034aa403ea82f58a115"
+    },
+    {
+      "candidate_id": "c02_part_union_raw",
+      "role": "overlay",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c02_part_union_raw/repaired_object_mask_overlay.png",
+      "bytes": 461877,
+      "sha256": "7682d6b25033c0bec8ab9057621f017700ffac07896ab6b1251b1a54081a0cfe"
+    },
+    {
+      "candidate_id": "c02_part_union_raw",
+      "role": "hunyuan_input_rgb",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c02_part_union_raw/hunyuan_input_rgb.png",
+      "bytes": 166216,
+      "sha256": "a465b8fb230f6fdd030b0982c3f780ef210ff49855bfccdb8054400487250dd7"
+    },
+    {
+      "candidate_id": "c03_part_union_minus_distractors",
+      "role": "manifest",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c03_part_union_minus_distractors/candidate_manifest.json",
+      "bytes": 1917,
+      "sha256": "fa0dd4696e05de5fd1a6c21bb2c66dcf8e7c3a3f5487dea95619eb2ead894aeb"
+    },
+    {
+      "candidate_id": "c03_part_union_minus_distractors",
+      "role": "mask",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c03_part_union_minus_distractors/repaired_object_mask.png",
+      "bytes": 4344,
+      "sha256": "0b6607be7b384a5339ad7bb78197a176cb19bae4a2826f3bdbf8fc01a4318ab7"
+    },
+    {
+      "candidate_id": "c03_part_union_minus_distractors",
+      "role": "overlay",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c03_part_union_minus_distractors/repaired_object_mask_overlay.png",
+      "bytes": 461886,
+      "sha256": "6b45e258229ad6fbf053eed67215e77ad9f0a06224eab984046f9c05227fc89e"
+    },
+    {
+      "candidate_id": "c03_part_union_minus_distractors",
+      "role": "hunyuan_input_rgb",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c03_part_union_minus_distractors/hunyuan_input_rgb.png",
+      "bytes": 166190,
+      "sha256": "8ea44fba92aaa42fa65ec09c15b8f9899f00c88ad4ef54968d8ebc24b91ad37d"
+    },
+    {
+      "candidate_id": "c04_part_graph_complete",
+      "role": "manifest",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c04_part_graph_complete/candidate_manifest.json",
+      "bytes": 1892,
+      "sha256": "f17cc14dcc774123e74dadfe5c2e4e8aca5399c97c0ccfee2b8d8164d272eaa5"
+    },
+    {
+      "candidate_id": "c04_part_graph_complete",
+      "role": "mask",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c04_part_graph_complete/repaired_object_mask.png",
+      "bytes": 3658,
+      "sha256": "6aba28c8cae69704bb8a6b37777b040e1f82a6ad4b7d60fd1f918a7fdd88c7b6"
+    },
+    {
+      "candidate_id": "c04_part_graph_complete",
+      "role": "overlay",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c04_part_graph_complete/repaired_object_mask_overlay.png",
+      "bytes": 457972,
+      "sha256": "682b4dcba660ebfdec0fcfb42a07dc0cd3c22b1522560dc67f4b5541433ed9c5"
+    },
+    {
+      "candidate_id": "c04_part_graph_complete",
+      "role": "hunyuan_input_rgb",
+      "path": "/home/fredcui/foho_phase0/vlm_failure_containment/alapuse02v3n60/inpainting_fallback/automatic_recovery_v2_part_graph/candidate_bank/c04_part_graph_complete/hunyuan_input_rgb.png",
+      "bytes": 183639,
+      "sha256": "f6faa007b8be5ef800d2443b792026fc9453fcf35eeef2e0fae5710b8389e1f3"
+    }
+  ],
+  "blind_critic_queries_spent": 0
+}
