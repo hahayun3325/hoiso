@@ -1,0 +1,9 @@
+{
+  "normalization": "target_bbox_diagonal",
+  "proper_normalized_rmse_max": 0.5,
+  "proper_normalized_p95_max": 0.75,
+  "pairwise_normalized_rmse_max": 0.1,
+  "mask_iou_min": null,
+  "reflected_preference_ratio_max": 0.8,
+  "reflected_preference_min_abs_improvement": 0.02
+}

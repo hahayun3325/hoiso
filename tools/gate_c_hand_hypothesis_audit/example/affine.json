@@ -1,0 +1,21 @@
+{
+  "name": "identity",
+  "matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "includes_registered_horizontal_flip": false
+}

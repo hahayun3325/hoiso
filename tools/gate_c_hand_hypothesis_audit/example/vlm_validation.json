@@ -1,0 +1,17 @@
+{
+  "schema_version": "gate_c_vlm_hand_choice_validation_v1",
+  "raw_response_path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/vlm_response.json",
+  "audit_summary_path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/hand_candidate_audit_summary.json",
+  "valid": true,
+  "validation_errors": [],
+  "raw_decision": "select",
+  "selected_candidate_id": "good",
+  "deterministic_route": "SELECT_CORRESPONDENCE_CANDIDATE_FOR_C1_5",
+  "final_route": "VLM_SUPPORTS_DETERMINISTIC_CORRESPONDENCE_CANDIDATE",
+  "authorizations": {
+    "run_optimizer": false,
+    "run_c2": false,
+    "run_f34": false,
+    "run_gate_d": false
+  }
+}

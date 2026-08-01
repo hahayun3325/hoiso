@@ -1,0 +1,4 @@
+candidate_id,projected_keypoints_path,mesh_path,mask_path,source_frame,source_identity_status,handedness,crop_flipped,joint_order_status,raster_status,mapping_path,raster_affine_path,notes
+current_c1_hand,/ABS/PATH/current_projected_keypoints.npy,/ABS/PATH/current_hand.ply,,target_frame,unknown,left,false,unknown,unknown,/ABS/PATH/keypoint_mapping.json,/ABS/PATH/raster_affine.json,Do not mark verified until source code and crop transform are audited
+alternate_same_frame_0,/ABS/PATH/alternate0_projected_keypoints.npy,/ABS/PATH/alternate0_hand.ply,,target_frame,unknown,right,false,unknown,unknown,/ABS/PATH/keypoint_mapping.json,/ABS/PATH/raster_affine.json,Possible second hand detection
+neighbor_upper_hand,/ABS/PATH/neighbor_projected_keypoints.npy,/ABS/PATH/neighbor_hand.ply,,neighbor_frame,unknown,left,false,unknown,unknown,/ABS/PATH/keypoint_mapping.json,/ABS/PATH/raster_affine.json,Initialization-only candidate; final evaluation remains on target frame

@@ -1,0 +1,4 @@
+candidate_id,route,metadata_contract_pass,proper_normalized_rmse,proper_normalized_p95,reflected_normalized_rmse,pairwise_normalized_rmse,mask_iou,overlay
+good,PASS_CORRESPONDENCE_CANDIDATE,True,0.0,0.0,0.250463,0.0,,/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/good_correspondence_overlay.png
+reflected,HOLD_REFLECTED_ONLY,True,0.250463,0.33885,0.0,0.0,,/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/reflected_correspondence_overlay.png
+wrong,FAIL_GLOBAL_CORRESPONDENCE,True,0.140586,0.248632,0.247017,0.451667,,/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/wrong_correspondence_overlay.png

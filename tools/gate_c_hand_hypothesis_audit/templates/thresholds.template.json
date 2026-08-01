@@ -1,0 +1,21 @@
+{
+  "schema_version": "gate_c_hand_correspondence_thresholds_v1",
+  "status": "DRAFT_NOT_REGISTERED",
+  "normalization": "target_bbox_diagonal",
+  "proper_normalized_rmse_max": 0.5,
+  "proper_normalized_p95_max": 0.75,
+  "pairwise_normalized_rmse_max": null,
+  "mask_iou_min": null,
+  "calibration_rule": {
+    "reference_case": "alapuse02v6n60",
+    "pairwise_threshold": "freeze after running the known-positive hand through the same audit; suggested starting rule is 1.25x the positive-reference pairwise error",
+    "mask_threshold": "optional; freeze only if candidate and target hand masks use the same raster and occlusion convention"
+  },
+  "notes": [
+    "Do not fill thresholds after seeing the v3 candidate results.",
+    "A reflected-only fit can never authorize a 3D hand reflection.",
+    "The existing RMSE and p95 limits are inherited from the registered Branch-E diagnostic; confirm the same normalization convention before use."
+  ],
+  "reflected_preference_ratio_max": 0.8,
+  "reflected_preference_min_abs_improvement": 0.02
+}

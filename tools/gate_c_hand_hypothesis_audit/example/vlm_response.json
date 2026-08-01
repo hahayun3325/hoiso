@@ -1,0 +1,8 @@
+{
+  "decision": "select",
+  "selected_candidate_id": "good",
+  "physical_hand": "upper",
+  "handedness": "left",
+  "confidence": 0.95,
+  "reasons": ["matches the upper hand", "finger spread is consistent"]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "explicit_keypoint_mapping_v1",
+  "name": "REPLACE_WITH_SOURCE_PROVEN_MAPPING_NAME",
+  "source_joint_order": "REPLACE_WITH_EXACT_SOURCE_ORDER",
+  "target_joint_order": "REPLACE_WITH_EXACT_TARGET_ORDER",
+  "candidate_to_target": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "provenance": "Do not keep identity unless the producer code proves both arrays use the same semantic order."
+}

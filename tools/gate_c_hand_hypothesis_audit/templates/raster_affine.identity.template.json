@@ -1,0 +1,13 @@
+{
+  "schema_version": "registered_raster_affine_v1",
+  "name": "full_image_identity",
+  "matrix": [
+    [1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0]
+  ],
+  "includes_registered_horizontal_flip": false,
+  "source_space": "REPLACE_WITH_SOURCE_SPACE",
+  "target_space": "REPLACE_WITH_TARGET_SPACE",
+  "provenance": "Use identity only when both keypoint arrays are already in the same full-image raster."
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "gate_c_professor_route_v1",
+  "case_id": "alapuse02v3n60",
+  "created_at_utc": "2026-08-01T21:55:35.555662+00:00",
+  "audit_route": "SELECT_CORRESPONDENCE_CANDIDATE_FOR_C1_5",
+  "selected_candidate_id": "good",
+  "professor_route": "PREPARE_SELECTED_CANDIDATE_SHARED_FRAME_DRY_RUN",
+  "reasoning": [
+    "translation-only Branch E is permanently closed",
+    "proper-root and reflected-only Branch F recovery are closed",
+    "object-root movement cannot repair a hand-only keypoint correspondence failure",
+    "contact/collision stages remain closed until a credible hand projection exists"
+  ],
+  "bound_inputs": {
+    "audit_summary": {
+      "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/hand_candidate_audit_summary.json",
+      "sha256": "9efc34e052e281ebe1850e5dda33fa6b531ca6d43652b74f3f31a8ce9d74fcec",
+      "size_bytes": 8818
+    },
+    "vlm_validation": {
+      "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/vlm_validation.json",
+      "sha256": "b4b283f7fb9a4d284f2e478ebe4bccfc083c13c2294ef6acba417b8612635dec",
+      "size_bytes": 663
+    }
+  },
+  "authorizations": {
+    "run_new_optimizer": false,
+    "run_c2": false,
+    "run_f34": false,
+    "run_gate_d": false
+  }
+}

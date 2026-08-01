@@ -1,0 +1,283 @@
+{
+  "schema_version": "gate_c_hand_candidate_audit_v1",
+  "target_keypoints": {
+    "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/target.npy",
+    "sha256": "bf9c13fee6cf0d47f10be31a7261bea4c4a126dd011ab10271cf2f7897fedea1",
+    "count": 21
+  },
+  "thresholds": {
+    "normalization": "target_bbox_diagonal",
+    "proper_normalized_rmse_max": 0.5,
+    "proper_normalized_p95_max": 0.75,
+    "pairwise_normalized_rmse_max": 0.1,
+    "mask_iou_min": null,
+    "reflected_preference_ratio_max": 0.8,
+    "reflected_preference_min_abs_improvement": 0.02
+  },
+  "normalization": "target_bbox_diagonal",
+  "candidates": [
+    {
+      "candidate_id": "good",
+      "source_frame": "synthetic",
+      "source_identity_status": "verified_upper_hand",
+      "handedness": "left",
+      "crop_flipped": false,
+      "joint_order_status": "verified",
+      "raster_status": "verified",
+      "notes": "synthetic test",
+      "projected_keypoints": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/candidate_good.npy",
+        "sha256": "292c93aead10cf4802d166493641c3d9aa8840dcc6fdc130c40969d3f49ff589",
+        "count": 21
+      },
+      "usable_joint_count": 21,
+      "normalization_value_px": 271.447969,
+      "mapping": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/mapping.json",
+        "sha256": "0d5382f1c4c2035cf353a3abf6adc408e9f28d8e4ea9e8a8b47a058be7923bde",
+        "name": "synthetic_identity"
+      },
+      "raster_affine": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/affine.json",
+        "sha256": "50d6d9ceeadd14ec103e594bcfc99fc9e2b1f0f949ac979c0890be09392f75d2",
+        "name": "identity"
+      },
+      "metadata_contract_pass": true,
+      "proper_fit": {
+        "valid": true,
+        "determinant": 1.0,
+        "scale": 1.25,
+        "rotation": [
+          [
+            0.90630778703665,
+            -0.4226182617406993
+          ],
+          [
+            0.42261826174069944,
+            0.90630778703665
+          ]
+        ],
+        "translation": [
+          -91.2701871489736,
+          120.53907810474604
+        ],
+        "rmse_px": 0.0,
+        "p95_px": 0.0,
+        "mean_px": 0.0,
+        "max_px": 0.0,
+        "normalized_rmse": 0.0,
+        "normalized_p95": 0.0
+      },
+      "reflected_fit": {
+        "valid": true,
+        "determinant": -1.0,
+        "scale": 0.278731,
+        "rotation": [
+          [
+            -0.5356115967696679,
+            -0.8444644559754109
+          ],
+          [
+            -0.844464455975411,
+            0.5356115967696677
+          ]
+        ],
+        "translation": [
+          342.07746896468086,
+          318.62426531037204
+        ],
+        "rmse_px": 67.987609,
+        "p95_px": 91.980106,
+        "mean_px": 62.965179,
+        "max_px": 115.455599,
+        "normalized_rmse": 0.250463,
+        "normalized_p95": 0.33885
+      },
+      "pairwise_normalized_rmse": 0.0,
+      "mask_iou": null,
+      "route": "PASS_CORRESPONDENCE_CANDIDATE",
+      "reasons": [
+        "proper_similarity_and_structure_pass"
+      ],
+      "overlay": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/good_correspondence_overlay.png"
+    },
+    {
+      "candidate_id": "reflected",
+      "source_frame": "synthetic",
+      "source_identity_status": "verified_upper_hand",
+      "handedness": "left",
+      "crop_flipped": false,
+      "joint_order_status": "verified",
+      "raster_status": "verified",
+      "notes": "synthetic test",
+      "projected_keypoints": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/candidate_reflected.npy",
+        "sha256": "3dfcafa1bfcf73e8edd37dcfae653579ff630c27c96b7522c3ad6f9f39ac9af8",
+        "count": 21
+      },
+      "usable_joint_count": 21,
+      "normalization_value_px": 271.447969,
+      "mapping": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/mapping.json",
+        "sha256": "0d5382f1c4c2035cf353a3abf6adc408e9f28d8e4ea9e8a8b47a058be7923bde",
+        "name": "synthetic_identity"
+      },
+      "raster_affine": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/affine.json",
+        "sha256": "50d6d9ceeadd14ec103e594bcfc99fc9e2b1f0f949ac979c0890be09392f75d2",
+        "name": "identity"
+      },
+      "metadata_contract_pass": true,
+      "proper_fit": {
+        "valid": true,
+        "determinant": 1.0,
+        "scale": 0.278731,
+        "rotation": [
+          [
+            0.5356115967696679,
+            0.844464455975411
+          ],
+          [
+            -0.844464455975411,
+            0.5356115967696677
+          ]
+        ],
+        "translation": [
+          265.64021021864295,
+          198.11054134971855
+        ],
+        "rmse_px": 67.987609,
+        "p95_px": 91.980106,
+        "mean_px": 62.965179,
+        "max_px": 115.455599,
+        "normalized_rmse": 0.250463,
+        "normalized_p95": 0.33885
+      },
+      "reflected_fit": {
+        "valid": true,
+        "determinant": -1.0,
+        "scale": 1.25,
+        "rotation": [
+          [
+            -0.90630778703665,
+            0.4226182617406994
+          ],
+          [
+            0.42261826174069944,
+            0.90630778703665
+          ]
+        ],
+        "translation": [
+          488.7667965544824,
+          -149.93660940930152
+        ],
+        "rmse_px": 0.0,
+        "p95_px": 0.0,
+        "mean_px": 0.0,
+        "max_px": 0.0,
+        "normalized_rmse": 0.0,
+        "normalized_p95": 0.0
+      },
+      "pairwise_normalized_rmse": 0.0,
+      "mask_iou": null,
+      "route": "HOLD_REFLECTED_ONLY",
+      "reasons": [
+        "reflected_fit_materially_preferred_requires_source_raster_or_chirality_correction"
+      ],
+      "overlay": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/reflected_correspondence_overlay.png"
+    },
+    {
+      "candidate_id": "wrong",
+      "source_frame": "synthetic",
+      "source_identity_status": "verified_upper_hand",
+      "handedness": "left",
+      "crop_flipped": false,
+      "joint_order_status": "verified",
+      "raster_status": "verified",
+      "notes": "synthetic test",
+      "projected_keypoints": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/candidate_wrong.npy",
+        "sha256": "589dec36d789193ca34c4a01ca4b7ac0085349b5ef9715c4ccb6c3982c523b23",
+        "count": 21
+      },
+      "usable_joint_count": 21,
+      "normalization_value_px": 271.447969,
+      "mapping": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/mapping.json",
+        "sha256": "0d5382f1c4c2035cf353a3abf6adc408e9f28d8e4ea9e8a8b47a058be7923bde",
+        "name": "synthetic_identity"
+      },
+      "raster_affine": {
+        "path": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/affine.json",
+        "sha256": "50d6d9ceeadd14ec103e594bcfc99fc9e2b1f0f949ac979c0890be09392f75d2",
+        "name": "identity"
+      },
+      "metadata_contract_pass": true,
+      "proper_fit": {
+        "valid": true,
+        "determinant": 1.0,
+        "scale": 0.763009,
+        "rotation": [
+          [
+            0.8806697317556269,
+            -0.4737307500780085
+          ],
+          [
+            0.4737307500780084,
+            0.8806697317556268
+          ]
+        ],
+        "translation": [
+          33.138548728644935,
+          213.20478672373127
+        ],
+        "rmse_px": 38.161705,
+        "p95_px": 67.490775,
+        "mean_px": 33.376323,
+        "max_px": 81.371392,
+        "normalized_rmse": 0.140586,
+        "normalized_p95": 0.248632
+      },
+      "reflected_fit": {
+        "valid": true,
+        "determinant": -1.0,
+        "scale": 0.250796,
+        "rotation": [
+          [
+            -0.40721628635410334,
+            -0.9133317557864576
+          ],
+          [
+            -0.9133317557864574,
+            0.40721628635410323
+          ]
+        ],
+        "translation": [
+          331.62789665974674,
+          331.6874568981892
+        ],
+        "rmse_px": 67.052145,
+        "p95_px": 90.541662,
+        "mean_px": 62.432599,
+        "max_px": 115.550768,
+        "normalized_rmse": 0.247017,
+        "normalized_p95": 0.333551
+      },
+      "pairwise_normalized_rmse": 0.451667,
+      "mask_iou": null,
+      "route": "FAIL_GLOBAL_CORRESPONDENCE",
+      "reasons": [
+        "proper_and_reflected_fits_fail"
+      ],
+      "overlay": "/mnt/data/alapuse02v3n60_gate_c_hand_audit_toolkit/example/report/overlays/wrong_correspondence_overlay.png"
+    }
+  ],
+  "decision": {
+    "route": "SELECT_CORRESPONDENCE_CANDIDATE_FOR_C1_5",
+    "selected_candidate_id": "good",
+    "optimizer_authorized": false,
+    "c2_authorized": false,
+    "f34_authorized": false,
+    "gate_d_authorized": false
+  }
+}
