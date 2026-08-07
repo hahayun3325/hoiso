@@ -1,0 +1,63 @@
+{
+  "schema": "expanded_translation_scale_articulation_capacity_policy_v99_8",
+  "case_id": "alapuse02v3n60",
+  "family": {
+    "translation_variables": 3,
+    "hand_scale_variables": 1,
+    "articulation_variables": 18,
+    "total_variables": 22,
+    "jacobian_shape": [
+      42,
+      22
+    ],
+    "parameter_order": [
+      "translation_x",
+      "translation_y",
+      "translation_z",
+      "global_log_hand_scale",
+      "articulation_00_to_17"
+    ]
+  },
+  "scale": {
+    "parameter": "global_log_hand_scale",
+    "physical_map": "exp(global_log_hand_scale)",
+    "physical_bounds": [
+      0.95,
+      1.05
+    ],
+    "zero": 0.0
+  },
+  "articulation_per_variable_degrees": 10.0,
+  "rank_policy": {
+    "relative_singular_cutoff": 0.001,
+    "absolute_singular_cutoff_px_per_full_bound": 0.25,
+    "maximum_effective_condition_number": 10000.0
+  },
+  "acceptance": {
+    "minimum_weighted_residual_energy_coverage": 0.8,
+    "maximum_bounded_residual_norm_ratio": 0.45,
+    "minimum_predicted_rmse_reduction_fraction": 0.5,
+    "maximum_predicted_normalized_rmse": 0.65,
+    "maximum_predicted_normalized_p95": 1.0,
+    "maximum_translation_bound_fraction": 0.9,
+    "maximum_scale_bound_fraction": 0.9,
+    "maximum_single_articulation_bound_fraction": 0.9,
+    "maximum_saturated_articulation_fraction": 0.1,
+    "maximum_solver_prediction_difference_px_l2": 0.05
+  },
+  "saturation_threshold_fraction": 0.95,
+  "initialization": "all_zero",
+  "forbidden": [
+    "rejected_Branch_E_initializer",
+    "rejected_v87_combined_solution_initializer",
+    "capacity_solution_as_optimizer_initializer",
+    "post_hoc_bound_widening",
+    "root_rotation",
+    "object_movement",
+    "contact",
+    "collision",
+    "flow"
+  ],
+  "authorizes_capacity_execution": false,
+  "authorizes_optimizer_execution": false
+}

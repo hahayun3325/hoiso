@@ -1,0 +1,55 @@
+{
+  "schema": "bounded_gate_c_optimizer_policy_v100",
+  "case_id": "alapuse02v3n60",
+  "prerequisite_route": "prepare_v100_bounded_gate_c_optimizer_policy_only",
+  "trainable": [
+    "translation_xyz",
+    "global_log_hand_scale",
+    "frozen_18_index_middle_articulation_variables"
+  ],
+  "frozen": [
+    "laptop_geometry",
+    "lid_base_articulation",
+    "object_root",
+    "camera",
+    "hand_root_rotation",
+    "hand_shape",
+    "all_other_hand_articulation",
+    "hand_topology"
+  ],
+  "initialization": "all_zero_deltas",
+  "forbidden_initializers": [
+    "Branch_E_translation",
+    "v87_linear_capacity_solution",
+    "v99_9_linear_capacity_solution"
+  ],
+  "loss_policy": {
+    "active": [
+      "source_faithful_keypoint_reprojection",
+      "pose_delta_regularization",
+      "translation_scale_articulation_bound_barriers"
+    ],
+    "monitor_only_until_zero_silhouette_contract_passes": [
+      "visible_upper_hand_silhouette_anti_regression"
+    ],
+    "closed": [
+      "contact_attraction",
+      "collision",
+      "object_movement",
+      "flow_guidance"
+    ]
+  },
+  "automatic_gate_c_pass": {
+    "maximum_normalized_rmse": 0.50,
+    "maximum_normalized_p95": 0.75,
+    "minimum_rmse_reduction_fraction": 0.50,
+    "maximum_translation_bound_fraction": 0.90,
+    "maximum_scale_bound_fraction": 0.90,
+    "maximum_single_articulation_bound_fraction": 0.90,
+    "maximum_silhouette_iou_drop_absolute": 0.02,
+    "object_camera_topology_hashes_unchanged": true,
+    "physical_upper_hand_identity_required": true
+  },
+  "authorizes_optimizer_execution": false,
+  "authorizes_C2": false
+}
