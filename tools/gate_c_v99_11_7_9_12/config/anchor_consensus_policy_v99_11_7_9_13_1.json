@@ -1,0 +1,33 @@
+{
+  "schema": "anchor_consensus_policy_v99_11_7_9_13_1",
+  "calibration_case": "alapuse02v6n60",
+  "hard_gates": [
+    "identity_review_pass",
+    "frozen_five_active_numeric_gates_pass"
+  ],
+  "medoid": {
+    "representation": "source_frozen_reanchored_full_image_21x2_keypoints",
+    "pairwise_metric": "keypoint_rmse_divided_by_frozen_normalization",
+    "candidate_score": "mean_pairwise_distance_to_other_survivors",
+    "v6_dispersion_threshold": "median_plus_3_scaled_MAD",
+    "scaled_MAD_factor": 1.4826
+  },
+  "tie_break_order": [
+    "lower_medoid_score",
+    "higher_neighbor_crop_consensus_score_defined_as_negative_frozen_distance",
+    "lower_full_image_keypoint_nrmse",
+    "lower_normalized_metric_depth_residual",
+    "lexicographic_candidate_uid"
+  ],
+  "historical_s100_center_privileged": false,
+  "select_exactly_one_or_reject_all": true,
+  "freeze_before_v3": true,
+  "authorizes_v3_execution": false,
+  "authorizes_optimizer": false,
+  "neighbor_crop_consensus_score_definition": {
+    "input": "frozen_candidate_table_neighbor_crop_consensus_distance",
+    "transform": "score_equals_negative_distance",
+    "equivalent_direction": "lower_raw_distance_is_better",
+    "refit": false
+  }
+}
