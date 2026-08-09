@@ -1,0 +1,38 @@
+{
+  "schema": "hand_anchor_depth_frame_contract_review_v99_11_7_9_21_7_12",
+  "scaled_vertices_moge": {
+    "producer_file": null,
+    "producer_function": null,
+    "coordinate_frame": null,
+    "units": null,
+    "candidate_specific": null,
+    "applied_operations_in_order": []
+  },
+  "masked_moge_points": {
+    "producer_file": null,
+    "coordinate_frame": null,
+    "units": null,
+    "mask_source": null,
+    "shared_across_candidates": null
+  },
+  "translation_xyz": {
+    "producer_file": null,
+    "producer_function": null,
+    "coordinate_frame": null,
+    "units": null,
+    "purpose": null,
+    "may_be_applied_to_scaled_vertices_moge": null,
+    "source_evidence": []
+  },
+  "metric_role": {
+    "current_name": "normalized_metric_depth_residual",
+    "current_stage": null,
+    "intended_stage": null,
+    "absolute_alignment_metric": null,
+    "translation_invariant_support_metric": null
+  },
+  "decision": "HOLD_UNTIL_SOURCE_CONFIRMED",
+  "authorizes_formula_change": false,
+  "authorizes_threshold_change": false,
+  "authorizes_optimizer": false
+}
