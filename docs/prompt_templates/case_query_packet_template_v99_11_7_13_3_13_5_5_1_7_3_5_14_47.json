@@ -1,0 +1,63 @@
+{
+  "schema": "hoiso_case_query_packet_template_v1",
+  "rule": "questions_and_empty_answers_may_be_prepared_early_but_answers_are_valid_only_after_owned_dependencies_exist",
+  "case_id": "{case_id}",
+  "stages": [
+    {
+      "stage": "foundation_input_policies",
+      "timing": "pre_execution",
+      "roles": [
+        "moge",
+        "hunyuan",
+        "hamer"
+      ],
+      "answer_status": "fill_before_each_model_run"
+    },
+    {
+      "stage": "gate_b",
+      "timing": "exact_RGB_and_masks_bound",
+      "roles": [
+        "coarse_contact_semantics"
+      ],
+      "answer_status": "manual_query_or_bind_existing_receipt"
+    },
+    {
+      "stage": "gate_d0",
+      "timing": "selected_hand_and_object_geometry_bound",
+      "roles": [
+        "finger_names",
+        "object_part_and_side",
+        "allowed_and_forbidden_regions",
+        "occlusion_order"
+      ],
+      "answer_status": "manual_query_then_deterministic_geometry_compiler"
+    },
+    {
+      "stage": "technical_live_zero",
+      "timing": "D0_and_valid_zorder_pass",
+      "roles": [
+        "no_update_runtime_replay"
+      ],
+      "answer_status": "machine_capture_only"
+    },
+    {
+      "stage": "gate_d1",
+      "timing": "post_optimization",
+      "roles": [
+        "independent_contact_and_alignment_adjudication"
+      ],
+      "answer_status": "manual_query_plus_machine_gates"
+    }
+  ],
+  "manual_answers": {
+    "gate_b": null,
+    "gate_d0": null,
+    "gate_d1": null
+  },
+  "prohibition": [
+    "do_not_invent_mesh_indices_in_VLM_answers",
+    "do_not_finalize_D0_before_geometry_bindings",
+    "do_not_query_D1_as_if_post_optimization_evidence_already_exists",
+    "do_not_treat_prompt_completion_as_optimizer_authorization"
+  ]
+}

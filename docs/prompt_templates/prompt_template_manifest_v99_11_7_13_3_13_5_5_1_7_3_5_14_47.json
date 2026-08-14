@@ -1,0 +1,98 @@
+{
+  "schema": "hoiso_prompt_template_manifest_v1",
+  "canonical_folder": "docs/prompt_templates",
+  "policy": "manifest_indexes_templates_and_model_input_policies_without_moving_legacy_files",
+  "canonical": {
+    "gate_d0": {
+      "path": "docs/prompt_templates/Gate_D0_semantic_contact_compiler_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_46.json",
+      "sha256": "09cd4fdbe23550f4332ae0372f6246fa1729d2cbf4006db9e5b341b2ddf0f73b",
+      "kind": "semantic_prompt",
+      "status": "canonical"
+    },
+    "gate_d1": {
+      "path": "docs/prompt_templates/Gate_D1_contact_adjudication_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_46.json",
+      "sha256": "80bd2548cd1be88ccdf85d571b4f6bacb05d0c5e5e6900db688c8ea8ba227285",
+      "kind": "semantic_prompt",
+      "status": "canonical"
+    }
+  },
+  "required_roles": {
+    "moge": {
+      "expected_kind": "model_input_policy",
+      "inventory_candidates": 1
+    },
+    "hunyuan": {
+      "expected_kind": "generation_prompt_or_model_input_policy",
+      "inventory_candidates": 2
+    },
+    "hamer": {
+      "expected_kind": "model_input_and_handedness_selector_policy",
+      "inventory_candidates": 1
+    },
+    "gate_b": {
+      "expected_kind": "semantic_prompt",
+      "inventory_candidates": 0
+    },
+    "gate_d0": {
+      "expected_kind": "semantic_prompt",
+      "status": "canonical"
+    },
+    "gate_d1": {
+      "expected_kind": "semantic_prompt",
+      "status": "canonical"
+    }
+  },
+  "query_timing": {
+    "foundation_input_policies": "prepare_before_model_execution",
+    "gate_b": "answer_when_exact_RGB_and_masks_are_bound",
+    "gate_d0": "answer_after_GateB_selected_hand_MANO_topology_GateA_parts_camera_and_masks_are_bound",
+    "gate_d1": "answer_only_after_post_optimization_renders_and_machine_metrics_exist"
+  },
+  "inventory": {
+    "explicit_roots": [
+      "docs/prompt_templates",
+      "src/foho"
+    ],
+    "cap": 300,
+    "max_depth": 5,
+    "truncated": false,
+    "candidates": [
+      {
+        "role_guess": "gate_d0",
+        "path": "docs/prompt_templates/Gate_D0_semantic_contact_compiler_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_46.json",
+        "sha256": "09cd4fdbe23550f4332ae0372f6246fa1729d2cbf4006db9e5b341b2ddf0f73b",
+        "kind": "inventory_only_requires_human_classification"
+      },
+      {
+        "role_guess": "gate_d1",
+        "path": "docs/prompt_templates/Gate_D1_contact_adjudication_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_46.json",
+        "sha256": "80bd2548cd1be88ccdf85d571b4f6bacb05d0c5e5e6900db688c8ea8ba227285",
+        "kind": "inventory_only_requires_human_classification"
+      },
+      {
+        "role_guess": "hamer",
+        "path": "src/foho/hand/hamer.py",
+        "sha256": "aae48acf6cd4b81663d1caf33bb2dbf7b41487d347c6ecec995033d1854effb6",
+        "kind": "inventory_only_requires_human_classification"
+      },
+      {
+        "role_guess": "hunyuan",
+        "path": "src/foho/geometry/hunyuan.py",
+        "sha256": "42a883c52b6e79d1f21e478cc7c2d61412b31649859bf35e23e59a627a574a45",
+        "kind": "inventory_only_requires_human_classification"
+      },
+      {
+        "role_guess": "moge",
+        "path": "src/foho/geometry/moge.py",
+        "sha256": "754d8f20e83e92e27a1ede8c3559a6a9ca4b0b985290ddc8e8483ceaa773004f",
+        "kind": "inventory_only_requires_human_classification"
+      },
+      {
+        "role_guess": "hunyuan",
+        "path": "src/foho/preprocess/get_hunyuan_input.py",
+        "sha256": "48620bccf983698e41ddf64687159bd673eb172605218900f7f73d0e36eec114",
+        "kind": "inventory_only_requires_human_classification"
+      }
+    ]
+  }
+}
