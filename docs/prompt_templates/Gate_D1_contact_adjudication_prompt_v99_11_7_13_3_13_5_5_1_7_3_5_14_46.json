@@ -1,0 +1,28 @@
+{
+  "schema": "hoiso_gate_d1_contact_adjudication_prompt_v1",
+  "purpose": "independent_semantic_review_after_machine_geometry_checks",
+  "required_input_bindings": [
+    "exact_D0_contract_sha256",
+    "pre_and_post_RGB_overlays",
+    "pre_and_post_XY_XZ_YZ_renders",
+    "selected_finger_and_allowed_patch_overlay",
+    "machine_keypoint_mask_depth_zorder_contact_collision_metrics",
+    "hand_object_transform_and_mesh_hashes"
+  ],
+  "system_prompt": "You are an independent post-optimization semantic adjudicator. Do not change D0, optimize geometry, or infer metric collision from appearance. Check whether the visible result agrees with the bound D0 hand, fingers, object part/side, palm branch, and occlusion. Return reject or review_required when evidence is ambiguous. Machine geometry gates remain authoritative.",
+  "user_prompt_template": "Compare the bound D0 contract with the pre/post renders and machine metrics for case {case_id}. Check hand identity, contacting fingers, localized object part/side, forbidden visible contact, palm-facing branch, occlusion order, and visible plausibility. Return JSON only.",
+  "output_schema": {
+    "case_id": "string",
+    "D0_sha256": "string",
+    "semantic_contact_matches": "true|false|null",
+    "finger_set_matches": "true|false|null",
+    "object_part_and_side_match": "true|false|null",
+    "forbidden_visible_contact": "true|false|null",
+    "palm_branch_matches": "true|false|null",
+    "occlusion_plausible": "true|false|null",
+    "semantic_verdict": "accept_semantics|reject_semantics|review_required",
+    "evidence": "array",
+    "uncertainty": "string"
+  },
+  "finalization_rule": "D1 passes only when semantic verdict accepts and every separately owned machine geometry/provenance gate passes; the VLM output alone cannot pass D1"
+}

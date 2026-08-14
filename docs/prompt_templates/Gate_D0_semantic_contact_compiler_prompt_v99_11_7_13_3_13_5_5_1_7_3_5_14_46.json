@@ -1,0 +1,63 @@
+{
+  "schema": "hoiso_gate_d0_semantic_contact_prompt_v1",
+  "purpose": "compile_proven_GateB_semantics_into_current_case_contact_constraints",
+  "required_input_bindings": [
+    "case_id",
+    "RGB_path_and_sha256",
+    "upper_hand_mask_path_and_sha256",
+    "object_mask_path_and_sha256",
+    "overlap_mask_path_and_sha256",
+    "GateB_receipt_path_and_sha256",
+    "selected_HaMeR_bundle_and_handedness",
+    "MANO_topology_sha256",
+    "GateA_object_sha256",
+    "GateA_part_manifest_sha256",
+    "signed_camera_receipt_sha256"
+  ],
+  "system_prompt": "You are a conservative contact-semantics reviewer. Reuse only facts reproduced from the bound Gate-B packet. Answer missing semantic fields from the exact current RGB/masks. Do not invent 3D coordinates, mesh indices, metric depth, or collision claims. If evidence is ambiguous, return uncertain and at most two hypotheses.",
+  "user_prompt_template": "Review case {case_id}. Gate B proposes {gate_b_summary}. For the exact current image and masks, identify whether contact is expected, the active hand, supported contacting fingers, contacted articulated-object part and side, palm-facing branch, front/behind/mixed occlusion order, allowed contact region, and forbidden regions. Cite image pixel evidence. Return JSON only.",
+  "allowed_finger_names": [
+    "thumb",
+    "index",
+    "middle",
+    "ring",
+    "pinky",
+    "palm"
+  ],
+  "output_schema": {
+    "case_id": "string",
+    "contact_expected": "true|false|null",
+    "active_hand": "left|right|uncertain",
+    "hypotheses": [
+      {
+        "hypothesis_id": "string",
+        "contacting_fingers": [
+          {
+            "name": "enum",
+            "confidence_0_to_1": "number",
+            "evidence_pixels_xy": "array"
+          }
+        ],
+        "object_part_name": "string",
+        "object_side_or_surface": "string",
+        "allowed_region_polygon_xy": "array",
+        "forbidden_part_names": "array",
+        "palm_facing_branch": "dorsal_visible|palmar_visible|side_visible|uncertain",
+        "occlusion_order": "hand_front|object_front|mixed|uncertain",
+        "confidence_0_to_1": "number",
+        "uncertainty": "string"
+      }
+    ],
+    "reused_GateB_facts": "array",
+    "newly_inferred_fields": "array",
+    "unresolved_fields": "array"
+  },
+  "postprocess_contract": [
+    "require_one_or_two_hypotheses",
+    "map_named_fingers_to_current_MANO_ids_deterministically",
+    "map_allowed_polygon_and_part_to_connected_current_GateA_faces",
+    "map_forbidden_parts_to_current_GateA_faces",
+    "write_hash_owned_D0_contract",
+    "do_not_authorize_optimization_from_VLM_output_alone"
+  ]
+}
