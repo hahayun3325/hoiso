@@ -1,0 +1,21 @@
+{
+  "schema_version": "auto_v2_spatial_proposal_v1",
+  "case_id": "alapuse02v3n60",
+  "uncertain": true,
+  "regions": {
+    "whole_laptop": {"box_norm_xyxy": [0.0, 0.0, 1.0, 1.0], "confidence": 0.0, "visible": true, "description": ""},
+    "laptop_lid": {"box_norm_xyxy": [0.0, 0.0, 1.0, 1.0], "confidence": 0.0, "visible": true, "description": ""},
+    "laptop_base": {"box_norm_xyxy": [0.0, 0.0, 1.0, 1.0], "confidence": 0.0, "visible": true, "description": ""},
+    "wooden_support": {"box_norm_xyxy": [0.0, 0.0, 1.0, 1.0], "confidence": 0.0, "visible": true, "description": ""},
+    "tabletop": {"box_norm_xyxy": [0.0, 0.0, 1.0, 1.0], "confidence": 0.0, "visible": true, "description": ""}
+  },
+  "relations": {
+    "laptop_is_open": true,
+    "lid_above_base": true,
+    "base_above_support": true,
+    "support_above_tabletop": true,
+    "support_is_not_part_of_laptop": true,
+    "tabletop_is_not_part_of_laptop": true
+  },
+  "notes": "template only"
+}

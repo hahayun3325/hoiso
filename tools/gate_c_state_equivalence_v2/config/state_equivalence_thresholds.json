@@ -1,0 +1,13 @@
+{
+  "h0_max_abs_m": 1e-05,
+  "h0_rmse_m": 2e-06,
+  "h1_max_abs_m": 1e-05,
+  "h1_rmse_m": 2e-06,
+  "h2_max_abs_px": 0.05,
+  "h2_rmse_px": 0.01,
+  "h3_max_abs_m": 1e-05,
+  "h3_rmse_m": 2e-06,
+  "h4_max_abs_m": 1e-05,
+  "h4_rmse_m": 2e-06,
+  "calibration_note": "Engineering defaults only. Freeze final tolerances from same-process repeatability and the positive alapuse02v6n60 control before inspecting v3 pass/fail."
+}

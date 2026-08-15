@@ -1,0 +1,41 @@
+{
+  "schema": "low_memory_gate_c_schedule_v2",
+  "hardware": {"gpu": "NVIDIA RTX 4090", "vram_gb": 24},
+  "principles": [
+    "Do not backpropagate through the Hunyuan decoder during root or MANO placement.",
+    "Keep accepted part-aware geometry immutable until Gate C passes.",
+    "Use a reduced optimization proxy but verify every accepted state on the full accepted mesh.",
+    "Keep transform parameters and final metric reductions in float32.",
+    "A post-flow transform may be retained with pre-flow geometry only after explicit replay and anti-regression checks on that exact pair."
+  ],
+  "stages": [
+    {
+      "name": "LM0_object_and_hand_root",
+      "flow_guidance": false,
+      "geometry_frozen": true,
+      "trainable": ["one_whole_object_sim3_if_authorized", "hand_root_translation_if_authorized"],
+      "closed": ["independent_part_scale", "object_deformation", "contact", "collision"]
+    },
+    {
+      "name": "LM1_selected_mano_articulation",
+      "flow_guidance": false,
+      "geometry_frozen": true,
+      "trainable": ["gate_b_active_finger_pose_if_probe_passes"],
+      "closed": ["full_hand_articulation", "contact", "collision"]
+    },
+    {
+      "name": "LM2_short_flow_refinement",
+      "flow_guidance": true,
+      "prerequisite": "Gate_C_projection_and_silhouette_pass",
+      "anti_regression_selector": true,
+      "geometry_fallback": "best_pre_flow_part_aware_object",
+      "required_replay_if_mixing_geometry_and_transform": true
+    },
+    {
+      "name": "LM3_physical_cleanup",
+      "flow_guidance": false,
+      "prerequisite": "LM2_or_preflow_candidate_selected",
+      "trainable": ["bounded_contact_preservation", "bounded_collision_cleanup"]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "residual_morphology_policy_v98",
+  "case_id": "alapuse02v3n60",
+  "alpha": 1.0,
+  "thresholds": {
+    "translation_explained_min": 0.70,
+    "global_model_explained_min": 0.60,
+    "new_mode_increment_min": 0.15,
+    "model_preference_margin": 0.05,
+    "full_similarity_explained_min": 0.50,
+    "inactive_chain_fraction_min": 0.60,
+    "wrist_energy_fraction_max_for_root_rotation": 0.15
+  },
+  "interpretation": {
+    "translation": "screening evidence for a separately preregistered translation-radius-only family; not authorization",
+    "root_rotation": "screening evidence for translation plus one bounded global SO(3) root mode plus existing articulation",
+    "hand_scale": "screening evidence for translation plus one positive isotropic hand-scale mode plus existing articulation",
+    "broader_articulation": "screening evidence for source-proven inactive-finger variables",
+    "alternate_candidate": "screening evidence that no simple coherent global residual model explains the remaining mismatch"
+  },
+  "authorizes_derivative_collection": false,
+  "authorizes_optimizer": false
+}

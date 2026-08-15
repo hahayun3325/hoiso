@@ -1,0 +1,6 @@
+role,artifact_path,asset_id,source_candidate_id,source_image_sha256,mask_sha256,mesh_sha256,units,root_frame,root_transform_path,vertex_map_path,notes
+pre_gate_a,,,,,,,,,,,
+post_gate_a_assembly,,,,,,,,,,,
+screen_lid_part,,,,,,,,,,,
+keyboard_base_part,,,,,,,,,,,
+part_scene,,,,,,,,,,,

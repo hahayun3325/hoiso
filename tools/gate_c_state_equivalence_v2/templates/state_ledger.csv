@@ -1,0 +1,7 @@
+artifact_id,stage,run_id,parent_artifact_ids,path,sha256,git_commit,checkpoint_sha256,mano_asset_sha256,contract_sha256,candidate_index,physical_hand,handedness,state_before_or_after_flip,units,coordinate_frame,raster_height,raster_width,crop_bbox_xyxy,cam_t,transform_sha256,vertex_order_sha256,notes
+historical_batch,H0,,,,,,,,,,,,raw_pre_flip,m,HaMeR_model_space,,,,,,
+historical_guidance,H1,,,,,,,,,,,,handedness_adjusted,m,HaMeR_guidance_space,,,,,,
+target_raster,H2,,,,,,,,,,,,,px,full_image_or_exact_crop,,,,,,
+c1_keypoints,H3,,,,,,,,,,,,,m,MoGe_shared_frame,,,,,,
+zero_update_vertices,H4a,,,,,,,,,,,,,m,MoGe_shared_frame,,,,,,
+zero_update_helper_joints,H4b,,,,,,,,,,,,,m,MoGe_shared_frame,,,,,,

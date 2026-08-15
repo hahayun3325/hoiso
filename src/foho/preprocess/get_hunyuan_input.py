@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import traceback
 import os
 import sys
 from typing import Optional
@@ -125,6 +126,8 @@ def run(
             print(f"Runtime error on image {img_id}: {e}. Skipping.")
         except Exception as e:
             print(f"Error processing image {img_id} ({source_image}): {e}. Skipping.")
+
+            traceback.print_exc()
             continue
 
     print("Done.")

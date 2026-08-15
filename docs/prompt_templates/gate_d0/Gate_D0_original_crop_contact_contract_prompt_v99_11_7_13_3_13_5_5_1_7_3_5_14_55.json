@@ -1,0 +1,41 @@
+{
+  "schema": "hoiso_gate_d0_original_crop_prompt_v3",
+  "role": "independent_preoptimization_contact_contract",
+  "model_visible_inputs": [
+    "original_standardized_crop",
+    "this_prompt"
+  ],
+  "system_prompt": "You are a conservative single-image contact-semantics reviewer. Distinguish multiple hands by image position, independently infer the interaction, preserve ambiguity under occlusion, and return JSON only.",
+  "user_prompt": "Identify the active hand instance; handedness if visible; contact state; supported contacting fingers or palm; contacted articulated-object part, region, and side; contact mode; palm-facing branch; expected occlusion order; allowed and forbidden regions; uncertainty; and at most two alternatives. Ignore stands, table, and background. Do not output coordinates, geometry IDs, depth, transforms, optimizer settings, loss weights, hashes, paths, case labels, or human verdicts.",
+  "output_schema": {
+    "schema": "hoiso_gate_d0_semantic_v3",
+    "hand_instance": "upper_image_hand|lower_image_hand|single_hand|ambiguous",
+    "active_hand": "left|right|unknown",
+    "contact_state": "contact|likely_contact|near_contact|no_contact|uncertain",
+    "contacts": [
+      {
+        "hand_regions": [
+          "thumb|index|middle|ring|pinky|palm"
+        ],
+        "object_part": "string",
+        "object_region": "string",
+        "object_side": "string",
+        "contact_mode": "touch|near_contact|uncertain|no_contact",
+        "palm_facing": "toward_object|away_from_object|sideways|unknown",
+        "expected_z_order": "hand_in_front|object_in_front|mixed|unknown",
+        "confidence": "number_0_to_1"
+      }
+    ],
+    "allowed_regions": [
+      "semantic_string"
+    ],
+    "forbidden_regions": [
+      "semantic_string"
+    ],
+    "alternatives": [
+      "object"
+    ],
+    "uncertainty": "string",
+    "decision": "compile|review_required|reject"
+  }
+}

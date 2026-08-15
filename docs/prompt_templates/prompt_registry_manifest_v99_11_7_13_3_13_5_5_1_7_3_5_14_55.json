@@ -1,0 +1,45 @@
+{
+  "schema": "hoiso_prompt_registry_manifest_v4",
+  "primary_query_image": "original_standardized_crop_available_at_ingestion",
+  "foreground_assisted_ablation": "canonical_clean_crop_after_masks",
+  "query_independence": "Gate B and D0 never see each others answers",
+  "roles": {
+    "mask_or_grounding": {
+      "kind": "short_positive_text",
+      "project_soft_max_content_words": 8,
+      "negative_clauses": false
+    },
+    "moge_geometry": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hunyuan_object_foundation": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hunyuan_hoi_carrier": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hamer_upper_hand": {
+      "kind": "image_selector_policy",
+      "natural_language_words": 0
+    },
+    "gate_b": {
+      "kind": "semantic_query",
+      "owner": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_b/Gate_B_original_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json"
+    },
+    "gate_d0": {
+      "kind": "semantic_query",
+      "owner": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_d0/Gate_D0_original_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json"
+    }
+  },
+  "internal_only": [
+    "paths",
+    "hashes",
+    "versions",
+    "receipts",
+    "geometry_maps",
+    "prior_gate_answers"
+  ]
+}

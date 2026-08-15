@@ -1,0 +1,59 @@
+{
+  "schema": "hoiso_semantic_objective_adapter_policy_v1",
+  "compiler": {
+    "input": "independently frozen Gate-B and D0 semantic JSON",
+    "maps": [
+      "current hash-owned MANO finger/contact map",
+      "current hash-owned Gate-A part/region map"
+    ],
+    "conflict": "retain alternatives; never force contact",
+    "forbidden_VLM_outputs": [
+      "weights",
+      "coordinates",
+      "geometry_ids",
+      "transforms",
+      "depth"
+    ]
+  },
+  "activation": {
+    "high_confidence_min": 0.75,
+    "hypothesis_min": 0.5,
+    "below": "diagnostic_only",
+    "confidence_changes_weight": false
+  },
+  "selector": {
+    "hand_phase": [
+      "selected distal finger parameters only",
+      "global group only if separately authorized"
+    ],
+    "joint_phase": [
+      "same selected hand regions",
+      "mapped object contact patch"
+    ],
+    "always_frozen": [
+      "object geometry",
+      "hand shape",
+      "hand scale",
+      "unselected joints unless separately authorized"
+    ]
+  },
+  "terms": [
+    "ordered keypoints",
+    "hand silhouette",
+    "MoGe hand depth and normal",
+    "selected contact gap",
+    "forbidden clearance",
+    "dense valid z-order",
+    "penetration",
+    "trust region"
+  ],
+  "hard_gates": [
+    "finite values",
+    "valid depth ownership",
+    "collision and forbidden-region limits",
+    "rollback on regression"
+  ],
+  "weights": "global frozen dimensionless policy",
+  "changes_flow_architecture": false,
+  "authorizes_optimizer": false
+}

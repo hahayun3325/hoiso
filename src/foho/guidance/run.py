@@ -169,12 +169,24 @@ def run_hunyuan_w_guid(
     )
 
     try:
-        obj_mesh_verts, obj_mesh_faces = obj_mesh.verts_packed(), obj_mesh.faces_packed()
-        obj_mesh = trimesh.Trimesh(vertices=obj_mesh_verts.cpu().numpy(), faces=obj_mesh_faces.cpu().numpy())
-        obj_mesh = FloaterRemover()(obj_mesh)
-        obj_mesh = DegenerateFaceRemover()(obj_mesh)
-        obj_mesh = FaceReducer()(obj_mesh)
-        obj_mesh.export(save_path_obj)
+        # Opt-in only: F3 targets use full-object vertex IDs.
+        if os.environ.get("FOHO_PRESERVE_OBJECT_VERTEX_ORDER", "0") == "1":
+            IO().save_mesh(obj_mesh, save_path_obj)
+            obj_mesh = trimesh.load(save_path_obj, process=False, force="mesh")
+            print("[FOHO_EXPORT] saved vertex-order-preserving object mesh")
+        else:
+            obj_mesh_verts = obj_mesh.verts_packed()
+            obj_mesh_faces = obj_mesh.faces_packed()
+            obj_mesh = trimesh.Trimesh(
+                vertices=obj_mesh_verts.cpu().numpy(),
+                faces=obj_mesh_faces.cpu().numpy(),
+                process=False,
+            )
+            obj_mesh = FloaterRemover()(obj_mesh)
+            obj_mesh = DegenerateFaceRemover()(obj_mesh)
+            obj_mesh = FaceReducer()(obj_mesh)
+            obj_mesh.export(save_path_obj)
+            print("[FOHO_EXPORT] saved cleaned object mesh")
 
         IO().save_mesh(hand_mesh, save_path_hand)
     except Exception:

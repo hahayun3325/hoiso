@@ -1,0 +1,5 @@
+name,group,step,bound,enabled,authorizes,source_locator,notes
+REPLACE_index_joint_axis0,active_articulation,0.008726646259971648,0.17453292519943295,1,1,REPLACE_EXACT_SOURCE_INDEX,"0.5-degree FD step; 10-degree primary bound"
+REPLACE_translation_x,translation,0.001,REPLACE_BRANCH_E_RADIUS,0,1,REPLACE_EXACT_SOURCE_FIELD,"Enable only after copying the registered Branch-E radius/bounds"
+REPLACE_root_rotation_axis0,root_rotation,0.008726646259971648,0.08726646259971647,0,0,REPLACE_EXACT_SOURCE_FIELD,"Diagnostic only; never authorizes the first trial"
+REPLACE_other_joint_axis0,other_articulation,0.008726646259971648,0.17453292519943295,0,0,REPLACE_EXACT_SOURCE_INDEX,"Sensitivity/upper-bound block only"

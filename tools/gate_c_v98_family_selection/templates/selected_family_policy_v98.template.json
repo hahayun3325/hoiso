@@ -1,0 +1,24 @@
+{
+  "schema": "selected_expanded_placement_family_policy_v98",
+  "case_id": "alapuse02v3n60",
+  "source_v97_1_route": "select_one_separately_preregistered_expanded_placement_family_v98",
+  "selected_family_id": "REPLACE_AFTER_PROFESSOR_REVIEW",
+  "selection_evidence": [
+    "residual_morphology_report_v98.json",
+    "per_joint_residuals_v98.csv",
+    "source_seam_review_to_be_completed"
+  ],
+  "new_variables": [],
+  "new_bounds": {},
+  "unchanged_variables_and_bounds": [],
+  "required_before_new_derivative_collection": [
+    "source_seam_review",
+    "zero_identity",
+    "zero_restoration",
+    "parameter_order_freeze",
+    "source_hash_freeze",
+    "professor_authorization"
+  ],
+  "authorizes_derivative_collection": false,
+  "authorizes_optimizer": false
+}

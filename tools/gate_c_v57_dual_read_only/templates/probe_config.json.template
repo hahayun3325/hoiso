@@ -1,0 +1,50 @@
+{
+  "adapter": "$SOURCE_ADAPTER",
+  "adapter_context": {
+    "repo": "$REPO",
+    "case_root": "$CASE_ROOT",
+    "note": "REPLACE with exact source parameters, candidate index, handedness, C1 transform, camera and raster paths used by the adapter"
+  },
+  "target_keypoints": "$TARGET_KEYPOINTS",
+  "expected_zero_keypoints": "$EXPECTED_ZERO_KEYPOINTS",
+  "confidence": "$TARGET_CONFIDENCE",
+  "normalization_scale_px": "$NORMALIZATION_SCALE_PX",
+  "parameter_manifest": "$PARAMETER_MANIFEST",
+  "thresholds": "$THRESHOLDS",
+  "fd_step_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "base_step_multiplier": 1.0,
+  "known_branch_e_translation_rejected": true,
+  "analysis_blocks": {
+    "active_articulation": [
+      "active_articulation"
+    ],
+    "translation_only": [
+      "translation"
+    ],
+    "translation_plus_active": [
+      "translation",
+      "active_articulation"
+    ],
+    "all_articulation_upper_bound": [
+      "active_articulation",
+      "other_articulation"
+    ],
+    "diagnostic_full_upper_bound": [
+      "translation",
+      "root_rotation",
+      "active_articulation",
+      "other_articulation"
+    ]
+  },
+  "authorizing_blocks": [
+    "active_articulation",
+    "translation_plus_active"
+  ],
+  "group_l2_limits": {
+    "translation": "$BRANCH_E_TRANSLATION_RADIUS_M"
+  }
+}

@@ -46,7 +46,7 @@ def run(
         raise ValueError("GEMINI_API_KEY is not set")
 
     genai.configure(api_key=api_key)
-    gemini = genai.GenerativeModel("gemini-2.5-flash-lite")
+    gemini = genai.GenerativeModel(os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"))
 
     if split_path:
         import pandas as pd

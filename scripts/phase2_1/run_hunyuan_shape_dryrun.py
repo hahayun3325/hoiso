@@ -45,14 +45,40 @@ def main():
             device=args.device,
         )
         generator = torch.Generator(device=args.device).manual_seed(args.seed)
-        mesh = pipeline(
+        result = pipeline(
             image=str(image_path),
             num_inference_steps=args.steps,
             octree_resolution=args.octree_resolution,
             num_chunks=args.num_chunks,
             generator=generator,
             output_type='trimesh',
-        )[0]
+        )
+        print(f'[INFO] HUNYUAN_RESULT_ROOT_TYPE={type(result).__name__}')
+
+        mesh = result
+        depth = 0
+        while isinstance(mesh, (list, tuple)):
+            print(
+                f'[INFO] HUNYUAN_RESULT_LEVEL depth={depth} '
+                f'type={type(mesh).__name__} length={len(mesh)}'
+            )
+            if not mesh:
+                break
+            mesh = mesh[0]
+            depth += 1
+
+        if not hasattr(mesh, 'export'):
+            print(
+                f'[HOLD] HUNYUAN_RESULT_NOT_EXPORTABLE='
+                f'{type(mesh).__name__}'
+            )
+            return
+
+        print(
+            f'[INFO] HUNYUAN_MESH_TYPE={type(mesh).__name__} '
+            f'vertices={len(getattr(mesh, "vertices", []))} '
+            f'faces={len(getattr(mesh, "faces", []))}'
+        )
         mesh.export(output_path)
 
         if output_path.is_file() and output_path.stat().st_size > 0:

@@ -1,0 +1,7 @@
+dataset,input_id,image_path,llm,prompt_style,object_description,notes
+HO3D,spam_gpfm0875,/home/fredcui/foho_phase0/inputs/test_hoi_clean_002.jpg,Gemini,default,"A can of Spam.","Baseline vague prompt"
+HO3D,spam_gpfm0875,/home/fredcui/foho_phase0/inputs/test_hoi_clean_002.jpg,Manual,structured,"A rectangular SPAM canned meat tin with flat front and back faces, rounded rectangular corners, and a metal top. The object is boxy and not a cylindrical soda can or soup can.","Structured prompt template"
+OakInk,split000,/home/fredcui/foho_phase0/inputs/oakink/oakink_split000.png,Gemini,default,"A spray bottle.","Vague official-dataset prompt"
+ARCTIC,box_grab_01,TBD,LLM,structured,"TBD","Rigid box prompt test"
+ARCTIC,ketchup_grab_01,TBD,LLM,structured,"TBD","Bottle/cylinder prompt test"
+ARCTIC,scissors_grab_01,TBD,LLM,structured,"TBD","Thin-object selector test"

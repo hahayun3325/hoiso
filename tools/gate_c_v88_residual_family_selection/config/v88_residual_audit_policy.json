@@ -1,0 +1,52 @@
+{
+  "schema": "v88_residual_geometry_policy",
+  "version": "v88",
+  "primary_scale_index": 1,
+  "joint_names": [
+    "wrist",
+    "thumb_mcp", "thumb_pip", "thumb_dip", "thumb_tip",
+    "index_mcp", "index_pip", "index_dip", "index_tip",
+    "middle_mcp", "middle_pip", "middle_dip", "middle_tip",
+    "ring_mcp", "ring_pip", "ring_dip", "ring_tip",
+    "pinky_mcp", "pinky_pip", "pinky_dip", "pinky_tip"
+  ],
+  "finger_groups": {
+    "wrist": [0],
+    "thumb": [1, 2, 3, 4],
+    "index": [5, 6, 7, 8],
+    "middle": [9, 10, 11, 12],
+    "ring": [13, 14, 15, 16],
+    "pinky": [17, 18, 19, 20]
+  },
+  "routing_thresholds": {
+    "bound_limited_span_floor_ratio_max": 0.12,
+    "bound_limited_constraint_gap_ratio_min": 0.10,
+    "root_rotation_tangential_r2_min": 0.60,
+    "hand_scale_radial_r2_min": 0.60,
+    "inactive_chain_energy_fraction_min": 0.50,
+    "minimum_broad_chain_count": 4,
+    "minimum_chain_energy_fraction": 0.05
+  },
+  "root_rotation_preregistration": {
+    "representation": "one_axis_angle_vector",
+    "constraint": "geodesic_l2_ball",
+    "radius_degrees": 5.0,
+    "central_difference_steps_degrees": [0.5, 1.0, 2.0],
+    "optimization_authorized": false
+  },
+  "closed": [
+    "modify_v87",
+    "change_v87_translation_articulation_ratio",
+    "increase_existing_bounds_post_hoc",
+    "reuse_branch_e_delta",
+    "reuse_v87_linear_solution_as_initializer",
+    "nonlinear_optimizer",
+    "nonzero_mesh",
+    "contact",
+    "collision",
+    "flow",
+    "C2",
+    "F3_4",
+    "Gate_D"
+  ]
+}

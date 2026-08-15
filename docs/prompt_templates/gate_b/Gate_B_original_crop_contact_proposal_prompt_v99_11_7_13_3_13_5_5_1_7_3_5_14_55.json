@@ -1,0 +1,34 @@
+{
+  "schema": "hoiso_gate_b_original_crop_prompt_v3",
+  "role": "coarse_independent_contact_proposal",
+  "model_visible_inputs": [
+    "original_standardized_crop",
+    "this_prompt"
+  ],
+  "system_prompt": "You are a conservative single-image hand-object interaction observer. Distinguish multiple visible hands by image position. Infer only visible semantic hypotheses, preserve uncertainty, and return JSON only.",
+  "user_prompt": "From this crop, identify the active hand instance as upper_image_hand, lower_image_hand, single_hand, or ambiguous; infer handedness only if visible; list visible articulated-object parts; propose likely contacting fingers or palm, contacted part and side, coarse occlusion order, confidence, and at most two alternatives. Ignore supports and background objects. Do not output coordinates, geometry IDs, depth, transforms, optimizer settings, or loss weights.",
+  "output_schema": {
+    "schema": "hoiso_gate_b_semantic_v3",
+    "hand_instance": "upper_image_hand|lower_image_hand|single_hand|ambiguous",
+    "active_hand": "left|right|unknown",
+    "visible_object_parts": [
+      "string"
+    ],
+    "candidate_contacts": [
+      {
+        "hand_regions": [
+          "thumb|index|middle|ring|pinky|palm|unknown"
+        ],
+        "object_part": "string",
+        "object_side": "string",
+        "z_order": "hand_in_front|object_in_front|mixed|unknown",
+        "confidence": "number_0_to_1"
+      }
+    ],
+    "alternatives": [
+      "object"
+    ],
+    "uncertainty": "string",
+    "decision": "propose|unknown|reject"
+  }
+}

@@ -1,0 +1,12 @@
+stage,term,role,active,representation,tensor_name,producer,source_evidence,artifact_path,review_status,notes
+F3,2D hand keypoint reprojection,gradient,true,unknown,TO_FILL,TO_FILL,,,pending,Trace the predicted joint tensor and the immutable 2D target separately.
+F3,local index/middle lid contact,gradient,true,direct_fingertip_vertices,hand_vertices[320/443],ordered MANO-778 mesh,,,pending,Confirm exact source lines and target IDs.
+F3,initial hand pose/translation regularization,gradient,true,other,TO_FILL,TO_FILL,,,pending,Record whether this constrains root only or full MANO parameters.
+F3.1,2D hand keypoint anchor,gradient,false,unknown,TO_FILL,TO_FILL,,,pending,Mark active only if the accepted downstream seed actually came through F3.1.
+F3.1,bounded root rotation/translation,gradient,false,mesh_vertices,trans_hand + rotation_delta_hand,ordered MANO-778 mesh,,,pending,Mark active only if accepted seed lineage includes this branch.
+F3.3,accepted contact placement term,gradient,false,unknown,TO_FILL,TO_FILL,,,pending,Identify exact accepted F3.3/F3.4 seed producer.
+F3.4,index/middle placement lock,acceptance,true,direct_fingertip_vertices,hand_vertices[320/443],ordered MANO-778 mesh,,,pending,Confirm accepted seed and threshold source.
+Gate_D,root cleanup search,gradient,true,mesh_vertices,all hand vertices + root transform,serialized same-frame hand mesh,,,pending,Confirm exact implementation and whether any 21-joint helper enters the score.
+Gate_D,index contact preserved,acceptance,true,direct_fingertip_vertices,hand_vertices[320],ordered MANO-778 mesh,,,pending,Accepted v6 report states 2.040 mm.
+Gate_D,middle placement preserved,acceptance,true,direct_fingertip_vertices,hand_vertices[443],ordered MANO-778 mesh,,,pending,Accepted v6 report states 56.535 mm.
+Gate_D,penetration improvement,acceptance,true,mesh_vertices,hand surface vs object surface,serialized same-frame meshes,,,pending,Confirm object byte identity and oriented-depth implementation.

@@ -1,0 +1,33 @@
+{
+  "adequacy": {
+    "max_abs_bound_fraction": 0.9,
+    "max_bounded_residual_ratio": 0.45,
+    "max_group_norm_fraction": 0.9,
+    "max_predicted_normalized_p95": 1.0,
+    "max_predicted_normalized_rmse": 0.65,
+    "max_saturated_fraction": 0.1,
+    "min_bounded_energy_coverage": 0.8,
+    "min_rmse_reduction_fraction": 0.5
+  },
+  "fd_stability": {
+    "max_unstable_fraction": 0.1,
+    "min_column_cosine": 0.98,
+    "near_zero_column_norm": 1e-08,
+    "norm_ratio_max": 1.25,
+    "norm_ratio_min": 0.8
+  },
+  "registered_final_gate": {
+    "max_normalized_p95": 0.75,
+    "max_normalized_rmse": 0.5,
+    "max_trust_fraction": 0.98
+  },
+  "svd": {
+    "absolute_px_per_bound": 0.25,
+    "max_effective_condition": 10000.0,
+    "relative_cutoff": 0.001
+  },
+  "zero_identity": {
+    "max_px": 0.05,
+    "rmse_px": 0.01
+  }
+}

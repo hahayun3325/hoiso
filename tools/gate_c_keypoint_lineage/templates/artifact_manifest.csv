@@ -1,0 +1,6 @@
+stage,artifact_path,sha256,producer_source,producer_commit,candidate_index,physical_hand,handedness,coordinate_frame,chirality_state,joint_count,joint_order,crop_or_raster,notes,reviewed
+H0,,,,,,,,raw_hamer_model,pre_external_flip,21,HaMeR_MANO_OpenPose21,,raw pred_vertices and pred_keypoints_3d from same saved batch,false
+H1,,,,,,,,hamer_guidance,post_external_flip,21,HaMeR_MANO_OpenPose21,,selected kps_for_guidance file,false
+H2,,,,,,,,full_image_raster,post_external_flip,21,HaMeR_MANO_OpenPose21,,source-faithful perspective projection,false
+H3,,,,,,,,C1_shared_frame,post_external_flip,21,HaMeR_MANO_OpenPose21,,same transform applied to vertices and source joints,false
+H4,,,,,,,,zero_update_live_mesh,post_external_flip,21,HaMeR_MANO_OpenPose21,,live helper on exact zero-update mesh,false

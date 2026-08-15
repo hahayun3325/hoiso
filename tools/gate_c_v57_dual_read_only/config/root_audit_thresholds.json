@@ -1,0 +1,21 @@
+{
+  "schema": "part_aware_root_audit_thresholds_v1",
+  "notes": [
+    "These thresholds are diagnostic defaults, not publication claims.",
+    "Calibrate strict identity tolerances on a known no-op export/import round trip before using them as a gate.",
+    "Geometric-equivalence thresholds must never substitute for source provenance or a vertex map."
+  ],
+  "strict_identity": {
+    "scale_abs_error_max": 0.0001,
+    "rotation_deg_max": 0.05,
+    "translation_over_target_diagonal_max": 0.0001,
+    "mapped_vertex_rmse_over_target_diagonal_max": 0.000001,
+    "mapped_vertex_max_over_target_diagonal_max": 0.00001
+  },
+  "geometric_equivalence": {
+    "symmetric_rmse_over_target_diagonal_max": 0.0025,
+    "symmetric_p95_over_target_diagonal_max": 0.005,
+    "bidirectional_coverage_distance_over_target_diagonal": 0.005,
+    "bidirectional_coverage_min": 0.95
+  }
+}

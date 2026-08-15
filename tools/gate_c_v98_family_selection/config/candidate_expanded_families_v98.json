@@ -1,0 +1,45 @@
+{
+  "schema": "candidate_expanded_placement_families_v98",
+  "case_id": "alapuse02v3n60",
+  "source_classification": "bounds_likely_limiting",
+  "selection_rule": "select_exactly_one_family_before_new_execution",
+  "families": [
+    {
+      "id": "F98_R_translation_root_rotation_active_articulation",
+      "new_mode": "one external source-faithful global hand SO(3) rotation",
+      "initial_bound": "geodesic axis-angle L2 radius 5 degrees",
+      "fd_steps_degrees": [0.5, 1.0, 2.0],
+      "existing_translation_bound": "unchanged",
+      "existing_articulation_bounds": "unchanged"
+    },
+    {
+      "id": "F98_T_translation_radius_only_expansion",
+      "new_mode": "none; one separately justified translation-radius expansion",
+      "rule": "do not expand articulation in the same first ablation"
+    },
+    {
+      "id": "F98_S_translation_hand_scale_active_articulation",
+      "new_mode": "one positive isotropic hand log-scale",
+      "initial_bound": "absolute scale change at most 5 percent",
+      "fd_steps_percent": [0.5, 1.0, 2.0]
+    },
+    {
+      "id": "F98_W_translation_wrist_active_articulation",
+      "new_mode": "source-proven local wrist or parent articulation; distinct from global root rotation"
+    },
+    {
+      "id": "F98_A_source_proven_broader_articulation",
+      "new_mode": "one preregistered inactive-finger chain block"
+    },
+    {
+      "id": "F98_C_alternate_same_run_hamer_candidate",
+      "new_mode": "candidate identity change under a fresh zero-state contract"
+    },
+    {
+      "id": "U_close_gate_c",
+      "new_mode": "none"
+    }
+  ],
+  "authorizes_derivative_collection": false,
+  "authorizes_optimizer": false
+}
