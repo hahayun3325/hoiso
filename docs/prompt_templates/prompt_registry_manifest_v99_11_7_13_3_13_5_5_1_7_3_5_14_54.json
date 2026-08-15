@@ -1,0 +1,65 @@
+{
+  "schema": "hoiso_prompt_registry_manifest_v3",
+  "created_for": "case_agnostic_runtime_selection",
+  "query_boundary": "only the referenced image and referenced prompt are model-visible; registry metadata is internal",
+  "roles": {
+    "mask_or_grounding": {
+      "kind": "short_positive_text",
+      "project_soft_max_content_words": 8,
+      "negative_clauses": false,
+      "exact_live_owner": "pending_callsite_binding"
+    },
+    "moge_geometry": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hunyuan_object_foundation": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hunyuan_hoi_carrier": {
+      "kind": "image_policy",
+      "natural_language_words": 0
+    },
+    "hamer_upper_hand": {
+      "kind": "image_selector_policy",
+      "natural_language_words": 0
+    },
+    "gate_b": {
+      "kind": "semantic_query",
+      "owner": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_b/Gate_B_single_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_54.json",
+      "independent_of_gate_d0": true
+    },
+    "gate_d0": {
+      "kind": "semantic_query",
+      "owner": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_d0/Gate_D0_single_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_54.json",
+      "independent_of_gate_b": true
+    },
+    "gate_d1": {
+      "kind": "postoptimization_adjudication",
+      "owner": "/home/fredcui/Projects/FollowMyHold/tools/hoiso_d0_objective_contract/templates/gate_d1_query.md"
+    }
+  },
+  "compiler_policy": {
+    "VLM_may_emit": [
+      "semantic_names",
+      "confidence",
+      "unknown",
+      "alternative_hypotheses"
+    ],
+    "VLM_must_not_emit": [
+      "geometry_ids",
+      "coordinates",
+      "depth",
+      "transforms",
+      "loss_weights",
+      "optimizer_schedule"
+    ],
+    "confidence_to_activation": {
+      "high": "active",
+      "medium": "hypothesis",
+      "low": "diagnostic_only"
+    },
+    "numerical_weights": "one_global_frozen_dimensionless_policy"
+  }
+}
