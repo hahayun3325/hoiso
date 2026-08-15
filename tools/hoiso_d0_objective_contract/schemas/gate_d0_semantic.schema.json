@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HOISO-Flow Gate D0 semantic contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "case_id",
+    "active_hand",
+    "contact_state",
+    "contacts",
+    "forbidden_regions",
+    "uncertainty",
+    "decision"
+  ],
+  "properties": {
+    "schema": {"const": "hoiso_gate_d0_semantic_v1"},
+    "case_id": {"type": "string", "minLength": 1},
+    "active_hand": {"type": "string", "enum": ["left_upper", "right_upper", "left", "right"]},
+    "contact_state": {"type": "string", "enum": ["contact", "likely_contact", "near_contact", "no_contact", "uncertain"]},
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finger", "object_part", "object_region", "confidence", "contact_mode", "expected_z_order"],
+        "properties": {
+          "finger": {"type": "string", "enum": ["thumb", "index", "middle", "ring", "pinky", "palm"]},
+          "object_part": {"type": "string", "minLength": 1},
+          "object_region": {"type": "string", "minLength": 1},
+          "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+          "contact_mode": {"type": "string", "enum": ["touch", "near_contact", "uncertain", "no_contact"]},
+          "expected_z_order": {"type": "string", "enum": ["hand_in_front", "object_in_front", "not_observable", "uncertain"]},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "forbidden_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["object_part", "object_region", "reason"],
+        "properties": {
+          "object_part": {"type": "string", "minLength": 1},
+          "object_region": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "uncertainty": {"type": "string"},
+    "alternative_hypothesis": {"type": ["object", "null"]},
+    "decision": {"type": "string", "enum": ["compile", "reject", "review_required"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  }
+}

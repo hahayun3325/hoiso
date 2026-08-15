@@ -1,0 +1,86 @@
+{
+  "schema": "hoiso_prompt_and_input_policy_registry_v1",
+  "entries": [
+    {
+      "id": "segmentation_object_mask_v1",
+      "consumer": "text_conditioned_segmentation",
+      "role": "object_mask_localization",
+      "interface": "short_positive_text",
+      "natural_language_prompt": true,
+      "negative_language_policy": "avoid_distractor_nouns_use_masks_and_guards",
+      "output_schema": "binary_object_mask"
+    },
+    {
+      "id": "inpainting_object_reconstruction_v1",
+      "consumer": "FLUX_Kontext",
+      "role": "object_appearance_completion",
+      "interface": "image_plus_concise_text",
+      "natural_language_prompt": true,
+      "negative_language_policy": "at_most_one_critical_exclusion",
+      "output_schema": "completed_object_rgb"
+    },
+    {
+      "id": "moge_input_policy_v2",
+      "consumer": "MoGe",
+      "role": "geometry_and_camera",
+      "interface": "canonical_rgb",
+      "natural_language_prompt": false,
+      "negative_language_policy": "not_applicable",
+      "output_schema": "depth_pointmap_camera_receipt"
+    },
+    {
+      "id": "hamer_input_identity_policy_v2",
+      "consumer": "HaMeR",
+      "role": "mano_hand_and_keypoints",
+      "interface": "rgb_crop_plus_detector_identity",
+      "natural_language_prompt": false,
+      "negative_language_policy": "not_applicable",
+      "output_schema": "hand_candidate_receipt"
+    },
+    {
+      "id": "hunyuan_object_geometry_v1",
+      "consumer": "Hunyuan3D",
+      "role": "object_geometry",
+      "interface": "clean_object_image",
+      "natural_language_prompt": false,
+      "negative_language_policy": "not_applicable",
+      "output_schema": "object_asset_receipt"
+    },
+    {
+      "id": "hunyuan_hoi_pose_carrier_v1",
+      "consumer": "Hunyuan3D",
+      "role": "hoi_pose_carrier",
+      "interface": "clean_hoi_foreground",
+      "natural_language_prompt": false,
+      "negative_language_policy": "not_applicable",
+      "output_schema": "disposable_carrier_receipt"
+    },
+    {
+      "id": "gate_b_contact_semantic_v3",
+      "consumer": "manual_mllm",
+      "role": "semantic_contact_proposal",
+      "interface": "rgb_plus_part_overlay",
+      "natural_language_prompt": true,
+      "negative_language_policy": "reasoning_context_allowed",
+      "output_schema": "gate_b_contact_v3.json"
+    },
+    {
+      "id": "gate_d0_contact_contract_v1",
+      "consumer": "manual_mllm_plus_deterministic_compiler",
+      "role": "semantic_to_geometric_contact_contract",
+      "interface": "targeted_query_plus_geometry_inventory",
+      "natural_language_prompt": true,
+      "negative_language_policy": "explicit_forbidden_named_regions",
+      "output_schema": "hoiso_gate_d0_semantic_v1"
+    },
+    {
+      "id": "gate_d1_physical_adjudication_v1",
+      "consumer": "independent_reviewer_or_vlm",
+      "role": "post_optimization_physical_adjudication",
+      "interface": "before_after_evidence_packet",
+      "natural_language_prompt": true,
+      "negative_language_policy": "not_applicable",
+      "output_schema": "accept_reject_review_required"
+    }
+  ]
+}

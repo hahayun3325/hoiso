@@ -1,0 +1,85 @@
+{
+  "schema": "hoiso_professor_toolkit_provenance_v1",
+  "source": "/home/fredcui/Downloads/hoiso_d0_objective_contract_toolkit",
+  "source_tree_sha256": "196856a0ef7e2c3877b6bb7d3d57e4f02ac5f478e5a48a3214ce98d49cdbcc9f",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1280,
+      "sha256": "fe8b7aa584cd7dbca77fdb4ba94622b64c8866673eeae4c6855bee9bfcc3585c"
+    },
+    {
+      "path": "config/finger_geometry_map.template.json",
+      "bytes": 1110,
+      "sha256": "75405e290c4b11c0b62e4026f7a26236de7350eeee1b5805dfdfad27b1bb29d4"
+    },
+    {
+      "path": "config/object_patch_map.template.json",
+      "bytes": 1235,
+      "sha256": "5b10126abcee27b6e9cd611e217b4a63e07d5b4fab9be94ecdfe6bc77641a8ea"
+    },
+    {
+      "path": "config/objective_policy.template.json",
+      "bytes": 1713,
+      "sha256": "fb313445928b70556a29167aaf7f075da4d83bac1d67067234684be8c9610a52"
+    },
+    {
+      "path": "schemas/gate_d0_semantic.schema.json",
+      "bytes": 2218,
+      "sha256": "cd46cb02df4ac7fc25f0802682ee5510a6f2b2740c51fb5ca8a037976892fa4b"
+    },
+    {
+      "path": "scripts/audit_dense_zorder_inputs.py",
+      "bytes": 1936,
+      "sha256": "09e1777d8f898a2a0c34de77ee36e259f20ee9405e84a8a56d632e7bfcf844a4"
+    },
+    {
+      "path": "scripts/bootstrap_d0_contract.sh",
+      "bytes": 2588,
+      "sha256": "22dda9150f95266a2bde86df218bd5816192ccdc593587de26814d571e7cf04e"
+    },
+    {
+      "path": "scripts/build_phase_objectives.py",
+      "bytes": 4657,
+      "sha256": "a7af304cba78584ac3e4e78cccb503f558604ab97724c90b66016eb61ac8d330"
+    },
+    {
+      "path": "scripts/compile_gate_d0_contract.py",
+      "bytes": 5411,
+      "sha256": "379cc9c2ba5bb8d6e9aab826972c7b9d190f1b2aee86775650860945762bf4e1"
+    },
+    {
+      "path": "scripts/create_resource_receipt.py",
+      "bytes": 1163,
+      "sha256": "06afa029bf113ae4b54f6da8865f4546ec5a1a2951e1536101d2d1328e50d150"
+    },
+    {
+      "path": "scripts/validate_gate_d0.py",
+      "bytes": 1864,
+      "sha256": "38614bc37bbc27b7093a251fcd13abf5d6025f57780fc3cc22f03d3c4f8bf7e7"
+    },
+    {
+      "path": "templates/gate_d0_query.md",
+      "bytes": 1128,
+      "sha256": "4111998f0ee98eed01e270f51fac3850e13b81b23a0363b1b06796542b25657c"
+    },
+    {
+      "path": "templates/gate_d1_query.md",
+      "bytes": 811,
+      "sha256": "1938621a4478dc901d176db9683fe67cfba2b3dc8e6867c6d00df867eb2c39bd"
+    },
+    {
+      "path": "templates/prompt_registry_manifest.template.json",
+      "bytes": 3082,
+      "sha256": "3f53fda88f84dcbbe4904a91918f79b3f6dbd2dcd4732b4eb503196e10d959c0"
+    }
+  ],
+  "ignored_cache_files": [
+    "scripts/__pycache__/audit_dense_zorder_inputs.cpython-313.pyc",
+    "scripts/__pycache__/build_phase_objectives.cpython-313.pyc",
+    "scripts/__pycache__/compile_gate_d0_contract.cpython-313.pyc",
+    "scripts/__pycache__/create_resource_receipt.cpython-313.pyc",
+    "scripts/__pycache__/validate_gate_d0.cpython-313.pyc"
+  ],
+  "policy": "copied_not_moved; preparation_only; no_optimizer_authorization"
+}

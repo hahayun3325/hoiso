@@ -1,0 +1,45 @@
+{
+  "schema": "hoiso_finger_geometry_map_v1",
+  "case_id": "alapuse02v3n60",
+  "mano_topology_vertex_count": 778,
+  "source_hashes": {},
+  "fingers": {
+    "thumb": {
+      "tip_vertex_ids": [744],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    },
+    "index": {
+      "tip_vertex_ids": [320],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    },
+    "middle": {
+      "tip_vertex_ids": [443],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    },
+    "ring": {
+      "tip_vertex_ids": [554],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    },
+    "pinky": {
+      "tip_vertex_ids": [671],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    },
+    "palm": {
+      "tip_vertex_ids": [],
+      "contact_vertex_ids": [],
+      "joint_parameter_names": [],
+      "joint_keypoint_ids": []
+    }
+  },
+  "status": "HOLD_UNTIL_CURRENT_SOURCE_CONFIRMED"
+}

@@ -1,0 +1,9 @@
+case_uid,role,stage,query_kind,primary_input_path,primary_input_sha256,evidence_manifest_path,evidence_manifest_sha256,template_path,template_version,template_sha256,response_schema,response_path,response_sha256,review_status,reviewer,reviewed_at
+CASE_UID,mask_or_grounding,foundation,short_text_prompt,,,,,,,,,,,unfilled,,
+CASE_UID,moge_geometry,foundation,input_camera_policy,,,,,,,,,,,unfilled,,
+CASE_UID,hunyuan_object_foundation,foundation,image_policy,,,,,,,,,,,unfilled,,
+CASE_UID,hunyuan_hoi_carrier,hand_transform,image_policy,,,,,,,,,,,unfilled,,
+CASE_UID,hamer_upper_hand,hand_transform,selector_policy,,,,,,,,,,,unfilled,,
+CASE_UID,gate_b,pre_alignment,semantic_query,,,,,,,,,,,unfilled,,
+CASE_UID,gate_d0,pre_optimization,semantic_query,,,,,,,,,,,unfilled,,
+CASE_UID,gate_d1,post_optimization,adjudication_query,,,,,,,,,,,unfilled,,

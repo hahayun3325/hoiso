@@ -1,0 +1,47 @@
+{
+  "schema": "hoiso_object_patch_map_v1",
+  "case_id": "alapuse02v3n60",
+  "authoritative_object": "Gate-A seed-2026",
+  "source_hashes": {},
+  "parts": {
+    "screen_lid": {
+      "regions": {
+        "front_top_rim": {
+          "face_ids_path": null,
+          "vertex_ids_path": null,
+          "normal_policy": "source_mesh_normals",
+          "connected": null
+        },
+        "screen_face": {
+          "face_ids_path": null,
+          "vertex_ids_path": null,
+          "normal_policy": "source_mesh_normals",
+          "connected": null
+        },
+        "hinge": {
+          "face_ids_path": null,
+          "vertex_ids_path": null,
+          "normal_policy": "source_mesh_normals",
+          "connected": null
+        }
+      }
+    },
+    "keyboard_base": {
+      "regions": {
+        "keyboard_top": {
+          "face_ids_path": null,
+          "vertex_ids_path": null,
+          "normal_policy": "source_mesh_normals",
+          "connected": null
+        },
+        "front_edge": {
+          "face_ids_path": null,
+          "vertex_ids_path": null,
+          "normal_policy": "source_mesh_normals",
+          "connected": null
+        }
+      }
+    }
+  },
+  "status": "HOLD_UNTIL_CURRENT_GATE_A_PATCHES_CONFIRMED"
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "hoiso_prompt_collection_csv_contract_v2",
+  "row_identity": [
+    "case_uid",
+    "role",
+    "stage"
+  ],
+  "columns": [
+    "case_uid",
+    "role",
+    "stage",
+    "query_kind",
+    "primary_input_path",
+    "primary_input_sha256",
+    "evidence_manifest_path",
+    "evidence_manifest_sha256",
+    "template_path",
+    "template_version",
+    "template_sha256",
+    "response_schema",
+    "response_path",
+    "response_sha256",
+    "review_status",
+    "reviewer",
+    "reviewed_at"
+  ],
+  "CSV_role": "index_only",
+  "structured_response_role": "schema_validated_JSON",
+  "runtime_resolution": {
+    "CLI": "--prompt-collection ABS.csv --case-uid CASE",
+    "environment": "HOISO_PROMPT_COLLECTION",
+    "per_case_source_edits": false,
+    "exactly_one_matching_row": true
+  },
+  "input_policy": "query-specific evidence manifest; crop-only allowed only when the template requires no additional modality",
+  "D0_required_modalities": [
+    "exact_RGB_crop",
+    "GateB_receipt_or_explicit_requery_all_fallback",
+    "labeled_GateA_part_side_overlay",
+    "indexed_hand_finger_overlay",
+    "optional_valid_depth"
+  ],
+  "D1_required_modalities": [
+    "original_RGB_crop",
+    "frozen_D0_contract",
+    "before_after_renders",
+    "selected_and_forbidden_distances",
+    "collision_penetration",
+    "valid_depth_zorder",
+    "topology_part_state"
+  ],
+  "optimizer_authorized": false
+}

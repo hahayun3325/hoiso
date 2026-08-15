@@ -1,0 +1,25 @@
+{
+  "schema": "hoiso_template_owner_resolution_and_fallback_policy_v3",
+  "case": "alapuse02v3n60",
+  "selection_receipt": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_fallback_owner_and_query_bootstrap_v99_11_7_13_3_13_5_5_1_7_3_5_14_52/reports/D0_D1_fallback_owner_adjudication_v99_11_7_13_3_13_5_5_1_7_3_5_14_52.json",
+  "selected": {
+    "gate_d0": {
+      "path": "/home/fredcui/Projects/FollowMyHold/tools/hoiso_d0_objective_contract/templates/gate_d0_query.md",
+      "sha256": "4111998f0ee98eed01e270f51fac3850e13b81b23a0363b1b06796542b25657c",
+      "role": "targeted_preoptimization_semantic_query"
+    },
+    "gate_d1": {
+      "path": "/home/fredcui/Projects/FollowMyHold/tools/hoiso_d0_objective_contract/templates/gate_d1_query.md",
+      "sha256": "1938621a4478dc901d176db9683fe67cfba2b3dc8e6867c6d00df867eb2c39bd",
+      "role": "independent_postoptimization_adjudication"
+    },
+    "gate_d0_schema": {
+      "path": "/home/fredcui/Projects/FollowMyHold/tools/hoiso_d0_objective_contract/schemas/gate_d0_semantic.schema.json",
+      "sha256": "cd46cb02df4ac7fc25f0802682ee5510a6f2b2740c51fb5ca8a037976892fa4b",
+      "role": "structured_D0_response_schema"
+    }
+  },
+  "historical_owner_status": "not_proven_after_bounded_review",
+  "remaining_role_rule": "one bounded callsite/hash review, then new versioned owner; never overwrite",
+  "optimizer_authorized": false
+}
