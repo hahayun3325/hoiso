@@ -1,7 +1,7 @@
 from pathlib import Path
 
-REQUIRED_PARAMETERS={'global_hand_rotation','global_hand_translation','global_hand_scale','mano_articulation','object_pose'}
-REQUIRED_HOOKS={'object_vertices','rasterize_object','build_optimizer','compute_loss','gate_pass','snapshot','restore','save_checkpoint','capture'}
+REQUIRED_PARAMETERS={'global_hand_rotation','global_hand_translation'}
+REQUIRED_HOOKS={'frozen_state','object_vertices','rasterize_object','build_optimizer','compute_loss','gate_pass','snapshot','restore','save_checkpoint','capture'}
 
 class LivePhase1Runtime:
     def __init__(self,parameters,hooks,metadata=None):
@@ -12,6 +12,7 @@ class LivePhase1Runtime:
             if not hasattr(value,'requires_grad_') or not hasattr(value,'detach'): raise TypeError(f'parameter_is_not_live_tensor:{name}')
 
     def parameter_registry(self): return self._parameters
+    def frozen_state(self): return self._hooks['frozen_state']()
     def object_vertices(self): return self._hooks['object_vertices']()
     def rasterize_object(self,vertices): return self._hooks['rasterize_object'](vertices)
     def build_optimizer(self,selected): return self._hooks['build_optimizer'](selected)

@@ -49,7 +49,7 @@ class H0Controller:
         for name,parameter in self.registry.items(): parameter.requires_grad_(self.original_flags[name])
 
     def frozen_state(self):
-        return {'parameters':{name:value for name,value in self.registry.items() if name not in self.enabled},'object_vertices':self.runtime.object_vertices()}
+        return {'parameters':{name:value for name,value in self.registry.items() if name not in self.enabled},'runtime_frozen':self.runtime.frozen_state(),'object_vertices':self.runtime.object_vertices()}
 
     def gradient_stats(self):
         stats={}
