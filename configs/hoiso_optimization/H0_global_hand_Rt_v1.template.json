@@ -1,0 +1,25 @@
+{
+  "schema": "hoiso_phase_template_v1",
+  "phase": "H0_global_hand_Rt",
+  "enable": [
+    "global_hand_rotation",
+    "global_hand_translation"
+  ],
+  "freeze": [
+    "hand_scale",
+    "MANO_shape",
+    "MANO_articulation",
+    "all_GateA_parameters",
+    "camera",
+    "all_unlisted_parameters"
+  ],
+  "required_inputs": [
+    "compiled_semantics",
+    "PASS_H0_finger_pad_map",
+    "PASS_object_patch_map",
+    "dense_GateA_depth_and_face_ID",
+    "MoGe_hand_observation"
+  ],
+  "updates": "separately_authorized_bounded_count",
+  "optimizer_authorized": false
+}

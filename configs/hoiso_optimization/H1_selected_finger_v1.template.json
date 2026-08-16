@@ -1,0 +1,23 @@
+{
+  "schema": "hoiso_phase_template_v1",
+  "phase": "H1_selected_finger_articulation",
+  "starts_from": "accepted_H0_checkpoint",
+  "enable": "compiler_resolved_selected_MANO_joint_indices",
+  "freeze": [
+    "global_hand_Rt",
+    "hand_scale",
+    "MANO_shape",
+    "unselected_MANO_joints",
+    "all_GateA_parameters",
+    "camera"
+  ],
+  "required_inputs": [
+    "PASS_H1_joint_owner_map",
+    "accepted_H0_checkpoint",
+    "compiled_semantics",
+    "PASS_object_patch_map",
+    "dense_GateA_depth_and_face_ID"
+  ],
+  "updates": "separately_authorized_bounded_count",
+  "optimizer_authorized": false
+}
