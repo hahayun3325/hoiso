@@ -1068,7 +1068,7 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
         moge_mesh_path=None,
         h2m_rt_path=None,
         hunyuan_hoi_mesh_path=None,
-        **kwargs,
+        *, h0_live_callback=None, **kwargs,
     ) -> List[List[trimesh.Trimesh]]:
         callback = kwargs.pop("callback", None)
         callback_steps = kwargs.pop("callback_steps", None)
@@ -1317,45 +1317,81 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                         )
                         hand_optimizer = torch.optim.Adam(params_guidance_hand, eps=1e-4)
                         
-                        for k in range(optimization_steps_hand):
-                            hand_optimizer.zero_grad()
+                        h0_handled = False
+                        if h0_live_callback is not None:
+                            def _h0_compute_base_loss(h0_step_index=0):
+                                RT = torch.eye(4, device=device)
+                                RT[:3, :3] = quaternion_to_matrix(rotation_hand).float().unsqueeze(0)
+                                RT[:3, 3] = trans_hand
+                                transformed_hand_mesh = transform_mesh_around_center_w_scale(mano_mesh_moge, RT, scale_hand)
+                                with torch.cuda.amp.autocast(enabled=False):
+                                    rendered_normal_hand, rendered_disp_hand = render_normal_and_disparity(renderer, transformed_hand_mesh)
+                                    sil_mano_hand = sil_renderer(transformed_hand_mesh)[..., 3]
+                                opt_3d_kps = mano_vert_to_3dkps(transformed_hand_mesh, J_regressor, device).unsqueeze(0)
+                                opt_2d_kps_screen = renderer.rasterizer.cameras.transform_points_screen(opt_3d_kps, image_size=(H, W)).squeeze(0)
+                                opt_2d_kps = opt_2d_kps_screen[:, :2]
+                                loss_2d_kps = F.mse_loss(opt_2d_kps, torch.tensor(hamer_2d_kps, device=device).float())
+                                loss_normal_hand = normal_alignment_loss(rendered_normal_hand, moge_normal, valid_mask=moge_hand_mask)
+                                loss_disp_hand = F.l1_loss(rendered_disp_hand, moge_disp * moge_hand_mask)
+                                loss_silhouette_hand = F.binary_cross_entropy(sil_mano_hand.float(), moge_hand_sil.float())
+                                loss_hand_trans = (trans_hand ** 2).mean()
+                                total_hand_loss = 1e-2 * loss_2d_kps + loss_normal_hand + 10 * loss_disp_hand + loss_silhouette_hand + 1e-2 * loss_hand_trans
+                                return total_hand_loss, {
+                                    'loss_2d_kps': loss_2d_kps, 'loss_normal_hand': loss_normal_hand, 'loss_disp_hand': loss_disp_hand,
+                                    'loss_silhouette_hand': loss_silhouette_hand, 'loss_hand_trans': loss_hand_trans,
+                                    'transformed_hand_mesh': transformed_hand_mesh, 'rendered_normal_hand': rendered_normal_hand,
+                                    'rendered_disp_hand': rendered_disp_hand, 'sil_mano_hand': sil_mano_hand, 'opt_2d_kps': opt_2d_kps,
+                                }
+                            _h0_live_context = {
+                                'owner': 'Hunyuan3DDiTFlowMatchingPipeline_main.__call__.phase1_hand',
+                                'parameters': {'global_hand_rotation': rotation_hand, 'global_hand_translation': trans_hand},
+                                'frozen': {'global_hand_scale': scale_hand, 'mano_mesh_moge': mano_mesh_moge, 'scale_obj': scale_obj, 'trans_obj': trans_obj, 'rotation_obj': rotation_obj},
+                                'compute_base_loss': _h0_compute_base_loss,
+                                'metadata': {'outer_step': i, 'legacy_updates': optimization_steps_hand},
+                            }
+                            from foho.guidance.h0_live_callback_dispatch_v99_11_7_13_3_13_5_5_1_7_3_5_14_83 import dispatch_h0_live_callback
+                            _h0_outcome = dispatch_h0_live_callback(h0_live_callback, _h0_live_context)
+                            h0_handled = _h0_outcome['handled']
+                        if not h0_handled:
+                            for k in range(optimization_steps_hand):
+                                hand_optimizer.zero_grad()
 
-                            RT = torch.eye(4, device=device)
-                            RT[:3, :3] = quaternion_to_matrix(rotation_hand).float().unsqueeze(0)
-                            RT[:3, 3] = trans_hand
-                            transformed_hand_mesh = transform_mesh_around_center_w_scale(mano_mesh_moge, RT, scale_hand)
-                            with torch.cuda.amp.autocast(enabled=False):
-                                rendered_normal_hand, rendered_disp_hand = render_normal_and_disparity(renderer, transformed_hand_mesh)
-                                sil_mano_hand = sil_renderer(transformed_hand_mesh)[..., 3]
+                                RT = torch.eye(4, device=device)
+                                RT[:3, :3] = quaternion_to_matrix(rotation_hand).float().unsqueeze(0)
+                                RT[:3, 3] = trans_hand
+                                transformed_hand_mesh = transform_mesh_around_center_w_scale(mano_mesh_moge, RT, scale_hand)
+                                with torch.cuda.amp.autocast(enabled=False):
+                                    rendered_normal_hand, rendered_disp_hand = render_normal_and_disparity(renderer, transformed_hand_mesh)
+                                    sil_mano_hand = sil_renderer(transformed_hand_mesh)[..., 3]
 
-                                if debugging:
-                                    if k % 10 == 0:
-                                        plot_in_grid(rendered_normal_hand, moge_normal, save_path=f'{save_dir}/rendered_normal_hand_t{i}_opt{k}.png')
+                                    if debugging:
+                                        if k % 10 == 0:
+                                            plot_in_grid(rendered_normal_hand, moge_normal, save_path=f'{save_dir}/rendered_normal_hand_t{i}_opt{k}.png')
 
-                            opt_3d_kps = mano_vert_to_3dkps(transformed_hand_mesh, J_regressor, device).unsqueeze(0) # (1,N,3)
-                            opt_2d_kps_screen = renderer.rasterizer.cameras.transform_points_screen(opt_3d_kps, image_size=(H, W)).squeeze(0)  # (N,3)
-                            opt_2d_kps = opt_2d_kps_screen[:, :2]  # (N, 2)
-                            loss_2d_kps = F.mse_loss(opt_2d_kps, torch.tensor(hamer_2d_kps, device=device).float()) 
-                            loss_normal_hand = normal_alignment_loss(rendered_normal_hand, moge_normal, valid_mask=moge_hand_mask)
-                            loss_disp_hand = F.l1_loss(rendered_disp_hand, moge_disp * moge_hand_mask)
-                            loss_silhouette_hand = F.binary_cross_entropy(sil_mano_hand.float(), moge_hand_sil.float()) #F.l1_loss(sil_mano_hand, moge_hand_sil) #F.binary_cross_entropy(sil_mano_hand, moge_hand_sil, reduction='none')
-                            loss_hand_trans = (trans_hand ** 2).mean() # regularization on hand translation to prevent exploding translation
-                            total_hand_loss = (
-                                1e-2 * loss_2d_kps +
-                                1 * loss_normal_hand +
-                                10 * loss_disp_hand +
-                                1 * loss_silhouette_hand +
-                                1e-2 * loss_hand_trans 
-                            )
+                                opt_3d_kps = mano_vert_to_3dkps(transformed_hand_mesh, J_regressor, device).unsqueeze(0) # (1,N,3)
+                                opt_2d_kps_screen = renderer.rasterizer.cameras.transform_points_screen(opt_3d_kps, image_size=(H, W)).squeeze(0)  # (N,3)
+                                opt_2d_kps = opt_2d_kps_screen[:, :2]  # (N, 2)
+                                loss_2d_kps = F.mse_loss(opt_2d_kps, torch.tensor(hamer_2d_kps, device=device).float())
+                                loss_normal_hand = normal_alignment_loss(rendered_normal_hand, moge_normal, valid_mask=moge_hand_mask)
+                                loss_disp_hand = F.l1_loss(rendered_disp_hand, moge_disp * moge_hand_mask)
+                                loss_silhouette_hand = F.binary_cross_entropy(sil_mano_hand.float(), moge_hand_sil.float()) #F.l1_loss(sil_mano_hand, moge_hand_sil) #F.binary_cross_entropy(sil_mano_hand, moge_hand_sil, reduction='none')
+                                loss_hand_trans = (trans_hand ** 2).mean() # regularization on hand translation to prevent exploding translation
+                                total_hand_loss = (
+                                    1e-2 * loss_2d_kps +
+                                    1 * loss_normal_hand +
+                                    10 * loss_disp_hand +
+                                    1 * loss_silhouette_hand +
+                                    1e-2 * loss_hand_trans
+                                )
                             
-                            if k % 10 == 0:
-                                loss_str = f'Opt step {k}, loss_2d_kps: {loss_2d_kps.item()}, loss_normal_hand: {loss_normal_hand.item()}, loss_disp_hand: {loss_disp_hand.item()}'
-                                if loss_log_file:
-                                    loss_log_file.write(loss_str + '\n')
-                                print(loss_str)
+                                if k % 10 == 0:
+                                    loss_str = f'Opt step {k}, loss_2d_kps: {loss_2d_kps.item()}, loss_normal_hand: {loss_normal_hand.item()}, loss_disp_hand: {loss_disp_hand.item()}'
+                                    if loss_log_file:
+                                        loss_log_file.write(loss_str + '\n')
+                                    print(loss_str)
                             
-                            total_hand_loss.backward()
-                            hand_optimizer.step()
+                                total_hand_loss.backward()
+                                hand_optimizer.step()
 
                     
                     elif i == handopt_start_step + 1: # optimize the object mesh transformation
