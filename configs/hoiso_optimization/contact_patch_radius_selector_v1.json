@@ -1,0 +1,18 @@
+{
+  "schema": "hoiso_contact_patch_radius_selector_v1",
+  "thresholds": {
+    "minimum_patch_precision_in_semantic_ROI": 0.9,
+    "minimum_semantic_ROI_coverage": 0.5
+  },
+  "hard_requirements": [
+    "contains_seed",
+    "connected_by_growth",
+    "projects_nonempty",
+    "intersects_overlap_or_ROI",
+    "local_under_20pct_visible_object"
+  ],
+  "ranking": "smallest_radius_fraction_among_feasible_candidates",
+  "no_feasible_action": "REVIEW_REQUIRED_expand_schedule_or_semantic_review",
+  "VLM_role": "semantic_region_only_not_metric_radius_or_face_ID",
+  "optimizer_authorized": false
+}
