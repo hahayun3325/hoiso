@@ -54,7 +54,7 @@ def main():
         rotation=torch.tensor([1.0,0.1,0.02,0.0],dtype=dtype)
         translation=torch.tensor([0.1,-0.1,0.05],dtype=dtype)
         scale=torch.tensor([1.0],dtype=dtype)
-        object_vertices=torch.tensor([[0.,0.,-2.],[1.,0.,-2.],[0.,1.,-2.]],dtype=dtype)
+        object_vertices=torch.tensor([[0.,0.,2.],[1.,0.,2.],[0.,1.,2.]],dtype=dtype)
         resources={
             'phase_config_path':None,
             'hook_module':None,
@@ -77,7 +77,7 @@ def main():
         policy=json.loads(Path('/home/fredcui/Projects/FollowMyHold/config/optimization/H0_global_dimensionless_loss_policy_v99_11_7_13_3_13_5_5_1_7_3_5_14_85_3_4.json').read_text())
         resources['hook_module']=hook_module; resources['zorder_module']=zmodule; resources['policy']=policy
 
-        base=torch.tensor([[0.,0.,-3.],[1.,0.,-3.],[0.,1.,-3.]],dtype=dtype)
+        base=torch.tensor([[0.,0.,3.],[1.,0.,3.],[0.,1.,3.]],dtype=dtype)
         def compute_base_loss(step=0):
             offset=torch.stack((rotation[1],rotation[2],translation[2]))
             mesh=Mesh(base+translation+offset)
@@ -118,6 +118,9 @@ def main():
                 'flags_restored':all(context['parameters'][name].requires_grad==value for name,value in flags.items()),
                 'fixed_raster_once':result.get('metrics',{}).get('raster_calls')==1,
                 'metric_depth_active':result.get('metrics',{}).get('metric_hand_depth_active') is True,
+                'positive_hand_depth_domain':result.get('metrics',{}).get('hand_depth_valid_count',0)>0,
+                'positive_object_depth_domain':result.get('metrics',{}).get('object_depth_valid_count',0)>0,
+                'zorder_support_positive':result.get('metrics',{}).get('zorder_valid_count',0)>0,
                 'contact_active':result.get('metrics',{}).get('D0_contact_active') is True,
             }
 

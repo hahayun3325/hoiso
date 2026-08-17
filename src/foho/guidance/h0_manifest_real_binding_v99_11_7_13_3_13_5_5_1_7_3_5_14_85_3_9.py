@@ -189,7 +189,7 @@ def bind_live_context(context, resources, output_root):
         vertices = mesh.verts_packed()
         faces = mesh.faces_packed()
         view_vertices = renderer.rasterizer.cameras.get_world_to_view_transform().transform_points(vertices)
-        vertex_depth = -view_vertices[:, 2]
+        vertex_depth = view_vertices[:, 2]
         hand_depth, hand_valid = interpolate_metric_face_depth(
             fragments.pix_to_face, fragments.bary_coords, faces, vertex_depth)
         if hand_depth.ndim == 3 and hand_depth.shape[0] == 1:
