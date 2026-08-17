@@ -1,0 +1,19 @@
+{
+  "schema": "hoiso_H0_global_dimensionless_loss_policy_v1",
+  "status": "PASS",
+  "scope": "case-independent H0 global hand rotation and translation",
+  "learning_rate": 0.001,
+  "weights": {
+    "base": 1.0,
+    "contact_xy": 1.0,
+    "contact_z": 1.0,
+    "zorder": 0.25,
+    "trust": 0.01
+  },
+  "zorder_margin": 0.0,
+  "gate": {
+    "max_relative_total_regression": 0.1,
+    "absolute_tolerance": 1e-8
+  },
+  "ground_truth_fields": []
+}

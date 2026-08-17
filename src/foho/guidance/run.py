@@ -77,6 +77,8 @@ def run_hunyuan_w_guid(
     save_path_hand,
     config,
     device="cuda",
+    *,
+    h0_live_callback=None,
 ):
     original_img_hand_mask = cv2.imread(cropped_hand_mask_path, cv2.IMREAD_GRAYSCALE)
     img_size = original_img_hand_mask.shape
@@ -166,6 +168,7 @@ def run_hunyuan_w_guid(
         moge_mesh_path=moge_mesh_path,
         h2m_rt_path=T_h2m_path,
         hunyuan_hoi_mesh_path=hunyuan_hoi_mesh_path,
+        h0_live_callback=h0_live_callback,
     )
 
     try:

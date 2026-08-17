@@ -1347,8 +1347,14 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                                 'parameters': {'global_hand_rotation': rotation_hand, 'global_hand_translation': trans_hand},
                                 'frozen': {'global_hand_scale': scale_hand, 'mano_mesh_moge': mano_mesh_moge, 'scale_obj': scale_obj, 'trans_obj': trans_obj, 'rotation_obj': rotation_obj},
                                 'compute_base_loss': _h0_compute_base_loss,
+                                'rendering': {'renderer': renderer, 'image_size': (H, W)},
                                 'metadata': {'outer_step': i, 'legacy_updates': optimization_steps_hand},
                             }
+                            _h0_bind = getattr(h0_live_callback, 'bind_live_context', None)
+                            if callable(_h0_bind):
+                                _h0_live_context = _h0_bind(_h0_live_context)
+                            elif 'hooks' not in _h0_live_context:
+                                raise RuntimeError('H0_callback_did_not_supply_live_hook_binder')
                             from foho.guidance.h0_live_callback_dispatch_v99_11_7_13_3_13_5_5_1_7_3_5_14_83 import dispatch_h0_live_callback
                             _h0_outcome = dispatch_h0_live_callback(h0_live_callback, _h0_live_context)
                             h0_handled = _h0_outcome['handled']
