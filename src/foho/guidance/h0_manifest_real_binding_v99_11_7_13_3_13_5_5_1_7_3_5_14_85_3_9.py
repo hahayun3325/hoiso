@@ -221,6 +221,11 @@ def bind_live_context(context, resources, output_root):
             contact_exempt_mask=raster['r04'],
             margin=float(policy['zorder_margin']),
             object_diagonal=resources['object_diagonal'])
+        hand_positive = hand_valid.bool() & torch.isfinite(hand_depth) & (hand_depth > 0)
+        object_positive = raster['valid'].bool() & torch.isfinite(raster['depth']) & (raster['depth'] > 0)
+        overlap = hand_positive & object_positive
+        exempt_overlap = overlap & raster['r04'].bool()
+        nonexempt_overlap = overlap & ~raster['r04'].bool()
         trust_rotation = (rotation-initial['global_hand_rotation']).pow(2).mean()
         trust_translation = torch.linalg.vector_norm(
             translation-initial['global_hand_translation'])/resources['object_diagonal']
@@ -238,6 +243,11 @@ def bind_live_context(context, resources, output_root):
             'metric_hand_depth_active':bool(hand_valid.any().detach().cpu()),
             'zorder_valid_count':int(zfacts['valid_count']),
             'zorder_candidate_count':int(zfacts['candidate_count']),
+            'hand_depth_valid_count':int(hand_positive.sum().detach().cpu()),
+            'object_depth_valid_count':int(object_positive.sum().detach().cpu()),
+            'zorder_overlap_count':int(overlap.sum().detach().cpu()),
+            'zorder_exempt_overlap_count':int(exempt_overlap.sum().detach().cpu()),
+            'zorder_nonexempt_overlap_count':int(nonexempt_overlap.sum().detach().cpu()),
             'r04_support_count':int(r04_yx.shape[0]),
             'raster_calls':state['raster_calls'], 'loss_calls':state['loss_calls'],
         }
