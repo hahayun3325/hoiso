@@ -52,16 +52,18 @@ def _preserve_parameter(parameter):
             parameter.grad.copy_(gradient)
 
 
-def _mesh_state(provider, residual, accepted_rotation, accepted_translation, scale,
+from foho.guidance.h1_alapuse02v3n60_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_5 import apply_accepted_h0_pose, register_hshape_vertices
+
+
+def _mesh_state(provider, residual, fixed_T_h2m, registered_center,
+                accepted_rotation, accepted_translation, scale,
                 faces, renderer, image_size, pad_ids):
     parameter = provider.selected_so3_residual
     with torch.no_grad():
         parameter.copy_(residual.to(device=parameter.device, dtype=parameter.dtype))
-        vertices = provider()[0]
-        center = (vertices.min(0).values + vertices.max(0).values) / 2.0
-        rotation = quaternion_to_matrix(accepted_rotation.reshape(-1, 4))[0]
-        transformed = (scale * (vertices - center)) @ rotation.transpose(0, 1)
-        transformed = transformed + center + accepted_translation.reshape(-1, 3)[0]
+        registered = register_hshape_vertices(provider()[0], fixed_T_h2m)
+        transformed = apply_accepted_h0_pose(
+            registered, registered_center, scale, accepted_rotation, accepted_translation)
         mesh = Meshes(verts=[transformed], faces=[faces])
         fragments = renderer.rasterizer(mesh)
         mask = torch.squeeze(fragments.pix_to_face[..., 0] >= 0)
@@ -214,13 +216,18 @@ class ReadOnlyH1PanelCallback:
         scale = scale.detach().clone() if torch.is_tensor(scale) else torch.as_tensor(scale, device=parameter.device, dtype=parameter.dtype)
         faces = base_mesh.faces_packed().detach().clone()
         pad_ids = resources['h0']['pad_ids']
-        before = _state_digest(runtime.frozen_state())
+        frozen_state = runtime.frozen_state()
+        before = _state_digest(frozen_state)
+        fixed_T_h2m = frozen_state['fixed_T_h2m']
+        registered_center = frozen_state['registered_center']
         result = None
         with _preserve_parameter(parameter):
-            initial = _mesh_state(provider, torch.zeros_like(parameter), accepted_rotation,
-                                  accepted_translation, scale, faces, renderer, image_size, pad_ids)
-            final = _mesh_state(provider, residual, accepted_rotation, accepted_translation,
-                                scale, faces, renderer, image_size, pad_ids)
+            initial = _mesh_state(provider, torch.zeros_like(parameter), fixed_T_h2m,
+                                  registered_center, accepted_rotation, accepted_translation,
+                                  scale, faces, renderer, image_size, pad_ids)
+            final = _mesh_state(provider, residual, fixed_T_h2m, registered_center,
+                                accepted_rotation, accepted_translation, scale, faces,
+                                renderer, image_size, pad_ids)
             laptop = _object_mask(resources, renderer)
             raster = runtime.rasterize_object()
             result = compose_h1_panel(self.crop_path, initial, final, laptop,

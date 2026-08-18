@@ -39,6 +39,21 @@ def _number(value):
     return float(value.detach().cpu()) if torch.is_tensor(value) else float(value)
 
 
+def register_hshape_vertices(vertices, fixed_T_h2m):
+    if vertices.ndim != 2 or vertices.shape[1] != 3:
+        raise ValueError('H1_Hshape_vertices_must_be_N_by_3')
+    if fixed_T_h2m.shape != (4, 4):
+        raise ValueError('H1_T_h2m_must_be_4_by_4')
+    return vertices @ fixed_T_h2m[:3, :3].transpose(0, 1) + fixed_T_h2m[:3, 3]
+
+
+def apply_accepted_h0_pose(registered_vertices, registered_center, scale,
+                           accepted_rotation, accepted_translation):
+    rotation = quaternion_to_matrix(accepted_rotation.reshape(-1, 4))[0]
+    transformed = (scale * (registered_vertices - registered_center)) @ rotation.transpose(0, 1)
+    return transformed + registered_center + accepted_translation.reshape(-1, 3)[0]
+
+
 def _load_carrier(path):
     original=torch.storage._load_from_bytes
     torch.storage._load_from_bytes=lambda blob: torch.load(io.BytesIO(blob),map_location='cpu',weights_only=False)
@@ -48,7 +63,7 @@ def _load_carrier(path):
 
 def load_h1_resources(h0_manifest,h0_source_bundle,h0_policy,h1_policy,provider_path,
                       bridge_path,carrier_path,mano_path,jacobian_path,h0_checkpoint,
-                      device,dtype):
+                      device,dtype,T_h2m_path=None):
     h0=load_case_resources(h0_manifest,h0_source_bundle,h0_policy,device,dtype)
     policy=json.loads(Path(h1_policy).read_text())
     if policy.get('status')!='PASS': raise ValueError('H1_live_policy_not_PASS')
@@ -71,16 +86,25 @@ def load_h1_resources(h0_manifest,h0_source_bundle,h0_policy,h1_policy,provider_
     accepted=checkpoint.get('parameters') or {}
     if set(accepted)!={'global_hand_rotation','global_hand_translation'}:
         raise ValueError('accepted_H0_checkpoint_Rt_mismatch')
+    if T_h2m_path is None:
+        raise ValueError('H1_fixed_T_h2m_owner_required')
+    fixed_T_h2m=torch.as_tensor(np.load(T_h2m_path),device=device,dtype=dtype)
+    if fixed_T_h2m.shape!=(4,4) or not bool(torch.isfinite(fixed_T_h2m).all()):
+        raise ValueError('H1_fixed_T_h2m_invalid')
+    expected_last=torch.tensor([0.0,0.0,0.0,1.0],device=device,dtype=dtype)
+    if not torch.allclose(fixed_T_h2m[3],expected_last,atol=1e-6,rtol=0.0):
+        raise ValueError('H1_fixed_T_h2m_must_be_affine')
     with np.load(jacobian_path,allow_pickle=False) as packet:
         palm_mask=torch.as_tensor(packet['palm_mask'],device=device,dtype=torch.bool)
     hashes={name:_sha(path) for name,path in {
       'h0_manifest':h0_manifest,'h0_source_bundle':h0_source_bundle,'h0_policy':h0_policy,
       'h1_policy':h1_policy,'provider':provider_path,'bridge':bridge_path,
-      'carrier':carrier_path,'mano':mano_path,'jacobian':jacobian_path,'h0_checkpoint':h0_checkpoint}.items()}
+      'carrier':carrier_path,'mano':mano_path,'jacobian':jacobian_path,
+      'h0_checkpoint':h0_checkpoint,'T_h2m':T_h2m_path}.items()}
     return {'h0':h0,'policy':policy,'provider':provider,
             'accepted_rotation':accepted['global_hand_rotation'].to(device=device,dtype=dtype),
             'accepted_translation':accepted['global_hand_translation'].to(device=device,dtype=dtype),
-            'palm_mask':palm_mask,'artifact_hashes':hashes}
+            'fixed_T_h2m':fixed_T_h2m,'palm_mask':palm_mask,'artifact_hashes':hashes}
 
 
 def bind_live_context(context,resources,output_root):
@@ -100,16 +124,24 @@ def bind_live_context(context,resources,output_root):
     accepted_scale=scale.detach().clone() if torch.is_tensor(scale) else torch.as_tensor(scale,device=parameter.device,dtype=parameter.dtype)
     faces=base_mesh.faces_packed().detach().clone()
     baseline_hshape=provider().detach().clone()[0]
+    fixed_T_h2m=resources['fixed_T_h2m'].detach().clone()
+    baseline_registered=register_hshape_vertices(baseline_hshape,fixed_T_h2m)
+    live_base_vertices=base_mesh.verts_packed().detach()
+    if baseline_registered.shape!=live_base_vertices.shape:
+        raise ValueError('H1_zero_residual_live_vertex_shape_mismatch')
+    zero_identity_max=float((baseline_registered-live_base_vertices).abs().max().detach().cpu())
+    if zero_identity_max>1e-4:
+        raise ValueError(f'H1_zero_residual_does_not_reproduce_live_base:{zero_identity_max}')
+    registered_center=(baseline_registered.min(0).values+baseline_registered.max(0).values)/2.0
     output_root=Path(output_root)
     state={'optimizer':None,'raster_calls':0,'loss_calls':0,'accepted_total':None}
 
     def parameter_registry(): return {'selected_so3_residual':parameter}
 
     def current_mesh():
-        vertices=provider()[0]
-        center=(vertices.min(0).values+vertices.max(0).values)/2.0
-        rotation=quaternion_to_matrix(accepted_R.reshape(-1,4))[0]
-        transformed=(accepted_scale*(vertices-center))@rotation.transpose(0,1)+center+accepted_t.reshape(-1,3)[0]
+        registered=register_hshape_vertices(provider()[0],fixed_T_h2m)
+        transformed=apply_accepted_h0_pose(
+            registered,registered_center,accepted_scale,accepted_R,accepted_t)
         return Meshes(verts=[transformed],faces=[faces])
 
     def frozen_state():
@@ -119,7 +151,9 @@ def bind_live_context(context,resources,output_root):
                 'accepted_hand_scale':accepted_scale,'GateA_vertices':h0['object_vertices'],
                 'GateA_faces':h0['object_faces'],'object_depth':h0['object_depth'],
                 'object_valid':h0['object_valid'],'r04':h0['r04'],
-                'camera_R':camera.R,'camera_T':camera.T,'baseline_hshape':baseline_hshape}
+                'camera_R':camera.R,'camera_T':camera.T,'baseline_hshape':baseline_hshape,
+                'fixed_T_h2m':fixed_T_h2m,'baseline_registered':baseline_registered,
+                'registered_center':registered_center,'zero_identity_max':zero_identity_max}
 
     def rasterize_object():
         state['raster_calls']+=1
@@ -257,7 +291,8 @@ def create_bound_callback(paths,output_root,attempts=0,backward_only=True,captur
         resources=resources_override or load_h1_resources(
             paths['h0_manifest'],paths['h0_source_bundle'],paths['h0_policy'],paths['h1_policy'],
             paths['provider'],paths['bridge'],paths['carrier'],paths['mano'],paths['jacobian'],
-            paths['h0_checkpoint'],reference.device,reference.dtype)
+            paths['h0_checkpoint'],reference.device,reference.dtype,
+            T_h2m_path=paths['T_h2m'])
         return bind_live_context(context,resources,output_root)
     return BoundH1Callback(binder,attempts,backward_only,capture_only,terminate_after_h1)
 
@@ -277,7 +312,8 @@ PATHS={
   'carrier':HAMER_POLICY_ROOT/'generated/alapuse02v3n60upperL_0.npy',
   'mano':HAMER_ROOT/'_DATA/data/mano/MANO_RIGHT.pkl',
   'jacobian':CASE_ROOT/'gate_d0_H1_registered_carrier_provider_and_Jacobian_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_3_3/artifacts/index_middle_vertex_Jacobian_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_3_3.npz',
-  'h0_checkpoint':CASE_ROOT/'gate_d0_H0_corrected_five_update_v99_11_7_13_3_13_5_5_1_7_3_5_14_88_7_1/runtime/controller/checkpoints/H0_step_005.pt'}
+  'h0_checkpoint':CASE_ROOT/'gate_d0_H0_corrected_five_update_v99_11_7_13_3_13_5_5_1_7_3_5_14_88_7_1/runtime/controller/checkpoints/H0_step_005.pt',
+  'T_h2m':CASE_ROOT/'gate_c_hand_constraint_first_CPU_v99_11_7_13_3_13_5_5_1_7_3_5_14_38/candidates/depth_median_CF_T_Hshape_to_I.npy'}
 
 def create_callback(mode,output_root,resources_override=None):
     modes={'backward-only':(0,True,False),'capture-only':(0,False,True),'optimize':(5,False,False)}
