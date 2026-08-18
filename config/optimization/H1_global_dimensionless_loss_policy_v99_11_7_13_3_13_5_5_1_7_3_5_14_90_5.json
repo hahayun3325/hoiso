@@ -1,0 +1,23 @@
+{
+  "schema": "foho.H1GlobalDimensionlessLivePolicy.v1",
+  "status": "PASS",
+  "scope": "case-independent selected index and middle MANO articulation",
+  "learning_rate": 0.001,
+  "joint_limit_radians": 0.35,
+  "weights": {
+    "base_observation": 1.0,
+    "contact_xy": 0.5,
+    "contact_z": 0.5,
+    "zorder": 0.25,
+    "pose_prior": 0.05,
+    "joint_limit": 0.1,
+    "collision": 0.25,
+    "integrity": 0.1
+  },
+  "zorder_margin": 0.0,
+  "gate": {
+    "max_relative_total_regression": 0.1,
+    "absolute_tolerance": 1e-08
+  },
+  "ground_truth_fields": []
+}
