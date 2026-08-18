@@ -1342,11 +1342,32 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                                     'transformed_hand_mesh': transformed_hand_mesh, 'rendered_normal_hand': rendered_normal_hand,
                                     'rendered_disp_hand': rendered_disp_hand, 'sil_mano_hand': sil_mano_hand, 'opt_2d_kps': opt_2d_kps,
                                 }
+                            def _foho_compute_base_loss_for_mesh(transformed_hand_mesh, hand_translation):
+                                with torch.cuda.amp.autocast(enabled=False):
+                                    rendered_normal_hand, rendered_disp_hand = render_normal_and_disparity(renderer, transformed_hand_mesh)
+                                    sil_mano_hand = sil_renderer(transformed_hand_mesh)[..., 3]
+                                opt_3d_kps = mano_vert_to_3dkps(transformed_hand_mesh, J_regressor, device).unsqueeze(0)
+                                opt_2d_kps_screen = renderer.rasterizer.cameras.transform_points_screen(opt_3d_kps, image_size=(H, W)).squeeze(0)
+                                opt_2d_kps = opt_2d_kps_screen[:, :2]
+                                loss_2d_kps = F.mse_loss(opt_2d_kps, torch.tensor(hamer_2d_kps, device=device).float())
+                                loss_normal_hand = normal_alignment_loss(rendered_normal_hand, moge_normal, valid_mask=moge_hand_mask)
+                                loss_disp_hand = F.l1_loss(rendered_disp_hand, moge_disp * moge_hand_mask)
+                                loss_silhouette_hand = F.binary_cross_entropy(sil_mano_hand.float(), moge_hand_sil.float())
+                                loss_hand_trans = (hand_translation ** 2).mean()
+                                total_hand_loss = 1e-2 * loss_2d_kps + loss_normal_hand + 10 * loss_disp_hand + loss_silhouette_hand + 1e-2 * loss_hand_trans
+                                return total_hand_loss, {
+                                    'loss_2d_kps': loss_2d_kps, 'loss_normal_hand': loss_normal_hand, 'loss_disp_hand': loss_disp_hand,
+                                    'loss_silhouette_hand': loss_silhouette_hand, 'loss_hand_trans': loss_hand_trans,
+                                    'transformed_hand_mesh': transformed_hand_mesh, 'rendered_normal_hand': rendered_normal_hand,
+                                    'rendered_disp_hand': rendered_disp_hand, 'sil_mano_hand': sil_mano_hand, 'opt_2d_kps': opt_2d_kps,
+                                }
+
                             _h0_live_context = {
                                 'owner': 'Hunyuan3DDiTFlowMatchingPipeline_main.__call__.phase1_hand',
                                 'parameters': {'global_hand_rotation': rotation_hand, 'global_hand_translation': trans_hand},
                                 'frozen': {'global_hand_scale': scale_hand, 'mano_mesh_moge': mano_mesh_moge, 'scale_obj': scale_obj, 'trans_obj': trans_obj, 'rotation_obj': rotation_obj},
                                 'compute_base_loss': _h0_compute_base_loss,
+                                'compute_base_loss_for_mesh': _foho_compute_base_loss_for_mesh,
                                 'rendering': {'renderer': renderer, 'image_size': (H, W)},
                                 'metadata': {'outer_step': i, 'legacy_updates': optimization_steps_hand},
                             }
