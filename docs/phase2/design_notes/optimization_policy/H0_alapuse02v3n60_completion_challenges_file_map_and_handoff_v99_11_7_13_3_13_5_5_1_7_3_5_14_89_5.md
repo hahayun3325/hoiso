@@ -152,3 +152,32 @@ into the ephemeral live tensors, render the final state, and exit without
 backward, optimizer construction, checkpoint writing, or mutation of frozen
 owners. Export original-crop silhouette, normal, contact/r04, metric-depth, and
 z-order overlays for human H0 acceptance before H1 begins.
+
+## Corrected H0 final amendment — 14_90_1
+
+
+The original H0 integration record is retained as history, but its earlier
+visual conclusion is superseded by the corrected hand handoff and corrected
+five-update run.  Human review accepted the final panel.  H0 made a small,
+bounded global rigid adjustment: total loss changed from `21.2859764099` to
+`21.0658721924`, while rotation and translation delta norms were approximately
+`0.00907` and `0.00725`.  Contact losses increased slightly, so H1 inherits a
+specific local-articulation task; H0 is not to be rerun as a substitute for H1.
+
+Accepted corrected inputs and outputs:
+
+- corrected call arguments: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_intermediate_Hshape_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2/config/alapuse02v3n60_corrected_H0_call_arguments_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2.json`
+- corrected hand source triplet: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_intermediate_Hshape_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2/config/corrected_H0_hand_source_triplet_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2.json`
+- accepted H0 checkpoint: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_corrected_five_update_v99_11_7_13_3_13_5_5_1_7_3_5_14_88_7_1/runtime/controller/checkpoints/H0_step_005.pt`
+- H0 trajectory metrics: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_corrected_final_evaluation_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5/reports/corrected_H0_trajectory_metrics_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5.csv`
+- corrected final hand+laptop panel: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_corrected_final_evaluation_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5/artifacts/alapuse02v3n60_corrected_H0_final_hand_laptop_panel_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5.png`
+- panel immutability audit: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_corrected_final_evaluation_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5/reports/corrected_H0_final_panel_audit_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_5.json`
+- human acceptance receipt: `/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_final_accept_and_H1_plan_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_1/config/corrected_H0_final_human_ACCEPT_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_1.json`
+- active production pipeline: `/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/pipelines.py`
+- H0 real binder: `/home/fredcui/Projects/FollowMyHold/src/foho/guidance/h0_manifest_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_85_3_9.py`
+- H0 case launcher: `/home/fredcui/Projects/FollowMyHold/src/foho/guidance/run_alapuse02v3n60_d0_h0_v99_11_7_13_3_13_5_5_1_7_3_5_14_85_3_2.py`
+- read-only registration panel launcher: `/home/fredcui/Projects/FollowMyHold/src/foho/guidance/run_alapuse02v3n60_h0_registration_panel_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_8.py`
+
+H1 must start from the corrected hand triplet and accepted H0 global-R/T
+checkpoint, freeze those global parameters, and bind exact selected-finger
+MANO articulation owners before any GPU update is authorized.
