@@ -1,0 +1,46 @@
+{
+  "schema": "foho.H1SelectedFingerResidualPolicy.v1",
+  "phase": "H1",
+  "selected_pose_rows": {
+    "index": [
+      0,
+      1,
+      2
+    ],
+    "middle": [
+      3,
+      4,
+      5
+    ]
+  },
+  "trainable_tensor": {
+    "name": "selected_so3_residual",
+    "shape": [
+      6,
+      3
+    ]
+  },
+  "maximum_live_attempts": 5,
+  "frozen": [
+    "global_hand_rotation",
+    "global_hand_translation",
+    "MANO_global_orient",
+    "MANO_betas",
+    "nonselected_pose_rows",
+    "object",
+    "camera"
+  ],
+  "required_loss_terms": [
+    "base_observation",
+    "selected_pad_r04_contact",
+    "metric_zorder",
+    "pose_prior",
+    "joint_limit",
+    "collision",
+    "nonselected_integrity"
+  ],
+  "execution": {
+    "authorized": false,
+    "reason": "production binder, backward-only and zero replay not yet closed"
+  }
+}
