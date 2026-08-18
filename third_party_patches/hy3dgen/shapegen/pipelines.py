@@ -1068,7 +1068,7 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
         moge_mesh_path=None,
         h2m_rt_path=None,
         hunyuan_hoi_mesh_path=None,
-        *, h0_live_callback=None, **kwargs,
+        *, h0_live_callback=None, o0_live_callback=None, **kwargs,
     ) -> List[List[trimesh.Trimesh]]:
         callback = kwargs.pop("callback", None)
         callback_steps = kwargs.pop("callback_steps", None)
@@ -1444,76 +1444,102 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                             obj_lrs=obj_lrs,
                             obj_2half_lrs=obj_2half_lrs,
                         )
-                        object_optimizer = torch.optim.AdamW(params_guidance_obj, eps=1e-4) 
+                        o0_handled = False
+                        if o0_live_callback is not None:
+                            def _o0_compute_base_loss_for_object_mesh(mesh):
+                                with torch.cuda.amp.autocast(enabled=False):
+                                    rendered_normal, rendered_disp = render_normal_and_disparity(renderer, mesh)
+                                    rendered_sil = sil_renderer(mesh)[..., 3]
+                                loss_normal = normal_alignment_loss(rendered_normal, moge_normal, valid_mask=moge_obj_mask)
+                                loss_disp = F.l1_loss(rendered_disp, moge_disp * moge_obj_mask)
+                                loss_silhouette = F.binary_cross_entropy(rendered_sil.float(), moge_obj_mask.float())
+                                loss_edge = mesh_edge_loss(mesh)
+                                loss_vertices = mesh.verts_packed().pow(2).mean()
+                                loss_translation = (trans_obj ** 2).mean()
+                                total = loss_edge + 10 * loss_normal + 10 * loss_disp + 100 * loss_silhouette + 1e-3 * loss_vertices + 1e-2 * loss_translation
+                                return total, {'loss_edge': loss_edge, 'loss_normal': loss_normal, 'loss_disp': loss_disp, 'loss_silhouette': loss_silhouette, 'loss_vertices': loss_vertices, 'loss_translation': loss_translation}
+                            _o0_context = {
+                                'owner': 'Hunyuan3DDiTFlowMatchingPipeline_main.__call__.phase1_5_object',
+                                'parameters': {'global_object_rotation': rotation_obj, 'global_object_translation': trans_obj},
+                                'frozen': {'global_object_scale': scale_obj, 'global_hand_scale': scale_hand, 'mano_mesh_moge': mano_mesh_moge},
+                                'compute_base_loss_for_object_mesh': _o0_compute_base_loss_for_object_mesh,
+                                'rendering': {'renderer': renderer, 'sil_renderer': sil_renderer, 'image_size': (H, W)},
+                                'metadata': {'outer_step': i, 'GateA_object_owned_by_binder': True},
+                            }
+                            from foho.guidance.h0_live_callback_dispatch_v99_11_7_13_3_13_5_5_1_7_3_5_14_83 import dispatch_h0_live_callback
+                            _o0_outcome = dispatch_h0_live_callback(o0_live_callback, _o0_context)
+                            o0_handled = _o0_outcome['handled']
+                        if not o0_handled:
+                            object_optimizer = torch.optim.AdamW(params_guidance_obj, eps=1e-4)
 
-                        for k in range(optimization_steps_scale): # optimization_steps_joint
-                            object_optimizer.zero_grad()
+                            for k in range(optimization_steps_scale): # optimization_steps_joint
+                                object_optimizer.zero_grad()
 
-                            # object refinement starts
-                            # obj_latent_x1 = self.scheduler.step_final(noise_pred_obj, t, obj_latents)
-                            obj_latent_x1 = self.scheduler.step_final(noise_pred_obj, t, obj_latents)
-                            obj_pred_sdf = latent2sdf(obj_latent_x1, xyz_samples, grid_size, self.vae, device)
-                            obj_verts, obj_faces, _ = flexi(xyz_samples, obj_pred_sdf[0].flatten(), cube_indices, octree_res)
+                                # object refinement starts
+                                # obj_latent_x1 = self.scheduler.step_final(noise_pred_obj, t, obj_latents)
+                                obj_latent_x1 = self.scheduler.step_final(noise_pred_obj, t, obj_latents)
+                                obj_pred_sdf = latent2sdf(obj_latent_x1, xyz_samples, grid_size, self.vae, device)
+                                obj_verts, obj_faces, _ = flexi(xyz_samples, obj_pred_sdf[0].flatten(), cube_indices, octree_res)
 
-                            if obj_verts.shape[0] == 0:
-                                print('Invalid mesh detected, aborting step!')
-                                continue # skip step
+                                if obj_verts.shape[0] == 0:
+                                    print('Invalid mesh detected, aborting step!')
+                                    continue # skip step
 
-                            # additional: define obj texture for consistency in join_meshes_as_scene
-                            tex_obj = torch.zeros_like(obj_verts) # add texture to the obj mesh for silhoutte loss
-                            tex_obj[:, 2] = 1.0 # blue
-                            tex_obj = TexturesVertex(verts_features=[tex_obj])
-                            obj_mesh = Meshes(verts=[obj_verts], faces=[obj_faces], textures=tex_obj).to(device)
+                                # additional: define obj texture for consistency in join_meshes_as_scene
+                                tex_obj = torch.zeros_like(obj_verts) # add texture to the obj mesh for silhoutte loss
+                                tex_obj[:, 2] = 1.0 # blue
+                                tex_obj = TexturesVertex(verts_features=[tex_obj])
+                                obj_mesh = Meshes(verts=[obj_verts], faces=[obj_faces], textures=tex_obj).to(device)
                             
-                            # transform object mesh to moge space and rotate/scale/translate it in mofe space
-                            moge_obj_mesh = transform_hunyuan2moge(obj_mesh, T_h2m) # putting the obj in moge space
-                            RT_obj = torch.eye(4, device=device)
-                            RT_obj[:3, :3] = quaternion_to_matrix(rotation_obj).float().unsqueeze(0)
-                            RT_obj[:3, 3] = trans_obj
-                            transformed_obj_mesh = transform_mesh_around_center_w_scale(moge_obj_mesh, RT_obj, scale_obj) 
+                                # transform object mesh to moge space and rotate/scale/translate it in mofe space
+                                moge_obj_mesh = transform_hunyuan2moge(obj_mesh, T_h2m) # putting the obj in moge space
+                                RT_obj = torch.eye(4, device=device)
+                                RT_obj[:3, :3] = quaternion_to_matrix(rotation_obj).float().unsqueeze(0)
+                                RT_obj[:3, 3] = trans_obj
+                                transformed_obj_mesh = transform_mesh_around_center_w_scale(moge_obj_mesh, RT_obj, scale_obj)
 
-                            # rendering normal and disparity maps
-                            with torch.cuda.amp.autocast(enabled=False):
-                                rendered_obj_normal, rendered_obj_disp = render_normal_and_disparity(renderer, transformed_obj_mesh)
-                                rendered_obj_sil = sil_renderer(transformed_obj_mesh)[..., 3]
+                                # rendering normal and disparity maps
+                                with torch.cuda.amp.autocast(enabled=False):
+                                    rendered_obj_normal, rendered_obj_disp = render_normal_and_disparity(renderer, transformed_obj_mesh)
+                                    rendered_obj_sil = sil_renderer(transformed_obj_mesh)[..., 3]
 
-                                if debugging:
-                                    if k % 10 == 0:
-                                        plot_in_grid(rendered_obj_normal, moge_normal * moge_obj_mask[..., None], save_path=f'{save_dir}/rendered_obj_normal_t{i}_opt{k}.png')
+                                    if debugging:
+                                        if k % 10 == 0:
+                                            plot_in_grid(rendered_obj_normal, moge_normal * moge_obj_mask[..., None], save_path=f'{save_dir}/rendered_obj_normal_t{i}_opt{k}.png')
                             
-                            loss_normal = normal_alignment_loss(rendered_obj_normal, moge_normal, valid_mask=moge_obj_mask) 
-                            loss_disp = F.l1_loss(rendered_obj_disp, moge_disp * moge_obj_mask)
-                            loss_silhouette = torch.nn.functional.binary_cross_entropy(rendered_obj_sil.float(), moge_obj_mask.float()) 
-                            obj_verts_loss = transformed_obj_mesh.verts_packed().pow(2).mean() # regularization on object mesh verts
-                            loss_obj_trans_reg = (trans_obj ** 2).mean() # regularization on object translation to prevent exploding translation
+                                loss_normal = normal_alignment_loss(rendered_obj_normal, moge_normal, valid_mask=moge_obj_mask)
+                                loss_disp = F.l1_loss(rendered_obj_disp, moge_disp * moge_obj_mask)
+                                loss_silhouette = torch.nn.functional.binary_cross_entropy(rendered_obj_sil.float(), moge_obj_mask.float())
+                                obj_verts_loss = transformed_obj_mesh.verts_packed().pow(2).mean() # regularization on object mesh verts
+                                loss_obj_trans_reg = (trans_obj ** 2).mean() # regularization on object translation to prevent exploding translation
                             
-                            # add additional object mesh losses from pytorch
-                            w_edge = 1.0 
-                            w_normal = 0.01
-                            obj_loss_edge = mesh_edge_loss(transformed_obj_mesh)
-                            obj_loss = obj_loss_edge * w_edge 
+                                # add additional object mesh losses from pytorch
+                                w_edge = 1.0
+                                w_normal = 0.01
+                                obj_loss_edge = mesh_edge_loss(transformed_obj_mesh)
+                                obj_loss = obj_loss_edge * w_edge
                             
-                            total_obj_loss = (
-                                1 * obj_loss +
-                                10 * loss_normal + 
-                                10 * loss_disp +
-                                100 * loss_silhouette +
-                                1e-3 * obj_verts_loss +
-                                1e-2 * loss_obj_trans_reg 
-                            )
+                                total_obj_loss = (
+                                    1 * obj_loss +
+                                    10 * loss_normal +
+                                    10 * loss_disp +
+                                    100 * loss_silhouette +
+                                    1e-3 * obj_verts_loss +
+                                    1e-2 * loss_obj_trans_reg
+                                )
 
-                            if torch.isnan(total_obj_loss):
-                                print('Total loss is NaN') # investigate from which loss NaN comes and why that loss is NaN
-                                return None
+                                if torch.isnan(total_obj_loss):
+                                    print('Total loss is NaN') # investigate from which loss NaN comes and why that loss is NaN
+                                    return None
 
-                            if k % 10 == 0:
-                                loss_str = f'Opt step {k}, object loss: {obj_loss.item()}, loss_normal_obj: {loss_normal.item()}, loss_disp: {loss_disp.item()}'
-                                if loss_log_file:
-                                    loss_log_file.write(loss_str + '\n')
-                                print(loss_str)                            
+                                if k % 10 == 0:
+                                    loss_str = f'Opt step {k}, object loss: {obj_loss.item()}, loss_normal_obj: {loss_normal.item()}, loss_disp: {loss_disp.item()}'
+                                    if loss_log_file:
+                                        loss_log_file.write(loss_str + '\n')
+                                    print(loss_str)
                             
-                            total_obj_loss.backward()
-                            object_optimizer.step()
+                                total_obj_loss.backward()
+                                object_optimizer.step()
 
                     elif handopt_start_step + 2 <= i <= guidance_end_step: # joint optimization step: optimize hands and object together
                         info_str = f'Joint optimization step {i}, optimizing hands and object together'

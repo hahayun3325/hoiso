@@ -1,0 +1,21 @@
+{
+  "schema": "foho.O0RigidObjectPolicy.v1",
+  "status": "PASS",
+  "rotation_learning_rate": 0.0005,
+  "translation_learning_rate": 0.0005,
+  "zorder_margin": 0.002,
+  "weights": {
+    "base": 1.0,
+    "contact_xy": 1.0,
+    "contact_z": 1.0,
+    "zorder": 1.0,
+    "collision": 0.1,
+    "trust": 0.1,
+    "quaternion_norm": 1.0
+  },
+  "gate": {
+    "max_relative_total_regression": 0.02,
+    "absolute_tolerance": 1e-08
+  },
+  "note": "globally fixed numeric policy; no VLM-generated weights"
+}
