@@ -256,7 +256,8 @@ def create_h1_panel_callback(paths, output_root, checkpoint_path, crop_path,
         resources = resources_override or load_h1_resources(
             paths['h0_manifest'], paths['h0_source_bundle'], paths['h0_policy'], paths['h1_policy'],
             paths['provider'], paths['bridge'], paths['carrier'], paths['mano'], paths['jacobian'],
-            paths['h0_checkpoint'], reference.device, reference.dtype)
+            paths['h0_checkpoint'], reference.device, reference.dtype,
+            T_h2m_path=paths['T_h2m'])
         holder['resources'] = resources
         return bind_h1_live_context(context, resources, Path(output_root) / 'read_only_runtime')
     return ReadOnlyH1PanelCallback(binder, holder, checkpoint_path, crop_path,
