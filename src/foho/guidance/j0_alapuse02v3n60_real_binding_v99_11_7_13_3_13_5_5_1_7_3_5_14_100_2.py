@@ -151,7 +151,8 @@ class BoundJ0Callback:
         if self._bound: raise RuntimeError('J0_context_may_be_bound_once')
         self._bound=True; return self.binder(context)
     def __call__(self,context):
-        result=run_live(context['j0_runtime'],attempts=self.attempts,checkpoint_every=1,backward_only=self.backward_only,capture_only=self.capture_only)
+        bound_context=self.bind_live_context(context)
+        result=run_live(bound_context['j0_runtime'],attempts=self.attempts,checkpoint_every=1,backward_only=self.backward_only,capture_only=self.capture_only)
         raise J0DiagnosticComplete({'handled':True,'result':result})
 class BypassPriorPhase:
     def __init__(self,phase): self.phase=phase
