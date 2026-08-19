@@ -177,7 +177,8 @@ class BoundO0Callback:
         if self._bound: raise RuntimeError('O0_context_may_be_bound_once')
         self._bound=True; return self.binder(context)
     def __call__(self,context):
-        result=run_live(context['o0_runtime'],attempts=self.attempts,checkpoint_every=1,
+        bound = self.bind_live_context(context)
+        result=run_live(bound['o0_runtime'],attempts=self.attempts,checkpoint_every=1,
           backward_only=self.backward_only,capture_only=self.capture_only)
         outcome={'handled':True,'result':result}
         if self.terminate: raise O0DiagnosticComplete(outcome)
