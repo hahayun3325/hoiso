@@ -1068,7 +1068,7 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
         moge_mesh_path=None,
         h2m_rt_path=None,
         hunyuan_hoi_mesh_path=None,
-        *, h0_live_callback=None, o0_live_callback=None, **kwargs,
+        *, h0_live_callback=None, o0_live_callback=None, j0_live_callback=None, **kwargs,
     ) -> List[List[trimesh.Trimesh]]:
         callback = kwargs.pop("callback", None)
         callback_steps = kwargs.pop("callback_steps", None)
@@ -1547,6 +1547,23 @@ class Hunyuan3DDiTFlowMatchingPipeline_main(Hunyuan3DDiTPipeline):
                             loss_log_file.write(info_str + '\n')
                         print(info_str)
 
+                        if j0_live_callback is not None:
+                            if '_h0_live_context' not in locals() or '_o0_context' not in locals():
+                                raise RuntimeError('J0_requires_prior_live_contexts')
+                            _j0_context = {
+                                'owner': 'Hunyuan3DDiTFlowMatchingPipeline_main.__call__.joint_seam',
+                                'parameters': {'global_hand_rotation': rotation_hand, 'global_hand_translation': trans_hand, 'global_object_rotation': rotation_obj, 'global_object_translation': trans_obj},
+                                'frozen': {'global_hand_scale': scale_hand, 'global_object_scale': scale_obj, 'mano_mesh_moge': mano_mesh_moge},
+                                'compute_base_loss_for_hand_mesh': _h0_live_context['compute_base_loss_for_mesh'],
+                                'compute_base_loss_for_object_mesh': _o0_context['compute_base_loss_for_object_mesh'],
+                                'rendering': _o0_context['rendering'],
+                                'metadata': {'outer_step': i, 'H0_H1_O0_terminal_handoff': True},
+                            }
+                            from foho.guidance.h0_live_callback_dispatch_v99_11_7_13_3_13_5_5_1_7_3_5_14_83 import dispatch_h0_live_callback
+                            _j0_outcome = dispatch_h0_live_callback(j0_live_callback, _j0_context)
+                            if _j0_outcome.get('handled'):
+                                raise RuntimeError('J0_handled_without_diagnostic_completion')
+                            raise RuntimeError('J0_callback_returned_unhandled')
                         params_guidance_hoi, noise_pred_obj, scale_hand, trans_hand, rotation_hand, scale_obj, trans_obj, rotation_obj = get_guidance_params(
                             phase=2,
                             noise_pred_obj=noise_pred_obj,

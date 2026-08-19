@@ -1,0 +1,55 @@
+{
+  "schema": "foho.J0CaseManifest.v1",
+  "status": "CPU_CANDIDATE",
+  "case_id": "alapuse02v3n60",
+  "phase": "J0",
+  "owner_schema": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_J0_owner_and_proposal_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_100_2/reports/J0_three_checkpoint_owner_schema_v99_11_7_13_3_13_5_5_1_7_3_5_14_100_2.json",
+  "owner_schema_sha256": "18f51b9cffedec314e54c7c447ccfc8c06443e244a24dd57b952723b473f79da",
+  "ownership_note": "/home/fredcui/Projects/FollowMyHold/docs/phase2/design_notes/optimization_policy/J0_alapuse02v3n60_ownership_contract_and_implementation_proposal_v99_11_7_13_3_13_5_5_1_7_3_5_14_100_2.md",
+  "ownership_note_sha256": "d077316a5e3adb085f91966ca286129de008af1f89ff963567ccc34805c3cb49",
+  "checkpoints": {
+    "H0": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_corrected_five_update_v99_11_7_13_3_13_5_5_1_7_3_5_14_88_7_1/runtime/controller/checkpoints/H0_step_005.pt",
+      "sha256": "8e382d5f712e520970e558d3c8cedf158d65e2281afc6ed99e4fd02cac926eb6"
+    },
+    "H1": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H1_fixed_registration_five_attempt_v99_11_7_13_3_13_5_5_1_7_3_5_14_93_2/runtime/controller/checkpoints/H1_attempt_005.pt",
+      "sha256": "f21a0ac081d6eb282f9d77e610faa99367f7d6174c1ca3a1d8399f956d482f4b"
+    },
+    "O0": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_O0_five_attempt_v99_11_7_13_3_13_5_5_1_7_3_5_14_98/runtime/controller/checkpoints/O0_attempt_005.pt",
+      "sha256": "b6a5adf128be9a3bec622bc5d23c590942d7b137984f5879d75f2aed9ed86a64"
+    }
+  },
+  "trainable": [
+    "global_hand_rotation",
+    "global_hand_translation",
+    "global_object_rotation",
+    "global_object_translation"
+  ],
+  "frozen": [
+    "selected_so3_residual",
+    "hand_shape",
+    "nonselected_MANO_pose",
+    "hand_scale",
+    "object_scale",
+    "hand_topology",
+    "object_topology",
+    "camera",
+    "FOV",
+    "D0_semantics",
+    "r04_map",
+    "source_and_input_hashes"
+  ],
+  "future_callback_name": "j0_live_callback",
+  "paths": {
+    "h1_provider": "/home/fredcui/Projects/FollowMyHold/src/foho/guidance/h1_selected_finger_mano_provider_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_4.py",
+    "h1_binder": "/home/fredcui/Projects/FollowMyHold/src/foho/guidance/h1_alapuse02v3n60_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_90_5.py",
+    "o0_binder": "/home/fredcui/Projects/FollowMyHold/src/foho/guidance/o0_alapuse02v3n60_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_95_3.py",
+    "dispatcher": "/home/fredcui/Projects/FollowMyHold/src/foho/guidance/h0_live_callback_dispatch_v99_11_7_13_3_13_5_5_1_7_3_5_14_83.py",
+    "active_pipeline": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/pipelines.py",
+    "tracked_pipeline": "/home/fredcui/Projects/FollowMyHold/third_party_patches/hy3dgen/shapegen/pipelines.py",
+    "production_caller": "/home/fredcui/Projects/FollowMyHold/src/foho/guidance/run.py",
+    "j0_policy_target": "/home/fredcui/Projects/FollowMyHold/config/optimization/J0_joint_trust_region_policy_v99_11_7_13_3_13_5_5_1_7_3_5_14_100_2.json"
+  }
+}

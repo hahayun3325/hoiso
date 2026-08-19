@@ -1,0 +1,53 @@
+{
+  "schema": "foho.J0JointRigidTrustRegionPolicy.v1",
+  "status": "CPU_CANDIDATE",
+  "full_state_order": [
+    "global_hand_rotation",
+    "global_hand_translation",
+    "selected_so3_residual",
+    "global_object_rotation",
+    "global_object_translation"
+  ],
+  "trainable": [
+    "global_hand_rotation",
+    "global_hand_translation",
+    "global_object_rotation",
+    "global_object_translation"
+  ],
+  "frozen": [
+    "selected_so3_residual",
+    "hand_shape",
+    "nonselected_MANO_pose",
+    "hand_scale",
+    "object_scale",
+    "hand_topology",
+    "object_topology",
+    "camera",
+    "FOV",
+    "D0_semantics",
+    "r04_map",
+    "source_and_input_hashes"
+  ],
+  "learning_rates": {
+    "global_hand_rotation": 0.0001,
+    "global_hand_translation": 0.0001,
+    "global_object_rotation": 0.0001,
+    "global_object_translation": 0.0001
+  },
+  "weights": {
+    "hand_base": 1.0,
+    "object_base": 1.0,
+    "contact_xy": 1.0,
+    "contact_z": 1.0,
+    "zorder": 1.0,
+    "collision": 0.1,
+    "hand_trust": 0.25,
+    "object_trust": 0.25,
+    "quaternion_norm": 1.0
+  },
+  "gate": {
+    "max_relative_total_regression": 0.01,
+    "absolute_tolerance": 1e-08
+  },
+  "note": "numeric CPU candidate only; selected H1 articulation is lineage-bound and frozen"
+}
