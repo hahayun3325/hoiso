@@ -15,6 +15,7 @@ from foho.guidance.h1_alapuse02v3n60_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_1
     register_hshape_vertices,
 )
 from foho.guidance.o0_alapuse02v3n60_real_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_95_3 import (
+    bind_live_context as bind_o0_live_context,
     load_o0_resources,
 )
 
@@ -140,9 +141,27 @@ class O0ReadOnlyPanelCallback:
         self.panel = Path(panel)
         self.receipt = Path(receipt)
         self._used = False
+        self._bound_resources = None
 
     def bind_live_context(self, context):
-        return context
+        manifest = json.loads(self.case_manifest.read_text())
+        paths = manifest["paths"]
+        parameters = context.get("parameters") or {}
+        reference = parameters.get("global_object_rotation")
+        if reference is None:
+            raise ValueError("O0_panel_live_rotation_missing")
+        resources = load_o0_resources(paths, reference.device, reference.dtype)
+        policy = json.loads(Path(paths["o0_policy"]).read_text())
+        bound = bind_o0_live_context(
+            context,
+            resources,
+            self.panel.parent / "read_only_owner_binding",
+            policy,
+        )
+        if not callable(bound.get("current_object_mesh")):
+            raise ValueError("O0_panel_bound_mesh_owner_missing")
+        self._bound_resources = resources
+        return bound
 
     def __call__(self, context):
         if self._used:
@@ -150,6 +169,7 @@ class O0ReadOnlyPanelCallback:
         self._used = True
         if self.panel.exists() or self.receipt.exists():
             raise FileExistsError("O0_panel_outputs_must_be_fresh")
+        context = self.bind_live_context(context)
         manifest = json.loads(self.case_manifest.read_text())
         paths = manifest["paths"]
         parameters = context.get("parameters") or {}
@@ -165,7 +185,9 @@ class O0ReadOnlyPanelCallback:
         hand_scale = frozen.get("global_hand_scale")
         if not callable(current_object_mesh) or renderer is None or base_hand is None or hand_scale is None:
             raise ValueError("O0_panel_live_owners_missing")
-        resources = load_o0_resources(paths, rotation.device, rotation.dtype)
+        resources = self._bound_resources
+        if resources is None:
+            raise RuntimeError("O0_panel_callback_requires_bound_resources")
         h1 = resources["h1"]
         provider = resources["provider"]
         fixed_T = h1["fixed_T_h2m"].detach()

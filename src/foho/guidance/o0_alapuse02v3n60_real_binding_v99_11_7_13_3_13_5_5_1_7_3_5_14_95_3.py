@@ -166,7 +166,7 @@ def bind_live_context(context,resources,output_root,policy):
     runtime=SimpleNamespace(parameter_registry=parameter_registry,frozen_state=frozen_state,compute_loss=evaluate,
       gate_pass=gate_pass,snapshot=snapshot,restore=restore,build_optimizer=build_optimizer,
       save_checkpoint=save_checkpoint,capture=capture)
-    bound=dict(context); bound['o0_runtime']=runtime; bound['metadata']={**dict(context.get('metadata') or {}),
+    bound=dict(context); bound['current_object_mesh']=current_object_mesh; bound['o0_runtime']=runtime; bound['metadata']={**dict(context.get('metadata') or {}),
       'O0_real_binding':True,'GateA_object_owned_by_binder':True,'accepted_H1_checkpoint_sha256':resources['hashes']['h1_checkpoint']}
     return bound
 
