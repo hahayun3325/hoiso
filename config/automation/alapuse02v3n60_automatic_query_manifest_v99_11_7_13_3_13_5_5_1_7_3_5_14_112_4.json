@@ -1,0 +1,67 @@
+{
+  "schema": "tracehoi.AutomaticQueryManifest.v1",
+  "case_id": "alapuse02v3n60",
+  "source_mode": "mock_and_validate_only",
+  "live_authorized": false,
+  "model": "gpt-5.5-2026-04-23",
+  "reasoning_effort": "high",
+  "store": false,
+  "api_key_environment": "OPENAI_API_KEY",
+  "transport_max_retries": 0,
+  "semantic_call_budget": {
+    "normal": 2,
+    "recovery_maximum": 3
+  },
+  "keyword_policy": {
+    "max_keywords": 8,
+    "max_chars": 96,
+    "reject_prefixes": [
+      "no ",
+      "without "
+    ]
+  },
+  "owners": {
+    "foundation_policy": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/foundation_primary_recovery_policy.json",
+      "sha256": "32dc0f873e3f2f6e1c4522a6bab0fcc17e292a45579ead7dd0191f7644f998cf"
+    },
+    "q0_manifest": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/combined_crop_query_Q0_manifest.json",
+      "sha256": "c43955fb8a507f5b24d189ae6b988037751d39fef93690ed31959faa1ec86dbc"
+    },
+    "jury_policy": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/auto_v2_primary_and_recheck_jury_policy.json",
+      "sha256": "abce6f2ef44195a8e669939cd3071ec0520d600a5299691181625392be50c3b8"
+    },
+    "query_schedule": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/alapuse02v3n60_token_bounded_query_schedule.json",
+      "sha256": "7adfc6f867b37d5f3f0a66325f7043b2f09a83e5a8dbbbc594b4a285303413ee"
+    },
+    "conditioning_receipt": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/owners/upstream_conditioning_contract.json",
+      "sha256": "3521f07dd43458d9c56fe4e8fc7d069d12a4f47055727eb91d85b53e0d725801"
+    },
+    "prompt_registry": {
+      "path": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/prompt_registry_manifest_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "1a6c61ae4e125f169aac21e784f843a9ba845ccbc99aad2bc8dd373c60927546"
+    },
+    "gate_b_owner": {
+      "path": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_b/Gate_B_original_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "4b2048f393b7111573dbe2a2944df2cbe24f65f4f68f3620d9a3bc5887b4f081"
+    },
+    "gate_d0_owner": {
+      "path": "/home/fredcui/Projects/FollowMyHold/docs/prompt_templates/gate_d0/Gate_D0_original_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "d294a7f55cd01373d2ebdb2d5c9fc3acbfd06ad77ea43c0bb027fc887c1f6d8f"
+    },
+    "query_policy_note": {
+      "path": "/home/fredcui/Projects/FollowMyHold/docs/phase2/design_notes/automation/alapuse02v3n60_token_bounded_query_and_template_policy_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_4.md",
+      "sha256": "ac0116509208f23089016709b365a0713088e064e202582a1196e19b4da6b7f3"
+    },
+    "implementation_proposal": {
+      "path": "/home/fredcui/Projects/FollowMyHold/docs/phase2/design_notes/automation/alapuse02v3n60_automatic_pipeline_implementation_proposal_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_3.md",
+      "sha256": "4a002ac3bb2dd1f648c75842237a96b21c73ba07c74df5c7e4617fceb10df79f"
+    }
+  },
+  "documentation_HEAD": "add268e3bd5289adca0891c1f6d344431d04a738",
+  "required_next_gate": "compile_exact_nested_Q0_Q1_Q2_schemas_then_live_Q0_preflight"
+}
