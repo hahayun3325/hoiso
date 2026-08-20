@@ -1,6 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 import hashlib, json
+from copy import deepcopy
 from pathlib import Path
 from typing import Mapping
 from foho.automation import q0_binding
@@ -11,6 +12,76 @@ def _resolve(value: str, roots: Mapping[str,str]) -> Path:
     for token,replacement in roots.items(): value=value.replace(token,replacement)
     if '${' in value: raise CombinedQ0Error(f'unresolved:{value}')
     return Path(value).resolve()
+_SCHEMA_KEYWORDS={'$schema','$ref','$defs','type','properties','items','anyOf','oneOf','allOf','enum','const','required','additionalProperties'}
+_UNSUPPORTED_STRICT={'allOf','not','dependentRequired','dependentSchemas','if','then','else'}
+
+def _looks_like_json_schema(node: object) -> bool:
+    return isinstance(node,dict) and bool(set(node)&_SCHEMA_KEYWORDS)
+
+def _template_schema(node: object, path: str) -> dict:
+    if _looks_like_json_schema(node): return _strict_schema(node,path)
+    if isinstance(node,dict):
+        if not node: raise CombinedQ0Error(f'empty_template_object:{path}')
+        if not all(isinstance(key,str) and key for key in node): raise CombinedQ0Error(f'template_keys:{path}')
+        properties={key:_template_schema(value,f'{path}.{key}') for key,value in node.items()}
+        return {'type':'object','properties':properties,'required':list(properties),'additionalProperties':False}
+    if isinstance(node,list):
+        if not node: raise CombinedQ0Error(f'empty_template_array:{path}')
+        compiled=[_template_schema(value,f'{path}[{index}]') for index,value in enumerate(node)]
+        signatures={json.dumps(value,sort_keys=True) for value in compiled}
+        if len(signatures)!=1: raise CombinedQ0Error(f'heterogeneous_template_array:{path}')
+        return {'type':'array','items':compiled[0]}
+    if isinstance(node,bool): return {'type':'boolean'}
+    if isinstance(node,int): return {'type':'integer'}
+    if isinstance(node,float): return {'type':'number'}
+    if isinstance(node,str): return {'type':'string'}
+    if node is None: raise CombinedQ0Error(f'untyped_null_template:{path}')
+    raise CombinedQ0Error(f'unsupported_template_leaf:{path}:{type(node).__name__}')
+
+def _allows_null(node: dict) -> bool:
+    value=node.get('type')
+    if value=='null' or isinstance(value,list) and 'null' in value: return True
+    return any(isinstance(item,dict) and _allows_null(item) for key in ('anyOf','oneOf') for item in node.get(key,[]) or [])
+
+def _nullable(node: dict) -> dict:
+    return node if _allows_null(node) else {'anyOf':[node,{'type':'null'}]}
+
+def _strict_schema(node: object, path: str) -> dict:
+    if not isinstance(node,dict): raise CombinedQ0Error(f'schema_node:{path}')
+    result=deepcopy(node)
+    forbidden=sorted(set(result)&_UNSUPPORTED_STRICT)
+    if forbidden: raise CombinedQ0Error(f'unsupported_strict_keywords:{path}:{forbidden}')
+    properties=result.get('properties')
+    if properties is not None:
+        if not isinstance(properties,dict) or not properties: raise CombinedQ0Error(f'object_properties:{path}')
+        if result.get('type') not in (None,'object'): raise CombinedQ0Error(f'object_type:{path}:{result.get("type")}')
+        result['type']='object'
+        previous=set(result.get('required',[]) or [])
+        if not previous.issubset(properties): raise CombinedQ0Error(f'unknown_required:{path}')
+        compiled={}
+        for name,child in properties.items():
+            value=_strict_schema(child,f'{path}.properties.{name}')
+            compiled[name]=value if name in previous else _nullable(value)
+        result['properties']=compiled
+        result['required']=list(compiled)
+        result['additionalProperties']=False
+    if result.get('type')=='array':
+        if 'items' not in result: raise CombinedQ0Error(f'array_items:{path}')
+        result['items']=_strict_schema(result['items'],path+'.items')
+    for keyword in ('anyOf','oneOf'):
+        if keyword in result:
+            choices=result[keyword]
+            if not isinstance(choices,list) or not choices: raise CombinedQ0Error(f'{keyword}:{path}')
+            result[keyword]=[_strict_schema(child,f'{path}.{keyword}[{index}]') for index,child in enumerate(choices)]
+    if '$defs' in result:
+        if not isinstance(result['$defs'],dict): raise CombinedQ0Error(f'defs:{path}')
+        result['$defs']={name:_strict_schema(child,f'{path}.$defs.{name}') for name,child in result['$defs'].items()}
+    return result
+
+def _compile_openai_transport_schema(raw: object, label: str) -> dict:
+    base=_strict_schema(raw,label) if _looks_like_json_schema(raw) else _template_schema(raw,label)
+    return _strict_schema(base,label)
+
 @dataclass(frozen=True)
 class Contract:
     case_id: str; crop: Path; model: str; reasoning_effort: str; store: bool
@@ -51,7 +122,7 @@ def load_contract(config_path: str|Path, roots: Mapping[str,str]) -> Contract:
     schema={'type':'object','additionalProperties':False,'required':required,
       'properties':{'object_category':{'type':'string','minLength':1,'maxLength':64},
        'visible_geometry':geometry,'foundation_primary':branches,'foundation_recovery':branches,
-       'gate_b':gate_b['output_schema'],'gate_d0':gate_d0_schema,
+       'gate_b':_compile_openai_transport_schema(gate_b['output_schema'],'gate_b'),'gate_d0':_compile_openai_transport_schema(gate_d0_schema,'gate_d0'),
        'confidence':{'type':'number','minimum':0,'maximum':1}}}
     prompt='\n\n'.join([str(q0.get('shared_instruction','')),str(gate_b['system_prompt']),str(gate_b['user_prompt']),
       str(gate_d0_prompt['system_prompt']),str(gate_d0_prompt['user_prompt']),

@@ -16,8 +16,41 @@ class CombinedQ0Test(unittest.TestCase):
         self.assertTrue(self.contract.crop.is_file())
         gate_b=Path(data['owners']['gate_b_prompt']['path_template'].replace('${PROJECT_ROOT}',os.environ['PROJECT_ROOT']))
         gate_d0=Path(data['owners']['gate_d0_schema']['path_template'].replace('${PROJECT_ROOT}',os.environ['PROJECT_ROOT']))
-        self.assertEqual(self.contract.output_schema['properties']['gate_b'],json.loads(gate_b.read_text())['output_schema'])
-        self.assertEqual(self.contract.output_schema['properties']['gate_d0'],json.loads(gate_d0.read_text()))
+        raw_gate_b=json.loads(gate_b.read_text())['output_schema']
+        raw_gate_d0=json.loads(gate_d0.read_text())
+        compiled_gate_b=self.contract.output_schema['properties']['gate_b']
+        compiled_gate_d0=self.contract.output_schema['properties']['gate_d0']
+        self.assertNotIn('type',raw_gate_b)
+        self.assertNotIn('properties',raw_gate_b)
+        self.assertEqual(compiled_gate_b['type'],'object')
+        self.assertEqual(set(compiled_gate_b['properties']),set(raw_gate_b))
+        def allows_null(node):
+            value=node.get('type')
+            return value=='null' or isinstance(value,list) and 'null' in value or any(allows_null(item) for key in ('anyOf','oneOf') for item in node.get(key,[]) or [])
+        def audit(node,path):
+            if not isinstance(node,dict): return
+            self.assertFalse(set(node)&{'allOf','not','dependentRequired','dependentSchemas','if','then','else'},path)
+            properties=node.get('properties')
+            if properties is not None:
+                self.assertEqual(node.get('type'),'object',path)
+                self.assertIs(node.get('additionalProperties'),False,path)
+                self.assertEqual(set(node.get('required',[])),set(properties),path)
+                for name,child in properties.items(): audit(child,f'{path}.properties.{name}')
+            if node.get('type')=='array': audit(node['items'],path+'.items')
+            for key in ('anyOf','oneOf'):
+                for index,child in enumerate(node.get(key,[]) or []): audit(child,f'{path}.{key}[{index}]')
+            for name,child in (node.get('$defs',{}) or {}).items(): audit(child,f'{path}.$defs.{name}')
+        audit(self.contract.output_schema,'root')
+        raw_optional=set(raw_gate_d0.get('properties',{}))-set(raw_gate_d0.get('required',[]))
+        for name in raw_optional:
+            self.assertIn(name,compiled_gate_d0['required'])
+            self.assertTrue(allows_null(compiled_gate_d0['properties'][name]),name)
+        raw_contact=raw_gate_d0['properties']['contacts']['items']
+        compiled_contact=compiled_gate_d0['properties']['contacts']['items']
+        item_optional=set(raw_contact.get('properties',{}))-set(raw_contact.get('required',[]))
+        for name in item_optional:
+            self.assertIn(name,compiled_contact['required'])
+            self.assertTrue(allows_null(compiled_contact['properties'][name]),'contacts.items.'+name)
     def test_missing_foundation_consumer_is_rejected(self):
         packet={key:{} for key in self.contract.output_schema['required']}
         packet.update({'object_category':'laptop','visible_geometry':{},'confidence':1.0,'gate_b':{},'gate_d0':{}})
