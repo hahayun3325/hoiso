@@ -197,7 +197,7 @@ class Contract:
 def load_contract(config_path: str|Path, roots: Mapping[str,str]) -> Contract:
     config=json.loads(Path(config_path).read_text())
     if config.get('schema')!='tracehoi.CombinedQ0Contract.v1' or config.get('decision')!='combined_Q0_contract_candidate': raise CombinedQ0Error('config')
-    if (config.get('model'),config.get('reasoning_effort'),config.get('store'))!=('gpt-5.5-2026-04-23','high',False): raise CombinedQ0Error('transport')
+    if (config.get('model'),config.get('reasoning_effort'),config.get('store'))!=('gpt-5.6-terra','medium',False): raise CombinedQ0Error('transport')
     paths={}; hashes={}
     for role,item in config.get('owners',{}).items():
         path=_resolve(item['path_template'],roots)

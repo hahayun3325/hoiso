@@ -11,7 +11,7 @@ class Q0BindingTest(unittest.TestCase):
     def test_exact_real_input_and_transport(self):
         bound=self.subject.bind_q0(self.config,self.roots); receipt=self.subject.validation_receipt(bound)
         self.assertEqual(receipt['decision'],'real_input_Q0_binding_validate_only_closed')
-        self.assertEqual(receipt['model'],'gpt-5.5-2026-04-23'); self.assertEqual(receipt['reasoning_effort'],'high')
+        self.assertEqual(receipt['model'],'gpt-5.6-terra'); self.assertEqual(receipt['reasoning_effort'],'medium')
         self.assertFalse(receipt['store']); self.assertTrue(bound.crop.is_file())
         self.assertEqual(receipt['expected_output_sections'],['object_category','visible_geometry','foundation_primary','foundation_recovery','gate_b','gate_d0','confidence'])
     def test_tampered_owner_is_rejected(self):

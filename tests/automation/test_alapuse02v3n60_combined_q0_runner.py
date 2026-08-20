@@ -38,7 +38,7 @@ class CombinedQ0RunnerTest(unittest.TestCase):
           'foundation_recovery':{name:['open laptop'] for name in consumers},
           'gate_b':{},'gate_d0':{'alternative_hypothesis':'{\"contact\":\"screen_edge\"}'},'confidence':0.9}
     def response(self,packet=None,**changes):
-        base={'id':'resp_mock','model':'gpt-5.5-2026-04-23','status':'completed',
+        base={'id':'resp_mock','model':'gpt-5.6-terra','status':'completed',
           'output_text':json.dumps(packet if packet is not None else self.packet()),'output':[],
           'usage':{'input_tokens':5000,'input_tokens_details':{'cached_tokens':0},'output_tokens':1000,'total_tokens':6000}}
         base.update(changes); return base
@@ -49,7 +49,7 @@ class CombinedQ0RunnerTest(unittest.TestCase):
             self.assertEqual(receipt['decision'],'alapuse02v3n60_combined_Q0_live_closed')
             self.assertEqual(len(client.responses.calls),1)
             req=client.responses.calls[0]
-            self.assertEqual((req['model'],req['reasoning']['effort'],req['store']),('gpt-5.5-2026-04-23','high',False))
+            self.assertEqual((req['model'],req['reasoning']['effort'],req['store']),('gpt-5.6-terra','medium',False))
             self.assertEqual([x['type'] for x in req['input'][0]['content']],['input_text','input_image'])
             self.assertTrue(req['input'][0]['content'][1]['image_url'].startswith('data:image/'))
             self.assertTrue(req['text']['format']['strict'])

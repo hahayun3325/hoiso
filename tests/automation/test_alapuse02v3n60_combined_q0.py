@@ -12,7 +12,7 @@ class CombinedQ0Test(unittest.TestCase):
     def test_exact_owners_schemas_and_validate_only_receipt(self):
         receipt=self.subject.validation_receipt(self.contract); data=json.loads(self.config.read_text())
         self.assertEqual(receipt['decision'],'alapuse02v3n60_combined_Q0_validate_only_closed')
-        self.assertEqual((receipt['model'],receipt['reasoning_effort'],receipt['store']),('gpt-5.5-2026-04-23','high',False))
+        self.assertEqual((receipt['model'],receipt['reasoning_effort'],receipt['store']),('gpt-5.6-terra','medium',False))
         self.assertTrue(self.contract.crop.is_file())
         gate_b=Path(data['owners']['gate_b_prompt']['path_template'].replace('${PROJECT_ROOT}',os.environ['PROJECT_ROOT']))
         gate_d0=Path(data['owners']['gate_d0_schema']['path_template'].replace('${PROJECT_ROOT}',os.environ['PROJECT_ROOT']))

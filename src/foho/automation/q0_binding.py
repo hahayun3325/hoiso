@@ -26,7 +26,7 @@ def bind_q0(config_path: str|Path, roots: Mapping[str,str]) -> BoundQ0:
     if config.get('schema')!='tracehoi.RealInputQ0Binding.v1': raise Q0BindingError('schema')
     if config.get('decision')!='real_input_Q0_binding_candidate': raise Q0BindingError('candidate_not_closed')
     if config.get('case_id')!='alapuse02v3n60': raise Q0BindingError('case')
-    if (config.get('model'),config.get('reasoning_effort'),config.get('store')) != ('gpt-5.5-2026-04-23','high',False):
+    if (config.get('model'),config.get('reasoning_effort'),config.get('store')) != ('gpt-5.6-terra','medium',False):
         raise Q0BindingError('transport')
     paths={}; hashes={}
     for role,item in config.get('owners',{}).items():

@@ -1,8 +1,8 @@
 {
   "schema": "tracehoi.CombinedQ0Contract.v1",
   "case_id": "alapuse02v3n60",
-  "model": "gpt-5.5-2026-04-23",
-  "reasoning_effort": "high",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
   "store": false,
   "required_output_sections": [
     "object_category",
@@ -43,11 +43,11 @@
     },
     "q0_binding_source": {
       "path_template": "${PROJECT_ROOT}/src/foho/automation/q0_binding.py",
-      "sha256": "9aba35ac3a9704efb28ba28a688b61e66bbde4c09092d9c128064f0d35e6b857"
+      "sha256": "cb16a909c8a362f58fa48850a4414e603e69df128af76ecfef3a31bda567e318"
     },
     "q0_binding_config": {
       "path_template": "${PROJECT_ROOT}/config/automation/alapuse02v3n60_q0_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_10.json",
-      "sha256": "2f0a39eafe86b190e647a15e8a3d9615bab785e711384239f5aa62d85625d1b2"
+      "sha256": "5139d39728d3a70b42396fdcc46c3c1399d0128b41b2fdf6effb52476ed25472"
     }
   },
   "live_authorized": false,
