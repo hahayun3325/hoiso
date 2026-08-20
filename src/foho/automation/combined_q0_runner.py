@@ -103,6 +103,9 @@ def execute(client: Any, contract: combined_q0.Contract, output_dir: str|Path,
         try: packet=json.loads(text)
         except Exception as exc: errors.append(f"json:{type(exc).__name__}:{exc}")
     if packet is not None and not errors:
+        try: packet=combined_q0.decode_transport_packet(packet,contract)
+        except Exception as exc: errors.append(f"codec:{type(exc).__name__}:{exc}")
+    if packet is not None and not errors:
         try: combined_q0.validate_semantic_packet(packet,contract)
         except Exception as exc: errors.append(f"semantic:{type(exc).__name__}:{exc}")
     if not errors and packet is not None:

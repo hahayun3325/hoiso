@@ -36,7 +36,7 @@ class CombinedQ0RunnerTest(unittest.TestCase):
           'visible_geometry':{'articulated':True,'articulation_state':'OPEN','visible_parts':['screen','base'],'occlusion_summary':'hand near screen'},
           'foundation_primary':{name:['laptop'] for name in consumers},
           'foundation_recovery':{name:['open laptop'] for name in consumers},
-          'gate_b':{},'gate_d0':{},'confidence':0.9}
+          'gate_b':{},'gate_d0':{'alternative_hypothesis':'{\"contact\":\"screen_edge\"}'},'confidence':0.9}
     def response(self,packet=None,**changes):
         base={'id':'resp_mock','model':'gpt-5.5-2026-04-23','status':'completed',
           'output_text':json.dumps(packet if packet is not None else self.packet()),'output':[],
@@ -91,4 +91,28 @@ class CombinedQ0RunnerTest(unittest.TestCase):
             self.assertEqual(failure['api_calls'],1)
             self.assertEqual(failure['decision'],'review_combined_Q0_transport_exception')
             self.assertFalse(Path(td,'combined_Q0_semantic_packet.json').exists())
+    def test_codec_writes_decoded_canonical_packet(self):
+        client=FakeClient(self.response())
+        with tempfile.TemporaryDirectory() as td:
+            self.subject.execute(client,self.contract,td,transport_authorized=True)
+            packet=json.loads((Path(td)/'combined_Q0_semantic_packet.json').read_text())
+            self.assertEqual(packet['gate_d0']['alternative_hypothesis'],{'contact':'screen_edge'})
+    def test_nullable_codec_preserves_null_in_canonical_packet(self):
+        packet=self.packet(); packet['gate_d0']['alternative_hypothesis']=None
+        client=FakeClient(self.response(packet))
+        with tempfile.TemporaryDirectory() as td:
+            self.subject.execute(client,self.contract,td,transport_authorized=True)
+            saved=json.loads((Path(td)/'combined_Q0_semantic_packet.json').read_text())
+            self.assertIsNone(saved['gate_d0']['alternative_hypothesis'])
+    def test_malformed_codec_keeps_telemetry_and_blocks_packet(self):
+        packet=self.packet(); packet['gate_d0']['alternative_hypothesis']='[]'
+        client=FakeClient(self.response(packet))
+        with tempfile.TemporaryDirectory() as td:
+            with self.assertRaises(self.subject.CombinedQ0RunnerError):
+                self.subject.execute(client,self.contract,td,transport_authorized=True)
+            root=Path(td)
+            self.assertTrue((root/'response_telemetry.json').is_file())
+            self.assertFalse((root/'combined_Q0_semantic_packet.json').exists())
+            receipt=json.loads((root/'execution_receipt.json').read_text())
+            self.assertTrue(any(value.startswith('codec:') for value in receipt['errors']))
 if __name__=='__main__': unittest.main()

@@ -29,6 +29,7 @@ class CombinedQ0Test(unittest.TestCase):
             return value=='null' or isinstance(value,list) and 'null' in value or any(allows_null(item) for key in ('anyOf','oneOf') for item in node.get(key,[]) or [])
         def audit(node,path):
             if not isinstance(node,dict): return
+            self.assertTrue(set(node)&{'type','$ref','anyOf','oneOf'},path)
             self.assertFalse(set(node)&{'allOf','not','dependentRequired','dependentSchemas','if','then','else'},path)
             properties=node.get('properties')
             if properties is not None:
@@ -57,4 +58,33 @@ class CombinedQ0Test(unittest.TestCase):
         packet['foundation_primary']={name:['laptop'] for name in self.contract.consumers[:-1]}
         packet['foundation_recovery']={name:['laptop'] for name in self.contract.consumers}
         with self.assertRaisesRegex(self.subject.CombinedQ0Error,'foundation_primary_keys'): self.subject.validate_semantic_packet(packet,self.contract)
+    def test_const_and_enum_only_leaves_receive_explicit_types(self):
+        const=self.subject._compile_openai_transport_schema({'const':'semantic_v1'},'const_case')
+        enum=self.subject._compile_openai_transport_schema({'enum':['OPEN','CLOSED',None]},'enum_case')
+        self.assertEqual(const['type'],'string')
+        self.assertEqual(enum['type'],['string','null'])
+        gate_d0=self.contract.output_schema['properties']['gate_d0']
+        self.assertEqual(gate_d0['properties']['schema']['type'],'string')
+        self.assertEqual(self.subject.audit_openai_transport_schema(self.contract.output_schema),[])
+    def test_transport_audit_rejects_an_untyped_leaf(self):
+        gaps=self.subject.audit_openai_transport_schema({'description':'orphan'},'orphan',False)
+        self.assertIn('orphan:missing_type_or_union',gaps)
+    def test_nullable_open_object_codec_is_exact_and_reversible(self):
+        self.assertEqual(self.contract.transport_codecs,
+          {'gate_d0.alternative_hypothesis':'nullable_json_object_string'})
+        node=self.contract.output_schema['properties']['gate_d0']['properties']['alternative_hypothesis']
+        self.assertEqual(set(node['type']),{'string','null'})
+        self.assertEqual(self.subject.audit_openai_transport_schema(self.contract.output_schema),[])
+        encoded={'gate_d0':{'alternative_hypothesis':'{"contact":"screen_edge"}'}}
+        decoded=self.subject.decode_transport_packet(encoded,self.contract)
+        self.assertEqual(decoded['gate_d0']['alternative_hypothesis'],{'contact':'screen_edge'})
+        self.assertIsInstance(encoded['gate_d0']['alternative_hypothesis'],str)
+        nullable={'gate_d0':{'alternative_hypothesis':None}}
+        self.assertIsNone(self.subject.decode_transport_packet(nullable,self.contract)
+                          ['gate_d0']['alternative_hypothesis'])
+    def test_nullable_open_object_codec_rejects_bad_nonnull_values(self):
+        for raw in ('not-json','[]','null','3','true'):
+            with self.subTest(raw=raw), self.assertRaises(self.subject.CombinedQ0Error):
+                self.subject.decode_transport_packet(
+                  {'gate_d0':{'alternative_hypothesis':raw}},self.contract)
 if __name__=='__main__': unittest.main()

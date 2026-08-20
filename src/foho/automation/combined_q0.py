@@ -46,11 +46,114 @@ def _allows_null(node: dict) -> bool:
 def _nullable(node: dict) -> dict:
     return node if _allows_null(node) else {'anyOf':[node,{'type':'null'}]}
 
+def _json_scalar_type(value: object, path: str) -> str:
+    if value is None: return 'null'
+    if isinstance(value,bool): return 'boolean'
+    if isinstance(value,int): return 'integer'
+    if isinstance(value,float): return 'number'
+    if isinstance(value,str): return 'string'
+    raise CombinedQ0Error(f'non_scalar_schema_literal:{path}:{type(value).__name__}')
+
+def _enum_type(values: object, path: str) -> object:
+    if not isinstance(values,list) or not values: raise CombinedQ0Error(f'empty_or_invalid_enum:{path}')
+    kinds={_json_scalar_type(value,f'{path}[{index}]') for index,value in enumerate(values)}
+    if kinds <= {'integer','number'}: kinds={'number'}
+    non_null=kinds-{'null'}
+    if len(non_null)>1: raise CombinedQ0Error(f'heterogeneous_enum_types:{path}:{sorted(kinds)}')
+    ordered=sorted(non_null)+(['null'] if 'null' in kinds else [])
+    return ordered[0] if len(ordered)==1 else ordered
+
+def audit_openai_transport_schema(node: object, path: str='root', root: bool=True) -> list[str]:
+    gaps=[]
+    if not isinstance(node,dict): return [f'{path}:not_object']
+    forms=set(node)&{'type','$ref','anyOf','oneOf'}
+    if not forms: gaps.append(f'{path}:missing_type_or_union')
+    value=node.get('type')
+    values=set(value) if isinstance(value,list) else ({value} if value is not None else set())
+    supported={'string','number','boolean','integer','object','array','null'}
+    if values-supported: gaps.append(f'{path}:unsupported_types:{sorted(values-supported)}')
+    if root and value!='object': gaps.append(f'{path}:root_not_object')
+    properties=node.get('properties')
+    if 'object' in values or properties is not None:
+        if not isinstance(properties,dict) or not properties: gaps.append(f'{path}:object_properties')
+        else:
+            if node.get('additionalProperties') is not False: gaps.append(f'{path}:additionalProperties')
+            if set(node.get('required',[]) or [])!=set(properties): gaps.append(f'{path}:required')
+            for name,child in properties.items(): gaps.extend(audit_openai_transport_schema(child,f'{path}.properties.{name}',False))
+    if 'array' in values:
+        if 'items' not in node: gaps.append(f'{path}:items')
+        else: gaps.extend(audit_openai_transport_schema(node['items'],path+'.items',False))
+    for key in ('anyOf','oneOf'):
+        choices=node.get(key)
+        if key in node and (not isinstance(choices,list) or not choices): gaps.append(f'{path}:{key}')
+        for index,child in enumerate(choices or []): gaps.extend(audit_openai_transport_schema(child,f'{path}.{key}[{index}]',False))
+    for name,child in (node.get('$defs',{}) or {}).items(): gaps.extend(audit_openai_transport_schema(child,f'{path}.$defs.{name}',False))
+    if 'const' in node and 'type' not in node: gaps.append(f'{path}:const_without_type')
+    if 'enum' in node and 'type' not in node: gaps.append(f'{path}:enum_without_type')
+    return gaps
+
+def _open_object_codec_paths(node: object, path: str) -> dict[str,str]:
+    found={}
+    if not isinstance(node,dict): return found
+    kind=node.get('type')
+    kinds=set(kind) if isinstance(kind,list) else ({kind} if kind is not None else set())
+    if 'object' in kinds and 'properties' not in node:
+        found[path]='nullable_json_object_string' if 'null' in kinds else 'json_object_string'
+        return found
+    for name,child in (node.get('properties',{}) or {}).items():
+        found.update(_open_object_codec_paths(child,f'{path}.{name}'))
+    if 'items' in node: found.update(_open_object_codec_paths(node['items'],path+'.items'))
+    for keyword in ('anyOf','oneOf'):
+        for index,child in enumerate(node.get(keyword,[]) or []):
+            found.update(_open_object_codec_paths(child,f'{path}.{keyword}[{index}]'))
+    for name,child in (node.get('$defs',{}) or {}).items():
+        found.update(_open_object_codec_paths(child,f'{path}.$defs.{name}'))
+    return found
+
+def decode_transport_packet(packet: dict, contract: Contract) -> dict:
+    if not isinstance(packet,dict): raise CombinedQ0Error('transport_packet_not_object')
+    decoded=deepcopy(packet)
+    for path,codec in contract.transport_codecs.items():
+        if codec not in ('json_object_string','nullable_json_object_string'):
+            raise CombinedQ0Error(f'unknown_codec:{path}:{codec}')
+        parts=path.split('.'); cursor=decoded
+        for part in parts[:-1]:
+            if not isinstance(cursor,dict) or part not in cursor:
+                raise CombinedQ0Error(f'codec_missing_path:{path}')
+            cursor=cursor[part]
+        leaf=parts[-1]
+        if not isinstance(cursor,dict) or leaf not in cursor:
+            raise CombinedQ0Error(f'codec_missing_path:{path}')
+        raw=cursor[leaf]
+        if raw is None:
+            if codec!='nullable_json_object_string':
+                raise CombinedQ0Error(f'codec_null_not_allowed:{path}')
+            continue
+        if not isinstance(raw,str): raise CombinedQ0Error(f'codec_not_string:{path}')
+        try: value=json.loads(raw)
+        except Exception as exc:
+            raise CombinedQ0Error(f'codec_invalid_JSON:{path}:{type(exc).__name__}') from exc
+        if not isinstance(value,dict):
+            raise CombinedQ0Error(f'codec_decoded_not_object:{path}:{type(value).__name__}')
+        cursor[leaf]=value
+    return decoded
+
 def _strict_schema(node: object, path: str) -> dict:
     if not isinstance(node,dict): raise CombinedQ0Error(f'schema_node:{path}')
     result=deepcopy(node)
     forbidden=sorted(set(result)&_UNSUPPORTED_STRICT)
     if forbidden: raise CombinedQ0Error(f'unsupported_strict_keywords:{path}:{forbidden}')
+    if 'const' in result and 'type' not in result:
+        result['type']=_json_scalar_type(result['const'],path+'.const')
+    if 'enum' in result and 'type' not in result:
+        result['type']=_enum_type(result['enum'],path+'.enum')
+    kind=result.get('type')
+    kinds=set(kind) if isinstance(kind,list) else ({kind} if kind is not None else set())
+    if 'object' in kinds and 'properties' not in result:
+        description=str(result.get('description','')).strip()
+        suffix='Return a compact JSON object encoded as a string; it is decoded locally before semantic validation.'
+        transport_type=['string','null'] if 'null' in kinds else 'string'
+        return {'type':transport_type,'description':(description+' '+suffix).strip()}
     properties=result.get('properties')
     if properties is not None:
         if not isinstance(properties,dict) or not properties: raise CombinedQ0Error(f'object_properties:{path}')
@@ -80,12 +183,16 @@ def _strict_schema(node: object, path: str) -> dict:
 
 def _compile_openai_transport_schema(raw: object, label: str) -> dict:
     base=_strict_schema(raw,label) if _looks_like_json_schema(raw) else _template_schema(raw,label)
-    return _strict_schema(base,label)
+    compiled=_strict_schema(base,label)
+    gaps=audit_openai_transport_schema(compiled,label,False)
+    if gaps: raise CombinedQ0Error(f'transport_schema_gaps:{gaps}')
+    return compiled
 
 @dataclass(frozen=True)
 class Contract:
     case_id: str; crop: Path; model: str; reasoning_effort: str; store: bool
     consumers: tuple[str,...]; prompt: str; output_schema: dict; owner_hashes: dict[str,str]
+    transport_codecs: dict[str,str]
 
 def load_contract(config_path: str|Path, roots: Mapping[str,str]) -> Contract:
     config=json.loads(Path(config_path).read_text())
@@ -119,6 +226,7 @@ def load_contract(config_path: str|Path, roots: Mapping[str,str]) -> Contract:
        'visible_parts':{'type':'array','maxItems':12,'items':{'type':'string','maxLength':64}},
        'occlusion_summary':{'type':'string','maxLength':240}}}
     required=config['required_output_sections']
+    transport_codecs=_open_object_codec_paths(gate_d0_schema,'gate_d0')
     schema={'type':'object','additionalProperties':False,'required':required,
       'properties':{'object_category':{'type':'string','minLength':1,'maxLength':64},
        'visible_geometry':geometry,'foundation_primary':branches,'foundation_recovery':branches,
@@ -126,8 +234,9 @@ def load_contract(config_path: str|Path, roots: Mapping[str,str]) -> Contract:
        'confidence':{'type':'number','minimum':0,'maximum':1}}}
     prompt='\n\n'.join([str(q0.get('shared_instruction','')),str(gate_b['system_prompt']),str(gate_b['user_prompt']),
       str(gate_d0_prompt['system_prompt']),str(gate_d0_prompt['user_prompt']),
-      'Return short positive keyword lists for: '+', '.join(consumers)])
-    return Contract(bound.case_id,bound.crop,config['model'],config['reasoning_effort'],config['store'],consumers,prompt,schema,hashes)
+      'Return short positive keyword lists for: '+', '.join(consumers),
+      'For non-null values at these transport fields, return compact JSON object text: '+', '.join(sorted(transport_codecs))])
+    return Contract(bound.case_id,bound.crop,config['model'],config['reasoning_effort'],config['store'],consumers,prompt,schema,hashes,transport_codecs)
 
 def validate_semantic_packet(packet: dict, contract: Contract) -> None:
     if set(packet)!=set(contract.output_schema['required']): raise CombinedQ0Error(f'top_level_keys:{sorted(packet)}')
@@ -141,4 +250,5 @@ def validation_receipt(contract: Contract) -> dict:
       'prompt_sha256':hashlib.sha256(contract.prompt.encode()).hexdigest(),
       'output_schema_sha256':hashlib.sha256(json.dumps(contract.output_schema,sort_keys=True).encode()).hexdigest(),
       'foundation_consumers':list(contract.consumers),'owner_hashes':contract.owner_hashes,
+      'transport_codecs':contract.transport_codecs,
       'api_called':False,'gpu_updates':0,'decision':'alapuse02v3n60_combined_Q0_validate_only_closed'}
