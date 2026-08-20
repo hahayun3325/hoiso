@@ -1,0 +1,62 @@
+{
+  "schema": "tracehoi.RealInputQ0Binding.v1",
+  "case_id": "alapuse02v3n60",
+  "model": "gpt-5.5-2026-04-23",
+  "reasoning_effort": "high",
+  "store": false,
+  "expected_output_sections": [
+    "object_category",
+    "visible_geometry",
+    "foundation_primary",
+    "foundation_recovery",
+    "gate_b",
+    "gate_d0",
+    "confidence"
+  ],
+  "owners": {
+    "query_manifest": {
+      "path_template": "${PROJECT_ROOT}/config/automation/alapuse02v3n60_automatic_query_manifest_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_4.json",
+      "sha256": "a46a91261ad466f080bb3680461e1ccfa8310545c514090c470cd281c5eb70cb"
+    },
+    "runtime_input_manifest": {
+      "path_template": "${PROJECT_ROOT}/config/automation/alapuse02v3n60_runtime_input_compatibility_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_5.json",
+      "sha256": "c94f3a017f465ec91106dd340042753f700cdd897384b5702899e45d771f397a"
+    },
+    "q0_design": {
+      "path_template": "${PHASE0_ROOT}/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/combined_crop_query_Q0_manifest.json",
+      "sha256": "c43955fb8a507f5b24d189ae6b988037751d39fef93690ed31959faa1ec86dbc"
+    },
+    "foundation_policy": {
+      "path_template": "${PHASE0_ROOT}/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/foundation_primary_recovery_policy.json",
+      "sha256": "32dc0f873e3f2f6e1c4522a6bab0fcc17e292a45579ead7dd0191f7644f998cf"
+    },
+    "gate_b_prompt": {
+      "path_template": "${PROJECT_ROOT}/docs/prompt_templates/gate_b/Gate_B_original_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "4b2048f393b7111573dbe2a2944df2cbe24f65f4f68f3620d9a3bc5887b4f081"
+    },
+    "gate_d0_prompt": {
+      "path_template": "${PROJECT_ROOT}/docs/prompt_templates/gate_d0/Gate_D0_original_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "d294a7f55cd01373d2ebdb2d5c9fc3acbfd06ad77ea43c0bb027fc887c1f6d8f"
+    },
+    "contracts": {
+      "path_template": "${PROJECT_ROOT}/src/foho/automation/contracts.py",
+      "sha256": "b04f8e5c0873bc1a7e9610aece59cd2b36675d2e4d9b8f4ae7ca7ec993cb8504"
+    },
+    "prompt_registry": {
+      "path_template": "${PROJECT_ROOT}/src/foho/automation/prompt_registry.py",
+      "sha256": "33f97cb59659c9c2438c258c4fed4d9483155c05bc9e6435f9951c8cd8e79f44"
+    },
+    "openai_adapter": {
+      "path_template": "${PROJECT_ROOT}/src/foho/automation/openai_query_adapter.py",
+      "sha256": "ccf1fae2ce6c88d50775bc4acdd0061ae17378c568b50e16d84c976c963aac29"
+    },
+    "query_orchestrator": {
+      "path_template": "${PROJECT_ROOT}/src/foho/automation/orchestrator.py",
+      "sha256": "3896e54e3c83bb6d46a80e5e57ed260093c4f54b5d48401042ee5faea46fb181"
+    }
+  },
+  "live_authorized": false,
+  "required_next_gate": "compose_exact_nested_Q0_schema_then_one_live_call",
+  "errors": [],
+  "decision": "real_input_Q0_binding_candidate"
+}
