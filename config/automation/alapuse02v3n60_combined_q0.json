@@ -1,0 +1,55 @@
+{
+  "schema": "tracehoi.CombinedQ0Contract.v1",
+  "case_id": "alapuse02v3n60",
+  "model": "gpt-5.5-2026-04-23",
+  "reasoning_effort": "high",
+  "store": false,
+  "required_output_sections": [
+    "object_category",
+    "visible_geometry",
+    "foundation_primary",
+    "foundation_recovery",
+    "gate_b",
+    "gate_d0",
+    "confidence"
+  ],
+  "foundation_consumers": [
+    "category_compatibility",
+    "flux_inpainting",
+    "hand_segmentation",
+    "object_segmentation",
+    "part_selection"
+  ],
+  "owners": {
+    "q0_design": {
+      "path_template": "${CASE_ROOT}/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/combined_crop_query_Q0_manifest.json",
+      "sha256": "c43955fb8a507f5b24d189ae6b988037751d39fef93690ed31959faa1ec86dbc"
+    },
+    "foundation_policy": {
+      "path_template": "${CASE_ROOT}/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/foundation_primary_recovery_policy.json",
+      "sha256": "32dc0f873e3f2f6e1c4522a6bab0fcc17e292a45579ead7dd0191f7644f998cf"
+    },
+    "gate_b_prompt": {
+      "path_template": "${PROJECT_ROOT}/docs/prompt_templates/gate_b/Gate_B_original_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "4b2048f393b7111573dbe2a2944df2cbe24f65f4f68f3620d9a3bc5887b4f081"
+    },
+    "gate_d0_prompt": {
+      "path_template": "${PROJECT_ROOT}/docs/prompt_templates/gate_d0/Gate_D0_original_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+      "sha256": "d294a7f55cd01373d2ebdb2d5c9fc3acbfd06ad77ea43c0bb027fc887c1f6d8f"
+    },
+    "gate_d0_schema": {
+      "path_template": "${PROJECT_ROOT}/tools/hoiso_d0_objective_contract/schemas/gate_d0_semantic.schema.json",
+      "sha256": "cd46cb02df4ac7fc25f0802682ee5510a6f2b2740c51fb5ca8a037976892fa4b"
+    },
+    "q0_binding_source": {
+      "path_template": "${PROJECT_ROOT}/src/foho/automation/q0_binding.py",
+      "sha256": "9aba35ac3a9704efb28ba28a688b61e66bbde4c09092d9c128064f0d35e6b857"
+    },
+    "q0_binding_config": {
+      "path_template": "${PROJECT_ROOT}/config/automation/alapuse02v3n60_q0_binding_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_10.json",
+      "sha256": "2f0a39eafe86b190e647a15e8a3d9615bab785e711384239f5aa62d85625d1b2"
+    }
+  },
+  "live_authorized": false,
+  "decision": "combined_Q0_contract_candidate"
+}
