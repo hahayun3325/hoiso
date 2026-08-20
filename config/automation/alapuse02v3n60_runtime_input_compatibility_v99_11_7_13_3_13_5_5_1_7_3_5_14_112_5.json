@@ -1,0 +1,45 @@
+{
+  "schema": "tracehoi.RuntimeInputCompatibility.v1",
+  "case_id": "alapuse02v3n60",
+  "use_scope": "out_of_split_single_case_pilot",
+  "official_1000_member": false,
+  "aggregate_with_official_1000": false,
+  "inputs": {
+    "rgb": {
+      "owner_key": "cropped_obj_img_path",
+      "path_template": "${PHASE0_ROOT}/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png",
+      "sha256": "05c3dd582f0e499598c7eb6cf1088dca55af90672f8107d56530eb85c6887b20",
+      "suffix": ".png"
+    },
+    "object_mask": {
+      "owner_key": "cropped_obj_mask_path",
+      "path_template": "${PHASE0_ROOT}/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/cropped_hand_masks/alapuse02v3_cropped_obj_mask.png",
+      "sha256": "70968d9f46c7b6c2d831ae23188957dee874879fa136a3ec064bb7ca1437c80a",
+      "suffix": ".png"
+    },
+    "hand_mask": {
+      "owner_key": "cropped_hand_mask_path",
+      "path_template": "${PHASE0_ROOT}/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/cropped_hand_masks/alapuse02v3_cropped_hand_mask.png",
+      "sha256": "ad9183cd012c13ec22c43a520aa7d8d56aba576dc9a36cb972575e5cae83db63",
+      "suffix": ".png"
+    }
+  },
+  "owner_receipts": {
+    "call_arguments_path_template": "${PHASE0_ROOT}/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_intermediate_Hshape_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2/config/alapuse02v3n60_corrected_H0_call_arguments_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2.json",
+    "call_arguments_sha256": "6c5aa00765f1e7ffc15b43a93796b573f166815bec73130fa00f796647ee078b",
+    "split_audit_path_template": "${PHASE0_ROOT}/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_4_1/reports/input_and_split_owner_audit.json",
+    "split_audit_sha256": "ede15cd76e0fb7489871b7f5fdd1484bb7fed2380bb9979786943493bdda9417"
+  },
+  "runtime_decision": "alapuse_runtime_input_closed",
+  "benchmark_identity": {
+    "dataset": null,
+    "subject": null,
+    "sequence": null,
+    "view": null,
+    "frame": null,
+    "decision": "hold_before_benchmark_identity_owner"
+  },
+  "errors": [],
+  "api_calls": 0,
+  "gpu_updates": 0
+}
