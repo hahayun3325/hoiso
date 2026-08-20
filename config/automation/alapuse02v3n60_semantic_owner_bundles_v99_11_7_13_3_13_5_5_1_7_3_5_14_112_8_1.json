@@ -1,0 +1,113 @@
+{
+  "schema": "tracehoi.AutomaticSemanticOwnerBundles.v1",
+  "case_id": "alapuse02v3n60",
+  "owners": {
+    "combined_q0": {
+      "kind": "typed_query_bundle",
+      "records": [
+        {
+          "locator": "$PROJECT_ROOT/config/automation/alapuse02v3n60_automatic_query_manifest_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_4.json",
+          "sha256": "a46a91261ad466f080bb3680461e1ccfa8310545c514090c470cd281c5eb70cb"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/prompt_registry.py",
+          "sha256": "33f97cb59659c9c2438c258c4fed4d9483155c05bc9e6435f9951c8cd8e79f44"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/contracts.py",
+          "sha256": "b04f8e5c0873bc1a7e9610aece59cd2b36675d2e4d9b8f4ae7ca7ec993cb8504"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/openai_query_adapter.py",
+          "sha256": "ccf1fae2ce6c88d50775bc4acdd0061ae17378c568b50e16d84c976c963aac29"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/orchestrator.py",
+          "sha256": "3896e54e3c83bb6d46a80e5e57ed260093c4f54b5d48401042ee5faea46fb181"
+        }
+      ],
+      "terminal_validator_required": true
+    },
+    "gate_a": {
+      "kind": "live_callback_plus_accepted_handoff",
+      "records": [
+        {
+          "locator": "$PROJECT_ROOT/src/foho/guidance/run.py",
+          "sha256": "4b0c454ac29ff4d30b120a9d3546fed6cecbef5b68efdc51eb63381e7d9ac090"
+        },
+        {
+          "locator": "$H0_CALL_ARGS",
+          "sha256": "6c5aa00765f1e7ffc15b43a93796b573f166815bec73130fa00f796647ee078b"
+        }
+      ],
+      "terminal_validator_required": true
+    },
+    "gate_c_auto_v2": {
+      "kind": "accepted_input_provenance_plus_jury_policy",
+      "records": [
+        {
+          "locator": "$PROJECT_ROOT/config/automation/alapuse02v3n60_runtime_input_compatibility_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_5.json",
+          "sha256": "c94f3a017f465ec91106dd340042753f700cdd897384b5702899e45d771f397a"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/prompt_registry.py",
+          "sha256": "33f97cb59659c9c2438c258c4fed4d9483155c05bc9e6435f9951c8cd8e79f44"
+        },
+        {
+          "locator": "$PROJECT_ROOT/docs/prompt_templates/gate_b/Gate_B_original_crop_contact_proposal_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+          "sha256": "4b2048f393b7111573dbe2a2944df2cbe24f65f4f68f3620d9a3bc5887b4f081"
+        }
+      ],
+      "terminal_validator_required": true
+    },
+    "gate_d0": {
+      "kind": "typed_semantic_contract_bundle",
+      "records": [
+        {
+          "locator": "$PROJECT_ROOT/docs/prompt_templates/gate_d0/Gate_D0_original_crop_contact_contract_prompt_v99_11_7_13_3_13_5_5_1_7_3_5_14_55.json",
+          "sha256": "d294a7f55cd01373d2ebdb2d5c9fc3acbfd06ad77ea43c0bb027fc887c1f6d8f"
+        },
+        {
+          "locator": "$PROJECT_ROOT/src/foho/automation/contracts.py",
+          "sha256": "b04f8e5c0873bc1a7e9610aece59cd2b36675d2e4d9b8f4ae7ca7ec993cb8504"
+        },
+        {
+          "locator": "$PROJECT_ROOT/config/automation/alapuse02v3n60_automatic_query_manifest_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_4.json",
+          "sha256": "a46a91261ad466f080bb3680461e1ccfa8310545c514090c470cd281c5eb70cb"
+        }
+      ],
+      "terminal_validator_required": true
+    },
+    "f0": {
+      "kind": "deterministic_terminal_validation_bundle",
+      "records": [
+        {
+          "locator": "$PROJECT_ROOT/docs/phase2/design_notes/optimization_policy/alapuse02v3n60_evaluation_validation_and_paper_comparison_contract_v99_11_7_13_3_13_5_5_1_7_3_5_14_106.md",
+          "sha256": "900c826532a72d114e44cf52b75253535e33f417d5f4a41ab8510feb3709eedd"
+        },
+        {
+          "locator": "$F0_RECEIPT",
+          "sha256": "7d92695a5fa9ee11fc3a90fcf58c3ffac99610382942038afe94375d924f1cc0"
+        },
+        {
+          "locator": "$J0_METRICS",
+          "sha256": "78854b5e8deaed0c58342372a8e7f57fe2b91cebc5d1b516b7b6fe509ef3a182"
+        }
+      ],
+      "terminal_validator_required": true
+    }
+  },
+  "required_roles": [
+    "combined_q0",
+    "f0",
+    "gate_a",
+    "gate_c_auto_v2",
+    "gate_d0"
+  ],
+  "errors": [],
+  "api_calls": 0,
+  "gpu_updates": 0,
+  "decision": "automatic_semantic_owner_bundles_closed_for_mocking",
+  "source_tag": "v99_11_7_13_3_13_5_5_1_7_3_5_14_112_8",
+  "recovery_tag": "v99_11_7_13_3_13_5_5_1_7_3_5_14_112_8_1"
+}
