@@ -1,0 +1,51 @@
+{
+  "schema": "tracehoi.FoundationProcessControllerContract.v1",
+  "case_scope": "one case per manifest",
+  "execution": "strictly sequential child processes",
+  "required_manifest_fields": [
+    "schema",
+    "case_id",
+    "fresh_output_root",
+    "stages"
+  ],
+  "required_stage_fields": [
+    "name",
+    "callable",
+    "kwargs",
+    "inputs",
+    "expected_outputs"
+  ],
+  "optional_stage_fields": [
+    "env",
+    "timeout_seconds"
+  ],
+  "callable_format": "installed.module:function",
+  "input_fields": [
+    "role",
+    "path",
+    "optional sha256"
+  ],
+  "output_fields": [
+    "role",
+    "exact path or glob",
+    "min_count"
+  ],
+  "allowed_environment_keys": [
+    "PYTHONPATH",
+    "CUDA_VISIBLE_DEVICES",
+    "TOKENIZERS_PARALLELISM",
+    "PYTORCH_CUDA_ALLOC_CONF"
+  ],
+  "publication_rule": "atomic receipt only after worker success and output hashing",
+  "resume_rule": "request hash and complete output snapshot must both match",
+  "failure_rule": "stop before the next stage; preserve stdout stderr traceback",
+  "prohibited": [
+    "API keys in manifest",
+    "unresolved $TOKENS",
+    "parallel GPU children",
+    "outputs outside fresh_output_root",
+    "implicit retry"
+  ],
+  "live_values_bound": false,
+  "decision": "foundation_process_controller_contract_closed"
+}
