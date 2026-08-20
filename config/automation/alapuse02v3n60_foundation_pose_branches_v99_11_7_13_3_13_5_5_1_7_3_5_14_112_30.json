@@ -1,0 +1,91 @@
+{
+  "schema": "tracehoi.FoundationPoseBranchConfig.v5",
+  "case_id": "alapuse02v3n60",
+  "owner_bundle": "/home/fredcui/Projects/FollowMyHold/config/automation/alapuse02v3n60_semantic_owner_bundles_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_8_1.json",
+  "roots": {
+    "$PROJECT_ROOT": "/home/fredcui/Projects/FollowMyHold",
+    "$PHASE0_ROOT": "/home/fredcui/foho_phase0",
+    "$CASE_ROOT": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2",
+    "$H0_CALL_ARGS": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_H0_intermediate_Hshape_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2/config/alapuse02v3n60_corrected_H0_call_arguments_v99_11_7_13_3_13_5_5_1_7_3_5_14_89_10_2.json",
+    "$F0_RECEIPT": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_J0_same_camera_panel_v99_11_7_13_3_13_5_5_1_7_3_5_14_105_5/reports/F0_internal_J0_validation_v99_11_7_13_3_13_5_5_1_7_3_5_14_105_5.json",
+    "$J0_METRICS": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_d0_J0_evaluation_v99_11_7_13_3_13_5_5_1_7_3_5_14_104_3/reports/J0_trajectory_and_metric_delta_v99_11_7_13_3_13_5_5_1_7_3_5_14_104_3.json"
+  },
+  "context": {
+    "PROJECT_ROOT": "/home/fredcui/Projects/FollowMyHold",
+    "PHASE0_ROOT": "/home/fredcui/foho_phase0"
+  },
+  "initial_inputs": {
+    "cropped_rgb": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png",
+      "sha256": "05c3dd582f0e499598c7eb6cf1088dca55af90672f8107d56530eb85c6887b20"
+    }
+  },
+  "stages": {
+    "input_adapter": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "cropped_rgb": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png"
+        }
+      }
+    },
+    "combined_q0": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "q0_handoff": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_22/reports/five_foundation_consumer_handoff.json"
+        }
+      }
+    },
+    "foundation_models": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "hamer_mano": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/aligned_mano/alapuse02v3_hamer_aligned_mano.ply",
+          "hunyuan_carrier": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/hunyuan_hoi_out/alapuse02v3_hoi_mesh.ply",
+          "moge_scene": "/home/fredcui/foho_phase0/phase1_diagnostics/selector_v41_full_pipeline/runs/arctic_alapuse02_v3_selector_v41_refined_pipeline/moge_out/alapuse02v3_cropped_hoi/mesh.glb"
+        }
+      }
+    },
+    "auto_v2_q1": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "reference_validation": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_25/reports/accepted_reference_pose_branch_entry.json"
+        }
+      }
+    },
+    "gate_a": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "object_mesh_in_I": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_clean_HOI_carrier_runtime_v99_11_7_13_3_13_5_5_1_7_3_5_14/runtime_import_and_guard_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_1/candidate_0_guarded_input_v99_11_7_13_3_13_5_5_1_7_3_5_14_2/clean_carrier_generation_policy_v99_11_7_13_3_13_5_5_1_7_3_5_14_3/clean_carrier_generation_execution_v99_11_7_13_3_13_5_5_1_7_3_5_14_4/actual_filename_adjudication_v99_11_7_13_3_13_5_5_1_7_3_5_14_5/carrier_to_MoGe_registration_v99_11_7_13_3_13_5_5_1_7_3_5_14_6/JSON_container_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_7/bounded_lineage_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_8/exact_field_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_9/RGBA_to_MoGe_RGB_recovery_v99_11_7_13_3_13_5_5_1_7_3_5_14_10/matching_MoGe_execution_v99_11_7_13_3_13_5_5_1_7_3_5_14_11/exact_mask_carrier_support_v99_11_7_13_3_13_5_5_1_7_3_5_14_13/selected_camera_reprojection_v99_11_7_13_3_13_5_5_1_7_3_5_14_14/high_confidence_GateA_to_I_prepare_v99_11_7_13_3_13_5_5_1_7_3_5_14_15/object_target_acceptance_and_staged_route_v99_11_7_13_3_13_5_5_1_7_3_5_14_16/camera_aware_fitter_source_v99_11_7_13_3_13_5_5_1_7_3_5_14_17/bounded_CPU_candidates_v99_11_7_13_3_13_5_5_1_7_3_5_14_18/data/seed_2026_GateA_in_I.ply"
+        }
+      }
+    },
+    "cpu_hand_registration": {
+      "carry_inputs": true,
+      "reference": {
+        "outputs": {
+          "hand_mesh_in_I": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_constraint_first_CPU_v99_11_7_13_3_13_5_5_1_7_3_5_14_38/candidates/depth_median_CF_hand_in_I.ply",
+          "T_Hshape_to_I": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_constraint_first_CPU_v99_11_7_13_3_13_5_5_1_7_3_5_14_38/candidates/depth_median_CF_T_Hshape_to_I.npy"
+        }
+      }
+    }
+  },
+  "join_contract": {
+    "required": [
+      "object_mesh_in_I",
+      "hand_mesh_in_I",
+      "T_Hshape_to_I"
+    ],
+    "frame": "I"
+  },
+  "prompt_policy": {
+    "object": "Q0_object_segmentation_CSV",
+    "hand": "fixed_only_hand",
+    "flux": "Q0_flux_inpainting_CSV"
+  },
+  "mode": "accepted_reference_wiring_not_fresh_reconstruction",
+  "decision": "foundation_pose_branch_reference_config_closed"
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "tracehoi.Q0FollowMyHoldCompatibilityConfig.v5",
+  "case_id": "alapuse02v3n60",
+  "q0_handoff": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_22/reports/five_foundation_consumer_handoff.json",
+  "q0_handoff_sha256": "5d63764fdca98ed1db2d02a298bd7d538963530cfd893b45c3e197d3a0530663",
+  "columns": [
+    "image_id",
+    "image_path",
+    "response"
+  ],
+  "bindings": {
+    "image_id": {
+      "kind": "literal",
+      "value": "alapuse02v3n60"
+    },
+    "image_path": {
+      "kind": "literal",
+      "value": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png"
+    },
+    "response": {
+      "kind": "pointer",
+      "pointer": [
+        "primary_values",
+        "object_segmentation"
+      ],
+      "codec": "comma_space_join_v1"
+    }
+  },
+  "foundation_routes": {
+    "object_segmentation_csv": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_29_1/compatibility/object_segmentation_prompts.csv",
+      "sha256": "bb73888f3d256e7a4a202561d3d4cacaa12092a72a374d4ca15cfac7cd2e28f4"
+    },
+    "flux_inpainting_csv": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_29_1/compatibility/flux_inpainting_prompts.csv",
+      "sha256": "0e8b1e3386709dbd3ade5dd05e56a73040007febb498a24d9e61c92a57875d42"
+    },
+    "fixed_hand_prompt": "only hand",
+    "legacy_category_csv": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_29_1/compatibility/gemini_responses_category.csv",
+      "sha256": "e06e16367c6b87810b538fab204495f5444c5d74b3d4f2ab3b6eb788618c9c68"
+    }
+  },
+  "decision": "Q0_FollowMyHold_transitive_lineage_compatibility_closed"
+}
