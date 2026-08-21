@@ -28,7 +28,9 @@ def bind(input_manifest,output_manifest,receipt,stages,device):
       'output_sha256':sha(target) if target.is_file() else None,'stages':names,'device':str(device),
       'previous_values':previous,'errors':errors,
       'decision':'foundation_manifest_GPU_binding_closed' if not errors else 'review_foundation_manifest_GPU_binding'}
-    Path(receipt).write_text(json.dumps(payload,indent=2)+'\n'); return payload
+    receipt_path=Path(receipt)
+    receipt_path.parent.mkdir(parents=True,exist_ok=True)
+    receipt_path.write_text(json.dumps(payload,indent=2)+'\n'); return payload
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--input',required=True)
     parser.add_argument('--output',required=True); parser.add_argument('--receipt',required=True)

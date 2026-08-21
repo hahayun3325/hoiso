@@ -23,6 +23,15 @@ class BindingAndProbeTest(unittest.TestCase):
             self.assertEqual(manifest['stages'][0]['env']['CUDA_VISIBLE_DEVICES'],'0')
             self.assertEqual(manifest['stages'][0]['kwargs']['runner_args'][4]['CUDA_VISIBLE_DEVICES'],'0')
             self.assertNotIn('CUDA_VISIBLE_DEVICES',manifest['stages'][1]['env'])
+    def test_nested_receipt_parent_is_created(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); source=self.fixture(root)
+            out=root/'bound'/'manifest.json'
+            receipt=root/'nested'/'receipts'/'GPU_binding.json'
+            packet=BIND.bind(source,out,receipt,['a'],'0')
+            self.assertEqual(packet['decision'],'foundation_manifest_GPU_binding_closed')
+            self.assertTrue(receipt.is_file())
+            self.assertEqual(json.loads(receipt.read_text())['output'],str(out))
     def test_missing_stage_fails_closed(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory); source=self.fixture(root)
