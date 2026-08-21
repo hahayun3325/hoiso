@@ -3,8 +3,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import importlib
+import importlib.util
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -46,14 +47,24 @@ def load_config(path: Path) -> dict[str, Any]:
 
 
 def load_vitpose_model(module_root: Path, device: str):
-    if not module_root.is_dir():
-        raise FileNotFoundError(f"ViTPose module root is not a directory: {module_root}")
-    sys.path.insert(0, str(module_root))
-    module = importlib.import_module("vitpose_model")
-    model_type = getattr(module, "ViTPoseModel", None)
-    if model_type is None:
-        raise RuntimeError("vitpose_model.ViTPoseModel is unavailable")
-    return model_type(device)
+    module_root = module_root.resolve()
+    module_path = module_root / "vitpose_model.py"
+    if not module_path.is_file():
+        raise FileNotFoundError(f"ViTPose module source is absent: {module_path}")
+    spec = importlib.util.spec_from_file_location("foho_runtime_vitpose_model", module_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("Unable to load the exact ViTPose module source")
+    module = importlib.util.module_from_spec(spec)
+    previous = Path.cwd()
+    try:
+        os.chdir(module_root)
+        spec.loader.exec_module(module)
+        model_type = getattr(module, "ViTPoseModel", None)
+        if model_type is None:
+            raise RuntimeError("vitpose_model.ViTPoseModel is unavailable")
+        return model_type(device)
+    finally:
+        os.chdir(previous)
 
 
 def extract_hand_keypoints(pose: dict[str, Any], handedness: str) -> np.ndarray:
