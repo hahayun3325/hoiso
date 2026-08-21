@@ -98,10 +98,20 @@ def validate_q0_packet(path: str|Path) -> Path:
 
 def validate_jury_result(packet: dict[str,Any],round_name: str) -> dict[str,Any]:
     verdict,retry_owner=decision(packet)
-    allowed={'PASS','RETRY_ONE_OWNER','REJECT_CASE'}
-    if verdict not in allowed: raise RuntimeError(round_name+' invalid verdict:'+verdict)
-    if verdict=='RETRY_ONE_OWNER' and not retry_owner:
-        raise RuntimeError(round_name+' retry owner absent')
+    if round_name=='Q2':
+        if packet.get('schema')!='tracehoi.Q2TerminalResult.v1':
+            raise RuntimeError('Q2 terminal schema mismatch')
+        if verdict not in {'PASS','REJECT_CASE'}:
+            raise RuntimeError('Q2 must be terminal:'+verdict)
+        if packet.get('eligible_for_gate_a') is not (verdict=='PASS'):
+            raise RuntimeError('Q2 eligibility mismatch')
+        if packet.get('third_jury_call_allowed') is not False:
+            raise RuntimeError('Q2 third-call invariant')
+    else:
+        if verdict not in {'PASS','RETRY_ONE_OWNER','REJECT_CASE'}:
+            raise RuntimeError(round_name+' invalid verdict:'+verdict)
+        if verdict=='RETRY_ONE_OWNER' and not retry_owner:
+            raise RuntimeError(round_name+' retry owner absent')
     return packet
 
 def prompt_views(packet_path: str|Path,config: dict[str,Any],family: str,
@@ -221,7 +231,10 @@ def jury_config(config: dict[str,Any],foundation_root: Path,model: str,
 def run_jury(config: dict[str,Any],foundation_root: Path,model: str,
              round_name: str,run_root: Path) -> dict[str,Any]:
     from foho.automation.q1_evidence_panel import build
-    from foho.automation.q1_responses_runner import run
+    if round_name=='Q2':
+        from foho.automation.q2_terminal_runner import run
+    else:
+        from foho.automation.q1_responses_runner import run
     panel=run_root/'panels'/f'{round_name}.png'
     manifest=run_root/'panels'/f'{round_name}.json'
     result_path=run_root/'jury'/f'{round_name}_result.json'
@@ -230,8 +243,9 @@ def run_jury(config: dict[str,Any],foundation_root: Path,model: str,
     build(config_path,panel,manifest)
     dry=run_root/'jury'/f'{round_name}_dry_run.json'
     rehearsed=run(config_path,panel,manifest,dry,dry_run=True)
-    if rehearsed.get('decision')!='Q1_nonempty_zero_cost_dry_run_closed':
-        raise RuntimeError(round_name+' dry run did not close')
+    expected=round_name+'_nonempty_zero_cost_dry_run_closed'
+    if rehearsed.get('decision')!=expected:
+        raise RuntimeError(round_name+' dry run did not close:'+str(rehearsed.get('decision')))
     claim=run_root/'jury'/f'{round_name}_call_claim.json'
     claim.parent.mkdir(parents=True,exist_ok=True)
     with claim.open('x') as stream:
