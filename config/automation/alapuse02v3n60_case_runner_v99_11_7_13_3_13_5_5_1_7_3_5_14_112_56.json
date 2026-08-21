@@ -1,0 +1,40 @@
+{
+  "schema": "tracehoi.AutomaticCaseRunnerConfig.v1",
+  "case_id": "alapuse02v3n60",
+  "project_root": "/home/fredcui/Projects/FollowMyHold",
+  "phase0_root": "/home/fredcui/foho_phase0",
+  "case_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2",
+  "image": {
+    "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png",
+    "sha256": "05c3dd582f0e499598c7eb6cf1088dca55af90672f8107d56530eb85c6887b20"
+  },
+  "q0": {
+    "config": "/home/fredcui/Projects/FollowMyHold/config/automation/alapuse02v3n60_combined_q0.json",
+    "max_output_tokens": 16000
+  },
+  "prompt_policy": {
+    "hand_segmentation": "only hand",
+    "recovery_object_single_label": "laptop"
+  },
+  "foundation": {
+    "runtime_template": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/config/alapuse02v3n60_fresh_foundation_recovery.env",
+    "template_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary"
+  },
+  "jury": {
+    "config_template": "/home/fredcui/Projects/FollowMyHold/config/automation/alapuse02v3n60_Q1_runtime_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_40_1.json",
+    "template_foundation_root": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary",
+    "reasoning_effort": "medium",
+    "SDK_retries": 0,
+    "store": false
+  },
+  "recovery": {
+    "max_rounds": 1,
+    "supported_retry_owners": [
+      "get_hunyuan_input"
+    ]
+  },
+  "post_Q2": {
+    "next_stage": "Gate_A",
+    "implemented_in_this_transaction": false
+  }
+}
