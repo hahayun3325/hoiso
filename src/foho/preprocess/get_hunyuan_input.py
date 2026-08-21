@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+from pathlib import Path
 import traceback
 import os
 import sys
@@ -98,7 +101,7 @@ def run(
                     f"no_hoi_segmentation:image_id={img_id}:object_name={object_name!r}:"
                     f"hand_instance={hand_instance!r}"
                 )
-            occ_img, cropped_obj_mask, cropped_hand_mask, cropped_img_wo_bckg, crop_img_hoi, is_right = out
+            occ_img, cropped_obj_mask, cropped_hand_mask, cropped_img_wo_bckg, crop_img_hoi, is_right, hand_owner = out
 
             occ_img_path = os.path.join(occ_img_dir, f"{img_id}_occ_obj.png")
             crop_img_hoi_path = os.path.join(cropped_img_dir, f"{img_id}_cropped_hoi_{is_right}.png")
@@ -119,6 +122,25 @@ def run(
             cropped_img_wo_bckg.save(cropped_img_wo_bckg_path)
             cropped_obj_mask.save(cropped_obj_mask_path)
             cropped_hand_mask.save(cropped_hand_mask_path)
+
+            owner_path = Path(mask_dir) / f"{img_id}_selected_hand_owner.json"
+            owner = dict(hand_owner)
+            owner["case_id"] = str(img_id)
+            owner["source_image"] = str(Path(source_image).resolve())
+            owner["artifacts"] = {
+              "crop":{"path":str(Path(crop_img_hoi_path).resolve()),
+                      "sha256":hashlib.sha256(Path(crop_img_hoi_path).read_bytes()).hexdigest()},
+              "hand_mask":{"path":str(Path(cropped_hand_mask_path).resolve()),
+                           "sha256":hashlib.sha256(Path(cropped_hand_mask_path).read_bytes()).hexdigest()}}
+            owner["selected_hand_id"] = hashlib.sha256(json.dumps({
+              "case_id":owner["case_id"],"policy":owner["selection_policy"],
+              "detector_box":owner["canonical_detector_box"],
+              "proposal_box":owner["selected_proposal_box"],
+              "mask_sha256":owner["artifacts"]["hand_mask"]["sha256"]},
+              sort_keys=True,separators=(",",":")).encode()).hexdigest()
+            temporary=owner_path.with_suffix(".json.tmp")
+            temporary.write_text(json.dumps(owner,indent=2,sort_keys=True)+"\n")
+            os.replace(temporary,owner_path)
 
             ori_img = Image.open(source_image)
             ori_img.save(os.path.join(original_img_dir, f"{img_id}_full_image_{is_right}.png"))

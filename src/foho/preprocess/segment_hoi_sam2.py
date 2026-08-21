@@ -13,6 +13,7 @@ from segment_anything import sam_model_registry, SamPredictor
 
 from foho.configs import third_party_root
 from foho.automation.hand_instance_selector import select_hand_index
+from foho.automation.selected_hand_mask import transform_xyxy, select_mask_proposal
 
 _TP = third_party_root()
 sys.path.append(_TP)
@@ -166,6 +167,7 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
         is_right.append(det.boxes.cls.cpu().detach().squeeze().item())
         bboxes.append(Bbox[:4].tolist())
 
+    selected_detector_index = 0
     if len(bboxes) == 0:
         print("no hands in this image")
         return None
@@ -175,9 +177,13 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
         hand_idx = select_hand_index(
             bboxes, hand_instance, bbox_obj.reshape(-1).tolist()
         )
+        selected_detector_index = int(hand_idx)
         bbox_hand = np.array(bboxes[hand_idx]).reshape((-1, 2))
         bboxes = [bboxes[hand_idx]]
         is_right = [is_right[hand_idx]]
+
+    selected_source_box = [float(value) for value in bboxes[0]]
+    source_is_right = bool(is_right[0])
 
     tl = np.min(np.concatenate([bbox_obj, bbox_hand], axis=0), axis=0)
     br = np.max(np.concatenate([bbox_obj, bbox_hand], axis=0), axis=0)
@@ -199,6 +205,8 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     scale_size = 512 # 224
     crop_img_cv2, trans = generate_patch_image(img_cv2, ho_bbox, (scale_size, scale_size), 0, 1.0, 0)
     crop_img_hoi = crop_img_cv2[..., ::-1]
+    canonical_detector_box = [float(value) for value in boxes[0]]
+    crop_detector_box = transform_xyxy(canonical_detector_box, trans.tolist())
 
     if object_name is None:
         object_name = "manipulated object"
@@ -214,10 +222,33 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     pred_hand = sam_model.predict([Image.fromarray(crop_img_hoi)], ["only hand"])
     if pred_hand[0]["boxes"] is None or len(pred_hand[0]["boxes"]) == 0:
         return None
-    bbox_hand = pred_hand[0]["boxes"][0].reshape((-1, 2))
-    mask_hand = pred_hand[0]["masks"][0]
-    mask_hand = (mask_hand > 0).astype(np.uint8) # make the mask binary
-    return mask_obj, mask_hand, crop_img_hoi, int(is_right[0])
+    proposal_boxes = pred_hand[0]["boxes"]
+    if hasattr(proposal_boxes, "detach"):
+        proposal_boxes = proposal_boxes.detach().cpu().numpy()
+    proposal_boxes = np.asarray(proposal_boxes,dtype=np.float64).reshape((-1,4))
+    selected = select_mask_proposal(
+        proposal_boxes.tolist(),crop_detector_box,
+        minimum_iou=float(os.environ.get("FOHO_HAND_MASK_MIN_IOU","0.10")))
+    selected_index = selected["selected_proposal_index"]
+    bbox_hand = proposal_boxes[selected_index].reshape((-1,2))
+    mask_hand = pred_hand[0]["masks"][selected_index]
+    mask_hand = (mask_hand > 0).astype(np.uint8)
+    hand_owner = {
+      "schema":"tracehoi.SelectedHandOwner.v1",
+      "selection_policy":hand_instance,
+      "selection_semantics":"Q0_control_signal_to_detector_box_to_mask_IoU",
+      "detector_index":selected_detector_index,
+      "source_detector_box":selected_source_box,
+      "source_is_right":source_is_right,
+      "pixels_mirrored":not source_is_right,
+      "canonical_is_right":True,
+      "canonical_detector_box":canonical_detector_box,
+      "crop_detector_box":crop_detector_box,
+      "crop_transform_3x3":trans.tolist(),
+      "segmenter_prompt":"only hand",
+      **selected,
+      "decision":"Q0_selected_detector_to_hand_mask_closed"}
+    return mask_obj, mask_hand, crop_img_hoi, int(is_right[0]), hand_owner
 
 
 def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detector, object_name='manipulated object', hand_instance='closest_to_object'):
@@ -232,7 +263,7 @@ def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detect
     result = hoi_detector(source_image_path, hand_detector, sam_model, IoU_threshold, hand_object_detector, object_name, hand_instance)
     if result is None:
         return None
-    crop_mask_obj, crop_hand_mask, crop_img_hoi, is_right = result
+    crop_mask_obj, crop_hand_mask, crop_img_hoi, is_right, hand_owner = result
     
     # Create a mask for the whole object-hand interaction
     mask_hoi = np.logical_or(crop_mask_obj, crop_hand_mask)
@@ -252,7 +283,7 @@ def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detect
 
     torch.cuda.empty_cache()
     
-    return cropped_occ_obj_img, crop_mask_obj, crop_hand_mask, cropped_hoi_image_wo_bckg, crop_img_hoi, is_right
+    return cropped_occ_obj_img, crop_mask_obj, crop_hand_mask, cropped_hoi_image_wo_bckg, crop_img_hoi, is_right, hand_owner
 
 
 if __name__ == "__main__":
