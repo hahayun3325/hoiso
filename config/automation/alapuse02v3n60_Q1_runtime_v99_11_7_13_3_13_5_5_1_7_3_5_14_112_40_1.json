@@ -1,0 +1,27 @@
+{
+  "schema": "tracehoi.Q1RuntimeConfig.v1",
+  "case_id": "alapuse02v3n60",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "max_output_tokens": 4000,
+  "accepted_crop": {
+    "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/gate_c_hand_anchor/v99_11_7_hand_anchor_gate_policy/sequential_reanchor_collection_v99_11_7_9/indexed_identity_critic_v99_11_7_9_12/one_blind_v3_scope_authorization_v99_11_7_9_14/one_blind_v3_launch_policy_v99_11_7_9_15/v3_crop_source_recovery_v99_11_7_9_15_1/one_blind_v3_execution_v99_11_7_9_16/wrong_source_and_output_contract_recovery_v99_11_7_9_16_1/binary_reader_and_target_provenance_recovery_v99_11_7_9_16_1_1/corrected_target_replacement_launch_v99_11_7_9_16_2_1/input/v3_cropped_hoi/alapuse02v3n60_cropped_hoi_1.png",
+    "sha256": "05c3dd582f0e499598c7eb6cf1088dca55af90672f8107d56530eb85c6887b20"
+  },
+  "policy": {
+    "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_2/candidates/auto_v2_primary_and_recheck_jury_policy.json",
+    "sha256": "abce6f2ef44195a8e669939cd3071ec0520d600a5299691181625392be50c3b8"
+  },
+  "inventories": {
+    "get_hunyuan_input": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/01_preprocess/stage_inventory.json",
+    "inpaint": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/02_inpaint/stage_inventory.json",
+    "moge": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/04_moge/stage_inventory.json",
+    "hunyuan": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/05_hunyuan/stage_inventory.json",
+    "hamer": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/03_hamer/stage_inventory.json",
+    "h2m": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/06_h2m/stage_inventory.json",
+    "mano_registration": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_replay_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_37/fresh_foundation_primary/07_mano/stage_inventory.json"
+  },
+  "single_claim": true,
+  "SDK_retries": 0,
+  "store": false
+}
