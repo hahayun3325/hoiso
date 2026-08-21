@@ -1,0 +1,8 @@
+{
+  "schema": "tracehoi.FoundationSegmentationAliasMap.v1",
+  "aliases": {
+    "articulated laptop computer": "laptop"
+  },
+  "unknown_category_policy": "fail_closed",
+  "case_scope": "alapuse02v3n60 development proof"
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "tracehoi.FoundationSegmentationPromptContract.v1",
+  "version": "14_112_48",
+  "consumer": "get_hunyuan_input object segmentation",
+  "maximum_words": 3,
+  "comma_allowed": false,
+  "negative_prompt_allowed": false,
+  "part_keywords_forwarded": false,
+  "fixed_hand_prompt": "only hand",
+  "unknown_category_policy": "fail_closed",
+  "api_calls": 0,
+  "cuda_started": false
+}
