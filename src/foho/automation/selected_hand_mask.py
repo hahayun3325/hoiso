@@ -1,6 +1,7 @@
 from __future__ import annotations
 from collections.abc import Sequence
 import math
+import numpy as np
 
 class SelectedHandMaskError(RuntimeError):
     pass
@@ -47,3 +48,35 @@ def select_mask_proposal(proposals,selected_detector_box,*,minimum_iou=0.10):
             'selected_proposal_box':list(boxes[index]),
             'proposal_boxes':[list(row) for row in boxes],
             'minimum_iou':float(minimum_iou)}
+
+
+def mask_xyxy(mask):
+    binary=np.asarray(mask)>0
+    if binary.ndim!=2 or not binary.any():
+        raise SelectedHandMaskError("box-prompted mask must be nonempty 2D")
+    ys,xs=np.nonzero(binary)
+    return [float(xs.min()),float(ys.min()),float(xs.max()+1),float(ys.max()+1)]
+
+def segment_box_prompt(sam_backend,image_rgb,selected_detector_box,*,minimum_iou=0.10):
+    image=np.asarray(image_rgb)
+    if image.ndim!=3 or image.shape[2]!=3:
+        raise SelectedHandMaskError("box-prompt image must be HxWx3")
+    target=np.asarray([_box(selected_detector_box)],dtype=np.float32)
+    masks,scores,_=sam_backend.predict(image,target)
+    masks=np.asarray(masks)
+    if masks.ndim==2: masks=masks[None,...]
+    if masks.ndim!=3 or masks.shape[0]==0:
+        raise SelectedHandMaskError("SAM2 box prompt returned no mask")
+    score_values=np.asarray(scores,dtype=np.float64).reshape(-1)
+    if score_values.size not in (0,masks.shape[0]):
+        raise SelectedHandMaskError("SAM2 box scores do not match masks")
+    index=int(np.argmax(score_values)) if score_values.size else 0
+    mask=(masks[index]>0).astype(np.uint8)
+    actual=mask_xyxy(mask); overlap=float(iou(actual,target[0]))
+    if overlap<float(minimum_iou):
+        raise SelectedHandMaskError(
+            f"SAM2 box mask misses Q0-selected detector box: iou={overlap:.6f}")
+    return mask,{'selected_proposal_index':index,
+      'selected_proposal_iou':overlap,'selected_proposal_box':actual,
+      'proposal_boxes':[actual],'minimum_iou':float(minimum_iou),
+      'selection_method':'Q0_selected_detector_box_to_SAM2_box_prompt'}

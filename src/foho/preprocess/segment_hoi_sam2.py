@@ -13,7 +13,7 @@ from segment_anything import sam_model_registry, SamPredictor
 
 from foho.configs import third_party_root
 from foho.automation.hand_instance_selector import select_hand_index
-from foho.automation.selected_hand_mask import transform_xyxy, select_mask_proposal
+from foho.automation.selected_hand_mask import transform_xyxy, segment_box_prompt
 
 _TP = third_party_root()
 sys.path.append(_TP)
@@ -219,24 +219,14 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     mask_obj = pred_obj[0]["masks"][0]
     mask_obj = (mask_obj > 0).astype(np.uint8) # make the mask binary
     
-    pred_hand = sam_model.predict([Image.fromarray(crop_img_hoi)], ["only hand"])
-    if pred_hand[0]["boxes"] is None or len(pred_hand[0]["boxes"]) == 0:
-        return None
-    proposal_boxes = pred_hand[0]["boxes"]
-    if hasattr(proposal_boxes, "detach"):
-        proposal_boxes = proposal_boxes.detach().cpu().numpy()
-    proposal_boxes = np.asarray(proposal_boxes,dtype=np.float64).reshape((-1,4))
-    selected = select_mask_proposal(
-        proposal_boxes.tolist(),crop_detector_box,
+    mask_hand, selected = segment_box_prompt(
+        sam_model.sam,crop_img_hoi,crop_detector_box,
         minimum_iou=float(os.environ.get("FOHO_HAND_MASK_MIN_IOU","0.10")))
-    selected_index = selected["selected_proposal_index"]
-    bbox_hand = proposal_boxes[selected_index].reshape((-1,2))
-    mask_hand = pred_hand[0]["masks"][selected_index]
-    mask_hand = (mask_hand > 0).astype(np.uint8)
+    bbox_hand = np.asarray(selected["selected_proposal_box"],dtype=np.float64).reshape((-1,2))
     hand_owner = {
       "schema":"tracehoi.SelectedHandOwner.v1",
       "selection_policy":hand_instance,
-      "selection_semantics":"Q0_control_signal_to_detector_box_to_mask_IoU",
+      "selection_semantics":"Q0_selected_detector_box_to_SAM2_box_prompt",
       "detector_index":selected_detector_index,
       "source_detector_box":selected_source_box,
       "source_is_right":source_is_right,
@@ -245,7 +235,7 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
       "canonical_detector_box":canonical_detector_box,
       "crop_detector_box":crop_detector_box,
       "crop_transform_3x3":trans.tolist(),
-      "segmenter_prompt":"only hand",
+      "segmenter_prompt":{"type":"SAM2_box","owner":"Q0_selected_detector_box"},
       **selected,
       "decision":"Q0_selected_detector_to_hand_mask_closed"}
     return mask_obj, mask_hand, crop_img_hoi, int(is_right[0]), hand_owner

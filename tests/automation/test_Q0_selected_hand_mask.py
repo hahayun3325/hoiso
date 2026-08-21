@@ -18,8 +18,9 @@ class Contract(unittest.TestCase):
         start=text.index("def hoi_detector("); end=text.index("\ndef get_hoi_mask(",start)
         body=text[start:end]
         self.assertNotIn('pred_hand[0]["masks"][0]',body)
-        self.assertIn('pred_hand[0]["masks"][selected_index]',body)
-        self.assertIn('Q0_control_signal_to_detector_box_to_mask_IoU',body)
+        self.assertIn('sam_model.sam,crop_img_hoi,crop_detector_box',body)
+        self.assertNotIn('["only hand"]',body)
+        self.assertIn('Q0_selected_detector_box_to_SAM2_box_prompt',body)
     def test_owner_is_written(self):
         text=Path(os.environ["PREPROCESS_SOURCE"]).read_text()
         self.assertIn('_selected_hand_owner.json',text)
