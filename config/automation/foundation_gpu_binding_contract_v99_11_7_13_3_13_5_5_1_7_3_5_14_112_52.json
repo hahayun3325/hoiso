@@ -1,0 +1,10 @@
+{
+  "schema": "tracehoi.FoundationGPUBindingContract.v1",
+  "version": "14_112_52",
+  "device_source": "case runtime config / explicit launch policy",
+  "worker_env_and_child_extra_env_must_match": true,
+  "probe_must_use_exact_controller_adapter_run_in_conda_environment": true,
+  "probe_loads_foundation_model": false,
+  "single_GPU_child_at_a_time": true,
+  "api_calls": 0
+}
