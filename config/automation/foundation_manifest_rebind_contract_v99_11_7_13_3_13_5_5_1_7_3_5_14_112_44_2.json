@@ -1,0 +1,15 @@
+{
+  "schema": "tracehoi.FoundationManifestRebindContract.v1",
+  "version": "14_112_44_2",
+  "atomic_owner_fields": [
+    "path",
+    "sha256",
+    "serialized_command_occurrences"
+  ],
+  "one_stage_manifest_only": true,
+  "refresh_all_existing_input_hashes": true,
+  "reject_missing_inputs": true,
+  "reject_stale_tokens": true,
+  "api_calls": 0,
+  "cuda_started": false
+}
