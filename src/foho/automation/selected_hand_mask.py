@@ -58,7 +58,7 @@ def mask_xyxy(mask):
     return [float(xs.min()),float(ys.min()),float(xs.max()+1),float(ys.max()+1)]
 
 def segment_box_prompt(sam_backend,image_rgb,selected_detector_box,*,minimum_iou=0.10):
-    image=np.asarray(image_rgb)
+    image=np.ascontiguousarray(np.asarray(image_rgb))
     if image.ndim!=3 or image.shape[2]!=3:
         raise SelectedHandMaskError("box-prompt image must be HxWx3")
     target=np.asarray([_box(selected_detector_box)],dtype=np.float32)
