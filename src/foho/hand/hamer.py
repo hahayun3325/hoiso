@@ -37,6 +37,7 @@ def run(
     out_folder: str,
     full_img_dir: str,
     checkpoint: str,
+    selected_hand_inventory: str = "",
     side_view: bool = False,
     full_frame: bool = True,
     save_mesh: bool = False,
@@ -106,13 +107,16 @@ def run(
     os.makedirs(out_folder, exist_ok=True)
 
     img_paths = [img for end in file_type for img in Path(img_folder).glob(end)]
+    if selected_hand_inventory:
+        from foho.automation.selected_hand_hamer import selected_crop_from_inventory
+        img_paths = [selected_crop_from_inventory(selected_hand_inventory)]
 
     for img_path in img_paths:
         img_cv2 = cv2.imread(str(img_path))
         if img_cv2 is None:
             continue
 
-        yolo_hand_id = int(str(img_path).split("/")[-1].split("_")[-1].split(".")[0])
+        yolo_hand_id = None if selected_hand_inventory else int(str(img_path).split("/")[-1].split("_")[-1].split(".")[0])
 
         det_out = detector(img_cv2)
         img = img_cv2.copy()[:, :, ::-1]
@@ -175,6 +179,14 @@ def run(
 
         boxes = bboxes[keep_indices]
         right = is_right[keep_indices]
+        if selected_hand_inventory:
+            from foho.automation.selected_hand_hamer import select_candidate, write_receipt
+            selection = select_candidate(selected_hand_inventory,boxes,right)
+            selected_index = int(selection["candidate_index"])
+            boxes = boxes[[selected_index]]; right = right[[selected_index]]
+            yolo_hand_id = int(bool(selection["canonical_is_right"]))
+            selection["image_path"] = str(img_path.resolve())
+            write_receipt(Path(out_folder) / f"{img_path.stem}_selected_hamer_owner.json",selection)
 
         dataset = ViTDetDataset(model_cfg, img_cv2, boxes, right, rescale_factor=rescale_factor)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=8, shuffle=False, num_workers=0)
@@ -304,6 +316,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="HaMeR demo code")
     parser.add_argument("--hamer_demo_dir", required=True)
     parser.add_argument("--checkpoint", type=str, default="")
+    parser.add_argument("--selected_hand_inventory", default="")
     parser.add_argument("--img_folder", type=str, required=True)
     parser.add_argument("--out_folder", type=str, required=True)
     parser.add_argument("--side_view", action="store_true", default=False)
@@ -322,6 +335,7 @@ def main() -> None:
         out_folder=args.out_folder,
         full_img_dir=args.full_img_dir,
         checkpoint=args.checkpoint,
+        selected_hand_inventory=args.selected_hand_inventory,
         side_view=args.side_view,
         full_frame=args.full_frame,
         save_mesh=args.save_mesh,

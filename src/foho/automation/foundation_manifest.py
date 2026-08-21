@@ -80,7 +80,7 @@ def build(config_path: str|Path,manifest_path: str|Path) -> dict[str,Any]:
       _stage('hamer','foho.hand.hamer',{
        'hamer_demo_dir':cfg.hamer_demo_dir,'img_folder':cfg.cropped_hoi_path,
        'out_folder':cfg.hamer_out_path,'full_img_dir':cfg.original_img_dir,
-       'save_mesh':True},cfg,cfg.hamer_demo_dir,[cfg.hamer_out_path],
+       'selected_hand_inventory':str(inv['preprocess']),'save_mesh':True},cfg,cfg.hamer_demo_dir,[cfg.hamer_out_path],
        inv['hamer'],[prior('preprocess_inventory','preprocess')]),
       _stage('h2m','foho.alignment.h2m',{
        'hunyuan_mesh_dir':cfg.hunyuan_hoi_mesh_path,
