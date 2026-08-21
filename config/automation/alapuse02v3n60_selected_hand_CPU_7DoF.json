@@ -1,0 +1,75 @@
+{
+  "schema": "s100_up_CPU_7DoF_config_v99_11_7_9_21_7_13_3_7_1",
+  "candidate_uid": "s100_up",
+  "expected_candidate_sha256": "4274bdc00efca3df9a329f72d4da096588b2de903338d08a065e56249421052a",
+  "expected_target_sha256": "43e093dd8f5931d3772d9514a0c938882362c77853370862e6aed8ab8ca1bd61",
+  "expected_H2M_sha256": "5dafd4e1dee11f1aee442866b44b7eeeaa9922f4ec9ce113eb364e1e30b93997",
+  "expected_points_sha256": "2d747c30109118101a8aabe9c65cfba7717311c22d6030b0ff577f8f53c8fd77",
+  "expected_hand_mask_sha256": "b4c35ef9902f25b2414048985fb9d32c6087424aa643969102a98cbc92f67a5b",
+  "packet_fields": {
+    "vertices": "root/pred_vertices",
+    "joints_3d": "root/pred_keypoints_3d",
+    "focal_length": "root/focal_length",
+    "camera_translation": "root/pred_cam_t_full"
+  },
+  "joint_map_21": [
+    0,
+    13,
+    14,
+    15,
+    16,
+    1,
+    2,
+    3,
+    17,
+    4,
+    5,
+    6,
+    18,
+    10,
+    11,
+    12,
+    19,
+    7,
+    8,
+    9,
+    20
+  ],
+  "positive_scale_bounds": [
+    0.5,
+    2.0
+  ],
+  "translation_lower_xyz": [
+    -0.7145037055015564,
+    -0.6684305816888809,
+    0.001
+  ],
+  "translation_upper_xyz": [
+    0.29007309675216675,
+    0.3394355773925781,
+    18.904504776000977
+  ],
+  "metric_point_to_surface_weight": 1.0,
+  "metric_residual_clip": 0.05,
+  "metric_max_points": 50000,
+  "metric_sample_seed": 991178,
+  "minimum_visible_joints": 21,
+  "PnP_max_initializer_rotation_radians": 3.141592653589793,
+  "PnP_max_final_reprojection_rmse_px": 1000.0,
+  "six_v6_gate_thresholds": null,
+  "authorizes_candidate_selection": false,
+  "authorizes_optimizer": false,
+  "expected_initialization_sha256": "592ecfd8645c3706e2dd4c07381d9cd9919419243b60ab57583ec851bc571608",
+  "global_rotation_component_bounds_radians": [
+    -3.141592653589793,
+    3.141592653589793
+  ],
+  "global_rotation_norm_max_radians": 3.141592653589793,
+  "global_reprojection_weight": 1.0,
+  "global_log_scale_prior_weight": 10.0,
+  "global_translation_prior_weight": 1.0,
+  "global_max_final_reprojection_rmse_px": 1000.0,
+  "thresholds_fitted_on_v3": false,
+  "candidate_selection_performed": false,
+  "authorizes_HC_application": false
+}

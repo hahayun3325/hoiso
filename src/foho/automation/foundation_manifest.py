@@ -87,12 +87,17 @@ def build(config_path: str|Path,manifest_path: str|Path) -> dict[str,Any]:
        'moge_out_dir':cfg.moge_out_path,'h2m_rt_dir':cfg.h2m_rt_path},
        cfg,cfg.project_root,[cfg.h2m_rt_path],inv['h2m'],
        [prior('moge_inventory','moge'),prior('hunyuan_inventory','hunyuan')]),
-      _stage('mano_registration','foho.alignment.mano',{
-       'hamer_out_dir':cfg.hamer_out_path,
-       'hunyuan_mesh_dir':cfg.hunyuan_hoi_mesh_path,
-       'aligned_mano_dir':cfg.aligned_mano_path},cfg,cfg.project_root,
-       [cfg.aligned_mano_path],inv['mano'],
-       [prior('hamer_inventory','hamer'),prior('hunyuan_inventory','hunyuan')])]
+      _stage('mano_registration','foho.automation.selected_hand_registration',{
+       'preprocess_inventory':str(inv['preprocess']),'hamer_inventory':str(inv['hamer']),
+       'h2m_inventory':str(inv['h2m']),'moge_inventory':str(inv['moge']),
+       'vitpose_script':str(Path(cfg.project_root)/'tools/gate_c_v99_11_hand_anchor/extract_case_image_vitpose_target_v99_11_7_9_21_7_2.py'),
+       'vitpose_module_root':cfg.hamer_demo_dir,
+       'solver_script':str(Path(cfg.project_root)/'tools/gate_c_v99_11_hand_anchor/run_v3_CPU_7DoF_global_hand_alignment_v99_11_7_13_3_6.py'),
+       'policy_template':str(Path(cfg.project_root)/'config/automation/alapuse02v3n60_selected_hand_CPU_7DoF.json'),
+       'output_dir':cfg.aligned_mano_path,'case_id':'alapuse02v3n60','device':'cuda:0'},
+       cfg,cfg.project_root,[cfg.aligned_mano_path],inv['mano'],
+       [prior('preprocess_inventory','preprocess'),prior('hamer_inventory','hamer'),
+        prior('h2m_inventory','h2m'),prior('moge_inventory','moge')])]
     manifest={'schema':'tracehoi.FreshFoundationManifest.v1',
       'case_id':'alapuse02v3n60','fresh_output_root':str(base),
       'stages':stages,'excluded_commands':['foho.preprocess.gemini_objname','foho.guidance.run'],

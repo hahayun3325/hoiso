@@ -282,6 +282,10 @@ def run_case(args: argparse.Namespace) -> dict[str,Any]:
         return state(root,config['case_id'],'TERMINAL_REJECTED',jury_round='Q1')
     if q1_decision!='RETRY_ONE_OWNER':
         raise RuntimeError('invalid Q1 decision:'+q1_decision)
+    if getattr(args,'stop_after_q1',False):
+        return state(root,config['case_id'],'Q1_RECOVERY_PENDING',
+                     Q1_decision=q1_decision,Q1_retry_owner=retry_owner,
+                     recovery_started=False)
     if args.max_recovery_rounds!=1:
         raise RuntimeError('exactly one recovery round is supported')
     supported=config['recovery']['supported_retry_owners']
@@ -309,6 +313,7 @@ def parser() -> argparse.ArgumentParser:
     run.add_argument('--max-recovery-rounds',type=int,default=1)
     run.add_argument('--reuse-q0-packet'); run.add_argument('--reuse-q1-result')
     run.add_argument('--resume',action='store_true')
+    run.add_argument('--stop-after-q1',action='store_true')
     return top
 
 def main() -> int:
