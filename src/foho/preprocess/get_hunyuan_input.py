@@ -127,12 +127,17 @@ def run(
         except RuntimeError as e:
             if "CUDA out of memory" in str(e):
                 print(f"CUDA OOM on image {img_id}. Clearing cache and stopping.")
+                if image_path:
+                    raise
                 return
             print(f"Runtime error on image {img_id}: {e}. Skipping.")
+            if image_path:
+                raise
         except Exception as e:
             print(f"Error processing image {img_id} ({source_image}): {e}. Skipping.")
-
             traceback.print_exc()
+            if image_path:
+                raise
             continue
 
     print("Done.")

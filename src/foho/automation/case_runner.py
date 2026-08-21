@@ -186,9 +186,11 @@ def run_foundation(config: dict[str,Any],run_root: Path,packet: Path,
         return owner/'outputs'
     prompts=prompt_views(packet,config,family,run_root/'config'/family/'prompts')
     output_root=owner/'outputs'; env_path=run_root/'config'/family/'foundation.env'
+    hand_resolution=resolve_hand_instance(load(packet))
+    atomic(run_root/'receipts'/f'{family}_hand_instance_resolution.json',hand_resolution)
     runtime_config(config['foundation']['runtime_template'],
       config['foundation']['template_root'],str(output_root),checked_image(config),prompts,
-      env_path,hand_instance=select_hand_instance(load(packet)))
+      env_path,hand_instance=hand_resolution['resolved_hand_instance'])
     raw_manifest=run_root/'config'/family/'manifest_unbound.json'
     bound_manifest=run_root/'config'/family/'manifest_GPU.json'
     bind_receipt=run_root/'receipts'/f'{family}_GPU_binding.json'
