@@ -86,3 +86,14 @@ flowchart TD
 ## Downstream route
 
 Gate A -> frame I -> Gate C -> D0 -> H0 -> H1 -> O0 -> J0 -> F0 -> export -> metrics.
+
+
+## Q1 multiview evidence-presentation correction
+
+Run 233 Q1 is preserved but accounted as
+`INVALIDATED_BY_EVIDENCE_PRESENTATION_CONTRACT`. Cell F contained one mesh
+asset rendered as three unlabeled orthographic projections. The jury described
+the XY / XZ / YZ columns as disconnected fragments. The corrected panel labels
+each view, separates the columns, and reports mesh statistics. It does not
+change or regenerate any foundation artifact. A replacement Q1 judges the same
+hash-owned inventories; Q2 remains unused.

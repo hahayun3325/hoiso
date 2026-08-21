@@ -78,6 +78,7 @@ def request(config: dict[str,Any],panel: Path,policy: dict[str,Any])->dict[str,A
       'Stage contract: MoGe is joint observation-space scene/depth and may contain exactly '
       'the selected hand plus object; do not reject it merely for that hand. Hunyuan is the '
       'object-only geometry branch and must not contain hand or arm geometry. '
+      'Cell F contains XY, XZ, and YZ orthographic projections of one Hunyuan mesh asset, not three separate objects. Do not interpret the three labeled columns as disconnected fragments. Its footer reports vertex, face, connected-component, and scene-geometry counts. An articulated laptop may contain multiple semantic components; reject Hunyuan only when the three views jointly fail to describe a coherent object or the geometry is invalid. '
       'The selected hand must match the declared image instance and be finite, nondegenerate, '
       'and spatially coherent with its 2D evidence. PASS only when every stage is acceptable. '
       'If any stage is failed or uncertain, return REJECT_CASE. Q2 is terminal: never request '

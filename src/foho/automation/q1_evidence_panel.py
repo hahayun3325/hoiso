@@ -102,28 +102,39 @@ def mesh_tile(path: Path, size: tuple[int,int], color=(26,126,160)):
     import numpy as np, trimesh
     from PIL import Image, ImageDraw
     loaded=trimesh.load(path,process=False,force='scene')
+    scene_geometry_count=len(loaded.geometry) if isinstance(loaded,trimesh.Scene) else 1
     mesh=loaded.dump(concatenate=True) if isinstance(loaded,trimesh.Scene) else loaded
     vertices=np.asarray(mesh.vertices,dtype=float); faces=np.asarray(mesh.faces,dtype=int)
     if vertices.ndim!=2 or len(vertices)<3 or faces.ndim!=2 or len(faces)<1:
         raise RuntimeError('invalid mesh: '+str(path))
-    finite=np.all(np.isfinite(vertices),axis=1)
-    if not finite.all(): raise RuntimeError('nonfinite mesh: '+str(path))
-    center=(vertices.min(axis=0)+vertices.max(axis=0))/2
-    vertices=vertices-center
+    if not np.isfinite(vertices).all(): raise RuntimeError('nonfinite mesh: '+str(path))
+    center=(vertices.min(axis=0)+vertices.max(axis=0))/2; vertices=vertices-center
     scale=float(np.ptp(vertices,axis=0).max())
     if not math.isfinite(scale) or scale<=0: raise RuntimeError('degenerate mesh: '+str(path))
     vertices/=scale
     edges=np.vstack((faces[:,[0,1]],faces[:,[1,2]],faces[:,[2,0]]))
     edges=np.unique(np.sort(edges,axis=1),axis=0)
     if len(edges)>24000: edges=edges[np.linspace(0,len(edges)-1,24000,dtype=int)]
-    canvas=Image.new('RGB',size,'white'); draw=ImageDraw.Draw(canvas)
-    views=[(0,1),(0,2),(1,2)]; gap=8; panel_w=(size[0]-2*gap)//3
-    for view,(a,b) in enumerate(views):
+    try: component_count=len(mesh.split(only_watertight=False))
+    except Exception: component_count=-1
+    canvas=Image.new('RGB',size,'white'); draw=ImageDraw.Draw(canvas); body,_=font(17)
+    views=[('XY',0,1),('XZ',0,2),('YZ',1,2)]; gap=10; footer_h=34
+    plot_h=size[1]-footer_h; panel_w=(size[0]-2*gap)//3
+    for view,(label,a,b) in enumerate(views):
         offset=view*(panel_w+gap); pts=vertices[:,[a,b]]
         px=offset+panel_w/2+pts[:,0]*(panel_w*.82)
-        py=size[1]/2-pts[:,1]*(size[1]*.82)
+        py=plot_h/2-pts[:,1]*(plot_h*.76)
+        if view:
+            draw.line((offset-gap/2,0,offset-gap/2,plot_h),fill=(170,170,170),width=1)
+        draw.rectangle((offset+4,4,offset+42,27),fill='white')
+        draw.text((offset+8,5),label,font=body,fill='black')
         for i,j in edges:
             draw.line((float(px[i]),float(py[i]),float(px[j]),float(py[j])),fill=color,width=1)
+    draw.rectangle((0,plot_h,size[0],size[1]),fill='white')
+    caption=('one mesh | three orthographic views | V='+str(len(vertices))+
+             ' F='+str(len(faces))+' CC='+str(component_count)+
+             ' scene-geometries='+str(scene_geometry_count))
+    draw.text((8,plot_h+6),caption,font=body,fill='black')
     return canvas
 
 def metadata_tile(paths: list[Path], size: tuple[int,int]):

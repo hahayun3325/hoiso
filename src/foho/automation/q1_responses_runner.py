@@ -57,6 +57,7 @@ def request(config: dict[str,Any],panel: Path,policy: dict[str,Any]) -> dict[str
       'Stage contract: MoGe is joint observation-space scene/depth and may contain exactly '
       'the selected hand plus object; do not reject it merely for that hand. Hunyuan is the '
       'object-only geometry branch and must not contain hand or arm geometry. '
+      'Cell F contains XY, XZ, and YZ orthographic projections of one Hunyuan mesh asset, not three separate objects. Do not interpret the three labeled columns as disconnected fragments. Its footer reports vertex, face, connected-component, and scene-geometry counts. An articulated laptop may contain multiple semantic components; reject Hunyuan only when the three views jointly fail to describe a coherent object or the geometry is invalid. '
       'Masks must select the named semantic role without obvious leakage; inpainting must be '
       'locally plausible and preserve visible evidence; MoGe must be coherent; Hunyuan and HaMeR '
       'must have plausible nondegenerate geometry; H2M and MANO outputs must be present and coherent. '
