@@ -1,14 +1,15 @@
 {
-  "schema": "tracehoi.FoundationRunInCondaAdapterContract.v1",
+  "schema": "tracehoi.FoundationRunInCondaAdapterContract.v2",
   "callable": "foho.automation.foundation_run_in_conda_adapter:run",
-  "controller_commit": "db87687012a08ad8083ad0eac4c9b0c9d41a03e2",
-  "kwargs_schema": {
-    "runner_args": "JSON list",
-    "runner_kwargs": "JSON object or null"
-  },
-  "shell": false,
+  "runner_args": "exact run_in_conda positional vector",
+  "runner_kwargs": "exact run_in_conda keyword mapping",
+  "output_roots": "nonempty roots required after successful child return",
+  "output_receipt": "atomic SHA-256 inventory",
+  "secret_rule": "no API key or token may be serialized in runner_args",
   "active_stage_count": 7,
-  "excluded_command_count": 2,
-  "environment_owner": "foho.utils.runner.run_in_conda",
-  "model_imported_in_controller_parent": false
+  "excluded_commands": [
+    "gemini_objname",
+    "foho.guidance.run"
+  ],
+  "shell_owned_only_by": "foho.utils.runner.run_in_conda"
 }
