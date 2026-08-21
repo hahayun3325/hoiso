@@ -64,12 +64,29 @@ def encode(value: Any) -> str:
         return ', '.join(item.strip() for item in value)
     raise RuntimeError('invalid short-keyword prompt value')
 
-def select_hand_instance(packet: dict[str,Any]) -> str:
-    value=str((packet.get('gate_b') or {}).get('hand_instance',''))
+def resolve_hand_instance(packet: dict[str,Any]) -> dict[str,Any]:
+    raw=str((packet.get('gate_b') or {}).get('hand_instance',''))
     allowed={'upper_image_hand','lower_image_hand','single_hand','ambiguous'}
-    if value not in allowed:
-        raise RuntimeError('invalid or missing Q0 gate_b.hand_instance:'+repr(value))
-    return value
+    if raw not in allowed:
+        raise RuntimeError('invalid or missing Q0 gate_b.hand_instance:'+repr(raw))
+    active=str((packet.get('gate_d0') or {}).get('active_hand','')).strip().lower()
+    positional=[]
+    if 'upper' in active: positional.append('upper_image_hand')
+    if 'lower' in active: positional.append('lower_image_hand')
+    if raw=='ambiguous':
+        if len(positional)!=1:
+            raise RuntimeError('ambiguous Gate-B hand has no unique Gate-D0 positional owner:'+repr(active))
+        resolved=positional[0]
+        owner='gate_d0.active_hand'
+    else:
+        resolved=raw
+        owner='gate_b.hand_instance'
+        if raw in {'upper_image_hand','lower_image_hand'} and positional and positional!=[raw]:
+            raise RuntimeError('Gate-B/Gate-D0 hand owner conflict:'+repr((raw,active)))
+    return {'schema':'tracehoi.HandInstanceResolution.v1',
+      'gate_b_hand_instance':raw,'gate_d0_active_hand':active,
+      'resolved_hand_instance':resolved,'resolution_owner':owner,
+      'decision':'hand_instance_resolution_closed'}
 
 def validate_q0_packet(path: str|Path) -> Path:
     packet=load(path)
@@ -92,7 +109,10 @@ def prompt_views(packet_path: str|Path,config: dict[str,Any],family: str,
     packet=load(packet_path); selected=values(packet,family); image=checked_image(config)
     category=encode(selected['category_compatibility'])
     object_prompt=encode(selected['object_segmentation'])
-    if family=='recovery' and config['prompt_policy'].get('recovery_object_single_label'):
+    scalar=config['prompt_policy'].get('object_segmentation_single_label')
+    if scalar:
+        object_prompt=encode(scalar)
+    elif family=='recovery' and config['prompt_policy'].get('recovery_object_single_label'):
         object_prompt=config['prompt_policy']['recovery_object_single_label']
     flux=encode(selected['flux_inpainting'])
     rows={'category':category,'object':object_prompt,'flux':flux}; paths={}

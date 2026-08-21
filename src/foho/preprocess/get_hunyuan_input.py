@@ -94,8 +94,10 @@ def run(
                 )
 
             if out is None:
-                print(f"No masks for {img_id}. Skipping.")
-                continue
+                raise RuntimeError(
+                    f"no_hoi_segmentation:image_id={img_id}:object_name={object_name!r}:"
+                    f"hand_instance={hand_instance!r}"
+                )
             occ_img, cropped_obj_mask, cropped_hand_mask, cropped_img_wo_bckg, crop_img_hoi, is_right = out
 
             occ_img_path = os.path.join(occ_img_dir, f"{img_id}_occ_obj.png")
