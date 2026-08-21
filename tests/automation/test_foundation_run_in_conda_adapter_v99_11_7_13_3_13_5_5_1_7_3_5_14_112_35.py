@@ -24,7 +24,7 @@ class AdapterInventoryTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)/'out'; receipt=Path(temp)/'inventory.json'; seen={}
             def call(*args,**kwargs):
-                seen.update(args=args,kwargs=kwargs); root.mkdir(); (root/'asset.bin').write_bytes(b'asset')
+                seen.update(args=args,kwargs=kwargs); root.mkdir(exist_ok=True); (root/'asset.bin').write_bytes(b'asset')
             with fake(call):
                 adapter.run(runner_args=['conda.sh','foho','python3 -m owner','/tmp',{}],
                   output_roots=[str(root)],output_receipt=str(receipt))
@@ -32,6 +32,22 @@ class AdapterInventoryTest(unittest.TestCase):
             packet=json.loads(receipt.read_text())
             self.assertEqual(packet['decision'],'foundation_stage_artifact_inventory_closed')
             self.assertEqual(packet['file_count'],1)
+    def test_output_roots_exist_before_child(self):
+        adapter=load()
+        with tempfile.TemporaryDirectory() as temp:
+            roots=[Path(temp)/'one',Path(temp)/'two']
+            receipt=Path(temp)/'inventory.json'
+            def call(*args,**kwargs):
+                self.assertTrue(all(root.is_dir() for root in roots))
+                for index,root in enumerate(roots):
+                    (root/f'asset_{index}.bin').write_bytes(b'asset')
+            with fake(call):
+                adapter.run(runner_args=['conda.sh','foho','command','/tmp',{}],
+                  output_roots=[str(root) for root in roots],
+                  output_receipt=str(receipt))
+            packet=json.loads(receipt.read_text())
+            self.assertEqual(packet['file_count'],2)
+            self.assertEqual(len(packet['output_roots']),2)
     def test_empty_root_is_error_and_no_receipt(self):
         adapter=load()
         with tempfile.TemporaryDirectory() as temp:

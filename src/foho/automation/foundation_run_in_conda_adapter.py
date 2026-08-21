@@ -35,6 +35,9 @@ def run(*, runner_args: list[Any], runner_kwargs: dict[str,Any]|None=None,
     if not isinstance(runner_kwargs,dict): raise TypeError('runner_kwargs must be a dict')
     if output_roots is not None and not isinstance(output_roots,list):
         raise TypeError('output_roots must be a list')
+    prepared_roots=[Path(raw).resolve() for raw in (output_roots or [])]
+    for root in prepared_roots:
+        root.mkdir(parents=True,exist_ok=True)
     from foho.utils.runner import run_in_conda
     result=run_in_conda(*runner_args,**runner_kwargs)
     returncode=getattr(result,'returncode',None)

@@ -1,5 +1,5 @@
 {
-  "schema": "tracehoi.FoundationRunInCondaAdapterContract.v2",
+  "schema": "tracehoi.FoundationRunInCondaAdapterContract.v3",
   "callable": "foho.automation.foundation_run_in_conda_adapter:run",
   "runner_args": "exact run_in_conda positional vector",
   "runner_kwargs": "exact run_in_conda keyword mapping",
@@ -11,5 +11,9 @@
     "gemini_objname",
     "foho.guidance.run"
   ],
-  "shell_owned_only_by": "foho.utils.runner.run_in_conda"
+  "shell_owned_only_by": "foho.utils.runner.run_in_conda",
+  "prelaunch_output_directory_rule": "mkdir(parents=True, exist_ok=True) for each declared output root",
+  "failure_directory_rule": "empty directories may remain; inventory and controller stage receipt remain absent",
+  "source_owner": "foho.automation.foundation_run_in_conda_adapter:run",
+  "decision": "foundation_output_directory_lifecycle_contract_closed"
 }
