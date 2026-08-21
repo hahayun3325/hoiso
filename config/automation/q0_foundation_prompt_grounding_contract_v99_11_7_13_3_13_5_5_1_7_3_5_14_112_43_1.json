@@ -1,0 +1,12 @@
+{
+  "schema": "tracehoi.Q0FoundationPromptGroundingContract.v1",
+  "version": "14_112_43_1",
+  "category_owner": "combined_Q0_semantic_packet.object_category",
+  "keyword_owner": "five_foundation_consumer_handoff.{branch}_values.object_segmentation",
+  "output_rule": "exact category first, then frozen branch keywords, case-insensitive deduplication",
+  "maximum_keywords": 8,
+  "positive_keywords_only": true,
+  "fixed_hand_prompt": "only hand",
+  "must_not_call_API": true,
+  "must_not_start_CUDA": true
+}
