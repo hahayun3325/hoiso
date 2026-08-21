@@ -73,7 +73,7 @@ def build(config_path: str|Path,manifest_path: str|Path) -> dict[str,Any]:
        'output':cfg.moge_out_path},cfg,cfg.project_root,[cfg.moge_out_path],
        inv['moge'],[prior('preprocess_inventory','preprocess')]),
       _stage('hunyuan','foho.geometry.hunyuan',{
-       'project_root':cfg.project_root,'image_dir':cfg.cropped_hoi_wo_bckg_path,
+       'project_root':cfg.project_root,'image_dir':cfg.masked_obj_path,
        'save_dir':cfg.hunyuan_hoi_mesh_path},cfg,cfg.project_root,
        [cfg.hunyuan_hoi_mesh_path],inv['hunyuan'],
        [prior('preprocess_inventory','preprocess')]),

@@ -75,6 +75,9 @@ def request(config: dict[str,Any],panel: Path,policy: dict[str,Any])->dict[str,A
     prompt=(
       'You are the terminal Q2 jury for one hand-object reconstruction after its only recovery. '
       'Inspect all eight cells and judge each of the seven producers independently. '
+      'Stage contract: MoGe is joint observation-space scene/depth and may contain exactly '
+      'the selected hand plus object; do not reject it merely for that hand. Hunyuan is the '
+      'object-only geometry branch and must not contain hand or arm geometry. '
       'The selected hand must match the declared image instance and be finite, nondegenerate, '
       'and spatially coherent with its 2D evidence. PASS only when every stage is acceptable. '
       'If any stage is failed or uncertain, return REJECT_CASE. Q2 is terminal: never request '

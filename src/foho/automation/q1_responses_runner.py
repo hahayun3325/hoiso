@@ -54,6 +54,9 @@ def request(config: dict[str,Any],panel: Path,policy: dict[str,Any]) -> dict[str
     prompt=(
       'You are the automatic Q1 jury for a single-image hand-object reconstruction. '
       'Inspect all eight labeled cells. Judge each fresh producer independently. '
+      'Stage contract: MoGe is joint observation-space scene/depth and may contain exactly '
+      'the selected hand plus object; do not reject it merely for that hand. Hunyuan is the '
+      'object-only geometry branch and must not contain hand or arm geometry. '
       'Masks must select the named semantic role without obvious leakage; inpainting must be '
       'locally plausible and preserve visible evidence; MoGe must be coherent; Hunyuan and HaMeR '
       'must have plausible nondegenerate geometry; H2M and MANO outputs must be present and coherent. '
