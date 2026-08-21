@@ -1,0 +1,23 @@
+{
+  "schema": "tracehoi.PostQ2Config.v1",
+  "case_id": "alapuse02v3n60",
+  "owner_bundle": "/home/fredcui/Projects/FollowMyHold/config/automation/alapuse02v3n60_semantic_owner_bundles_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_8_1.json",
+  "roots": {
+    "${PROJECT_ROOT}": "/home/fredcui/Projects/FollowMyHold",
+    "${PHASE0_ROOT}": "/home/fredcui/foho_phase0",
+    "${CASE_ROOT}": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2"
+  },
+  "stage_order": [
+    "gate_a",
+    "frame_i",
+    "gate_c",
+    "d0",
+    "h0",
+    "h1",
+    "o0",
+    "j0",
+    "f0",
+    "final_export",
+    "evaluation"
+  ]
+}
