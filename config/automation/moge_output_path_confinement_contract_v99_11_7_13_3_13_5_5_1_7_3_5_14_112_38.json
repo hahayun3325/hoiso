@@ -1,0 +1,11 @@
+{
+  "schema": "tracehoi.MoGeOutputPathConfinementContract.v1",
+  "source_owner": "foho.geometry.moge",
+  "helper": "_confined_output_path",
+  "normalization_scope": "image stem only",
+  "stem_rule": "substring through first hoi token",
+  "confinement_rule": "resolved target must remain below resolved output_path",
+  "regression_parent": "trace_hoi parent must not truncate output root",
+  "misplaced_historical_outputs": "diagnostic only; never adopted automatically",
+  "decision": "moge_output_path_confinement_contract_closed"
+}

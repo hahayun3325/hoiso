@@ -14,6 +14,18 @@ import warnings
 
 from foho.configs import third_party_root
 
+
+def _confined_output_path(input_path: str, output_path: str, image_path: Path) -> Path:
+    input_owner=Path(input_path).resolve()
+    image_owner=Path(image_path).resolve()
+    relative_parent=image_owner.relative_to(input_owner).parent
+    normalized_stem=image_owner.stem.split("hoi",1)[0]+"hoi"
+    output_owner=Path(output_path).resolve()
+    target=(output_owner/relative_parent/normalized_stem).resolve()
+    if os.path.commonpath([str(output_owner),str(target)])!=str(output_owner):
+        raise RuntimeError(f"MoGe output escaped declared root: {target}")
+    return target
+
 def run(
     project_root: str,
     input_path: str,
@@ -107,8 +119,7 @@ def run(
         intrinsics = output["intrinsics"].cpu().numpy()
         normal = output["normal"].cpu().numpy() if "normal" in output else None
 
-        save_path = Path(output_path, image_path.relative_to(input_path).parent, image_path.stem)
-        save_path = Path(str(save_path).split("hoi")[0] + "hoi")
+        save_path = _confined_output_path(input_path,output_path,image_path)
         save_path.mkdir(exist_ok=True, parents=True)
 
         if save_maps:
