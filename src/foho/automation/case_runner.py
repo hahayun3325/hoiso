@@ -64,6 +64,13 @@ def encode(value: Any) -> str:
         return ', '.join(item.strip() for item in value)
     raise RuntimeError('invalid short-keyword prompt value')
 
+def select_hand_instance(packet: dict[str,Any]) -> str:
+    value=str((packet.get('gate_b') or {}).get('hand_instance',''))
+    allowed={'upper_image_hand','lower_image_hand','single_hand','ambiguous'}
+    if value not in allowed:
+        raise RuntimeError('invalid or missing Q0 gate_b.hand_instance:'+repr(value))
+    return value
+
 def validate_q0_packet(path: str|Path) -> Path:
     packet=load(path)
     for family in ('primary','recovery'):
@@ -104,11 +111,13 @@ def prompt_views(packet_path: str|Path,config: dict[str,Any],family: str,
     atomic(root/'prompt_views.json',receipt); return paths
 
 def runtime_config(template: str|Path,old_root: str,new_root: str,image: Path,
-                   prompts: dict[str,str],output: Path) -> None:
+                   prompts: dict[str,str],output: Path,
+                   hand_instance: str='closest_to_object') -> None:
     text=Path(template).read_text().replace(old_root,new_root)
     updates={'IMAGE_PATH':str(image),'BASE_DIR':new_root,
       'GEMINI_RESPONSES':prompts['category'],
-      'OBJECT_PROMPT_CSV':prompts['object'],'FLUX_PROMPT_CSV':prompts['flux']}
+      'OBJECT_PROMPT_CSV':prompts['object'],'FLUX_PROMPT_CSV':prompts['flux'],
+      'HAND_INSTANCE':hand_instance}
     lines=[]; seen=set()
     for line in text.splitlines():
         if '=' in line and not line.lstrip().startswith('#'):
@@ -116,7 +125,10 @@ def runtime_config(template: str|Path,old_root: str,new_root: str,image: Path,
             if key in updates: line=key+'='+updates[key]; seen.add(key)
         lines.append(line)
     missing=set(updates)-seen
-    if missing: raise RuntimeError('runtime template missing keys:'+repr(sorted(missing)))
+    for key in sorted(missing & {'HAND_INSTANCE'}):
+        lines.append(key+'='+updates[key])
+    remaining=missing-{'HAND_INSTANCE'}
+    if remaining: raise RuntimeError('runtime template missing keys:'+repr(sorted(remaining)))
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text('\n'.join(lines)+'\n')
 
@@ -155,7 +167,8 @@ def run_foundation(config: dict[str,Any],run_root: Path,packet: Path,
     prompts=prompt_views(packet,config,family,run_root/'config'/family/'prompts')
     output_root=owner/'outputs'; env_path=run_root/'config'/family/'foundation.env'
     runtime_config(config['foundation']['runtime_template'],
-      config['foundation']['template_root'],str(output_root),checked_image(config),prompts,env_path)
+      config['foundation']['template_root'],str(output_root),checked_image(config),prompts,
+      env_path,hand_instance=select_hand_instance(load(packet)))
     raw_manifest=run_root/'config'/family/'manifest_unbound.json'
     bound_manifest=run_root/'config'/family/'manifest_GPU.json'
     bind_receipt=run_root/'receipts'/f'{family}_GPU_binding.json'

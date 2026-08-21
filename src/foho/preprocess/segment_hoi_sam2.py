@@ -12,6 +12,7 @@ from kiui.vis import plot_image as plti
 from segment_anything import sam_model_registry, SamPredictor
 
 from foho.configs import third_party_root
+from foho.automation.hand_instance_selector import select_hand_index
 
 _TP = third_party_root()
 sys.path.append(_TP)
@@ -142,7 +143,7 @@ def calculate_iou(box1, box2):
     return intersection / union if union > 0 else 0.0
 
 
-def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_detector, object_name=None):
+def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_detector, object_name=None, hand_instance="closest_to_object"):
     only_upto_wrist = False
     img_cv2 = cv2.imread(img_path)
     img_pil = Image.fromarray(img_cv2[..., ::-1])
@@ -171,13 +172,9 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     elif len(bboxes) == 1:
         bbox_hand = np.array(bboxes[0]).reshape((-1, 2))
     elif len(bboxes) > 1:
-        hand_idx = None
-        max_iou = -10.
-        for cur_idx, cur_bbox in enumerate(bboxes):
-            cur_iou = calculate_iou(cur_bbox, bbox_obj.reshape(-1).tolist())
-            if cur_iou >= max_iou:
-                hand_idx = cur_idx
-                max_iou = cur_iou
+        hand_idx = select_hand_index(
+            bboxes, hand_instance, bbox_obj.reshape(-1).tolist()
+        )
         bbox_hand = np.array(bboxes[hand_idx]).reshape((-1, 2))
         bboxes = [bboxes[hand_idx]]
         is_right = [is_right[hand_idx]]
@@ -223,7 +220,7 @@ def hoi_detector(img_path, hand_detector, sam_model, IoU_threshold, hand_object_
     return mask_obj, mask_hand, crop_img_hoi, int(is_right[0])
 
 
-def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detector, object_name='manipulated object'):
+def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detector, object_name='manipulated object', hand_instance='closest_to_object'):
     """
     Given a source image, returns the hand and object masks. 
     """
@@ -232,7 +229,7 @@ def get_hoi_mask(source_image_path, hand_detector, sam_model, hand_object_detect
 
     hand_detector = hand_detector.to(device)
 
-    result = hoi_detector(source_image_path, hand_detector, sam_model, IoU_threshold, hand_object_detector, object_name)
+    result = hoi_detector(source_image_path, hand_detector, sam_model, IoU_threshold, hand_object_detector, object_name, hand_instance)
     if result is None:
         return None
     crop_mask_obj, crop_hand_mask, crop_img_hoi, is_right = result

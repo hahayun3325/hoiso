@@ -30,6 +30,7 @@ def run(
     original_img_dir: str,
     gemini_responses: Optional[str] = None,
     project_root: Optional[str] = None,
+    hand_instance: str = "closest_to_object",
 ) -> None:
     project_root = project_root or os.environ.get(
         "FOHO_PROJECT_ROOT", third_party_root()
@@ -83,11 +84,13 @@ def run(
                 object_name = object_name[0] if len(object_name) else None
                 print(f"Object name for {img_id}: {object_name}")
                 out = hoiSAM2.get_hoi_mask(
-                    source_image, hand_detector, sam_model, hand_object_detector, object_name
+                    source_image, hand_detector, sam_model, hand_object_detector,
+                    object_name=object_name, hand_instance=hand_instance
                 )
             else:
                 out = hoiSAM2.get_hoi_mask(
-                    source_image, hand_detector, sam_model, hand_object_detector
+                    source_image, hand_detector, sam_model, hand_object_detector,
+                    hand_instance=hand_instance
                 )
 
             if out is None:
@@ -144,6 +147,7 @@ def main() -> None:
     parser.add_argument("--original_img_dir", required=True)
     parser.add_argument("--gemini_responses", default=None)
     parser.add_argument("--project_root", default=None)
+    parser.add_argument("--hand_instance", default="closest_to_object")
     args = parser.parse_args()
 
     run(
@@ -156,6 +160,7 @@ def main() -> None:
         original_img_dir=args.original_img_dir,
         gemini_responses=args.gemini_responses,
         project_root=args.project_root,
+        hand_instance=args.hand_instance,
     )
 
 
