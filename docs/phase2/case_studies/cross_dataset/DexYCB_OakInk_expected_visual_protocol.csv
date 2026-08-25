@@ -1,0 +1,13 @@
+dataset,category_id,native_category_key,object_class,candidate_id,evidence_class,expected_tracehoi_visual,expected_followmyhold_visual,primary_stress,manuscript_status
+DexYCB,D003,ycb_11,handled_pitcher,p001c01,EXPECTED_HYPOTHESIS_ILLUSTRATION,handle-specific grasp,body/rim drift and over-closing across handle,part ownership,eligible for supplemental protocol; measured output required for results
+DexYCB,D003,ycb_11,handled_pitcher,p001c03,EXPECTED_HYPOTHESIS_ILLUSTRATION,handle/body-junction contact,bodyward drift crowds handle opening,handle/body ambiguity,eligible for supplemental protocol
+DexYCB,D009,ycb_17,scissors,p002c08,EXPECTED_HYPOTHESIS_ILLUSTRATION,open scissors and loop-centered grasp,reduced opening and pivot drift,articulation and loop contact,eligible after source-alignment audit
+DexYCB,D009,ycb_17,scissors,p004c03,EXPECTED_HYPOTHESIS_ILLUSTRATION,downward hand axis on closed blade/shank,small thumb gap only,contact under locked orientation,HOLD: current pair reverses hand orientation; exclude from positive main claims
+OakInk,O041,C37001,stapler,p006c01,EXPECTED_HYPOTHESIS_ILLUSTRATION,upper-arm pinch with visible gap,gap reduction and base drift,articulated part ownership,supplemental diversity case
+OakInk,O042,C40001,eyeglasses,p006c08,EXPECTED_HYPOTHESIS_ILLUSTRATION,thumb/index at image-left temple,extra middle-finger frame contact,finger contact selectivity,strong candidate once measured
+OakInk,O042,C40001,eyeglasses,p006c09,EXPECTED_HYPOTHESIS_ILLUSTRATION,selected owner and contact side,opposite symmetric contact side,hand identity and side,supplement; avoid eyeglasses overrepresentation in main
+OakInk,O042,C40001,eyeglasses,p007c01,EXPECTED_HYPOTHESIS_ILLUSTRATION,stronger object-owning temple pinch,opposite hinge/temple,hand identity and side,supplement; avoid eyeglasses overrepresentation in main
+OakInk,O044,C42001,binoculars,p007c04,EXPECTED_HYPOTHESIS_ILLUSTRATION,localized right-barrel/bridge grasp,broad symmetry-ambiguous grasp,part ownership on symmetric object,strong candidate once measured
+OakInk,O045,C43001,game_controller,p007c08,EXPECTED_HYPOTHESIS_ILLUSTRATION,right-grip ownership and curl,inward drift and flattened fingers,grip and contact,strong candidate once measured
+OakInk,O100,Y35037,scissors,p008c02,EXPECTED_HYPOTHESIS_ILLUSTRATION,thumb/index/middle blade contact,index floats and ring contacts,selected fingertips,strong candidate once measured
+OakInk,O100,Y35037,scissors,p008c07,EXPECTED_HYPOTHESIS_ILLUSTRATION,separated loops and handle contact,loop-depth collapse and pivot drift,depth and part contact,supplemental alternative view
