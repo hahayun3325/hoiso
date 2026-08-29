@@ -1,0 +1,40 @@
+{
+  "schema": "tracehoi.GateAConfig.v1",
+  "case_id": "alapuse02v3n60",
+  "project_root": "/home/fredcui/Projects/FollowMyHold",
+  "partfield_root": "/home/fredcui/Projects/ArtHOI-4D-Reconstruction/third_party/PartField",
+  "partfield_python_env": "FOHO_PARTFIELD_PYTHON",
+  "partfield_config": "configs/final/demo.yaml",
+  "checkpoint": "model/model_objaverse.ckpt",
+  "result_name": "alapuse02v3n60_auto_gate_a_n2",
+  "q0": {
+    "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_case_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_58/q0/combined_Q0_semantic_packet.json",
+    "sha256": "7fe45aa3e9319dd7de0a8c4107b4e5b2e1f475e7d243bab27fe936017c1031e4"
+  },
+  "object_mesh": {
+    "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/trace_hoi_automatic_case_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_233/foundation/primary/outputs/05_hunyuan/alapuse02v3n60_hoi_mesh.ply",
+    "sha256": "43376e6860fc68117015c40c13e65cf9a6be4ee415a7132b636aea76518f83aa"
+  },
+  "scripts": {
+    "merge": "/home/fredcui/Projects/FollowMyHold/scripts/phase2/run_gate_a_partfield_vmap_merge_adapter.py",
+    "coverage": "/home/fredcui/Projects/FollowMyHold/scripts/phase2/check_gate_a_partfield_vmap_face_coverage_generic.py",
+    "quality": "/home/fredcui/Projects/FollowMyHold/scripts/phase2/report_gate_a_partfield_vmap_quality_generic.py"
+  },
+  "target_faces": 30000,
+  "n_point_per_face": 1,
+  "n_sample_each": 10000,
+  "max_num_clusters": 2,
+  "cluster_option": 0,
+  "expected_parts": ["screen_lid", "keyboard_base"],
+  "semantic_mapping_policy": "alapuse02v3n60_n2_face_count_v1",
+  "timeouts": {
+    "partfield_seconds": 7200,
+    "cpu_step_seconds": 1800
+  },
+  "thresholds": {
+    "minimum_unique_face_coverage": 0.95,
+    "maximum_duplicate_ratio": 0.05,
+    "minimum_bbox_ratio": 0.90,
+    "maximum_bbox_ratio": 1.10
+  }
+}
