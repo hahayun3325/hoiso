@@ -3,39 +3,43 @@
 from __future__ import annotations
 
 import argparse
-import glob
 import os
 
-from foho.alignment.mesh_align import align_meshes_impl
+from pathlib import Path
+from foho.case_artifacts import mesh_case_id
+
+
+def _alignment_pairs(hunyuan_mesh_dir: str, moge_out_dir: str):
+    meshes = sorted(Path(hunyuan_mesh_dir).glob("*_hoi_mesh.ply"))
+    if not meshes:
+        raise FileNotFoundError(f"No Hunyuan HOI meshes found in {hunyuan_mesh_dir}")
+    pairs = []
+    missing = []
+    for source in meshes:
+        case = mesh_case_id(source)
+        moge_dir = Path(moge_out_dir) / f"{case}_cropped_hoi"
+        target = next((moge_dir / name for name in ("mesh.ply", "pointcloud.ply", "mesh.glb")
+                       if (moge_dir / name).is_file() and (moge_dir / name).stat().st_size > 0), None)
+        if not source.is_file() or source.stat().st_size == 0:
+            missing.append(f"{case}: Hunyuan mesh is empty or not a file ({source})")
+        elif target is None:
+            missing.append(f"{case}: no nonempty MoGe mesh/pointcloud in {moge_dir}")
+        else:
+            pairs.append((source, target))
+    if missing:
+        raise FileNotFoundError("Incomplete H2M inputs; no alignment started: " + "; ".join(missing))
+    return pairs
 
 
 def run(hunyuan_mesh_dir: str, moge_out_dir: str, h2m_rt_dir: str) -> None:
-    meshes = glob.glob(os.path.join(hunyuan_mesh_dir, "*.ply"))
-    if not meshes:
-        print(f"No Hunyuan HOI meshes found in {hunyuan_mesh_dir}")
-        return
-
-    for mesh_path in meshes:
-        base_name = os.path.basename(mesh_path)
-        i = base_name.split("_")[0]
-        j = os.path.splitext(base_name)[0]
-        moge_dir = os.path.join(moge_out_dir, f"{i}_cropped_hoi")
-        target_mesh = os.path.join(moge_dir, "mesh.ply")
-        if not os.path.isfile(target_mesh):
-            # MoGe typically writes pointcloud.ply and/or mesh.glb.
-            pointcloud_mesh = os.path.join(moge_dir, "pointcloud.ply")
-            glb_mesh = os.path.join(moge_dir, "mesh.glb")
-            if os.path.isfile(pointcloud_mesh):
-                target_mesh = pointcloud_mesh
-            elif os.path.isfile(glb_mesh):
-                target_mesh = glb_mesh
-            else:
-                print(f"No MoGe mesh found for {i} in {moge_dir}. Skipping.")
-                continue
+    pairs = _alignment_pairs(hunyuan_mesh_dir, moge_out_dir)
+    from foho.alignment.mesh_align import align_meshes_impl
+    Path(h2m_rt_dir).mkdir(parents=True, exist_ok=True)
+    for source, target in pairs:
         align_meshes_impl(
-            source_mesh_path=mesh_path,
-            target_mesh_path=target_mesh,
-            transform_path=os.path.join(h2m_rt_dir, j),
+            source_mesh_path=str(source),
+            target_mesh_path=str(target),
+            transform_path=os.path.join(h2m_rt_dir, source.stem),
             transformed_mesh_path=None,
             fixed_scale=False,
             outliers=0.2,

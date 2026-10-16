@@ -13,13 +13,14 @@ from typing import Optional
 import warnings
 
 from foho.configs import third_party_root
+from foho.case_artifacts import image_case_id
 
 
 def _confined_output_path(input_path: str, output_path: str, image_path: Path) -> Path:
     input_owner=Path(input_path).resolve()
     image_owner=Path(image_path).resolve()
     relative_parent=image_owner.relative_to(input_owner).parent
-    normalized_stem=image_owner.stem.split("hoi",1)[0]+"hoi"
+    normalized_stem=image_case_id(image_owner)+"_cropped_hoi"
     output_owner=Path(output_path).resolve()
     target=(output_owner/relative_parent/normalized_stem).resolve()
     if os.path.commonpath([str(output_owner),str(target)])!=str(output_owner):
@@ -44,6 +45,26 @@ def run(
     save_ply: bool = True,
     show: bool = False,
 ) -> None:
+    include_suffices = ["jpg", "png", "jpeg", "JPG", "PNG", "JPEG"]
+    if Path(input_path).is_dir():
+        image_paths = sorted(
+            itertools.chain(*(Path(input_path).rglob(f"*.{suffix}") for suffix in include_suffices))
+        )
+    else:
+        image_paths = [Path(input_path)]
+
+    if len(image_paths) == 0:
+        raise FileNotFoundError(f"No image files found in {input_path}")
+
+    output_paths = {}
+    for image_path in image_paths:
+        if not image_path.is_file():
+            raise FileNotFoundError(f"Image is not a file: {image_path}")
+        target = _confined_output_path(input_path, output_path, image_path)
+        if target in output_paths:
+            raise ValueError(f"Multiple images target {target}: {output_paths[target]} and {image_path}")
+        output_paths[target] = image_path
+
     os.environ["OPENCV_IO_ENABLE_OPENEXR"] = "1"
     tp = third_party_root()
     sys.path.append(tp)
@@ -56,22 +77,11 @@ def run(
     from tqdm import tqdm
 
     from moge.model import import_model_class_by_version
-    from moge.utils.io import save_glb, save_ply
+    from moge.utils.io import save_glb as write_glb, save_ply as write_ply
     from moge.utils.vis import colorize_depth, colorize_normal
     import utils3d
 
     device = torch.device(device_name)
-
-    include_suffices = ["jpg", "png", "jpeg", "JPG", "PNG", "JPEG"]
-    if Path(input_path).is_dir():
-        image_paths = sorted(
-            itertools.chain(*(Path(input_path).rglob(f"*.{suffix}") for suffix in include_suffices))
-        )
-    else:
-        image_paths = [Path(input_path)]
-
-    if len(image_paths) == 0:
-        raise FileNotFoundError(f"No image files found in {input_path}")
 
     if pretrained_model_name_or_path is None:
         default_models = {
@@ -169,10 +179,10 @@ def run(
                 vertex_normals = vertex_normals * [1, -1, -1]
 
         if save_glb:
-            save_glb(save_path / "mesh.glb", vertices, faces, vertex_uvs, image, vertex_normals)
+            write_glb(save_path / "mesh.glb", vertices, faces, vertex_uvs, image, vertex_normals)
 
         if save_ply:
-            save_ply(save_path / "pointcloud.ply", vertices, np.zeros((0, 3), dtype=np.int32), vertex_colors, vertex_normals)
+            write_ply(save_path / "pointcloud.ply", vertices, np.zeros((0, 3), dtype=np.int32), vertex_colors, vertex_normals)
 
         if show:
             import trimesh

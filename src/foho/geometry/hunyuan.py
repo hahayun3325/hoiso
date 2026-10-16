@@ -6,6 +6,10 @@ import argparse
 import os
 import sys
 from typing import List
+from pathlib import Path
+import uuid
+
+from foho.case_artifacts import unique_image_cases
 
 from foho.configs import third_party_root
 
@@ -22,15 +26,32 @@ def _setup_sys_path(project_root: str) -> None:
 def _collect_images(image_dir: str) -> List[str]:
     return [
         os.path.join(image_dir, name)
-        for name in os.listdir(image_dir)
+        for name in sorted(os.listdir(image_dir))
         if name.lower().endswith((".png", ".jpg", ".jpeg"))
+        and os.path.isfile(os.path.join(image_dir, name))
     ]
 
 
 def _hunyuan_minimal_demo(image_list: List[str], save_path: str) -> None:
+    cases = unique_image_cases(image_list)
+    root = Path(save_path).resolve()
+    pending = []
+    for case, source in cases:
+        target = root / f"{case}_hoi_mesh.ply"
+        if target.is_symlink():
+            raise ValueError(f"Mesh output is a symlink: {target}")
+        if target.exists():
+            if not target.is_file() or target.stat().st_size == 0:
+                raise ValueError(f"Existing mesh output is not a nonempty file: {target}")
+            print(f"{case} already exists, skipping")
+        else:
+            pending.append((case, source, target))
+    if not pending:
+        print("No new images to process.")
+        return
+
     from PIL import Image
     import torch
-
     from hy3dgen.shapegen import (
         Hunyuan3DDiTFlowMatchingPipeline,
         FaceReducer,
@@ -38,67 +59,40 @@ def _hunyuan_minimal_demo(image_list: List[str], save_path: str) -> None:
         DegenerateFaceRemover,
     )
 
-    model_path = "tencent/Hunyuan3D-2"
-
-    images = []
-    img_ids = []
-    for image_path in image_list:
-        img_id = os.path.basename(image_path).split("_")[0]
-
-        if os.path.exists(f"{save_path}/{img_id}_hoi_mesh.ply"):
-            print(f"{img_id} already exists, skipping")
-            continue
-
-        image = Image.open(image_path).convert("RGBA")
-        datas = image.getdata()
-        new_data = []
-        for item in datas:
-            if item[0] == 255 and item[1] == 255 and item[2] == 255:
-                new_data.append((255, 255, 255, 0))
-            else:
-                new_data.append(item)
-        image.putdata(new_data)
-        images.append(image)
-        img_ids.append(img_id)
-
-    if not images:
-        print("No images to process.")
-        return
-
-    pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path)
-
-    batch_size = 5
-    batches = [images[i : i + batch_size] for i in range(0, len(images), batch_size)]
-    batch_ids = [img_ids[i : i + batch_size] for i in range(0, len(img_ids), batch_size)]
-
-    for batch, batch_id in zip(batches, batch_ids):
-        print(f"Processing batch {batch_id}")
-
-        real_batch = []
-        real_ids = []
-        for bid, img in zip(batch_id, batch):
-            if os.path.isfile(f"{save_path}/{bid}_hoi_mesh.ply"):
-                print(f"{bid} already exists, skipping")
-                continue
-            real_batch.append(img)
-            real_ids.append(bid)
-
-        if not real_batch:
-            continue
-
-        meshes = pipeline(
-            image=real_batch,
-            num_inference_steps=30,
-            mc_algo="mc",
-            generator=torch.manual_seed(2025),
-            multi_view=True,
-        )
-        for i, mesh in zip(real_ids, meshes):
-            mesh = FloaterRemover()(mesh)
+    root.mkdir(parents=True, exist_ok=True)
+    pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2")
+    for case, source, target in pending:
+        with Image.open(source) as opened:
+            image = opened.convert("RGBA")
+        try:
+            image.putdata([
+                (255, 255, 255, 0) if pixel[:3] == (255, 255, 255) else pixel
+                for pixel in image.getdata()
+            ])
+            meshes = pipeline(
+                image=image,
+                num_inference_steps=30,
+                mc_algo="mc",
+                generator=torch.manual_seed(2025),
+                multi_view=False,
+            )
+            if not isinstance(meshes, (list, tuple)) or len(meshes) != 1 or meshes[0] is None:
+                raise ValueError(f"Expected exactly one Hunyuan mesh for case {case}")
+            mesh = FloaterRemover()(meshes[0])
             mesh = DegenerateFaceRemover()(mesh)
             mesh = FaceReducer()(mesh)
-            mesh.export(f"{save_path}/{i}_hoi_mesh.ply")
-            print(f"Mesh saved with name {save_path}/{i}_hoi_mesh.ply")
+            # A failed export stays visibly partial and is never mistaken for a mesh to reuse.
+            partial = root / f".{case}.{uuid.uuid4().hex}.partial.ply"
+            with partial.open("xb"):
+                pass
+            mesh.export(str(partial))
+            if not partial.is_file() or partial.stat().st_size == 0:
+                raise ValueError(f"Empty mesh export for case {case}")
+            os.link(partial, target)  # Refuse a concurrently created destination.
+            partial.unlink()
+            print(f"Mesh saved with name {target}")
+        finally:
+            image.close()
 
 
 def run(project_root: str, image_dir: str, save_dir: str) -> None:
