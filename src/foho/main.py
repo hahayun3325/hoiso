@@ -39,6 +39,9 @@ def _env_with_paths(cfg: PipelineConfig) -> Dict[str, str]:
         env["HF_TOKEN"] = cfg.hf_token
     if cfg.hy3dgen_models:
         env["HY3DGEN_MODELS"] = cfg.hy3dgen_models
+    for name in ('FOHO_HUNYUAN_CONFIG', 'FOHO_HUNYUAN_CHECKPOINT', 'FOHO_HUNYUAN_DEVICE'):
+        if name in os.environ:
+            env[name] = os.environ[name]
     if cfg.foho_debug_dir:
         env["FOHO_DEBUG_DIR"] = cfg.foho_debug_dir
     return env

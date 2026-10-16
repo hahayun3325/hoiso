@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
-    tests = [ROOT / 'tests/geometry/test_case_handoff.py']
+    tests = [ROOT / 'tests/geometry/test_case_handoff.py', ROOT / 'tests/geometry/test_hunyuan_local.py', ROOT / 'tests/maintenance/test_archive_retired.py']
     legacy = ROOT / 'tests/automation/test_moge_output_path_confinement_v99_11_7_13_3_13_5_5_1_7_3_5_14_112_38.py'
     if legacy.exists():
         tests.append(legacy)

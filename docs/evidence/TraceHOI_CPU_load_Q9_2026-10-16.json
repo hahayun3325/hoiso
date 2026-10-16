@@ -1,0 +1,70 @@
+{
+  "checkpoint_tensors": 1645,
+  "cleanup_verified": true,
+  "cpu_load_passed": true,
+  "full_parent_acceptance": false,
+  "groups": [
+    {
+      "all_values_equal": true,
+      "device": "cpu",
+      "dtype": "float16",
+      "elements": 1113274432,
+      "group": "model",
+      "missing_keys": [],
+      "schema_binding": {
+        "bytes": 38986,
+        "sha256": "c43372b3b3ceb64da38894c5d83e86fc87b2c26e5fb903b7b9e42c2f1a1efafc"
+      },
+      "strict": true,
+      "tensors": 652,
+      "unexpected_keys": []
+    },
+    {
+      "all_values_equal": true,
+      "device": "cpu",
+      "dtype": "float16",
+      "elements": 214212865,
+      "group": "vae",
+      "missing_keys": [],
+      "schema_binding": {
+        "bytes": 17464,
+        "sha256": "6a77fc6760bd19b958b5ae1d803fb18f4a6fac6078775ad6e326c2149c83fd2b"
+      },
+      "strict": true,
+      "tensors": 266,
+      "unexpected_keys": []
+    },
+    {
+      "all_values_equal": true,
+      "device": "cpu",
+      "dtype": "float16",
+      "elements": 1136480768,
+      "group": "conditioner",
+      "missing_keys": [],
+      "schema_binding": {
+        "bytes": 65042,
+        "sha256": "558ae69849367310bcc3cc1e8d6c5f296785c2205ca7b986695ccc3faa16e6fd"
+      },
+      "strict": true,
+      "tensors": 727,
+      "unexpected_keys": []
+    }
+  ],
+  "inference_executed": false,
+  "manager_calls": 121,
+  "manifest_entries": 43,
+  "originals": {
+    "alapuse02v3n60_hunyuan_cpu_tool_recovery_probe_20261016_v1_Q9n6Ew3N.zip": {
+      "bytes": 1508120,
+      "sha256": "6b5e1173d621561ba2ab92b85933c2c7403abc21ce8da97ef4385d2bd83e85af"
+    },
+    "hunyuan_cpu_tool_recovery_probe_Q9n6Ew3N.terminal.txt": {
+      "bytes": 1532,
+      "sha256": "75417f507c16e196a7cb0ad365e3fac0c05e5fbb5745600ec41f5c020a75aa15"
+    }
+  },
+  "prepared_components_matched": 25,
+  "verified": true,
+  "worker_elapsed_seconds": 33.21313996333629,
+  "zip_members": 44
+}

@@ -32,7 +32,11 @@ def _collect_images(image_dir: str) -> List[str]:
     ]
 
 
-def _hunyuan_minimal_demo(image_list: List[str], save_path: str) -> None:
+def _hunyuan_minimal_demo(image_list: List[str], save_path: str, *,
+                          config_path=None, checkpoint_path=None, device=None) -> None:
+    if config_path or checkpoint_path:
+        from foho.geometry.hunyuan_local import local_inputs
+        config_path, checkpoint_path = local_inputs(config_path, checkpoint_path)
     cases = unique_image_cases(image_list)
     root = Path(save_path).resolve()
     pending = []
@@ -60,7 +64,13 @@ def _hunyuan_minimal_demo(image_list: List[str], save_path: str) -> None:
     )
 
     root.mkdir(parents=True, exist_ok=True)
-    pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2")
+    if config_path:
+        from foho.geometry.hunyuan_local import build_local_pipeline
+        pipeline = build_local_pipeline(config_path, checkpoint_path, device=device or 'cuda')
+    elif device is not None:
+        pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2", device=device)
+    else:
+        pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2")
     for case, source, target in pending:
         with Image.open(source) as opened:
             image = opened.convert("RGBA")
@@ -95,10 +105,12 @@ def _hunyuan_minimal_demo(image_list: List[str], save_path: str) -> None:
             image.close()
 
 
-def run(project_root: str, image_dir: str, save_dir: str) -> None:
+def run(project_root: str, image_dir: str, save_dir: str, *,
+        config_path=None, checkpoint_path=None, device=None) -> None:
     _setup_sys_path(project_root)
     image_list = _collect_images(image_dir)
-    _hunyuan_minimal_demo(image_list, save_dir)
+    _hunyuan_minimal_demo(image_list, save_dir, config_path=config_path,
+                          checkpoint_path=checkpoint_path, device=device)
     print("Saved Hunyuan HOI meshes to", save_dir)
 
 
@@ -107,9 +119,15 @@ def main() -> None:
     parser.add_argument("--project_root", required=True)
     parser.add_argument("--image_dir", required=True)
     parser.add_argument("--save_dir", required=True)
+    parser.add_argument("--config_path", default=os.environ.get("FOHO_HUNYUAN_CONFIG"))
+    parser.add_argument("--checkpoint_path", default=os.environ.get("FOHO_HUNYUAN_CHECKPOINT"))
+    parser.add_argument("--device", default=os.environ.get("FOHO_HUNYUAN_DEVICE"))
     args = parser.parse_args()
+    if bool(args.config_path) != bool(args.checkpoint_path):
+        parser.error("--config_path and --checkpoint_path must be supplied together")
 
-    run(project_root=args.project_root, image_dir=args.image_dir, save_dir=args.save_dir)
+    run(project_root=args.project_root, image_dir=args.image_dir, save_dir=args.save_dir,
+        config_path=args.config_path, checkpoint_path=args.checkpoint_path, device=args.device)
 
 
 if __name__ == "__main__":

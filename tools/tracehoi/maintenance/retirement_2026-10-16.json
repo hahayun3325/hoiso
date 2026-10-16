@@ -1,0 +1,32 @@
+[
+  {
+    "attempt_id": "N7l4Cu9L",
+    "folder": "/home/fredcui/tracehoi-hunyuan-cpu-load-probe-20261014-v1-N7l4Cu9L",
+    "kind": "retired_attempt",
+    "terminal": "/home/fredcui/hunyuan_cpu_load_probe_N7l4Cu9L.terminal.txt",
+    "terminal_binding": {
+      "bytes": 1373,
+      "sha256": "3332042e6588a8c768317300921a6086ea37f8dbee9d21494244abede33c844e"
+    },
+    "zip_binding": {
+      "bytes": 1277011,
+      "sha256": "0e498b6e0469e9abf90971c3879739b15b4969077f9f85efba6dc242c9ba35b4"
+    },
+    "zip_name": "alapuse02v3n60_hunyuan_cpu_load_probe_20261014_v1_N7l4Cu9L.zip"
+  },
+  {
+    "attempt_id": "P8m5Dv2M",
+    "folder": "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M",
+    "kind": "retired_attempt",
+    "terminal": "/home/fredcui/hunyuan_cpu_budget_probe_P8m5Dv2M.terminal.txt",
+    "terminal_binding": {
+      "bytes": 1530,
+      "sha256": "c925b53c748c5882ad5e0a53ab7d87e7a1ff89caa617ed205cc60b76df82585a"
+    },
+    "zip_binding": {
+      "bytes": 1356498,
+      "sha256": "2213c4c2d4a1a0a62de5f0bbd6713315a34319f5ee1c1667fbbbab580ecd09fd"
+    },
+    "zip_name": "alapuse02v3n60_hunyuan_cpu_budget_probe_20261014_v1_P8m5Dv2M.zip"
+  }
+]
