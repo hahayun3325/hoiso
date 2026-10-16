@@ -52,6 +52,15 @@ def build(config_path: str|Path,manifest_path: str|Path) -> dict[str,Any]:
       'h2m':Path(cfg.h2m_rt_path)/'stage_inventory.json',
       'mano':Path(cfg.aligned_mano_path)/'stage_inventory.json'}
     prior=lambda role,key:{'role':role,'path':str(inv[key].resolve())}
+    hand_solver=raw_config.get('HAND_FRAME_I_SOLVER_SCRIPT')
+    hand_policy=raw_config.get('HAND_FRAME_I_POLICY_TEMPLATE')
+    if bool(hand_solver)!=bool(hand_policy):
+        raise RuntimeError('hand Frame-I solver and policy overrides must be supplied together')
+    if not hand_solver:
+        hand_solver=str(Path(cfg.project_root)/'tools/gate_c_v99_11_hand_anchor/run_v3_CPU_7DoF_global_hand_alignment_v99_11_7_13_3_6.py')
+        hand_policy=str(Path(cfg.project_root)/'config/automation/alapuse02v3n60_selected_hand_CPU_7DoF.json')
+    hand_solver_owner=_input('mano_registration_solver',hand_solver)
+    hand_policy_owner=_input('mano_registration_policy',hand_policy)
     stages=[
       _stage('get_hunyuan_input','foho.preprocess.get_hunyuan_input',{
        'split_path':cfg.split_path,'image_path':cfg.image_path,
@@ -92,12 +101,13 @@ def build(config_path: str|Path,manifest_path: str|Path) -> dict[str,Any]:
        'h2m_inventory':str(inv['h2m']),'moge_inventory':str(inv['moge']),
        'vitpose_script':str(Path(cfg.project_root)/'tools/gate_c_v99_11_hand_anchor/extract_case_image_vitpose_target_v99_11_7_9_21_7_2.py'),
        'vitpose_module_root':cfg.hamer_demo_dir,
-       'solver_script':str(Path(cfg.project_root)/'tools/gate_c_v99_11_hand_anchor/run_v3_CPU_7DoF_global_hand_alignment_v99_11_7_13_3_6.py'),
-       'policy_template':str(Path(cfg.project_root)/'config/automation/alapuse02v3n60_selected_hand_CPU_7DoF.json'),
+       'solver_script':hand_solver_owner['path'],
+       'policy_template':hand_policy_owner['path'],
        'output_dir':cfg.aligned_mano_path,'case_id':'alapuse02v3n60','device':'cuda:0'},
        cfg,cfg.project_root,[cfg.aligned_mano_path],inv['mano'],
        [prior('preprocess_inventory','preprocess'),prior('hamer_inventory','hamer'),
-        prior('h2m_inventory','h2m'),prior('moge_inventory','moge')])]
+        prior('h2m_inventory','h2m'),prior('moge_inventory','moge'),
+        hand_solver_owner,hand_policy_owner])]
     manifest={'schema':'tracehoi.FreshFoundationManifest.v1',
       'case_id':'alapuse02v3n60','fresh_output_root':str(base),
       'stages':stages,'excluded_commands':['foho.preprocess.gemini_objname','foho.guidance.run'],

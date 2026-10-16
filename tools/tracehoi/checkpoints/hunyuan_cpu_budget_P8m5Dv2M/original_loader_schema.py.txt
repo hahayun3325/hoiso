@@ -1,0 +1,64 @@
+"""Hand-derived schema for the exact captured constructors/configuration. No tensors/imports.
+The model input is deliberately absent: expectations cannot be learned from checkpoint keys.
+Source/configuration SHA256 gates in loader_review.py bind this derivation to its review.
+"""
+from census import E,H,need
+
+def expected_schema():
+ s={}
+ def add(name,shape):
+  need(name not in s,'duplicate_expected_key');s[name]=list(shape)
+ def linear(n,i,o,bias=True):
+  add(n+'.weight',[o,i])
+  if bias:add(n+'.bias',[o])
+ def norm(n,width):add(n+'.weight',[width]);add(n+'.bias',[width])
+ def qknorm(n):add(n+'.query_norm.scale',[64]);add(n+'.key_norm.scale',[64])
+ # source_034 Hunyuan3DDiT and its children: hidden=1024, 16 heads, ratio=4.
+ linear('model.latent_in',64,1024);linear('model.cond_in',1536,1024)
+ linear('model.time_in.in_layer',256,1024);linear('model.time_in.out_layer',1024,1024)
+ for i in range(16):
+  for stream in ['img','txt']:
+   p='model.double_blocks.%d.%s_'%(i,stream)
+   linear(p+'mod.lin',1024,6144);linear(p+'attn.qkv',1024,3072);qknorm(p+'attn.norm');linear(p+'attn.proj',1024,1024)
+   linear(p+'mlp.0',1024,4096);linear(p+'mlp.2',4096,1024)
+ for i in range(32):
+  p='model.single_blocks.%d.'%i;linear(p+'linear1',1024,7168);linear(p+'linear2',5120,1024);qknorm(p+'norm');linear(p+'modulation.lin',1024,3072)
+ linear('model.final_layer.linear',1024,64);linear('model.final_layer.adaLN_modulation.1',1024,2048)
+ # source_035 ShapeVAE: qkv_bias=False, qk_norm=True; nonpersistent Fourier buffer omitted.
+ linear('vae.post_kl',64,1024)
+ def vae_mlp(p):linear(p+'.c_fc',1024,4096);linear(p+'.c_proj',4096,1024)
+ for i in range(16):
+  p='vae.transformer.resblocks.%d.'%i;linear(p+'attn.c_qkv',1024,3072,False);linear(p+'attn.c_proj',1024,1024)
+  norm(p+'attn.attention.q_norm',64);norm(p+'attn.attention.k_norm',64);norm(p+'ln_1',1024);norm(p+'ln_2',1024);vae_mlp(p+'mlp')
+ p='vae.geo_decoder.';linear(p+'query_proj',3*(8*2+1),1024)
+ q=p+'cross_attn_decoder.';linear(q+'attn.c_q',1024,1024,False);linear(q+'attn.c_kv',1024,2048,False);linear(q+'attn.c_proj',1024,1024)
+ norm(q+'attn.attention.q_norm',64);norm(q+'attn.attention.k_norm',64)
+ for n in ['ln_1','ln_2','ln_3']:norm(q+n,1024)
+ vae_mlp(q+'mlp');norm(p+'ln_post',1024);linear(p+'output_proj',1024,1)
+ # source_033 SingleImageEncoder -> DinoImageEncoder -> captured Dinov2Model.
+ # config has hidden=1536, layers=40, image=518, patch=14, 3 channels; mask token defaults True.
+ p='conditioner.main_image_encoder.model.'
+ add(p+'embeddings.cls_token',[1,1,1536]);add(p+'embeddings.mask_token',[1,1536]);add(p+'embeddings.position_embeddings',[1,(518//14)**2+1,1536])
+ add(p+'embeddings.patch_embeddings.projection.weight',[1536,3,14,14]);add(p+'embeddings.patch_embeddings.projection.bias',[1536])
+ for i in range(40):
+  q=p+'encoder.layer.%d.'%i;norm(q+'norm1',1536);norm(q+'norm2',1536)
+  for n in ['query','key','value']:linear(q+'attention.attention.'+n,1536,1536)
+  linear(q+'attention.output.dense',1536,1536);add(q+'layer_scale1.lambda1',[1536]);add(q+'layer_scale2.lambda1',[1536])
+  # Dinov2SwiGLUFFN: round_up_8(int(1536*4*2/3))=4096.
+  linear(q+'mlp.weights_in',1536,8192);linear(q+'mlp.weights_out',4096,1536)
+ norm(p+'layernorm',1536)
+ return dict(sorted(s.items()))
+
+def compare_metadata(metadata):
+ expected=expected_schema();rows=metadata['tensors'];need(type(rows)is list,'tensor_rows')
+ actual={r['name']:r for r in rows};need(len(actual)==len(rows),'unique_tensor_names')
+ missing=sorted(set(expected)-set(actual));unexpected=sorted(set(actual)-set(expected));mismatches=[]
+ for name in sorted(set(expected)&set(actual)):
+  r=actual[name]
+  if r['shape']!=expected[name]or r['dtype']!='F16':mismatches.append(dict(name=name,expected_shape=expected[name],observed_shape=r['shape'],expected_dtype='F16',observed_dtype=r['dtype']))
+ groups={}
+ for name,shape in expected.items():
+  g=name.split('.')[0];v=groups.setdefault(g,dict(tensors=0,elements=0,bytes=0));elements=1
+  for d in shape:elements*=d
+  v['tensors']+=1;v['elements']+=elements;v['bytes']+=2*elements
+ return dict(schema='HunyuanSymbolicStateSchemaComparison.v1',matches=not missing and not unexpected and not mismatches,expected_count=len(expected),observed_count=len(rows),expected_binding=H(E(expected)),groups=groups,missing=missing,unexpected=unexpected,mismatches=mismatches,method='Independent hand-derived state names/shapes from bound constructors and fixed configuration',actual_model_constructed=False,actual_load_state_dict_called=False,tensor_values_validated=False,runtime_authorized=False)

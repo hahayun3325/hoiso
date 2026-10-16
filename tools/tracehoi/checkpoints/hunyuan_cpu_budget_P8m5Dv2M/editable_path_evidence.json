@@ -1,0 +1,23 @@
+{
+  "editable_finder": {
+    "binding": {
+      "bytes": 3627,
+      "sha256": "c6c43e7320c791ed8a0c2e07c4afbce1da4bcd5921c7d17566791db9c3ef4c99"
+    },
+    "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/__editable___pytorch3d_0_7_9_finder.py"
+  },
+  "import_root": "/home/fredcui/Projects/FollowMyHold/third_party/pytorch3d",
+  "package": "pytorch3d",
+  "package_init": {
+    "binding": {
+      "bytes": 246,
+      "sha256": "08a43adbfe4f85b1bd5d234f98bcc840e3e2647ff90aefbfdad38c4e666f2816"
+    },
+    "path": "/home/fredcui/Projects/FollowMyHold/third_party/pytorch3d/pytorch3d/__init__.py"
+  },
+  "registration_executed": false,
+  "source_census": {
+    "bytes": 814656,
+    "sha256": "bfd1398fdcd354ef4b0aad4ecd4ffbb3a8479bdb1c6fc070d68e5d8dcd5d552a"
+  }
+}

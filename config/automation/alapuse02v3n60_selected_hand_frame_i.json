@@ -1,0 +1,33 @@
+{
+  "schema": "tracehoi.HandSpecificFrameIPolicy.v1",
+  "candidate_execution_authorized": false,
+  "packet_fields": {
+    "vertices": "root/pred_vertices",
+    "joints_3d": "root/pred_keypoints_3d",
+    "focal_length": "root/focal_length"
+  },
+  "joint_map_21": [0, 13, 14, 15, 16, 1, 2, 3, 17, 4, 5, 6, 18, 10, 11, 12, 19, 7, 8, 9, 20],
+  "minimum_visible_joints": 8,
+  "minimum_anchor_joints": 8,
+  "anchor_window_radius_px": 4,
+  "scale_multiplier_bounds": [0.5, 2.0],
+  "rotation_component_bounds_radians": [-3.141592653589793, 3.141592653589793],
+  "translation_support_extent_multiplier": 2.0,
+  "anchor_3d_weight": 1.0,
+  "reprojection_weight": 0.25,
+  "surface_support_weight": 0.1,
+  "log_scale_prior_weight": 0.25,
+  "surface_max_points": 512,
+  "surface_sample_seed": 991178,
+  "surface_residual_clip_normalized": 0.5,
+  "maximum_nfev": 400,
+  "minimum_positive_camera_depth_fraction": 0.95,
+  "maximum_keypoint_nrmse": 0.15,
+  "maximum_anchor_nrmse": 0.35,
+  "maximum_surface_nrmse": 0.5,
+  "minimum_projected_vertex_mask_fraction": 0.5,
+  "scale_bound_margin_fraction": 0.01,
+  "authorizes_frame_i": false,
+  "authorizes_installation": false,
+  "authorizes_contact_optimization": false
+}

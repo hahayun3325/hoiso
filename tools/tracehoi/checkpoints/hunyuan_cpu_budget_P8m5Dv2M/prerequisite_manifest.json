@@ -1,0 +1,27 @@
+[
+  {
+    "attempt_id": "N7l4Cu9L",
+    "local_verification": {
+      "bytes": 7894,
+      "sha256": "6609e286b78422a3bbcd53ad4986e91ab8e37cd9f498230af480f61248b2b6e5"
+    },
+    "packet": {
+      "binding": {
+        "bytes": 1277011,
+        "sha256": "0e498b6e0469e9abf90971c3879739b15b4969077f9f85efba6dc242c9ba35b4"
+      },
+      "name": "alapuse02v3n60_hunyuan_cpu_load_probe_20261014_v1_N7l4Cu9L.zip"
+    },
+    "report_binding": {
+      "bytes": 411987,
+      "sha256": "445896b58fdd89a6e45f5b7ec3b63ff7c7b4de08b96f138fe0f90700133f9b27"
+    },
+    "terminal": {
+      "binding": {
+        "bytes": 1373,
+        "sha256": "3332042e6588a8c768317300921a6086ea37f8dbee9d21494244abede33c844e"
+      },
+      "name": "hunyuan_cpu_load_probe_N7l4Cu9L.terminal.txt"
+    }
+  }
+]

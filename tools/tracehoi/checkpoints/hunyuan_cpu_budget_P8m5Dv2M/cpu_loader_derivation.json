@@ -1,0 +1,77 @@
+{
+  "config": {
+    "binding": {
+      "bytes": 1604,
+      "sha256": "70bbfcdd18b9686ee56fe011c3a059b222eae1f5450f904577c50f0e107a8a53"
+    },
+    "path": "/Users/fredcui/.codex/.chatgpt-projects/g-p-69ed238e29848191b854795f446494e3/work/0cv-v12zizgckj-review-20260919/hunyuan_prerequisite_return_20261012/packet/asset_config_001.yaml.txt"
+  },
+  "expected_schema_binding": {
+    "bytes": 135186,
+    "sha256": "0b1880f834b51773f31d80a15dc2063282aaf991e068bd6c905f016eb106926b"
+  },
+  "method": "Fixed CPU portion of reviewed build_pipeline. Before/after full checkpoint hashes; held descriptor for native load; all names/shapes/dtypes, finiteness, strict receipts, and exact half-precision state values checked. No pipeline construction or inference.",
+  "runtime_spec": {
+    "binding": {
+      "bytes": 5453,
+      "sha256": "5a77f28264b5c39d02a45b4545858a1e85745b92e9e93947c95d7742c4c33a0c"
+    },
+    "path": "/Users/fredcui/.codex/.chatgpt-projects/g-p-69ed238e29848191b854795f446494e3/work/0cv-v12zizgckj-review-20260919/hunyuan_observation_review_20261013_v1/runtime_spec.json"
+  },
+  "schema_comparison": {
+    "binding": {
+      "bytes": 890,
+      "sha256": "6c0f0f7b61db030f6a28fca9711c8228e57349851d63a32313b44fe3fa013af7"
+    },
+    "path": "/Users/fredcui/.codex/.chatgpt-projects/g-p-69ed238e29848191b854795f446494e3/work/0cv-v12zizgckj-review-20260919/hunyuan_loader_return_20261012/packet/schema_comparison.json"
+  },
+  "schema_source": {
+    "binding": {
+      "bytes": 4559,
+      "sha256": "a6a11b10abb6efeb6c4a99aec4084958f4f9c2f8e62f9193f5a3cad65ad45d8a"
+    },
+    "path": "/Users/fredcui/.codex/.chatgpt-projects/g-p-69ed238e29848191b854795f446494e3/work/0cv-v12zizgckj-review-20260919/hunyuan_observation_review_20261013_v1/loader_schema.py"
+  },
+  "support_sources_added": [
+    {
+      "binding": {
+        "bytes": 1033,
+        "sha256": "7c3ca9e4df8a709ccefaf51e4f77d903c51b0b6d457c61210ce95836f5c71c37"
+      },
+      "id": "e7_source_006",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 8291,
+        "sha256": "d36d05e792619389f06e9cf17c3c738bbecfa1efb93a9b8667e7fe9b11036058"
+      },
+      "id": "e7_source_007",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/configuration_dinov2.py"
+    },
+    {
+      "binding": {
+        "bytes": 33624,
+        "sha256": "e95dbed4078df66b2fdec8d15345e89e7bd1852e6bb0575642280d781634b766"
+      },
+      "id": "e7_source_008",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/modeling_dinov2.py"
+    },
+    {
+      "binding": {
+        "bytes": 304065,
+        "sha256": "7ec95ac201545738e963adde048a861cfee0e66f9e9417c49236e0c2631ab7b6"
+      },
+      "id": "e7_source_013",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/modeling_utils.py"
+    },
+    {
+      "binding": {
+        "bytes": 124492,
+        "sha256": "d125e6e19b4495e65758dc4c4d8fbdc3e30758c27eded646427971f0098eb117"
+      },
+      "id": "h2_torch_module",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/nn/modules/module.py"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "generator": {
+    "device": "cpu",
+    "seed": 2025
+  },
+  "inference": {
+    "box_v": 1.01,
+    "enable_pbar": false,
+    "eta": 0.0,
+    "guidance_scale": 7.5,
+    "mask_exists": false,
+    "mc_algo": "mc",
+    "mc_level": 0.0,
+    "multi_view": false,
+    "num_chunks": 8000,
+    "num_inference_steps": 30,
+    "octree_resolution": 384,
+    "output_type": "trimesh",
+    "sigmas": null,
+    "timesteps": null,
+    "transform_cam_pose": null
+  },
+  "input_binding": {
+    "bytes": 38710,
+    "sha256": "951a0efa31d2b534084b6d04cdc9c054740c64d1d39ec7a8cde55938a847e1e7"
+  },
+  "input_path": "/home/fredcui/tracehoi-model-worker-20261011-v1-W7u4Lc9Q/runtime/output/occ/alapuse02v3n60_occ_obj.png",
+  "limitations": [
+    "Only inert callback execution is authorized in H2.",
+    "Native module imports, memory/resource screens, process containment, temporary-file guards and parent/stop integration are pending.",
+    "Runtime checkpoint_read must perform full stable no-follow hashes before and after explicit safetensors CPU loading; synthetic receipts do not prove this.",
+    "The source pipeline moves components to CUDA before dtype conversion; this draft strictly loads and converts each group to F16 on CPU before pipeline construction.",
+    "Original native postprocessors retain their PLY temporary-file effects; temporary_scope is an unimplemented managed interface.",
+    "Fixed inference parameters and mesh bounds are draft single-case choices; model success and peak memory are unverified."
+  ],
+  "loader": {
+    "checkpoint_binding": {
+      "bytes": 4928151562,
+      "sha256": "360bc281fc956d4acac0c3d36d5ec0ebf8cdddbf4b8892e894d12419388d479b"
+    },
+    "checkpoint_path": "/home/fredcui/.cache/huggingface/hub/models--tencent--Hunyuan3D-2/blobs/360bc281fc956d4acac0c3d36d5ec0ebf8cdddbf4b8892e894d12419388d479b",
+    "config_binding": {
+      "bytes": 1604,
+      "sha256": "70bbfcdd18b9686ee56fe011c3a059b222eae1f5450f904577c50f0e107a8a53"
+    },
+    "constructors": {
+      "conditioner": {
+        "params": {
+          "main_image_encoder": {
+            "kwargs": {
+              "config": {
+                "attention_probs_dropout_prob": 0.0,
+                "drop_path_rate": 0.0,
+                "hidden_act": "gelu",
+                "hidden_dropout_prob": 0.0,
+                "hidden_size": 1536,
+                "image_size": 518,
+                "initializer_range": 0.02,
+                "layer_norm_eps": 1e-06,
+                "layerscale_value": 1.0,
+                "mlp_ratio": 4,
+                "model_type": "dinov2",
+                "num_attention_heads": 24,
+                "num_channels": 3,
+                "num_hidden_layers": 40,
+                "patch_size": 14,
+                "qkv_bias": true,
+                "torch_dtype": "float32",
+                "use_swiglu_ffn": true
+              },
+              "image_size": 518
+            },
+            "type": "DinoImageEncoder"
+          }
+        },
+        "target": "hy3dgen.shapegen.models.SingleImageEncoder"
+      },
+      "image_processor": {
+        "params": {
+          "border_ratio": 0.15,
+          "size": 512
+        },
+        "target": "hy3dgen.shapegen.preprocessors.ImageProcessorV2"
+      },
+      "model": {
+        "params": {
+          "axes_dim": [
+            64
+          ],
+          "context_in_dim": 1536,
+          "depth": 16,
+          "depth_single_blocks": 32,
+          "hidden_size": 1024,
+          "in_channels": 64,
+          "mlp_ratio": 4.0,
+          "num_heads": 16,
+          "qkv_bias": true,
+          "theta": 10000
+        },
+        "target": "hy3dgen.shapegen.models.Hunyuan3DDiT"
+      },
+      "scheduler": {
+        "params": {
+          "num_train_timesteps": 1000
+        },
+        "target": "hy3dgen.shapegen.schedulers.FlowMatchEulerDiscreteScheduler"
+      },
+      "vae": {
+        "params": {
+          "embed_dim": 64,
+          "heads": 16,
+          "include_pi": false,
+          "num_decoder_layers": 16,
+          "num_freqs": 8,
+          "num_latents": 3072,
+          "qk_norm": true,
+          "qkv_bias": false,
+          "scale_factor": 0.9990943042622529,
+          "width": 1024
+        },
+        "target": "hy3dgen.shapegen.models.ShapeVAE"
+      }
+    },
+    "device": "cpu",
+    "format": "safetensors",
+    "missing_conditioner_allowed": false,
+    "native_provider_implemented": false,
+    "network_fallback": false,
+    "notes": [
+      "Explicit safetensors callback on the hash-checked physical blob, avoiding from_single_file suffix dispatch.",
+      "Future native provider must bind live bytes/routes, use fixed classes rather than dynamic target imports, load all three state dictionaries strictly, and record allocations/effects/cleanup.",
+      "CPU checkpoint loading and default float32 constructor initialization can occupy far more memory than 4.93 GB; model-specific limits and allocation lifetime are unresolved."
+    ],
+    "pickle_fallback": false,
+    "pipeline_class": "hy3dgen.shapegen.pipelines.Hunyuan3DDiTFlowMatchingPipeline",
+    "runtime_authorized": false,
+    "schema": "HunyuanOfflineLoaderDraft.v1",
+    "strict": true
+  },
+  "mesh_limits": {
+    "coordinate_abs": 4.0,
+    "faces": 4000000,
+    "final_faces": 150000,
+    "ply_bytes": 33554432,
+    "vertices": 2000000
+  },
+  "native_provider_executed": false,
+  "output_name": "alapuse02v3n60_object_mesh.ply",
+  "runtime_authorized": false,
+  "schema": "HunyuanRuntimeDraft.v1"
+}

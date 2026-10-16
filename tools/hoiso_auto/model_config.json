@@ -1,0 +1,8 @@
+{
+  "semantic_label": "gpt-5.5-high",
+  "model_snapshot": "gpt-5.5-2026-04-23",
+  "reasoning_effort": "high",
+  "store": false,
+  "max_transport_attempts": 3,
+  "independent_gates": ["B", "D0"]
+}

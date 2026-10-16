@@ -1,0 +1,45 @@
+{
+  "finite_ancestor_headroom_bytes": 21474836480,
+  "group_estimates": [
+    {
+      "checkpoint_mapping_bytes": 4928151562,
+      "current_group_conversion_f16_bytes": 2226548864,
+      "current_group_f32_bytes": 4453097728,
+      "estimated_tensor_storage_bytes": 11607798154,
+      "group": "model",
+      "retained_earlier_groups_f16_bytes": 0
+    },
+    {
+      "checkpoint_mapping_bytes": 4928151562,
+      "current_group_conversion_f16_bytes": 428425730,
+      "current_group_f32_bytes": 856851460,
+      "estimated_tensor_storage_bytes": 8439977616,
+      "group": "vae",
+      "retained_earlier_groups_f16_bytes": 2226548864
+    },
+    {
+      "checkpoint_mapping_bytes": 4928151562,
+      "current_group_conversion_f16_bytes": 2272961536,
+      "current_group_f32_bytes": 4545923072,
+      "estimated_tensor_storage_bytes": 14402010764,
+      "group": "conditioner",
+      "retained_earlier_groups_f16_bytes": 2654974594
+    }
+  ],
+  "host_minimum_available_bytes": 25769803776,
+  "known_tensor_storage_estimate_bytes": 14402010764,
+  "limitations": [
+    "This estimates the checkpoint mapping, earlier retained F16 groups, one F32 construction and simultaneous F16 conversion. It is not a measured peak or a bound on native allocations.",
+    "The 4 GiB overhead allowance is a planning margin, not an observed measurement. The kernel 20 GiB limit remains authoritative; an overrun may produce partial diagnostics.",
+    "Host and ancestor headroom checks are observations, not reservations. No processes are killed or caches dropped to obtain memory."
+  ],
+  "memory_swap_max_bytes": 0,
+  "planning_estimate_with_overhead_bytes": 18696978060,
+  "planning_native_overhead_bytes": 4294967296,
+  "previous_attempt": "N7l4Cu9L",
+  "recorded_previous_available_bytes": 28820393984,
+  "runtime_max_seconds": 300,
+  "schema": "HunyuanCPULoadBudget.v1",
+  "tasks_max": 32,
+  "worker_memory_max_bytes": 21474836480
+}

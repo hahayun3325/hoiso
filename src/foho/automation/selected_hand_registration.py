@@ -86,6 +86,77 @@ def resolve_owners(*,preprocess_inventory,hamer_inventory,h2m_inventory,
 def run_command(arguments):
     return subprocess.run(arguments,check=True,text=True)
 
+def is_frame_i_policy(policy):
+    return policy.get('schema')=='tracehoi.HandSpecificFrameIPolicy.v1'
+
+def frame_i_solver_arguments(*,solver_script,paths,runtime_policy,result,report):
+    return [sys.executable,str(solver_script),'--candidate',str(paths['candidate']),
+      '--target',str(paths['target']),'--moge-points',str(paths['points']),
+      '--hand-mask',str(paths['mask']),'--config',str(runtime_policy),
+      '--result-out',str(result),'--report-out',str(report)]
+
+def execute_frame_i_candidate(*,root,owners,target,policy,solver_script,
+                              vitpose_module_root,case_id,launcher):
+    import numpy as np
+    if policy.get('candidate_execution_authorized') is not True:
+        raise SelectedHandRegistrationError(
+          'hand-specific Frame-I case execution is not authorized by the policy')
+    required={'packet_fields','joint_map_21','scale_multiplier_bounds',
+      'rotation_component_bounds_radians','minimum_visible_joints',
+      'minimum_anchor_joints','anchor_window_radius_px',
+      'minimum_positive_camera_depth_fraction','maximum_keypoint_nrmse',
+      'maximum_anchor_nrmse','maximum_surface_nrmse',
+      'minimum_projected_vertex_mask_fraction'}
+    if not required.issubset(policy):
+        raise SelectedHandRegistrationError('hand-specific Frame-I policy incomplete')
+    paths={'candidate':Path(owners['candidate']),'target':target,
+      'points':Path(owners['moge_points']),'mask':Path(owners['hand_mask'])}
+    policy.update({'expected_candidate_sha256':sha(paths['candidate']),
+      'expected_target_sha256':sha(paths['target']),
+      'expected_points_sha256':sha(paths['points']),
+      'expected_hand_mask_sha256':sha(paths['mask']),
+      'object_H2M_provenance_only':{'path':owners['H2M'],
+        'sha256':sha(owners['H2M']),'applied_to_hand':False}})
+    runtime_policy=root/'selected_hand_frame_i.json'; atomic(runtime_policy,policy)
+    result=root/'selected_hand_frame_i_candidate.npz'
+    report=root/'selected_hand_frame_i_candidate_report.json'
+    launcher(frame_i_solver_arguments(solver_script=solver_script,paths=paths,
+      runtime_policy=runtime_policy,result=result,report=report))
+    report_packet=json.loads(report.read_text())
+    if report_packet.get('decision')!='hand_specific_frame_I_candidate_result_written':
+        raise SelectedHandRegistrationError('hand-specific Frame-I candidate did not close')
+    if report_packet.get('object_H2M_applied_to_hand') is not False:
+        raise SelectedHandRegistrationError('foreign object H2M entered the hand transform')
+    with np.load(result,allow_pickle=False) as data:
+        vertices=np.asarray(data['aligned_vertices_moge_Nx3'],dtype=float)
+        positive=float(np.asarray(data['positive_camera_depth_fraction']).reshape(()))
+        proper=bool(np.asarray(data['proper_sim3']).reshape(()))
+    from foho.automation.mano_geometry_gate import audit_vertices
+    geometry=audit_vertices(vertices,expected_vertices=778)
+    if not proper: raise SelectedHandRegistrationError('hand transform is not proper Sim(3)')
+    if positive<float(policy['minimum_positive_camera_depth_fraction']):
+        raise SelectedHandRegistrationError('positive camera depth below policy')
+    mano=Path(vitpose_module_root)/'_DATA/data/mano'/(
+      'MANO_RIGHT.pkl' if owners['selected_side']=='right' else 'MANO_LEFT.pkl')
+    with mano.open('rb') as stream:
+        faces=np.asarray(pickle.load(stream,encoding='latin1')['f'],dtype=np.int64)
+    import trimesh
+    mesh=root/(case_id+'_selected_registered_mano_moge.ply')
+    trimesh.Trimesh(vertices=vertices,faces=faces,process=False).export(mesh)
+    receipt={'schema':'tracehoi.SelectedHandFrameIRegistration.v1','case_id':case_id,
+      'selected_hand_id':owners['selected_hand_id'],'selected_side':owners['selected_side'],
+      'owners':owners,'runtime_policy':str(runtime_policy),
+      'runtime_policy_sha256':sha(runtime_policy),'result':str(result),
+      'result_sha256':sha(result),'report':str(report),'report_sha256':sha(report),
+      'registered_mesh':str(mesh),'registered_mesh_sha256':sha(mesh),
+      'registered_mesh_frame':'native_MoGe','object_H2M_applied_to_hand':False,
+      'positive_camera_depth_fraction':positive,'geometry':geometry,
+      'part_preference_control':'deferred_to_fresh_Frame_I_with_Gate_A_parts',
+      'authorizes_frame_i':False,'authorizes_installation':False,
+      'decision':'selected_hand_frame_I_candidate_written'}
+    atomic(root/'selected_hand_registration_receipt.json',receipt)
+    return receipt
+
 def execute(*,preprocess_inventory,hamer_inventory,h2m_inventory,moge_inventory,
             vitpose_script,vitpose_module_root,solver_script,policy_template,
             output_dir,case_id='alapuse02v3n60',device='cuda:0',launcher=run_command):
@@ -119,6 +190,10 @@ def execute(*,preprocess_inventory,hamer_inventory,h2m_inventory,moge_inventory,
                 raise SelectedHandRegistrationError('ViTPose target side mismatch:'+side)
     target=target_dir/(owners['selected_side']+'_target.npz')
     policy=json.loads(Path(policy_template).read_text())
+    if is_frame_i_policy(policy):
+        return execute_frame_i_candidate(root=root,owners=owners,target=target,
+          policy=policy,solver_script=solver_script,
+          vitpose_module_root=vitpose_module_root,case_id=case_id,launcher=launcher)
     required={'packet_fields','global_max_final_reprojection_rmse_px','positive_scale_bounds',
       'translation_lower_xyz','translation_upper_xyz','metric_point_to_surface_weight',
       'metric_residual_clip','metric_max_points','metric_sample_seed','minimum_visible_joints'}

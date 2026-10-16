@@ -142,12 +142,29 @@ def prompt_views(packet_path: str|Path,config: dict[str,Any],family: str,
 
 def runtime_config(template: str|Path,old_root: str,new_root: str,image: Path,
                    prompts: dict[str,str],output: Path,
-                   hand_instance: str='closest_to_object') -> None:
+                   hand_instance: str='closest_to_object',
+                   hand_frame_i: dict[str,Any]|None=None) -> None:
     text=Path(template).read_text().replace(old_root,new_root)
     updates={'IMAGE_PATH':str(image),'BASE_DIR':new_root,
       'GEMINI_RESPONSES':prompts['category'],
       'OBJECT_PROMPT_CSV':prompts['object'],'FLUX_PROMPT_CSV':prompts['flux'],
       'HAND_INSTANCE':hand_instance}
+    if hand_frame_i is not None:
+        if not isinstance(hand_frame_i,dict) or set(hand_frame_i)!={'solver_script','policy_template'}:
+            raise RuntimeError('hand_frame_i override must own solver_script and policy_template')
+        owned={}
+        for role in ('solver_script','policy_template'):
+            record=hand_frame_i.get(role)
+            if not isinstance(record,dict) or set(record)!={'path','sha256'}:
+                raise RuntimeError('hand_frame_i '+role+' owner must contain only path and sha256')
+            path=Path(str(record.get('path','')))
+            expected=str(record.get('sha256',''))
+            if not path.is_file(): raise FileNotFoundError(str(path))
+            if not expected or sha(path)!=expected:
+                raise RuntimeError('hand_frame_i '+role+' hash mismatch')
+            owned[role]=str(path.resolve())
+        updates['HAND_FRAME_I_SOLVER_SCRIPT']=owned['solver_script']
+        updates['HAND_FRAME_I_POLICY_TEMPLATE']=owned['policy_template']
     lines=[]; seen=set()
     for line in text.splitlines():
         if '=' in line and not line.lstrip().startswith('#'):
@@ -155,9 +172,10 @@ def runtime_config(template: str|Path,old_root: str,new_root: str,image: Path,
             if key in updates: line=key+'='+updates[key]; seen.add(key)
         lines.append(line)
     missing=set(updates)-seen
-    for key in sorted(missing & {'HAND_INSTANCE'}):
+    optional={'HAND_INSTANCE','HAND_FRAME_I_SOLVER_SCRIPT','HAND_FRAME_I_POLICY_TEMPLATE'}
+    for key in sorted(missing & optional):
         lines.append(key+'='+updates[key])
-    remaining=missing-{'HAND_INSTANCE'}
+    remaining=missing-optional
     if remaining: raise RuntimeError('runtime template missing keys:'+repr(sorted(remaining)))
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text('\n'.join(lines)+'\n')
@@ -200,7 +218,8 @@ def run_foundation(config: dict[str,Any],run_root: Path,packet: Path,
     atomic(run_root/'receipts'/f'{family}_hand_instance_resolution.json',hand_resolution)
     runtime_config(config['foundation']['runtime_template'],
       config['foundation']['template_root'],str(output_root),checked_image(config),prompts,
-      env_path,hand_instance=hand_resolution['resolved_hand_instance'])
+      env_path,hand_instance=hand_resolution['resolved_hand_instance'],
+      hand_frame_i=config['foundation'].get('hand_frame_i'))
     raw_manifest=run_root/'config'/family/'manifest_unbound.json'
     bound_manifest=run_root/'config'/family/'manifest_GPU.json'
     bind_receipt=run_root/'receipts'/f'{family}_GPU_binding.json'

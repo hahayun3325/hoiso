@@ -1,0 +1,308 @@
+{
+  "import_paths": [
+    "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2",
+    "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages",
+    "/home/fredcui/Projects/FollowMyHold/third_party/pytorch3d",
+    "/home/fredcui/Projects/FollowMyHold/third_party"
+  ],
+  "limitations": [
+    "Explicit entry/support source pins do not enforce the complete transitive native closure. Python audit hooks do not confine arbitrary native code."
+  ],
+  "modules": [
+    {
+      "binding": {
+        "bytes": 95235,
+        "sha256": "46ab97624401733ee8c71f14c1c18679bf9ee388ec8a15ef6897e97c0d00219e"
+      },
+      "module": "torch",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/__init__.py",
+      "role": "m6_torch_init"
+    },
+    {
+      "binding": {
+        "bytes": 53831,
+        "sha256": "ca7cdd9a766b7ec5433fad1003b0e0c81f74407db1f452c5815f25a11e76383b"
+      },
+      "module": "torch.cuda",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/cuda/__init__.py",
+      "role": "m6_cuda_init"
+    },
+    {
+      "binding": {
+        "bytes": 18610,
+        "sha256": "53469c6556a12ecc6fa8f6b51a2b4c462681caee9755b9a20484c6b6ece70446"
+      },
+      "module": "safetensors.torch",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/safetensors/torch.py",
+      "role": "d6_source_017"
+    },
+    {
+      "binding": {
+        "bytes": 153611,
+        "sha256": "1a3d2ef3dbcbd056fbb4de3415302873348c60e90129a9a107b8829395ea47ea"
+      },
+      "module": "PIL.Image",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/PIL/Image.py",
+      "role": "e7_source_040"
+    },
+    {
+      "binding": {
+        "bytes": 2433,
+        "sha256": "82ab0c6786671b7a6c0ea1d6ffda96f9df6330b72cf890ac4fc4cdce500a6b4b"
+      },
+      "module": "trimesh",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/trimesh/__init__.py",
+      "role": "d6_source_022"
+    },
+    {
+      "binding": {
+        "bytes": 246,
+        "sha256": "08a43adbfe4f85b1bd5d234f98bcc840e3e2647ff90aefbfdad38c4e666f2816"
+      },
+      "module": "pytorch3d",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/pytorch3d/pytorch3d/__init__.py",
+      "role": "captured_editable_package_init"
+    },
+    {
+      "binding": {
+        "bytes": 50,
+        "sha256": "5a4564760c19568bbe73192cb4a94da57280e8b0e1e86dfef6c42250c2ab8c2b"
+      },
+      "module": "utilz",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/utilz/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 2846,
+        "sha256": "129b6828b539b34dc06f65495a61f57bd1cc1aa6559e884a30c04552a95ab4d8"
+      },
+      "module": "utilz.code_utils",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/utilz/code_utils.py"
+    },
+    {
+      "binding": {
+        "bytes": 5588,
+        "sha256": "bb8c402f0ca10f87055735f39d39db10be20c8f1526493c80845e42120b6e211"
+      },
+      "module": "utilz.kaolin_sdf_ops",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/utilz/kaolin_sdf_ops.py"
+    },
+    {
+      "binding": {
+        "bytes": 14989,
+        "sha256": "5e1a669488678721b0de72f4d3c606fca78cc6070802a84ba69531dc7b89f74c"
+      },
+      "module": "hy3dgen.shapegen.models.hunyuan3ddit",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/models/hunyuan3ddit.py",
+      "role": "d6_source_033"
+    },
+    {
+      "binding": {
+        "bytes": 21797,
+        "sha256": "9c063d806a1ecb08820c4f82457a42ba3413dc3cc20436a5704b1f5a26757050"
+      },
+      "module": "hy3dgen.shapegen.models.vae",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/models/vae.py",
+      "role": "d6_source_034"
+    },
+    {
+      "binding": {
+        "bytes": 5698,
+        "sha256": "e40311cfff8a446f868d3ce066a1b76040d1598fa7210c6e2cd371db5bfa64fa"
+      },
+      "module": "hy3dgen.shapegen.models.conditioner",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/models/conditioner.py",
+      "role": "d6_source_032"
+    },
+    {
+      "binding": {
+        "bytes": 20116,
+        "sha256": "e447d9551c403b337ad94e0176b819dd34a7470e8f511a74708e6e52c1897f25"
+      },
+      "module": "hy3dgen.shapegen.schedulers",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/schedulers.py",
+      "role": "d6_source_038"
+    },
+    {
+      "binding": {
+        "bytes": 5131,
+        "sha256": "2c73fa141d6f9a8da4285b380fbada3fc8a8955e6ec376de46469b81b2321e97"
+      },
+      "module": "hy3dgen.shapegen.preprocessors",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/preprocessors.py",
+      "role": "d6_source_037"
+    },
+    {
+      "binding": {
+        "bytes": 165433,
+        "sha256": "30e20924ac044cb46bec3f3c75aa9bb4f914724a3a3347c4c3c411a26b84b6c7"
+      },
+      "module": "hy3dgen.shapegen.pipelines",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/pipelines.py",
+      "role": "d6_source_035"
+    },
+    {
+      "binding": {
+        "bytes": 6112,
+        "sha256": "98b35045b03b2e82cfb7ad36f4fa55a3ee81ea7176c091b9b925d5fa45b197f2"
+      },
+      "module": "hy3dgen.shapegen.postprocessors",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/postprocessors.py",
+      "role": "d6_source_036"
+    }
+  ],
+  "support_sources": [
+    {
+      "binding": {
+        "bytes": 42187,
+        "sha256": "1ac006643ac07400e0c4f9af0113adcbad32d0ef7c5f47c65e083ff6ba487095"
+      },
+      "id": "platform",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/platform.py"
+    },
+    {
+      "binding": {
+        "bytes": 296,
+        "sha256": "6cc8f7eb06557a25cecbae8f9bd8525f86e6eb1d47ee339d5ca974c17193a792"
+      },
+      "id": "kaolin_init",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/kaolin/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 69,
+        "sha256": "6e6ad867bd0851738560c8393e3cfcd19182c163fd1b410b12b1bc2b2bb2d20e"
+      },
+      "id": "kaolin_physics_init",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/kaolin/physics/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 249,
+        "sha256": "b014e1c1c3aae34bd8187593d3f7eadbdcd60244582920f620ac9ba04c6d752d"
+      },
+      "id": "kaolin_simplicits_init",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/kaolin/physics/simplicits/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 38524,
+        "sha256": "9be48eb5ef6467865a1be59d05f3ede9884e6da6c3da54261847c7a64e8257c4"
+      },
+      "id": "kaolin_easy_api",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/kaolin/physics/simplicits/easy_api.py"
+    },
+    {
+      "binding": {
+        "bytes": 12218,
+        "sha256": "6366da5fa25f0e4a81f6574cb70c5e97cbf10e7bb45efd51f6860a8b2dd1810c"
+      },
+      "id": "kaolin_losses_warp",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/kaolin/physics/simplicits/losses_warp.py"
+    },
+    {
+      "binding": {
+        "bytes": 476553,
+        "sha256": "40948811fbc2e99773883f762cc0eb939718b11d26676739e4332b13337d5ee2"
+      },
+      "id": "warp_context",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/warp/_src/context.py"
+    },
+    {
+      "binding": {
+        "bytes": 18160,
+        "sha256": "4a272a0c07b087b8f43710ebb061f02b1bc002a1bf4f701c336528c64a6ba2f7"
+      },
+      "id": "warp_init",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/warp/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 23525,
+        "sha256": "099250f514030e8d8a77994a73ddc2b589b2cf072093e968f3a5ee6fd21f6033"
+      },
+      "id": "warp_build",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/warp/_src/build.py"
+    },
+    {
+      "binding": {
+        "bytes": 10759,
+        "sha256": "9a1ca6a287d599e64286e600dff2c929022fb1d0d836e4f68af31217f547325c"
+      },
+      "id": "warp_config",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/warp/config.py"
+    },
+    {
+      "binding": {
+        "bytes": 25070,
+        "sha256": "d32aaa0e5f553a6f539c48a4598405e0d60eb3cebb97f689bf126fa28cce2621"
+      },
+      "id": "warp_metadata",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/warp_lang-1.13.0.dist-info/METADATA"
+    },
+    {
+      "binding": {
+        "bytes": 1738,
+        "sha256": "ad3b8a76cd5678a9c4a857cdef5551dbbabe20aa1cbc5e9bda3e1f7e8e92283a"
+      },
+      "id": "shapegen_init",
+      "path": "/home/fredcui/Projects/FollowMyHold/third_party/Hunyuan3D-2/hy3dgen/shapegen/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 9868,
+        "sha256": "6ebe939543c2dd9bc0b34540f6cdf39b7b9afc72ea55bb91e1460f6a0c2ea0a1"
+      },
+      "id": "async_compile",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/_inductor/async_compile.py"
+    },
+    {
+      "binding": {
+        "bytes": 48001,
+        "sha256": "71ffb08b5f91ab22c843af2b1139b9011f2efcb7f7d8c6825d00f39bb691fe0a"
+      },
+      "id": "inductor_config",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/_inductor/config.py"
+    },
+    {
+      "binding": {
+        "bytes": 1033,
+        "sha256": "7c3ca9e4df8a709ccefaf51e4f77d903c51b0b6d457c61210ce95836f5c71c37"
+      },
+      "id": "e7_source_006",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/__init__.py"
+    },
+    {
+      "binding": {
+        "bytes": 8291,
+        "sha256": "d36d05e792619389f06e9cf17c3c738bbecfa1efb93a9b8667e7fe9b11036058"
+      },
+      "id": "e7_source_007",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/configuration_dinov2.py"
+    },
+    {
+      "binding": {
+        "bytes": 33624,
+        "sha256": "e95dbed4078df66b2fdec8d15345e89e7bd1852e6bb0575642280d781634b766"
+      },
+      "id": "e7_source_008",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/models/dinov2/modeling_dinov2.py"
+    },
+    {
+      "binding": {
+        "bytes": 304065,
+        "sha256": "7ec95ac201545738e963adde048a861cfee0e66f9e9417c49236e0c2631ab7b6"
+      },
+      "id": "e7_source_013",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/transformers/modeling_utils.py"
+    },
+    {
+      "binding": {
+        "bytes": 124492,
+        "sha256": "d125e6e19b4495e65758dc4c4d8fbdc3e30758c27eded646427971f0098eb117"
+      },
+      "id": "h2_torch_module",
+      "path": "/home/fredcui/anaconda3/envs/foho/lib/python3.10/site-packages/torch/nn/modules/module.py"
+    }
+  ]
+}

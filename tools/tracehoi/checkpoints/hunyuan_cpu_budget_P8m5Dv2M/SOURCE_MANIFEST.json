@@ -1,0 +1,131 @@
+{
+  "attempt": "P8m5Dv2M",
+  "local_fixture_sources": {
+    "service_fixture.json": {
+      "bytes": 832002,
+      "sha256": "730a73dd8f0c0561a8f3cc1b5e3e9c4bd4f8773432a79ffe939778c17935596d"
+    },
+    "test_configuration.py": {
+      "bytes": 4610,
+      "sha256": "a0173ea3de26661f3ccf348442636e3166d366ce8b276786105db05f9be5a00a"
+    },
+    "test_cpu_load.py": {
+      "bytes": 6368,
+      "sha256": "933baf5e42d4024f943bdfa05c25e1ae880966742a8d8431b5e66a7019bb2cb4"
+    },
+    "test_font_fallback.py": {
+      "bytes": 4872,
+      "sha256": "aa75d539b31614f2d9a83a7ec5e586c23610d476a06afb68596cf5f1d555906a"
+    },
+    "test_memory_budget.py": {
+      "bytes": 3567,
+      "sha256": "e9b9fd41b5cff7ef790a63ac2c7abbcf01b33b22d288f1b5011061997be79d51"
+    },
+    "test_null_audit.py": {
+      "bytes": 4860,
+      "sha256": "db1f06566818d27cd21386f05b8c3787598c7dd42bccf6c8558ad4ae44a8ce6b"
+    },
+    "test_probe.py": {
+      "bytes": 10396,
+      "sha256": "5432954c0bb880426c86453ae5b78bc5d55db847c9b7d953cbf39e21640e9ed0"
+    },
+    "test_sealed.py": {
+      "bytes": 5751,
+      "sha256": "bb36cf5564506cee8458a3b062c8178901bc90080536bdce7e6daeb18ba85f36"
+    }
+  },
+  "original_wrapper": {
+    "bytes": 1840199,
+    "name": "hunyuan_cpu_budget_probe_P8m5Dv2M_server.sh",
+    "sha256": "03c73b4b4abd437556a5e1bf5ceb1fe2078c853a1fda691a5871224b2f655fc7"
+  },
+  "publication_validation": "syntax and byte identity; no model or fixture execution",
+  "role": "historical source checkpoint; no rerun",
+  "schema": 1,
+  "server_components": {
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/cgroup_admission.py": {
+      "bytes": 5821,
+      "sha256": "1da768117e3b4fc9936215d1d6aaf154a5e8e59f3397ec437bcbc42f8fd0147b"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/cgroup_readers.py": {
+      "bytes": 2508,
+      "sha256": "eef904664a79e64e46e464a194ebcec33900b466cfee942d80e3c53c6eff52b5"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/cpu_loader_derivation.json": {
+      "bytes": 3294,
+      "sha256": "802a1984994610e5cb1f9e6e12d42d8f02bb68d98ef39b26eb580f4bd6a01abc"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/editable_path_evidence.json": {
+      "bytes": 787,
+      "sha256": "e8f3e5a91d3996bdd70572aa9f8d31ab9560511c562f003c8eb38a13197882b9"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/embedded_prior.py": {
+      "bytes": 22844,
+      "sha256": "c27c906ba47c7b7ddabf7a92d1c03dc203b9dbe114f5cf16b6cf3c9ec8940afb"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/interpreter_review.py": {
+      "bytes": 9205,
+      "sha256": "c2969e2ca479a6677c58bf88809ea779f1af91910ee805e379e6dbb79311d2f1"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/manager_observation.py": {
+      "bytes": 7218,
+      "sha256": "42c476a32c29528351329c74c331c12cd059614d8048ba15ecd4e3208bc20611"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/memory_budget.json": {
+      "bytes": 1922,
+      "sha256": "a9637f0ee83b80347019906f6bc10e3daa6badb1987d1298cb08b5b031ac968a"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/native_import_plan.json": {
+      "bytes": 11010,
+      "sha256": "a1699763e95e747992c4a8d032aac3841c06ba4bc48ee4841c36ed11fc559d48"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/native_service.py": {
+      "bytes": 14937,
+      "sha256": "2f5bc24b0741435a82fbb1eedbe459b9af8e277013c0253a2eff47c17df02795"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/native_worker.py": {
+      "bytes": 14694,
+      "sha256": "ae1991e5d4f036537904d7e91651cf46128ecef5a64f50deb1f362d421927f89"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/original_config.yaml.txt": {
+      "bytes": 1604,
+      "sha256": "70bbfcdd18b9686ee56fe011c3a059b222eae1f5450f904577c50f0e107a8a53"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/original_loader_schema.py.txt": {
+      "bytes": 4559,
+      "sha256": "a6a11b10abb6efeb6c4a99aec4084958f4f9c2f8e62f9193f5a3cad65ad45d8a"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/original_runtime_spec.json": {
+      "bytes": 5453,
+      "sha256": "5a77f28264b5c39d02a45b4545858a1e85745b92e9e93947c95d7742c4c33a0c"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/prerequisite_manifest.json": {
+      "bytes": 780,
+      "sha256": "b0eb112c587766a8286cfd3f52a7b41d4a8a03d88b00d4a22604c60c016e5d86"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/probe_storage.py": {
+      "bytes": 2958,
+      "sha256": "09fa94e222a4e232062ca9f00b76fa33a196467e90fd004708afd69cb49e7dbf"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/read_helpers.py": {
+      "bytes": 13960,
+      "sha256": "4ce905169ca8687d57a029eea4facc0990580d6bfdf406dc90d1ea70be2cdf95"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/review_driver.py": {
+      "bytes": 5654,
+      "sha256": "c5eedb73dd31c1ff713e1f405ef7b24c38d0c5df54165b495c0a8731253fa593"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/review_plan.json": {
+      "bytes": 194564,
+      "sha256": "513e09f550dff8c2fa8c268051e5c83991cf0c2cd447fa6c285177f8300ae57f"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/service_protocol.py": {
+      "bytes": 4240,
+      "sha256": "e06babf3aa7594058c17a9203117c4b66134638262a8c8935bcfcedcd73b5340"
+    },
+    "/home/fredcui/tracehoi-hunyuan-cpu-budget-probe-20261014-v1-P8m5Dv2M/worker_plan.json": {
+      "bytes": 173946,
+      "sha256": "598e09831a3bf9d48281e698ccc54303c0fbf0c63cb3f67d2069c62c2b1a5988"
+    }
+  }
+}

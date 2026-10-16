@@ -1,0 +1,48 @@
+{
+  "case_id": "alapuse02v3n60",
+  "finger_tip_vertex_ids": {
+    "index": 320,
+    "middle": 443
+  },
+  "gate_c_policy": {
+    "active_tip_target_normalized_max": 0.5,
+    "hand_object_diagonal_ratio_max": 1.5,
+    "hand_object_diagonal_ratio_min": 0.02,
+    "target_preference_margin": 0.05
+  },
+  "owners": {
+    "binding_spec": {
+      "path": "/home/fredcui/foho_phase0/phase2_gateA_part_recon/cases/alapuse02v3n60_auto_v2/tracehoi_autopipeline_0_0_3_20260829T193806Z/candidates/alapuse02v3n60_fresh_frame_i_gate_c_binding.json",
+      "sha256": "546e305ffc0bd163e179f511a27fd9085cfe7e56506f82635ee786bc30bd7db2"
+    }
+  },
+  "patch_policy": {
+    "largest_component_ratio_min": 0.85,
+    "max_screen_fraction": 0.75,
+    "min_faces": 32,
+    "normalized_mapping_p95_max": 0.08
+  },
+  "registration_policy": {
+    "correspondence_normalized_mean_max": 0.01,
+    "max_iterations": 75,
+    "normalized_symmetric_mean_max": 0.03,
+    "normalized_symmetric_p95_max": 0.08,
+    "sample_count": 12000,
+    "scale_max": 10.0,
+    "scale_min": 0.02,
+    "seed": 20260829,
+    "similarity_singular_ratio_max": 1.00001,
+    "tolerance": 1e-09,
+    "trim_fraction": 0.8
+  },
+  "schema": "tracehoi.FreshFrameIGateCConfig.v1",
+  "semantic_contract": {
+    "active_fingers": [
+      "index",
+      "middle"
+    ],
+    "object_part": "screen_lid",
+    "object_region_key": "upper_left_top_rim",
+    "selected_hand_identity": "upper_image_hand"
+  }
+}
