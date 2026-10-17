@@ -1,0 +1,60 @@
+{
+  "schema": "TraceHOISceneRepositoryEvidence.v1",
+  "source_attempt": "U5s2Ja7U",
+  "case_id": "alapuse02v3n60",
+  "source_zip": {
+    "name": "alapuse02v3n60_tracehoi_scene_candidate_handoff_20261017_v1_U5s2Ja7U.zip",
+    "bytes": 12949714,
+    "sha256": "b8e5add499e31d59546911bf1d758890c7ceaa5c28a5098cb430f6facafe1250"
+  },
+  "manifest_binding": {
+    "bytes": 10604,
+    "sha256": "65a187a301e7888ea7102bd8d41e609ff11fb98c293061e6b8e4c194fe7640bb"
+  },
+  "diagnostic_loads": 4,
+  "placement_refusals": 4,
+  "candidates": [
+    {
+      "accepted": false,
+      "collision_gate": "clear_surface_separation_only",
+      "conditional_scale": 2.263843277382709,
+      "id": "primary",
+      "pipeline_admissible": false,
+      "unsigned_surface_gap": 0.016901892139070285
+    },
+    {
+      "accepted": false,
+      "collision_gate": "blocked_transverse_crossing",
+      "conditional_scale": 2.191355141170339,
+      "id": "minimum_scale",
+      "pipeline_admissible": false,
+      "unsigned_surface_gap": 0.0
+    },
+    {
+      "accepted": false,
+      "collision_gate": "clear_surface_separation_only",
+      "conditional_scale": 2.4632499933116025,
+      "id": "maximum_scale",
+      "pipeline_admissible": false,
+      "unsigned_surface_gap": 0.03218084357864233
+    },
+    {
+      "accepted": false,
+      "collision_gate": "clear_surface_separation_only",
+      "conditional_scale": 2.2025070784651954,
+      "id": "minimum_scale_refined",
+      "pipeline_admissible": false,
+      "unsigned_surface_gap": 0.00011368397979591937
+    }
+  ],
+  "full_parent_acceptance": false,
+  "placement_ready": false,
+  "scale_identified": false,
+  "physical_contact_verified": false,
+  "mask_review_required": true,
+  "source_reader_binding": {
+    "bytes": 12427,
+    "sha256": "69cc60ada77695102acc1e65555cfda8c8a44180442737b69b5facec3e8ff034"
+  },
+  "provenance": "Authenticated U5 return; original data and detailed evidence remain outside Git. This record does not certify geometric accuracy."
+}
