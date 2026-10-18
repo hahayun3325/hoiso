@@ -1,0 +1,13 @@
+# TraceHOI adaptive diagnostic pipeline — 2026-10-18
+
+The P8 surface-map return was authenticated at commit `daac454b4259846b9c1398fd96f0a84f6168145d`. It reported 280 passing tests before and after installation, normal publication and complete N7 archival before Trash. The independent mask reference remains pending.
+
+This addition joins the published proximity, adaptive-coverage and surface-map modules through a single build/verify API and CLI. It authenticates five input packets, replays the saved adaptive evidence, checks exact map output, then joins candidate records by their identifiers, hand/object bindings, camera frame, units, collision gate and fixed threshold. Candidate array position is never used as correspondence.
+
+The portable workspace links the original scene orbit viewer, vertex witnesses, seven-threshold coverage viewer, adaptive dashboard, spatial cell map, visual review form and independent-reference annotator. The main dashboard compares whole-face and final adaptive bounds at the saved 2% object-diagonal threshold and exposes the saved depth/query history. Companion viewers retain their own default selections and controls.
+
+For the primary branch, the saved coverage interval tightened from approximately 0.332–1.787% to 0.504–0.608% of hand area. This is reduced computational uncertainty, not evidence of geometric accuracy. The minimum-scale branch remains blocked for transverse crossings. All four candidates remain unaccepted, the source geometry and masks remain unchanged, and no additional refinement or model inference is run.
+
+The CLI requires explicit purpose `adaptive_pipeline`; it refuses placement usage. Verification reconstructs every output and compares exact bytes. Existing narrow arithmetic tolerance is inherited only inside the published source verifiers, with classifications and nonnumeric fields unchanged. Twenty-eight new contract tests cover reordered/missing/duplicate candidates, inconsistent bindings/gates/thresholds/stages, false acceptance, zero uncertainty, mutation, unsafe markup and purpose refusal. The carrier runs the 308-test suite plus real-bundle verification before and after installation.
+
+After successful publication and verified replacement output, the carrier archives the complete P8 working tree (220 expected regular files) and moves only that tree to the server Trash. It preserves the original P8 terminal guard and authenticates against bundled original evidence even when a live guard differs. Unknown files stop retirement. Keep original review/reference JSON, source assets, evidence archives, terminal guards and current partial outputs. Manual server transfer only.
