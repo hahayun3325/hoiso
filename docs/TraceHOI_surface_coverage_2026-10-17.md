@@ -1,0 +1,17 @@
+# TraceHOI surface-coverage intervals — 2026-10-17
+
+The J3 diagnostic measured distance at saved hand vertices. Vertex counts do not measure surface area and cannot determine whether an entire triangle is near the object. This addition computes unsigned proximity intervals for each hand triangle, then weights the intervals by triangle area. Geometry, candidate transforms, masks and collision gates remain unchanged.
+
+The input is the authenticated J3 distance packet and its exact source workspace. The code recomputes and verifies J3 before using its vertex witnesses. It adds one full-object nearest-surface query per hand-triangle centroid: 6,152 queries over four 1,538-triangle hands and the unchanged 150,000-triangle object. It uses no native imports, model, GPU, fitting or network access.
+
+For each sample p with nearest distance d and object-surface witness q, let r be the maximum distance from p to the three hand-triangle corners. Distance to the fixed object surface is 1-Lipschitz, giving a lower bound d-r and upper bound d+r over the whole hand triangle. The maximum corner distance to q provides another upper bound. The implementation intersects these bounds across the three vertices and centroid, clips the lower bound at zero, and expands the interval by a numerical guard. This guard is an engineering tolerance, not a formal floating-point interval proof.
+
+At a threshold t, triangles with upper bound ≤ t contribute to the area lower bound. Triangles with lower bound > t are outside. All other area is unresolved and contributes only to the upper bound. Zero-area triangles contribute no area. The fixed profiles and interactive threshold are exploratory fractions of the object bounding-box diagonal; they are not acceptance criteria.
+
+The offline HTML shows the hand faces, an object preview, a movable threshold, candidate comparisons and per-face centroid witnesses. Its transparent orthographic display is for inspection; it does not certify visibility. Calculations use every object triangle even though the preview samples object vertices. Downloads preserve the complete face intervals and provenance.
+
+The minimum-scale branch retains its blocked transverse-crossing gate. Proximity intervals cannot clear that gate, establish physical contact or penetration depth, or identify metric scale. The human mask observation review is complete, but the independent reference is still missing. No mask accuracy, scale, scene placement or full parent acceptance is granted. Original review/reference records and all input geometry remain protected.
+
+Run `tools/tracehoi/check_surface_coverage.py` for the 25 area-envelope and contract tests. Tests include 1,200 interior points compared against exhaustive nearest-triangle queries on randomized meshes, analytic bounds, threshold equality, area weighting, degenerate faces, monotonicity and refusal of placement use. The server integration also verifies every centroid witness, source hashes, output relocation, normal publication, refusal paths and collection behavior.
+
+The CLI `tools/tracehoi/measure_surface_coverage.py` has `build` and `verify` actions. Both require `--workspace`, `--workspace-sha256`, `--distances`, `--distance-sha256`, `--case`, `--output` and `--purpose surface_coverage`. Verification additionally requires `--receipt-sha256`. Outputs are `coverage.json`, `index.html`, `README.md` and `files.json`. Keep both source packets and receipts to verify an exported result later.
