@@ -1,0 +1,17 @@
+# TraceHOI visual initial pose — 2026-10-18
+
+The CPU initialization stage now places and scales the saved HaMeR hand relative to the fixed laptop using image evidence. Contact, collision avoidance and physical consistency belong to the subsequent rectified-flow optimization stage. Earlier contact diagnostics remain historical evidence and do not select or reject this initializer.
+
+The initializer uses the original 512×512 crop, the recorded selected-hand box, saved HaMeR geometry/articulation, independent ViTPose 2D joints and fresh N7 MoGe depth. It recomputes a rigid camera pose with confidence-weighted Huber reprojection, a weak native-orientation prior and a soft box-containment term. Duplicate image targets share one observation weight. The loose recorded box is not a tight silhouette; the padded HaMeR crop size is not anatomical hand size.
+
+Relative scale is the median of 8-pixel tile medians of observed-to-rendered depth ratios, on valid hand-only pixels shared with the projected mesh. Object and ambiguous-overlap pixels are excluded from depth support. No object-surface distance, contact region, collision gate, collision-refined transform or penetration penalty enters the fit or scale estimate. The object mesh remains byte-identical.
+
+The local preview gives approximately 6.09 px median joint reprojection error, 8.38 px RMSE, scale 2.2644 in the learned scene coordinate system and 3,593 shared depth pixels across 75 tiles. These are local results; the server recomputes and verifies the package before publication. The scale is not independent metric calibration, and the tile spread is not a confidence interval.
+
+`initialization_ready` and `optimizer_handoff_ready` describe a computational initial state. `placement_ready` and `full_parent_acceptance` remain false for final validated placement. Completed human visual review remains recorded; independent mask reference annotation is still pending and is not a prerequisite for constructing this provisional initial state. The rectified-flow optimizer is not implemented or executed by this change.
+
+The output includes an offline image/3D viewer, initial hand mesh, unchanged laptop mesh, fit/provenance and `optimizer_input.json`. Both meshes already contain scene transforms: do not apply provenance transforms twice. The optimizer packet carries native MANO parameters, transformed joints and transform composition. Its display-scale slider changes only the preview.
+
+Use `tools/tracehoi/run_visual_initialization.py build --inputs INPUT_DIRECTORY --input-sha256 INPUTS_JSON_SHA256 --output NEW_DIRECTORY --purpose visual_initialization`. Use `verify` with the same arguments and `--receipt-sha256 FILES_JSON_SHA256` to recompute and validate. `placement` is not an accepted purpose for this initializer. No models, GPU work, environment installation or source-mask edits are needed.
+
+The S3 manual server carrier authenticates R2 evidence and restored raw inputs, verifies the exact repository base, runs the existing 340 checks plus 24 initializer tests and real-data checks before and after installation, then commits five exact additions and pushes normally. Only after verified publication and replacement evidence does it archive and move the exact R2 working tree to Trash. Original terminal guards, complete archives, raw observations and human review records must be retained. No previous attempt should be rerun.
